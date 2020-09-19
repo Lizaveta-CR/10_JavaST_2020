@@ -1,6 +1,6 @@
 package by.tsvirko.task01.service;
 
-final class PerfectNumber {
+public final class PerfectNumber {
     private PerfectNumber() {
         throw new AssertionError("Instantiating utility class.");
     }
@@ -9,9 +9,13 @@ final class PerfectNumber {
      * Checks if number is perfect.
      *
      * @param number is user's number.
-     * @return if number is perfect.
+     * @return boolean value: 'true' if number is perfect, else - 'false'
+     * @throws IllegalArgumentException if  user's number is 0
      */
     public static boolean isPerfectNumber(final int number) {
+        if (number == 0) {
+            throw new IllegalArgumentException("Number can not be 0!");
+        }
         long sum = 0;
         for (int i = 1; i < number; i++) {
             if (number % i == 0) {
