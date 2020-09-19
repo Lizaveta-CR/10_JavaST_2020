@@ -1,10 +1,9 @@
-package by.tsvirko.task01.service.readingInformation;
+package by.tsvirko.task01.service.readers;
 //TODO: classname convention
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class FileIntegerReader implements IntegerReader {

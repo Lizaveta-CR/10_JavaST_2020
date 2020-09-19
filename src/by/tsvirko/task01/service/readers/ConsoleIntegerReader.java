@@ -1,4 +1,4 @@
-package by.tsvirko.task01.service.readingInformation;
+package by.tsvirko.task01.service.readers;
 
 //TODO: classname convention
 
