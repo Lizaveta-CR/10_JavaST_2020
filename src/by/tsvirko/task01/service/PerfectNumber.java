@@ -11,7 +11,7 @@ public final class PerfectNumber {
      *
      * @param number is user's number.
      * @return boolean value: 'true' if number is perfect, else - 'false'
-     * @throws IllegalArgumentException if  user's number is 0
+     * @throw IllegalArgumentException if  user's number is 0
      */
     public static boolean isPerfectNumber(final int number) {
         if (number <= 0) {

@@ -4,12 +4,11 @@ package by.tsvirko.task01.service.readingInformation;
 
 import java.util.Scanner;
 
-public class ConsoleReader implements Reader {
+public class ConsoleIntegerReader implements IntegerReader {
     private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public int readInt() {
-        System.out.println("Write positive number and press <Enter>: ");
+    public int readNumber() {
         return scanner.nextInt();
     }
 }
