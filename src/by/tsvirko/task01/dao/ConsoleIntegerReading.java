@@ -1,10 +1,8 @@
-package by.tsvirko.task01.service.readers;
-
-//TODO: classname convention
+package by.tsvirko.task01.dao;
 
 import java.util.Scanner;
 
-public class ConsoleIntegerReader implements IntegerReader {
+public class ConsoleIntegerReading implements IntegerReadring {
     private Scanner scanner = new Scanner(System.in);
 
     @Override
