@@ -6,7 +6,8 @@ public class ReaderAccess {
     public static int getFile(Scanner scanner, String filePath) {
         System.out.println("Write file name (Number): ");
         String filename = scanner.next();
-        FileIntegerReader reader = new FileIntegerReader(filePath.concat(filename));
+        String fullPath = filePath.concat(filename);
+        FileIntegerReader reader = new FileIntegerReader(fullPath);
         return reader.readNumber();
     }
 
