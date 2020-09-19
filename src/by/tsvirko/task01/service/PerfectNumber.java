@@ -15,7 +15,7 @@ public final class PerfectNumber {
      */
     public static boolean isPerfectNumber(final int number) {
         if (number <= 0) {
-            throw new IllegalArgumentException("Number can not negative or 0!");
+            throw new IllegalArgumentException("Number can not be negative or 0!");
         }
         long sum = 0;
         for (int i = 1; i < number; i++) {

@@ -17,22 +17,42 @@ public class FileIntegerReader implements IntegerReader {
     @Override
     public int readNumber() {
         Scanner scanner = openFile(filename);
-        List<Integer> numbers = new ArrayList<>();
-        while (scanner.hasNextInt()) {
-            numbers.add(scanner.nextInt());
+        ArrayList<Integer> fileNumbers = new ArrayList<>();
+        int finalNumber = 0;
+        try {
+            while (scanner.hasNextInt()) {
+                fileNumbers.add(scanner.nextInt());
+            }
+            if (fileNumbers.size() > 1 || fileNumbers.size() == 0) {
+                throw new IllegalArgumentException("1 number must be in file!");
+            } else {
+                finalNumber = fileNumbers.get(0);
+            }
+        } catch (NullPointerException e) {
+            System.err.println("Check file name!");
         }
-        if (numbers.size() > 1) {
-            throw new IllegalArgumentException("Only 1 number in file!");
-        }
-        return numbers.get(0);
+        return finalNumber;
     }
 
     private Scanner openFile(final String filename) {
         try {
             return new Scanner(new File(filename));
         } catch (FileNotFoundException e) {
-            System.err.println("File not found" + e.getMessage());
-            return null;
+            System.err.println("File not found " + e.getMessage());
         }
+        return null;
     }
+
+//    private List<Integer> getNumbers(Scanner scanner) {
+//        List<Integer> numbers = new ArrayList<>();
+//        try {
+//            while (scanner.hasNextInt()) {
+//                numbers.add(scanner.nextInt());
+//            }
+//        } catch (NullPointerException e) {
+//            System.err.println("Check file name!");
+//            return null;
+//        }
+//        return numbers;
+//    }
 }
