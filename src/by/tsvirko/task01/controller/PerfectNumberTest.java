@@ -18,7 +18,7 @@ public class PerfectNumberTest {
 
     public static void main(String[] args) {
         System.out.println("Press 1 if you want to write number "
-                + "from console\n" + "Press 2 if you want to "
+                + "in console\n" + "Press 2 if you want to "
                 + "read number from file");
         Scanner scanner = new Scanner(System.in);
         NumbersOutputView numbersOutputView = new NumbersOutputView();
