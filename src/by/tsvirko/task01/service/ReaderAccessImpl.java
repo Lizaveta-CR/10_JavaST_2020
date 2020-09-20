@@ -2,7 +2,7 @@ package by.tsvirko.task01.service;
 
 import by.tsvirko.task01.dao.ConsoleIntegerReading;
 import by.tsvirko.task01.dao.FileIntegerReading;
-import by.tsvirko.task01.dao.IntegerReadring;
+import by.tsvirko.task01.dao.IntegerReading;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class ReaderAccessImpl implements ReaderAccess {
 
     public int consoleReader() {
         System.out.println("Write positive number and press <Enter>: ");
-        IntegerReadring reader = new ConsoleIntegerReading();
+        IntegerReading reader = new ConsoleIntegerReading();
         return reader.readNumber();
     }
 }

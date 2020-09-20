@@ -1,7 +1,6 @@
 package by.tsvirko.task01.controller;
 
 import by.tsvirko.task01.service.PerfectNumber;
-import by.tsvirko.task01.service.ReaderAccessImpl;
 import by.tsvirko.task01.view.NumbersOutputView;
 
 import java.util.InputMismatchException;

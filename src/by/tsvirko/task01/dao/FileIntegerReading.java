@@ -1,12 +1,11 @@
 package by.tsvirko.task01.dao;
-//TODO: classname convention
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIntegerReading implements IntegerReadring {
+public class FileIntegerReading implements IntegerReading {
     private String filename;
 
     public FileIntegerReading(String filename) {
@@ -31,7 +30,7 @@ public class FileIntegerReading implements IntegerReadring {
             while (scanner.hasNextInt()) {
                 fileNumbers.add(scanner.nextInt());
             }
-            if (fileNumbers.size() > 1 || fileNumbers.size() == 0) {
+            if (fileNumbers.size() > 1 || fileNumbers.isEmpty()) {
                 throw new IllegalArgumentException("1 number must be in file!");
             } else {
                 finalNumber = fileNumbers.get(0);
