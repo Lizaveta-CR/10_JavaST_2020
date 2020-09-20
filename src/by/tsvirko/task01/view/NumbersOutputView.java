@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NumbersOutputView {
-    private String filePath = "src/by/tsvirko/task01/";
+    public final String FILE_PATH = "src/by/tsvirko/task01/";
     private ReaderAccess reader = new ReaderAccessImpl();
 
     /**
@@ -24,7 +24,7 @@ public class NumbersOutputView {
             case 1:
                 return reader.consoleReader();
             case 2:
-                return reader.fileReader(scanner, filePath);
+                return reader.fileReader(scanner, FILE_PATH);
             default:
                 throw new InputMismatchException();
         }
