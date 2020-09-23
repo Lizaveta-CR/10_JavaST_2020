@@ -1,8 +1,8 @@
 package by.tsvirko.task02.task4;
 
 import java.util.Scanner;
-//я немного перепутала задание и сделала сложней, но было жалко удалять...
 public class PasswordMain {
+    //я немного перепутала задание и сделала сложней, но было жалко удалять..
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("1. A password must have at least six characters.\n" +
