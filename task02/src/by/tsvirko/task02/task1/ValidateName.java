@@ -22,7 +22,7 @@ public class ValidateName {
     }
 
     public boolean containsRussianSymbols(String name) {
-        //TODO:rus+eng
+        //не смогла придумать, если комбинация англ+рус
         return !name.matches("^\\w+$");
     }
 
