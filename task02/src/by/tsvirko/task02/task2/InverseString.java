@@ -1,8 +1,7 @@
 package by.tsvirko.task02.task2;
 
-public class InverseMain {
+public class InverseString {
     public static void main(String[] args) {
-        //TODO:console
         reverse(args);
     }
 
