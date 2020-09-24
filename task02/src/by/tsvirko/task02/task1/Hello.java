@@ -5,9 +5,14 @@ import java.util.Scanner;
 public class Hello {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.next();
-        showHello(name);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            String name = scanner.next();
+            showHello(name);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Check your name!");
+        }
+
     }
 
     private static void showHello(String name) {
@@ -16,7 +21,7 @@ public class Hello {
             String nameLang = validateName.chooseLanguage(name);
             System.out.println(nameLang + name + "!");
         } else {
-            throw new IllegalArgumentException("Check your name!");
+            throw new IllegalArgumentException();
         }
     }
 }
