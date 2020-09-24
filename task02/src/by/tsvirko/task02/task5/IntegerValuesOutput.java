@@ -4,14 +4,19 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IntegerValuesOutput {
+    //TODO: big numbers
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Enter 2 numbers: ");
             int userNum1 = scanner.nextInt();
             int userNum2 = scanner.nextInt();
-            System.out.println("Sum: " + sum(userNum1, userNum2)
-                    + " Multiplication: " + mult(userNum1, userNum2));
+            if (isValid(userNum1, userNum2)) {
+                System.out.println("Sum: " + sum(userNum1, userNum2)
+                        + " Multiplication: " + mult(userNum1, userNum2));
+            } else {
+                System.out.println("Try smaller numbers");
+            }
         } catch (InputMismatchException e) {
             System.err.println("Only integers!");
         }
@@ -23,5 +28,10 @@ public class IntegerValuesOutput {
 
     private static int mult(int num1, int num2) {
         return num1 * num2;
+    }
+
+    private static boolean isValid(int num1, int num2) {
+        return ((num1 >= Integer.MAX_VALUE) || (num2 <= Integer.MIN_VALUE)
+                || (num2 >= Integer.MAX_VALUE) && (num1 <= Integer.MIN_VALUE));
     }
 }
