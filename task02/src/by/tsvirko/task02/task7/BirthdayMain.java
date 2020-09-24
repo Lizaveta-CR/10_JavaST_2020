@@ -9,17 +9,21 @@ import java.util.Scanner;
 public class BirthdayMain {
     public static final String DATE_FORMAT = "dd/MM/yyyy";
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter birthday date like " + "'" + DATE_FORMAT + "'");
-        String userDate = scanner.next();
-        validateDateFormat(userDate);
-        Date javaDate = new SimpleDateFormat(DATE_FORMAT).parse(userDate);
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(javaDate);
-        System.out.println(weekDay(userDate, cal));
-        BirthdayUtility.showFullAge(javaDate, cal);
-        if (BirthdayUtility.isBirthday(javaDate, cal)) System.out.println("Happy birthday!!!");
+        try {
+            String userDate = scanner.next();
+            validateDateFormat(userDate);
+            Date javaDate = new SimpleDateFormat(DATE_FORMAT).parse(userDate);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(javaDate);
+            System.out.println(weekDay(userDate, cal));
+            BirthdayUtility.showFullAge(javaDate, cal);
+            if (BirthdayUtility.isBirthday(javaDate, cal)) System.out.println("Happy birthday!!!");
+        } catch (ParseException e) {
+            System.err.println("Invalid format");
+        }
     }
 
     private static boolean validateDateFormat(String strDate) {
@@ -28,7 +32,6 @@ public class BirthdayMain {
         try {
             sdfrmt.parse(strDate);
         } catch (ParseException e) {
-            System.err.println(strDate + " is Invalid Date format");
             return false;
         }
         return true;

@@ -56,13 +56,11 @@ public class BirthdayUtility {
     public static boolean isBirthday(Date usersDate, Calendar calendar) {
         int usersDay = calendar.get(Calendar.DATE);
         int usersMonth = calendar.get(Calendar.MONTH);
-        int usersYear = calendar.get(Calendar.YEAR);
 
         Calendar now = Calendar.getInstance();
         int nowDay = now.get(Calendar.DATE);
         int nowMonth = now.get(Calendar.MONTH);
-        int nowYear = now.get(Calendar.YEAR);
 
-        return (usersDay == nowDay) && (usersMonth == nowMonth) && (usersYear == nowYear);
+        return (usersDay == nowDay) && (usersMonth == nowMonth);
     }
 }
