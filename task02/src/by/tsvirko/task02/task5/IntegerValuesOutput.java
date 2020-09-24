@@ -32,7 +32,9 @@ public class IntegerValuesOutput {
     private static boolean isValid(int num1, int num2) {
         long num1L = num1;
         long num2L = num2;
-        return !((num1L >= Integer.MAX_VALUE) || (num2L <= Integer.MIN_VALUE)
-                || (num2L >= Integer.MAX_VALUE) || (num1L <= Integer.MIN_VALUE));
+        return !((num1L >= Integer.MAX_VALUE)
+                || (num2L <= Integer.MIN_VALUE)
+                || (num2L >= Integer.MAX_VALUE)
+                || (num1L <= Integer.MIN_VALUE));
     }
 }
