@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class IntegerValuesOutput {
-    //TODO: big numbers
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try {
@@ -31,7 +30,9 @@ public class IntegerValuesOutput {
     }
 
     private static boolean isValid(int num1, int num2) {
-        return ((num1 >= Integer.MAX_VALUE) || (num2 <= Integer.MIN_VALUE)
-                || (num2 >= Integer.MAX_VALUE) && (num1 <= Integer.MIN_VALUE));
+        long num1L = num1;
+        long num2L = num2;
+        return !((num1L >= Integer.MAX_VALUE) || (num2L <= Integer.MIN_VALUE)
+                || (num2L >= Integer.MAX_VALUE) || (num1L <= Integer.MIN_VALUE));
     }
 }
