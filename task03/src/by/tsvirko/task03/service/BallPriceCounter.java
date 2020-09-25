@@ -10,12 +10,12 @@ public class BallPriceCounter {
         switch (colour) {
             case BLUE:
                 return weight * blueCoeff;
-            case RED:
-                return weight * redCoeff;
             case GREEN:
                 return weight * greenCoeff;
             case PURPLE:
                 return weight * purpleCoeff;
+            case RED:
+                return weight * redCoeff;
             default:
                 return 0;
         }
