@@ -7,6 +7,9 @@ public class Ball {
     private double weight;
     private double price;
 
+    public Ball() {
+    }
+
     public Ball(BallColour colour, double weight, double price) {
         this.colour = colour;
         this.weight = weight;
