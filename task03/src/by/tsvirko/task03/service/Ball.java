@@ -1,13 +1,13 @@
-package by.tsvirko.task03;
+package by.tsvirko.task03.service;
 
 import java.util.Objects;
 
 public class Ball {
     private BallColour colour;
-    private int weight;
-    private float price;
+    private double weight;
+    private double price;
 
-    public Ball(BallColour colour, int weight, float price) {
+    public Ball(BallColour colour, double weight, double price) {
         this.colour = colour;
         this.weight = weight;
         this.price = price;
@@ -21,19 +21,19 @@ public class Ball {
         this.colour = colour;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -42,8 +42,8 @@ public class Ball {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ball ball = (Ball) o;
-        return weight == ball.weight &&
-                Float.compare(ball.price, price) == 0 &&
+        return Double.compare(ball.weight, weight) == 0 &&
+                Double.compare(ball.price, price) == 0 &&
                 colour == ball.colour;
     }
 
