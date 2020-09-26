@@ -1,4 +1,4 @@
-package by.tsvirko.task03.service;
+package by.tsvirko.task03.entity;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package by.tsvirko.task03.service;
+package by.tsvirko.task03.entity;
 
 public enum BallColour {
     BLUE,
