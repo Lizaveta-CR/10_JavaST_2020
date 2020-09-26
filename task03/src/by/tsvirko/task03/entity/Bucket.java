@@ -7,6 +7,9 @@ import java.util.Objects;
 public class Bucket {
     private List<Ball> balls;
 
+    public Bucket() {
+    }
+
     public Bucket(List<Ball> balls) {
         this.balls = new ArrayList<>();
     }
