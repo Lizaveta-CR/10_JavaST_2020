@@ -7,7 +7,7 @@ import by.tsvirko.task01.dao.IntegerReading;
 import java.util.Scanner;
 
 public class ReaderAccessImpl implements ReaderAccess {
-    public int fileReader(Scanner scanner, String filePath) {
+    public long fileReader(Scanner scanner, String filePath) {
         System.out.println("Write file name (Number): ");
         String filename = scanner.next();
         String fullPath = filePath.concat(filename);
@@ -15,7 +15,7 @@ public class ReaderAccessImpl implements ReaderAccess {
         return reader.readNumber();
     }
 
-    public int consoleReader() {
+    public long consoleReader() {
         System.out.println("Write positive number and press <Enter>: ");
         IntegerReading reader = new ConsoleIntegerReading();
         return reader.readNumber();

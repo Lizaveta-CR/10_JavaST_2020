@@ -6,7 +6,7 @@ public class ConsoleIntegerReading implements IntegerReading {
     private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public int readNumber() {
-        return scanner.nextInt();
+    public long readNumber() {
+        return scanner.nextLong();
     }
 }

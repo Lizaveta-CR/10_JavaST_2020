@@ -1,8 +1,14 @@
 package by.tsvirko.task01.service;
 
-public final class PerfectNumber {
-    private PerfectNumber() {
-        throw new AssertionError("Instantiating utility class.");
+public class PerfectNumber {
+    private long number;
+
+    public PerfectNumber(long number) {
+        if (number <= 0) {
+            throw new IllegalArgumentException("Number can't be <=0");
+        } else {
+            this.number = number;
+        }
     }
 
     /**
@@ -11,16 +17,19 @@ public final class PerfectNumber {
      * @param number is user's number.
      * @return boolean value: 'true' if number is perfect, else - 'false'
      */
-    public static boolean isPerfectNumber(final int number) {
-        if (number <= 0) {
-            throw new IllegalArgumentException("Number can't be <=0");
-        }
-        long sum = 0;
-        for (int i = 1; i < number; i++) {
+    public boolean isPerfectNumber(final long number) {
+        long result = 1;
+        long i = 2;
+        while (i * i <= number) {
             if (number % i == 0) {
-                sum += i;
+                result += i;
+                result += number / i;
             }
+            i++;
         }
-        return sum == number;
+        if (i * i == number) {
+            result -= i;
+        }
+        return result == number;
     }
 }

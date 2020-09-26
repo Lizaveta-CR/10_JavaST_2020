@@ -22,8 +22,9 @@ public class PerfectNumberTest {
         Scanner scanner = new Scanner(System.in);
         NumbersOutputView numbersOutputView = new NumbersOutputView();
         try {
-            int userNumber = numbersOutputView.getNumber(scanner);
-            System.out.println(PerfectNumber.isPerfectNumber(userNumber));
+            long userNumber = numbersOutputView.getNumber(scanner);
+            PerfectNumber perfectNumber = new PerfectNumber(userNumber);
+            System.out.println(perfectNumber.isPerfectNumber(userNumber));
         } catch (InputMismatchException e) {
             System.err.println("Only 1 or 2!");
         }

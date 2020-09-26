@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NumbersOutputView {
-    public final String FILE_PATH = "src/by/tsvirko/task01/";
+    private String FILE_PATH = "task01/src/by/tsvirko/task01/";
     private ReaderAccess reader = new ReaderAccessImpl();
 
     /**
@@ -18,7 +18,7 @@ public class NumbersOutputView {
      * @param scanner allows to read a number from System.in
      * @return an integer number
      */
-    public int getNumber(Scanner scanner) {
+    public long getNumber(Scanner scanner) {
         int userConsoleNumber = scanner.nextInt();
         switch (userConsoleNumber) {
             case 1:

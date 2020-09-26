@@ -22,7 +22,7 @@ public class FileIntegerReading implements IntegerReading {
     }
 
     @Override
-    public int readNumber() {
+    public long readNumber() {
         Scanner scanner = openFile(filename);
         ArrayList<Integer> fileNumbers = new ArrayList<>();
         int finalNumber = 0;
