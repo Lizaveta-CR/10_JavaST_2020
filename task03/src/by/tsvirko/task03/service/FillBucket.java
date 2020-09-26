@@ -23,8 +23,8 @@ public class FillBucket {
         balls.add(userBall);
     }
 
-    public void finish() {
+    public Bucket finish() {
         bucket.setBalls(balls);
-        System.out.println(bucket);
+        return bucket;
     }
 }
