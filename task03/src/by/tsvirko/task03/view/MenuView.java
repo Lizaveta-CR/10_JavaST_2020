@@ -1,17 +1,9 @@
 package by.tsvirko.task03.view;
 
-import by.tsvirko.task03.entity.Ball;
-import by.tsvirko.task03.entity.Bucket;
-import by.tsvirko.task03.service.BucketService;
-
-import java.util.Scanner;
-
 public class MenuView {
-    private Scanner scanner;
     private BallView ballView;
 
     public MenuView() {
-        this.scanner = new Scanner(System.in);
         this.ballView = new BallView();
     }
 
@@ -22,16 +14,11 @@ public class MenuView {
                 "4.Вывести информацию о мячиках в порядке возрастания их стоимости.\n" +
                 "5.Создать несколько корзин. \n" +
                 "6.Найти сколько одинаковых по набору мячиков корзин есть в наличии.\n");
-        int userNumber = scanner.nextInt();
-        switch (userNumber) {
-            case 1:
-                ballView.fillBallsView();
-            case 2:
-                ballView.ballWeightAndColourView();
-            case 3:
-                ballView.sameBallsView();
-            case 4:
-                ballView.ballsAscPrice();
-        }
+        ballView.fillBallsView();
+        ballView.ballWeightAndColourView();
+        ballView.sameBallsView();
+        ballView.ballsAscPrice();
+        ballView.createSeveralBuckets();
+        ballView.showSameBallsBuckets();
     }
 }
