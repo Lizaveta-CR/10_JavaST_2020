@@ -7,18 +7,19 @@ import by.tsvirko.task03.service.BucketService;
 
 import java.util.*;
 
+//TODO: same buckets, same balls ???????????????
 public class BallView {
     private final String STOP_WORD = "no";
     private Scanner scanner;
     private BallColour[] ballColours;
-    private BucketService service;
-    private List<Bucket> bucket;
+    private BucketService bucketService;
+//    private List<Bucket> bucket;
 
     public BallView() {
         this.ballColours = BallColour.values();
         this.scanner = new Scanner(System.in);
-        this.service = new BucketService();
-        this.bucket = new ArrayList<>();
+        this.bucketService = new BucketService();
+//        this.bucket = new ArrayList<>();
     }
 
     private BallColour viewUserColour() {
@@ -39,50 +40,62 @@ public class BallView {
     }
 
     public Bucket fillBallsView() {
+        List<Ball> balls = new ArrayList<>();
         boolean needBall = true;
         while (needBall) {
             BallColour userColor = viewUserColour();
             int ballWeight = viewUserBallWeight();
-            service.fill(userColor, ballWeight);
+            Ball ball = bucketService.fill(userColor, ballWeight);
+            balls.add(ball);
             System.out.println("Add one more ball (yes/no)?");
             String answer = scanner.next().toLowerCase();
             if (answer.equals(STOP_WORD)) {
                 needBall = false;
-                Bucket finishedBucked = service.finish();
-                this.bucket.add(finishedBucked);
-                return finishedBucked;
+                System.out.println("Your bucket is ready!");
+                return bucketService.finish(balls);
             } else {
                 System.out.println("Enter one more ball: ");
             }
         }
-        System.out.println("Your bucket is ready!");
         return null;
     }
 
     public void ballWeightAndColourView() {
         System.out.println("What colour would you like to count?");
         BallColour ballColour = viewUserColour();
-        int colourAmount = service.countBallsColour(bucket.get(0), ballColour);
-        double ballsWeight = service.countBallsWeight(bucket.get(0));
-        System.out.println("Bucket's balls weight = " + ballsWeight
-                + " Number of balls with " + ballColour.toString()
-                + " = " + colourAmount);
+        Map<Bucket, Integer> bucketIntegerMap = bucketService.countBallsColour(ballColour);
+        for (Map.Entry<Bucket, Integer> bucketIntegerEntry : bucketIntegerMap.entrySet()) {
+            System.out.println("Bucket " + bucketIntegerEntry.getKey() + " has "
+                    + bucketIntegerEntry.getValue() + " ball(s) with " + ballColour.toString());
+        }
+        Map<Bucket, Double> bucketDoubleMap = bucketService.countBallsWeight();
+        for (Map.Entry<Bucket, Double> bucketDoubleEntry : bucketDoubleMap.entrySet()) {
+            System.out.println("Bucket's " + bucketDoubleEntry.getKey() + " balls total weight = "
+                    + bucketDoubleEntry.getValue());
+        }
     }
 
     public void sameBallsView() {
-        int sameBallsAmount = service.countSameBalls(bucket.get(0));
-        if (sameBallsAmount > 1) {
-            System.out.println("There are " + sameBallsAmount + " same balls");
-        } else {
-            System.out.println("No same balls");
+        Map<Bucket, Integer> bucketIntegerMap = bucketService.countSameBalls();
+        for (Map.Entry<Bucket, Integer> bucketIntegerEntry : bucketIntegerMap.entrySet()) {
+            if (bucketIntegerEntry.getValue() > 1) {
+                System.out.println("Bucket " + bucketIntegerEntry.getKey()
+                        + "has " + bucketIntegerEntry.getValue() + " same balls");
+
+            } else {
+                System.out.println("No same balls");
+            }
         }
     }
 
     public void ballsAscPrice() {
-        List<Ball> balls = service.ballsInfoByPriceAsc(bucket.get(0));
-        System.out.println("Balls in ascending order of price:  ");
-        for (Ball ball : balls) {
-            System.out.println(ball);
+        Map<Bucket, List<Ball>> bucketListMap = bucketService.ballsInfoByPriceAsc();
+        for (Map.Entry<Bucket, List<Ball>> bucketListEntry : bucketListMap.entrySet()) {
+            System.out.println("Balls in ascending order of price:  ");
+            Bucket bucket = bucketListEntry.getKey();
+            System.out.println(bucket + " 's balls:");
+            List<Ball> value = bucketListEntry.getValue();
+            value.forEach(System.out::println);
         }
     }
 
@@ -100,7 +113,7 @@ public class BallView {
     }
 
     public void showSameBallsBuckets() {
-        int sameBucketsAmount = service.countSameBuckets();
+        int sameBucketsAmount = bucketService.countSameBuckets();
         if (sameBucketsAmount > 1) {
             System.out.println("There are " + sameBucketsAmount + " same buckets");
         } else {

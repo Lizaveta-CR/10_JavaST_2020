@@ -8,6 +8,7 @@ public class BallController {
     public static void main(String[] args) {
         try {
             MenuView menuView = new MenuView();
+            menuView.start();
             menuView.viewTasks();
         } catch (InputMismatchException e) {
             System.err.println("Try again..");
