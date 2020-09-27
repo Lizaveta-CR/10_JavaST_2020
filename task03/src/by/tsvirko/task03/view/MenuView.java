@@ -28,7 +28,10 @@ public class MenuView {
                 ballView.fillBallsView();
             case 2:
                 ballView.ballWeightAndColourView();
-            case 3:ballView.sameBallsView();
+            case 3:
+                ballView.sameBallsView();
+            case 4:
+                ballView.ballsAscPrice();
         }
     }
 }

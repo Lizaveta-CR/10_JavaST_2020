@@ -61,7 +61,7 @@ public class Ball {
         return "Ball{" +
                 "colour=" + colour +
                 ", weight=" + weight +
-                ", price=" + price +
+                ", price=" + String.format("%2.1f", price) +
                 '}';
     }
 }

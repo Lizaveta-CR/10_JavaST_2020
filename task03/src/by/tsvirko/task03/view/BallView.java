@@ -1,11 +1,13 @@
 package by.tsvirko.task03.view;
 
+import by.tsvirko.task03.entity.Ball;
 import by.tsvirko.task03.entity.BallColour;
 import by.tsvirko.task03.entity.Bucket;
 import by.tsvirko.task03.service.BucketService;
 import by.tsvirko.task03.service.FillBucket;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class BallView {
@@ -73,6 +75,14 @@ public class BallView {
             System.out.println("There are " + sameBallsAmount + " same balls");
         } else {
             System.out.println("No same balls");
+        }
+    }
+
+    public void ballsAscPrice() {
+        List<Ball> balls = service.ballsInfoByPriceAsc(bucket);
+        System.out.println("Balls in ascending order of price:  ");
+        for (Ball ball : balls) {
+            System.out.println(ball);
         }
     }
 }

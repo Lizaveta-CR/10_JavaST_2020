@@ -4,6 +4,7 @@ import by.tsvirko.task03.entity.Ball;
 import by.tsvirko.task03.entity.BallColour;
 import by.tsvirko.task03.entity.Bucket;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,5 +43,11 @@ public class BucketService {
             }
         }
         return count;
+    }
+
+    public List<Ball> ballsInfoByPriceAsc(Bucket bucket) {
+        List<Ball> balls = bucket.getBalls();
+        Collections.sort(balls, new SortByPriceAsc());
+        return balls;
     }
 }
