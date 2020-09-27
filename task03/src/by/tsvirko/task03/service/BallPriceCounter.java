@@ -2,7 +2,6 @@ package by.tsvirko.task03.service;
 
 import by.tsvirko.task03.entity.BallColour;
 
-//TODO: javadoc
 public class BallPriceCounter {
     private double blueCoeff = 1.2;
     private double redCoeff = 1.3;

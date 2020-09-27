@@ -1,8 +1,5 @@
 package by.tsvirko.task03.view;
 
-import by.tsvirko.task03.entity.Bucket;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuView {

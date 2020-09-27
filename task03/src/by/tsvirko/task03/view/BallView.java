@@ -7,19 +7,16 @@ import by.tsvirko.task03.service.BucketService;
 
 import java.util.*;
 
-//TODO: same buckets, same balls ???????????????
 public class BallView {
     private final String STOP_WORD = "no";
     private Scanner scanner;
     private BallColour[] ballColours;
     private BucketService bucketService;
-//    private List<Bucket> bucket;
 
     public BallView() {
         this.ballColours = BallColour.values();
         this.scanner = new Scanner(System.in);
         this.bucketService = new BucketService();
-//        this.bucket = new ArrayList<>();
     }
 
     private BallColour viewUserColour() {
