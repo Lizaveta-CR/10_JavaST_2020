@@ -20,4 +20,8 @@ public class ArraysController {
     public void fillArrayFile(String fileName) {
         arraysService.init(fileName);
     }
+
+    public void fillArrayRandom() {
+        arraysService.init();
+    }
 }

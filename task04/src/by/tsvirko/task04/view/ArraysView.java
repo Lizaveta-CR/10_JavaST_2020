@@ -15,22 +15,27 @@ public class ArraysView {
     }
 
     public void fillArray() {
-        System.out.println("How do you want to initialize array?\n"
-                + "1-console\n"
-                + "2-file\n"
-                + "3-random");
-        int number = scanner.nextInt();
-        switch (number) {
-            case 1:
-                fillArrayConsoleView();
-                break;
-            case 2:
-                fillArrayFileView();
-                break;
-            default:
-                fillArrayRandomView();
-                break;
+        try {
+            System.out.println("How do you want to initialize array?\n"
+                    + "1-console\n"
+                    + "2-file\n"
+                    + "3-random");
+            int number = scanner.nextInt();
+            switch (number) {
+                case 1:
+                    fillArrayConsoleView();
+                    break;
+                case 2:
+                    fillArrayFileView();
+                    break;
+                default:
+                    fillArrayRandomView();
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("try again...");
         }
+
     }
 
     private void fillArrayConsoleView() throws InputMismatchException {
@@ -40,7 +45,6 @@ public class ArraysView {
         arraysController.fillArrayConsole(scanner, size);
     }
 
-    //TODO
     private void fillArrayFileView() throws InputMismatchException {
         System.out.println("Enter file name: ");
         String fileName = scanner.next();
@@ -49,6 +53,6 @@ public class ArraysView {
 
     //TODO
     private void fillArrayRandomView() throws InputMismatchException {
-
+        arraysController.fillArrayRandom();
     }
 }

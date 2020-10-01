@@ -9,5 +9,5 @@ public interface ArraysInitService {
 
     void init(String filename);
 
-    void init(Random random);
+    void init();
 }
