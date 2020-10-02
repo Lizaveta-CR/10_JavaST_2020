@@ -1,11 +1,11 @@
 package by.tsvirko.task04.service;
 
-import java.io.File;
-import java.util.Random;
+import by.tsvirko.task04.entity.ArraysWrapper;
+
 import java.util.Scanner;
 
 public interface ArraysInitService {
-    void init(Scanner scanner, int size);
+    ArraysWrapper init(Scanner scanner, int size);
 
     void init(String filename);
 

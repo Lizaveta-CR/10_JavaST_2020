@@ -2,7 +2,7 @@ package by.tsvirko.task04.entity;
 
 import java.util.Arrays;
 
-public class Array {
+public class Array extends ArraysWrapper {
     private int[] array;
 
     public Array() {

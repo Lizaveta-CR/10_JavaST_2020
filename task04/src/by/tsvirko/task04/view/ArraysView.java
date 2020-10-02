@@ -10,12 +10,12 @@ public class ArraysView {
     private Scanner scanner;
 
     public ArraysView() {
-        arraysController = new ArraysController();
         scanner = new Scanner(System.in);
     }
 
     public void fillArray() {
         try {
+            chooseArray();
             System.out.println("How do you want to initialize array?\n"
                     + "1-console\n"
                     + "2-file\n"
@@ -32,16 +32,22 @@ public class ArraysView {
                     fillArrayRandomView();
                     break;
             }
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException | IllegalStateException e) {
             System.err.println("try again...");
         }
 
     }
 
+    private void chooseArray() throws InputMismatchException {
+        System.out.println("1.Array\n 2.JaggedArray");
+        int num = scanner.nextInt();
+        arraysController = new ArraysController(num);
+        arraysController.servicesFactory(num);
+    }
+
     private void fillArrayConsoleView() throws InputMismatchException {
         System.out.println("Enter number of elements: ");
         int size = scanner.nextInt();
-        System.out.println("Enter numbers: ");
         arraysController.fillArrayConsole(scanner, size);
     }
 
@@ -51,8 +57,8 @@ public class ArraysView {
         arraysController.fillArrayFile(fileName);
     }
 
-    //TODO
     private void fillArrayRandomView() throws InputMismatchException {
+        System.out.println("Random initialization...");
         arraysController.fillArrayRandom();
     }
 }

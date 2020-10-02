@@ -1,7 +1,10 @@
 package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
+import by.tsvirko.task04.entity.ArraysWrapper;
 
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ArraysInitServiceImpl implements ArraysInitService {
@@ -11,12 +14,16 @@ public class ArraysInitServiceImpl implements ArraysInitService {
     }
 
     @Override
-    public void init(Scanner scanner, int size) {
+    public Array init(Scanner scanner, int size) {
+        if (size <= 0) {
+            throw new InputMismatchException();
+        }
         int[] array = new int[size];
+        System.out.println("Enter numbers: ");
         for (int i = 0; i < size; i++) {
             array[i] = scanner.nextInt();
         }
-        Array newArray = new Array(array);
+        return new Array(array);
     }
 
     @Override
