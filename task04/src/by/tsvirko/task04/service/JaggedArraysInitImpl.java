@@ -1,13 +1,12 @@
 package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
-import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class JaggedArraysInitImpl implements ArraysInitService {
+    private final int MAX_SIZE_ARRAY = 4;
 
     public JaggedArraysInitImpl() {
     }
@@ -32,7 +31,15 @@ public class JaggedArraysInitImpl implements ArraysInitService {
     }
 
     @Override
-    public void init() {
-
+    public JaggedArray init() {
+        int[][] array = new int[MAX_SIZE_ARRAY][];
+        for (int i = 0; i < array.length; i++) {
+            int[] ints = new int[(int) (Math.random() * MAX_SIZE_ARRAY) + 1];
+            for (int i1 = 0; i1 < ints.length; i1++) {
+                ints[i1] = (int) (Math.random() * MAX_SIZE_ARRAY) + 1;
+            }
+            array[i] = ints;
+        }
+        return new JaggedArray(array);
     }
 }

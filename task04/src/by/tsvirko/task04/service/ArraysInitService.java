@@ -10,5 +10,5 @@ public interface ArraysInitService {
 
     ArraysWrapper init(String filename) throws IOException;
 
-    void init();
+    ArraysWrapper init();
 }

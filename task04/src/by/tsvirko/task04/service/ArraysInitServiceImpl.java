@@ -31,10 +31,11 @@ public class ArraysInitServiceImpl implements ArraysInitService {
     }
 
     @Override
-    public void init() {
+    public Array init() {
         int[] array = new int[MAX_SIZE_ARRAY];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * MAX_SIZE_ARRAY) + 1;
         }
+        return new Array(array);
     }
 }
