@@ -1,9 +1,7 @@
 package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
-import by.tsvirko.task04.entity.ArraysWrapper;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -27,9 +25,9 @@ public class ArraysInitServiceImpl implements ArraysInitService {
     }
 
     @Override
-    public void init(String fileName) {
-        FileArrayReading fileArrayReading = new FileArrayReading(fileName);
-        fileArrayReading.readArray();
+    public Array init(String fileName) {
+        FileReading fileArrayReading = new FileArrayReading(fileName);
+        return (Array) fileArrayReading.readArray();
     }
 
     @Override

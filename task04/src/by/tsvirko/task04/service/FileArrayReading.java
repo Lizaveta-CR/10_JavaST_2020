@@ -6,22 +6,24 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileArrayReading {
+public class FileArrayReading implements FileReading {
     private String filename;
-    private final String FILE_PATH = "task04/resources/";
+    private final String FILE_PATH = "/Users/elizaveta/Downloads/10_JavaST_2020/task04/resources/";
     private final String FILE_EXT = ".txt";
 
     public FileArrayReading(String filename) {
         this.filename = FILE_PATH.concat(filename).concat(FILE_EXT);
     }
 
-    private Scanner openFile(final String filename) {
-        try {
-            return new Scanner(new File(filename));
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found " + e.getMessage());
+    private Scanner openFile(String filename) {
+        {
+            try {
+                return new Scanner(new File(filename));
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found " + e.getMessage());
+            }
+            return null;
         }
-        return null;
     }
 
     public Array readArray() {

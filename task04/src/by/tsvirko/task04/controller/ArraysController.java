@@ -5,6 +5,7 @@ import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.ArraysInitServiceImpl;
 import by.tsvirko.task04.service.JaggedArraysInitImpl;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -34,11 +35,11 @@ public class ArraysController {
     }
 
     public void fillArrayConsole(Scanner scanner, int size) {
-        ArraysWrapper array = arraysService.init(scanner, size);
+        arraysService.init(scanner, size);
     }
 
-    public void fillArrayFile(String fileName) {
-        arraysService.init(fileName);
+    public void fillArrayFile(String fileName) throws IOException {
+        ArraysWrapper init = arraysService.init(fileName);
     }
 
     public void fillArrayRandom() {

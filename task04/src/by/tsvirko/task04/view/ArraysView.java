@@ -2,6 +2,7 @@ package by.tsvirko.task04.view;
 
 import by.tsvirko.task04.controller.ArraysController;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -32,14 +33,14 @@ public class ArraysView {
                     fillArrayRandomView();
                     break;
             }
-        } catch (InputMismatchException | IllegalStateException e) {
+        } catch (InputMismatchException | IllegalStateException | IOException e) {
             System.err.println("try again...");
         }
 
     }
 
     private void chooseArray() throws InputMismatchException {
-        System.out.println("1.Array\n 2.JaggedArray");
+        System.out.println("1.Array\n2.Jagged array");
         int num = scanner.nextInt();
         arraysController = new ArraysController(num);
         arraysController.servicesFactory(num);
@@ -51,7 +52,7 @@ public class ArraysView {
         arraysController.fillArrayConsole(scanner, size);
     }
 
-    private void fillArrayFileView() throws InputMismatchException {
+    private void fillArrayFileView() throws InputMismatchException, IOException {
         System.out.println("Enter file name: ");
         String fileName = scanner.next();
         arraysController.fillArrayFile(fileName);

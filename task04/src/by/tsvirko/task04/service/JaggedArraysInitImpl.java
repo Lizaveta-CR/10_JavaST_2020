@@ -1,8 +1,10 @@
 package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
+import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class JaggedArraysInitImpl implements ArraysInitService {
@@ -20,14 +22,13 @@ public class JaggedArraysInitImpl implements ArraysInitService {
             Array init = service.init(scanner, arrSize);
             newArr[i] = init.getArray();
         }
-        JaggedArray jaggedArray = new JaggedArray(newArr);
-        System.out.println(jaggedArray);
-        return jaggedArray;
+        return new JaggedArray(newArr);
     }
 
     @Override
-    public void init(String filename) {
-
+    public JaggedArray init(String filename) {
+        FileReading reading = new FileJaggedArrayReading(filename);
+        return (JaggedArray) reading.readArray();
     }
 
     @Override
