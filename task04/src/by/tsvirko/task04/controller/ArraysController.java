@@ -1,12 +1,15 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 import by.tsvirko.task04.service.impl.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -99,5 +102,17 @@ public class ArraysController {
             System.err.println("This is only for Array!! Read tasks correctly");
         }
         return index;
+    }
+
+    public List<Integer> getPtimesInArray() {
+        List<Integer> primes = new ArrayList<>();
+        try {
+            ArrayPrimeNumberService primeNumberService = serviceFactory.getPrimeNumberService();
+            List<Integer> primeNumbersInArray = primeNumberService.findPrimeNumbersInArray(arraysWrapper);
+            primes.addAll(primeNumbersInArray);
+        } catch (ArrayException e) {
+            System.err.println("Something is with array, check it");
+        }
+        return primes;
     }
 }
