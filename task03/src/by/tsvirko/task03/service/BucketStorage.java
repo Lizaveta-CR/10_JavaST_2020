@@ -12,6 +12,7 @@ public class BucketStorage {
         this.buckets = new ArrayList<>();
     }
 
+    //TODO: getBuskets(int i)
     public List<Bucket> getBuckets() {
         return buckets;
     }

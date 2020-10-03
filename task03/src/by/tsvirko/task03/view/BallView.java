@@ -30,7 +30,7 @@ public class BallView {
         }
         return ballColours[userColorNum];
     }
-
+//TODO
     private int viewUserBallWeight() {
         System.out.println("Enter weight: ");
         return scanner.nextInt();
@@ -56,7 +56,7 @@ public class BallView {
         }
         return null;
     }
-
+//TODO: different
     public void ballWeightAndColourView() {
         System.out.println("What colour would you like to count?");
         BallColour ballColour = viewUserColour();

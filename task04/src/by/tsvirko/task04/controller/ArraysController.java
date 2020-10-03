@@ -1,13 +1,11 @@
 package by.tsvirko.task04.controller;
 
-import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.ArraysInitServiceImpl;
 import by.tsvirko.task04.service.JaggedArraysInitImpl;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 

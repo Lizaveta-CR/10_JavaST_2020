@@ -1,15 +1,16 @@
 package by.tsvirko.task03.entity;
 
+import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Objects;
 
 public class Ball {
     private BallColour colour;
     private double weight;
-    private double price;
+    private BigDecimal price;
 
-    public Ball(BallColour colour, double weight, double price) {
-        if (weight <= 0 || price == 0) {
+    public Ball(BallColour colour, double weight, BigDecimal price) {
+        if (weight <= 0 || price.compareTo(BigDecimal.ZERO) == 0) {
             throw new InputMismatchException();
         }
         this.colour = colour;
@@ -33,11 +34,11 @@ public class Ball {
         this.weight = weight;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -47,8 +48,8 @@ public class Ball {
         if (o == null || getClass() != o.getClass()) return false;
         Ball ball = (Ball) o;
         return Double.compare(ball.weight, weight) == 0 &&
-                Double.compare(ball.price, price) == 0 &&
-                colour == ball.colour;
+                colour == ball.colour &&
+                Objects.equals(price, ball.price);
     }
 
     @Override

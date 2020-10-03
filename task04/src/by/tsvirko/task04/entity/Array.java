@@ -3,6 +3,7 @@ package by.tsvirko.task04.entity;
 import by.tsvirko.task04.exceptions.ArrayException;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Array extends ArraysWrapper {
     private int[] array;
@@ -63,5 +64,12 @@ public class Array extends ArraysWrapper {
         return "ArrayWrapper{" +
                 "array=" + Arrays.toString(array) +
                 '}';
+    }
+
+    int findElementIndex(int element) {
+        return IntStream.range(0, array.length)
+                .filter(i -> element == array[i])
+                .findFirst()
+                .orElse(-1);
     }
 }

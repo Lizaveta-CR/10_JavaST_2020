@@ -1,40 +1,30 @@
 package by.tsvirko.task04.entity;
 
-import java.util.Arrays;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class JaggedArray extends ArraysWrapper {
-    private int[][] array;
+    private List<Array> arrayList = new ArrayList<>();
 
     public JaggedArray() {
     }
 
-    public JaggedArray(Array arr, int size) {
-        for (int i = 0; i < size; i++) {
-            int[] array = arr.getArray();
-            for (int j = 0; j < array.length; j++) {
-                this.array[j] = array;
-            }
-        }
+    public JaggedArray(List<Array> arrayList) {
+        this.arrayList = arrayList;
     }
 
     public JaggedArray(int[][] array) {
-        this.array = array;
-    }
-
-
-    public JaggedArray(int sizeN, int[] array) {
-        for (int i = 0; i < sizeN; i++) {
-            this.array[i] = array;
+        for (int i = 0; i < array.length; i++) {
+            Array arr = new Array(array[i]);
+            arrayList.add(arr);
         }
     }
 
-    public int[][] getArray() {
-        return array;
+    public List<Array> getArrayList() {
+        return arrayList;
     }
 
-    public void setArray(int[][] array) {
-        this.array = array;
+    public void setArrayList(List<Array> arrayList) {
+        this.arrayList = arrayList;
     }
 
     @Override
@@ -42,22 +32,34 @@ public class JaggedArray extends ArraysWrapper {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JaggedArray that = (JaggedArray) o;
-        return Arrays.equals(array, that.array);
+        return Objects.equals(arrayList, that.arrayList);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(array);
+        return Objects.hash(arrayList);
     }
 
     @Override
     public String toString() {
         StringJoiner sj = new StringJoiner(System.lineSeparator());
         sj.add("Jagged Array[");
-        for (int[] row : array) {
-            sj.add(Arrays.toString(row));
+        for (Array array : arrayList) {
+            sj.add(array.toString());
         }
         sj.add("]");
         return sj.toString();
+    }
+
+    public Map<Integer, Integer> findElementIndex(int element) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            Array array = arrayList.get(i);
+            int elementIndexArray = array.findElementIndex(element);
+            if (elementIndexArray != -1) {
+                map.put(i, elementIndexArray);
+            }
+        }
+        return map;
     }
 }

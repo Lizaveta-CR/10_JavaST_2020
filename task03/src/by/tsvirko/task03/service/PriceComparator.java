@@ -4,9 +4,9 @@ import by.tsvirko.task03.entity.Ball;
 
 import java.util.Comparator;
 
-public class SortByPriceAsc implements Comparator<Ball> {
+public class PriceComparator implements Comparator<Ball> {
     @Override
     public int compare(Ball o1, Ball o2) {
-        return Double.compare(o1.getPrice(), o2.getPrice());
+        return o1.getPrice().compareTo(o2.getPrice());
     }
 }
