@@ -46,6 +46,10 @@ public class Array extends ArraysWrapper {
         }
     }
 
+    public int getLength() {
+        return array.length;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,12 +65,12 @@ public class Array extends ArraysWrapper {
 
     @Override
     public String toString() {
-        return "ArrayWrapper{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        return Arrays.toString(array);
     }
 
-    int findElementIndex(int element) {
+
+    @Override
+    public int findElementIndex(int element) {
         return IntStream.range(0, array.length)
                 .filter(i -> element == array[i])
                 .findFirst()

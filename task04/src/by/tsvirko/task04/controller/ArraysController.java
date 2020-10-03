@@ -1,5 +1,6 @@
 package by.tsvirko.task04.controller;
 
+import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.ArraysInitService;
@@ -10,13 +11,14 @@ import java.util.Scanner;
 
 
 public class ArraysController {
-    private ArraysInitService arraysService;
+    private ArraysInitService arraysInitService;
+    private ArraysWrapper arraysWrapper;
 
     public ArraysController() {
     }
 
     public ArraysController(int serviceNum) {
-        arraysService = servicesFactory(serviceNum);
+        arraysInitService = servicesFactory(serviceNum);
     }
 
     public ArraysInitService servicesFactory(int num) {
@@ -34,23 +36,30 @@ public class ArraysController {
         return service;
     }
 
-    public void fillArrayConsole(Scanner scanner, int size) {
+    public ArraysWrapper fillArrayConsole(Scanner scanner, int size) {
         try {
-            arraysService.init(scanner, size);
+            arraysWrapper = arraysInitService.init(scanner, size);
         } catch (InitConsoleException e) {
             System.err.println("Error while initializing file");
         }
+        return arraysWrapper;
     }
 
-    public void fillArrayFile(String fileName) {
+    public ArraysWrapper fillArrayFile(String fileName) {
         try {
-            arraysService.init(fileName);
+            arraysWrapper = arraysInitService.init(fileName);
         } catch (FileArrayException e) {
             System.err.println("Check your array and file!");
         }
+        return arraysWrapper;
     }
 
-    public void fillArrayRandom() {
-        arraysService.init();
+    public ArraysWrapper fillArrayRandom() {
+        arraysWrapper = arraysInitService.init();
+        return arraysWrapper;
+    }
+
+    public int findElementIndex(int element) {
+        return arraysWrapper.findElementIndex(element);
     }
 }

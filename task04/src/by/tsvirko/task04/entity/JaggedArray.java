@@ -43,23 +43,23 @@ public class JaggedArray extends ArraysWrapper {
     @Override
     public String toString() {
         StringJoiner sj = new StringJoiner(System.lineSeparator());
-        sj.add("Jagged Array[");
         for (Array array : arrayList) {
             sj.add(array.toString());
         }
-        sj.add("]");
         return sj.toString();
     }
 
-    public Map<Integer, Integer> findElementIndex(int element) {
-        Map<Integer, Integer> map = new HashMap<>();
+    public int findElementIndex(int element) {
+        int index = 0;
         for (int i = 0; i < arrayList.size(); i++) {
             Array array = arrayList.get(i);
-            int elementIndexArray = array.findElementIndex(element);
-            if (elementIndexArray != -1) {
-                map.put(i, elementIndexArray);
+            index = array.findElementIndex(element);
+            if (index == -1) {
+                continue;
+            } else {
+                return index;
             }
         }
-        return map;
+        return index;
     }
 }
