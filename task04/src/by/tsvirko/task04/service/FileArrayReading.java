@@ -1,6 +1,8 @@
 package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
+import by.tsvirko.task04.exceptions.ArrayException;
+import by.tsvirko.task04.exceptions.NoFile;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,31 +17,28 @@ public class FileArrayReading implements FileReading {
         this.filename = FILE_PATH.concat(filename).concat(FILE_EXT);
     }
 
-    private Scanner openFile(String filename) {
-        {
-            try {
-                return new Scanner(new File(filename));
-            } catch (FileNotFoundException e) {
-                System.err.println("File not found " + e.getMessage());
-            }
-            return null;
-        }
+    private Scanner openFile(String filename) throws FileNotFoundException {
+        return new Scanner(new File(filename));
     }
 
-    public Array readArray() {
-        Scanner scanner = openFile(filename);
-        ArrayList<Integer> fileNumbers = new ArrayList<>();
+    public Array readArray() throws NoFile, ArrayException {
         try {
+            Scanner scanner = openFile(filename);
+            ArrayList<Integer> fileNumbers = new ArrayList<>();
             while (scanner.hasNextInt()) {
                 fileNumbers.add(scanner.nextInt());
             }
-        } catch (NullPointerException e) {
-            System.err.println("Check file name!");
+            int size = fileNumbers.size();
+            Array array = new Array(size);
+            for (int i = 0; i < size; i++) {
+                int value = fileNumbers.get(i);
+                array.setElement(i, value);
+            }
+            return array;
+        } catch (FileNotFoundException e) {
+            throw new NoFile();
+        } catch (ArrayException e) {
+            throw new ArrayException();
         }
-        int[] ints = new int[fileNumbers.size()];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = fileNumbers.get(i);
-        }
-        return new Array(ints);
     }
 }

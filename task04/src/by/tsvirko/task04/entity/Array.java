@@ -1,5 +1,7 @@
 package by.tsvirko.task04.entity;
 
+import by.tsvirko.task04.exceptions.ArrayException;
+
 import java.util.Arrays;
 
 public class Array extends ArraysWrapper {
@@ -20,8 +22,27 @@ public class Array extends ArraysWrapper {
         return array;
     }
 
-    public void setArray(int[] array) {
-        this.array = array;
+    public int getElement(int i) throws ArrayException {
+        if (checkRange(i)) {
+            return array[i];
+        }
+        throw new ArrayException();
+    }
+
+    public void setElement(int i, int value) throws ArrayException {
+        if (checkRange(i)) {
+            array[i] = value;
+        } else {
+            throw new ArrayException();
+        }
+    }
+
+    private boolean checkRange(int i) {
+        if (i >= 0 && i < array.length) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override

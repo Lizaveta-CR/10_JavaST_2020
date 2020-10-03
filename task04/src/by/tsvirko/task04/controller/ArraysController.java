@@ -1,6 +1,8 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.FileArrayException;
+import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.ArraysInitServiceImpl;
 import by.tsvirko.task04.service.JaggedArraysInitImpl;
@@ -35,11 +37,19 @@ public class ArraysController {
     }
 
     public void fillArrayConsole(Scanner scanner, int size) {
-        arraysService.init(scanner, size);
+        try {
+            arraysService.init(scanner, size);
+        } catch (InitConsoleException e) {
+            System.err.println("Error while initializing file");
+        }
     }
 
-    public void fillArrayFile(String fileName) throws IOException {
-        ArraysWrapper init = arraysService.init(fileName);
+    public void fillArrayFile(String fileName) {
+        try {
+            arraysService.init(fileName);
+        } catch (FileArrayException e) {
+            System.err.println("Check your array and file!");
+        }
     }
 
     public void fillArrayRandom() {

@@ -9,10 +9,12 @@ public class JaggedArray extends ArraysWrapper {
     public JaggedArray() {
     }
 
-    public JaggedArray(Array arr) {
-        int[] array = arr.getArray();
-        for (int i = 0; i < array.length; i++) {
-            this.array[i] = array;
+    public JaggedArray(Array arr, int size) {
+        for (int i = 0; i < size; i++) {
+            int[] array = arr.getArray();
+            for (int j = 0; j < array.length; j++) {
+                this.array[j] = array;
+            }
         }
     }
 
@@ -48,13 +50,14 @@ public class JaggedArray extends ArraysWrapper {
         return Arrays.hashCode(array);
     }
 
-    //TODO
     @Override
     public String toString() {
         StringJoiner sj = new StringJoiner(System.lineSeparator());
+        sj.add("Jagged Array[");
         for (int[] row : array) {
             sj.add(Arrays.toString(row));
         }
+        sj.add("]");
         return sj.toString();
     }
 }

@@ -2,6 +2,10 @@ package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.ArrayException;
+import by.tsvirko.task04.exceptions.FileArrayException;
+import by.tsvirko.task04.exceptions.InitConsoleException;
+import by.tsvirko.task04.exceptions.NoFile;
 
 import java.util.Scanner;
 
@@ -12,7 +16,7 @@ public class JaggedArraysInitImpl implements ArraysInitService {
     }
 
     @Override
-    public JaggedArray init(Scanner scanner, int size) {
+    public JaggedArray init(Scanner scanner, int size) throws InitConsoleException {
         ArraysInitServiceImpl service = new ArraysInitServiceImpl();
         int[][] newArr = new int[size][];
         for (int i = 0; i < size; i++) {
@@ -25,9 +29,13 @@ public class JaggedArraysInitImpl implements ArraysInitService {
     }
 
     @Override
-    public JaggedArray init(String filename) {
-        FileReading reading = new FileJaggedArrayReading(filename);
-        return (JaggedArray) reading.readArray();
+    public JaggedArray init(String filename) throws FileArrayException {
+        try {
+            FileReading reading = new FileJaggedArrayReading(filename);
+            return (JaggedArray) reading.readArray();
+        } catch (ArrayException | NoFile e) {
+            throw new FileArrayException();
+        }
     }
 
     @Override
