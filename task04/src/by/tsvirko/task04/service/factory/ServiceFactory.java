@@ -1,9 +1,6 @@
 package by.tsvirko.task04.service.factory;
 
-import by.tsvirko.task04.service.ArrayBinarySearchService;
-import by.tsvirko.task04.service.ArrayFibonacciService;
-import by.tsvirko.task04.service.ArrayPrimeNumberService;
-import by.tsvirko.task04.service.SortArrayService;
+import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.impl.*;
 
 public class ServiceFactory {
@@ -13,6 +10,7 @@ public class ServiceFactory {
     private final SortArrayService sortArrayService = new SortArrayServiceImpl();
     private final ArrayPrimeNumberService primeNumberService = new ArrayPrimeNumberService();
     private final ArrayFibonacciService fibonacciService = new ArrayFibonacciService();
+    private final NumbersWithThreeDifferentDigitsService differentDigitsService = new NumbersWithThreeDifferentDigitsService();
 
     private ServiceFactory() {
     }
@@ -35,5 +33,9 @@ public class ServiceFactory {
 
     public ArrayFibonacciService getFibonacciService() {
         return fibonacciService;
+    }
+
+    public NumbersWithThreeDifferentDigitsService getDifferentDigitsService() {
+        return differentDigitsService;
     }
 }

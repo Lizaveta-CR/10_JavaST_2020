@@ -8,6 +8,7 @@ import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 import by.tsvirko.task04.service.impl.*;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,9 +19,6 @@ public class ArraysController {
     private ArraysInitService arraysInitService;
     private ArraySearchService searchService;
     private ArraysWrapper arraysWrapper;
-
-    public ArraysController() {
-    }
 
     public ArraysController(int serviceNum) {
         servicesFactory(serviceNum);
@@ -119,5 +117,16 @@ public class ArraysController {
     public List<Integer> getFibonacciNumInArray() {
         ArrayFibonacciService fibonacciService = serviceFactory.getFibonacciService();
         return fibonacciService.findFibNumbers(arraysWrapper);
+    }
+
+    public List<Integer> getNumbersWithThreeDifDigits() {
+        List<Integer> numbers = new ArrayList<>();
+        try {
+            NumbersWithThreeDifferentDigitsService differentDigitsService = serviceFactory.getDifferentDigitsService();
+            numbers.addAll(differentDigitsService.findNumbersWithThreeDifferentDigits(arraysWrapper));
+        } catch (ParseException e) {
+            System.err.println("Something is with array, check it");
+        }
+        return numbers;
     }
 }

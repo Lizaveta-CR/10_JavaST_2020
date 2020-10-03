@@ -26,7 +26,9 @@ public class ArraysView {
                     " которые вы ранее еще не реализовывали).\n"
                     + "5. Осуществлять бинарный поиск элемента массива типа Array\n"
                     + "6. Получить все простые числа, находящиеся в массиве типа Array.\n"
-                    + "7. Получить все числа Фибонначчи, находящиеся в массиве типа Array\n");
+                    + "7. Получить все числа Фибонначчи, находящиеся в массиве типа Array\n"
+                    + "8.\tПолучить все трехзначные числа, в десятичной записи которых нет одинаковых цифр " +
+                    "в массиве типа Array.\n");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -55,6 +57,9 @@ public class ArraysView {
                 case 7:
                     List<Integer> fibonacciNumInArray = arraysController.getFibonacciNumInArray();
                     fibonacciNumInArray.forEach(System.out::println);
+                case 8:
+                    List<Integer> numbersWithThreeDifDigits = arraysController.getNumbersWithThreeDifDigits();
+                    numbersWithThreeDifDigits.forEach(System.out::println);
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");
