@@ -9,7 +9,7 @@ import by.tsvirko.task04.exceptions.NoFile;
 
 import java.util.Scanner;
 
-public class JaggedArraysInitImpl implements ArraysInitService {
+public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements ArraysInitService {
     private final int MAX_SIZE_ARRAY = 4;
 
     public JaggedArraysInitImpl() {

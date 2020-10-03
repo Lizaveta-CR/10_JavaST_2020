@@ -3,37 +3,40 @@ package by.tsvirko.task04.controller;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
-import by.tsvirko.task04.service.ArraysInitService;
-import by.tsvirko.task04.service.ArraysInitServiceImpl;
-import by.tsvirko.task04.service.JaggedArraysInitImpl;
+import by.tsvirko.task04.service.*;
 
 import java.util.Scanner;
 
 
 public class ArraysController {
     private ArraysInitService arraysInitService;
+    private ArraySearchService searchService;
+    private SortArrayService sortService;
+    private ArrayBinarySearchService binarySearchService;
     private ArraysWrapper arraysWrapper;
 
     public ArraysController() {
     }
 
     public ArraysController(int serviceNum) {
-        arraysInitService = servicesFactory(serviceNum);
+        servicesFactory(serviceNum);
+        sortService = new SortArrayServiceImpl();
+        binarySearchService = new ArrayBinarySearchService();
     }
 
-    public ArraysInitService servicesFactory(int num) {
-        ArraysInitService service;
+    public void servicesFactory(int num) {
         switch (num) {
             case 1:
-                service = new ArraysInitServiceImpl();
+                this.arraysInitService = new ArraysInitServiceImpl();
+                this.searchService = new ArraysSearchServiceImpl();
                 break;
             case 2:
-                service = new JaggedArraysInitImpl();
+                this.arraysInitService = new JaggedArraysInitImpl();
+                this.searchService = new JaggedArraysSearchServiceImpl();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + num);
         }
-        return service;
     }
 
     public ArraysWrapper fillArrayConsole(Scanner scanner, int size) {
@@ -61,5 +64,39 @@ public class ArraysController {
 
     public int findElementIndex(int element) {
         return arraysWrapper.findElementIndex(element);
+    }
+
+    public int findMax() {
+        return searchService.findMax(arraysWrapper);
+    }
+
+    public int findMin() {
+        return searchService.findMin(arraysWrapper);
+    }
+
+    public ArraysWrapper sort(int sortOption) {
+        try {
+            switch (sortOption) {
+                case 1:
+                    sortService.heapSort(arraysWrapper);
+                case 2:
+                    sortService.insertionSort(arraysWrapper);
+                case 3:
+                    sortService.combSort(arraysWrapper);
+            }
+        } catch (ClassCastException e) {
+            System.err.println("This is only for Array!! Read tasks correctly");
+        }
+        return arraysWrapper;
+    }
+
+    public int binarySearch(int key) {
+        int index = 0;
+        try {
+            index = binarySearchService.binarySearch(arraysWrapper, key);
+        } catch (ClassCastException e) {
+            System.err.println("This is only for Array!! Read tasks correctly");
+        }
+        return index;
     }
 }
