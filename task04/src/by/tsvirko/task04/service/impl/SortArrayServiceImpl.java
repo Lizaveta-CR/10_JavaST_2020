@@ -1,7 +1,8 @@
-package by.tsvirko.task04.service;
+package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.service.SortArrayService;
 
 public class SortArrayServiceImpl implements SortArrayService {
     @Override

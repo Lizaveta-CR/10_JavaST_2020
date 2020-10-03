@@ -1,10 +1,12 @@
-package by.tsvirko.task04.service;
+package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.exceptions.NoFile;
+import by.tsvirko.task04.service.ArraysInitService;
+import by.tsvirko.task04.service.FileReading;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -35,7 +37,7 @@ public class ArraysInitServiceImpl implements ArraysInitService {
     @Override
     public Array init(String fileName) throws FileArrayException {
         try {
-            FileReading fileArrayReading = new FileArrayReading(fileName);
+            FileReading fileArrayReading = new FileArrayReadingImpl(fileName);
             return (Array) fileArrayReading.readArray();
         } catch (ArrayException | NoFile e) {
             throw new FileArrayException();

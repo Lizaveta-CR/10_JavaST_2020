@@ -4,15 +4,16 @@ import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.*;
+import by.tsvirko.task04.service.factory.ServiceFactory;
+import by.tsvirko.task04.service.impl.*;
 
 import java.util.Scanner;
 
 
 public class ArraysController {
+    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private ArraysInitService arraysInitService;
     private ArraySearchService searchService;
-    private SortArrayService sortService;
-    private ArrayBinarySearchService binarySearchService;
     private ArraysWrapper arraysWrapper;
 
     public ArraysController() {
@@ -20,8 +21,6 @@ public class ArraysController {
 
     public ArraysController(int serviceNum) {
         servicesFactory(serviceNum);
-        sortService = new SortArrayServiceImpl();
-        binarySearchService = new ArrayBinarySearchService();
     }
 
     public void servicesFactory(int num) {
@@ -75,6 +74,7 @@ public class ArraysController {
     }
 
     public ArraysWrapper sort(int sortOption) {
+        SortArrayService sortService = serviceFactory.getSortArrayService();
         try {
             switch (sortOption) {
                 case 1:
@@ -91,6 +91,7 @@ public class ArraysController {
     }
 
     public int binarySearch(int key) {
+        ArrayBinarySearchService binarySearchService = serviceFactory.getArrayBinarySearchService();
         int index = 0;
         try {
             index = binarySearchService.binarySearch(arraysWrapper, key);

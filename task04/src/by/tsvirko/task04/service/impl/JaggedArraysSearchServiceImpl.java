@@ -1,8 +1,10 @@
-package by.tsvirko.task04.service;
+package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.service.ArraySearchService;
+import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;

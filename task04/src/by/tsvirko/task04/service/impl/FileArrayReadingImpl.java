@@ -1,19 +1,20 @@
-package by.tsvirko.task04.service;
+package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.NoFile;
+import by.tsvirko.task04.service.FileReading;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileArrayReading implements FileReading {
+public class FileArrayReadingImpl implements FileReading {
     private String filename;
     private final String FILE_PATH = "/Users/elizaveta/Downloads/10_JavaST_2020/task04/resources/";
     private final String FILE_EXT = ".txt";
 
-    public FileArrayReading(String filename) {
+    public FileArrayReadingImpl(String filename) {
         this.filename = FILE_PATH.concat(filename).concat(FILE_EXT);
     }
 

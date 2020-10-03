@@ -16,7 +16,7 @@ public class ArrayBinarySearchService {
     public int binarySearch(ArraysWrapper wrapper, int key) throws ClassCastException {
         Array array = (Array) wrapper;
         int[] sortedArray = array.getArray();
-        int index = Integer.MAX_VALUE;
+        int index = -1;
         int low = 0;
         int high = sortedArray.length;
 

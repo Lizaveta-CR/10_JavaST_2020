@@ -1,4 +1,4 @@
-package by.tsvirko.task04.service;
+package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.JaggedArray;
@@ -6,6 +6,8 @@ import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.exceptions.NoFile;
+import by.tsvirko.task04.service.ArraysInitService;
+import by.tsvirko.task04.service.FileReading;
 
 import java.util.Scanner;
 
@@ -31,7 +33,7 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
     @Override
     public JaggedArray init(String filename) throws FileArrayException {
         try {
-            FileReading reading = new FileJaggedArrayReading(filename);
+            FileReading reading = new FileJaggedArrayReadingImpl(filename);
             return (JaggedArray) reading.readArray();
         } catch (ArrayException | NoFile e) {
             throw new FileArrayException();
