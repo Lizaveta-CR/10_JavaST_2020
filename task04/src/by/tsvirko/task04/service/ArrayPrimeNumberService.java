@@ -9,6 +9,13 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class ArrayPrimeNumberService {
+    /**
+     * Method finds prime numbers in given Array
+     *
+     * @param wrapper - input Array
+     * @return List<Integer> - list of prime numbers
+     * @throws ArrayException
+     */
     public List<Integer> findPrimeNumbersInArray(ArraysWrapper wrapper) throws ArrayException {
         Array array = (Array) wrapper;
         List<Integer> primes = new ArrayList<>();
@@ -21,6 +28,12 @@ public class ArrayPrimeNumberService {
         return primes;
     }
 
+    /**
+     * Method checks if given number if prime
+     *
+     * @param number - given number
+     * @return boolean value - if number is prime- true, else-false
+     */
     boolean isPrime(int number) {
         if (number <= 2)
             return false;
