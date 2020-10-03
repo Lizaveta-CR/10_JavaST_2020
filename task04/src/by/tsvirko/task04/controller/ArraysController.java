@@ -115,4 +115,9 @@ public class ArraysController {
         }
         return primes;
     }
+
+    public List<Integer> getFibonacciNumInArray() {
+        ArrayFibonacciService fibonacciService = serviceFactory.getFibonacciService();
+        return fibonacciService.findFibNumbers(arraysWrapper);
+    }
 }

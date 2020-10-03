@@ -25,7 +25,8 @@ public class ArraysView {
                     + "4.\tСортировать массив типа Array тремя способами (выберите любые 3 алгоритма сортировки," +
                     " которые вы ранее еще не реализовывали).\n"
                     + "5. Осуществлять бинарный поиск элемента массива типа Array\n"
-                    + "6. Получить все простые числа, находящиеся в массиве типа Array.\n");
+                    + "6. Получить все простые числа, находящиеся в массиве типа Array.\n"
+                    + "7. Получить все числа Фибонначчи, находящиеся в массиве типа Array\n");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -51,6 +52,9 @@ public class ArraysView {
                 case 6:
                     List<Integer> ptimesInArray = arraysController.getPtimesInArray();
                     ptimesInArray.forEach(System.out::println);
+                case 7:
+                    List<Integer> fibonacciNumInArray = arraysController.getFibonacciNumInArray();
+                    fibonacciNumInArray.forEach(System.out::println);
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");
