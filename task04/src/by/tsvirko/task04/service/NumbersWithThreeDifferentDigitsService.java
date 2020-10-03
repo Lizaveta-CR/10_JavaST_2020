@@ -8,6 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NumbersWithThreeDifferentDigitsService {
+    /**
+     * Finds numbers with three different digits
+     *
+     * @param arraysWrapper
+     * @return List<Integer> - list of numbers with three different digits
+     * @throws ParseException
+     */
     public List<Integer> findNumbersWithThreeDifferentDigits(ArraysWrapper arraysWrapper) throws ParseException {
         Array array = (Array) arraysWrapper;
         String number;
