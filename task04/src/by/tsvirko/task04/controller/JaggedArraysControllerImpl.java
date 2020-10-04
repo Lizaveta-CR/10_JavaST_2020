@@ -3,13 +3,11 @@ package by.tsvirko.task04.controller;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
+import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 import by.tsvirko.task04.service.ArraySearchService;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.JaggedArrayOperationsService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
-import by.tsvirko.task04.service.impl.ArraysInitServiceImpl;
-import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
-import by.tsvirko.task04.service.impl.JaggedArraysInitImpl;
 import by.tsvirko.task04.service.impl.JaggedArraysSearchServiceImpl;
 
 import java.util.List;
@@ -72,4 +70,23 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
         return arraysOperationsController.isSquare(wrapper);
     }
 
+    public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) {
+        try {
+            JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+            return service.sum(wrapper1, wrapper2);
+        } catch (JaggedArraysDimensionalException e) {
+            System.err.println("Can't add this two arrays");
+        }
+        return null;
+    }
+
+    public ArraysWrapper getDif(ArraysWrapper wrapper1, ArraysWrapper wrapper2) {
+        try {
+            JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+            return service.subtract(wrapper1, wrapper2);
+        } catch (JaggedArraysDimensionalException e) {
+            System.err.println("Can't subtract this two arrays");
+        }
+        return null;
+    }
 }

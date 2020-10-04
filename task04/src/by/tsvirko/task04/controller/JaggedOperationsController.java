@@ -1,6 +1,7 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 import by.tsvirko.task04.service.JaggedArrayOperationsService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 
@@ -23,5 +24,15 @@ public class JaggedOperationsController {
     public boolean isSquare(ArraysWrapper arraysWrapper) {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.isSquare(arraysWrapper);
+    }
+
+    public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) throws JaggedArraysDimensionalException {
+        JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+        return service.sum(wrapper1, wrapper2);
+    }
+
+    public ArraysWrapper getDif(ArraysWrapper wrapper1, ArraysWrapper wrapper2) throws JaggedArraysDimensionalException {
+        JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+        return service.subtract(wrapper1, wrapper2);
     }
 }

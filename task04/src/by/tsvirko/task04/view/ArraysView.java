@@ -36,7 +36,9 @@ public class ArraysView {
                     "в массиве типа Array.\n"
                     + "9. Выполнить операции над объектами типа JaggedArray:\n" +
                     "9.1 сравнения размерностей\n"
-                    + "9.2 проверки является ли массив квадратной матрицей");
+                    + "9.2 проверки является ли массив квадратной матрицей\n"
+                    + "10.\tсложения,вычитания")
+            ;
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -81,8 +83,11 @@ public class ArraysView {
                     boolean sameDim = jaggedArraysController.isSameDim(severalArraysView);
                     System.out.println("Same dim-s: " + sameDim);
                     severalArraysView.forEach(arr -> System.out.println("Square= " + jaggedArraysController.isSquare(arr)));
-
                     break;
+                case 10:
+                    List<ArraysWrapper> list = sumDifView();
+                    System.out.println("Subtraction= " + jaggedArraysController.getDif(list.get(0), list.get(1)));
+                    System.out.println("Sum= " + jaggedArraysController.getSum(list.get(0), list.get(1)));
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");
@@ -107,5 +112,10 @@ public class ArraysView {
     private int chooseSortMethod() {
         System.out.println("1-HeapSort\n2-InsertionSort\n3-CombSort");
         return scanner.nextInt();
+    }
+
+    public List<ArraysWrapper> sumDifView() {
+        System.out.println("Let's create two arrays:");
+        return fillArraysView.fillSeveralArrays(2);
     }
 }

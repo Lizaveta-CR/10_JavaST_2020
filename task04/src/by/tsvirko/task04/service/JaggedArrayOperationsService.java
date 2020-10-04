@@ -3,6 +3,7 @@ package by.tsvirko.task04.service;
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 
 import java.util.*;
 
@@ -56,5 +57,61 @@ public class JaggedArrayOperationsService {
             }
         }
         return true;
+    }
+
+    /**
+     * Method adds two Jagged Arrays
+     *
+     * @param arr1
+     * @param arr2
+     * @return JaggedArray - sum of two Jagged Arrays
+     * @throws JaggedArraysDimensionalException
+     */
+    public JaggedArray sum(ArraysWrapper arr1, ArraysWrapper arr2) throws JaggedArraysDimensionalException {
+        if (!Arrays.equals(getDimensions(arr1), getDimensions(arr2))) {
+            throw new JaggedArraysDimensionalException();
+        }
+        JaggedArray jagArr1 = (JaggedArray) arr1;
+        JaggedArray jagArr2 = (JaggedArray) arr2;
+        int[][] jaggedArrayF = jagArr1.getJaggedArray();
+        int[][] jaggedArrayS = jagArr2.getJaggedArray();
+        int[][] sum = new int[jaggedArrayF.length][];
+        for (int i = 0; i < 3; i++) {
+            int size = jaggedArrayF[i].length;
+            sum[i] = new int[size];
+            for (int j = 0; j < sum[i].length; j++) {
+                sum[i][j] = jaggedArrayF[i][j] + jaggedArrayS[i][j];
+            }
+
+        }
+        return new JaggedArray(sum);
+    }
+
+    /**
+     * Method subtracts two Jagged Arrays
+     *
+     * @param arr1
+     * @param arr2
+     * @return JaggedArray - difference of two Jagged Arrays
+     * @throws JaggedArraysDimensionalException
+     */
+    public JaggedArray subtract(ArraysWrapper arr1, ArraysWrapper arr2) throws JaggedArraysDimensionalException {
+        if (!Arrays.equals(getDimensions(arr1), getDimensions(arr2))) {
+            throw new JaggedArraysDimensionalException();
+        }
+        JaggedArray jagArr1 = (JaggedArray) arr1;
+        JaggedArray jagArr2 = (JaggedArray) arr2;
+        int[][] jaggedArrayF = jagArr1.getJaggedArray();
+        int[][] jaggedArrayS = jagArr2.getJaggedArray();
+        int[][] dif = new int[jaggedArrayF.length][];
+        for (int i = 0; i < 3; i++) {
+            int size = jaggedArrayF[i].length;
+            dif[i] = new int[size];
+            for (int j = 0; j < dif[i].length; j++) {
+                dif[i][j] = jaggedArrayF[i][j] - jaggedArrayS[i][j];
+            }
+
+        }
+        return new JaggedArray(dif);
     }
 }
