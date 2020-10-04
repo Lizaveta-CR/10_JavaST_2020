@@ -27,6 +27,15 @@ public class JaggedArray extends ArraysWrapper {
         this.arrayList = arrayList;
     }
 
+    public int[][] getJaggedArray() {
+        int[][] ints = new int[arrayList.size()][];
+        for (int i = 0; i < ints.length; i++) {
+            int[] array = arrayList.get(i).getArray();
+            ints[i] = array;
+        }
+        return ints;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -5,12 +5,14 @@ import by.tsvirko.task04.service.impl.*;
 
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
-
+    private final ArraysInitService arraysInitService = new ArraysInitServiceImpl();
+    private final ArraysInitService jagArraysInitService = new JaggedArraysInitImpl();
     private final ArrayBinarySearchService arrayBinarySearchService = new ArrayBinarySearchService();
     private final SortArrayService sortArrayService = new SortArrayServiceImpl();
     private final ArrayPrimeNumberService primeNumberService = new ArrayPrimeNumberService();
     private final ArrayFibonacciService fibonacciService = new ArrayFibonacciService();
     private final NumbersWithThreeDifferentDigitsService differentDigitsService = new NumbersWithThreeDifferentDigitsService();
+    private final JaggedArrayOperationsService jaggedArrayOperationsService = new JaggedArrayOperationsService();
 
     private ServiceFactory() {
     }
@@ -37,5 +39,17 @@ public class ServiceFactory {
 
     public NumbersWithThreeDifferentDigitsService getDifferentDigitsService() {
         return differentDigitsService;
+    }
+
+    public JaggedArrayOperationsService getJaggedArrayOperationsService() {
+        return jaggedArrayOperationsService;
+    }
+
+    public ArraysInitService getArraysInitService() {
+        return arraysInitService;
+    }
+
+    public ArraysInitService getJagArraysInitService() {
+        return jagArraysInitService;
     }
 }

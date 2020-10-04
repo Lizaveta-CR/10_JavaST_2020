@@ -1,22 +1,24 @@
 package by.tsvirko.task04.controller;
 
-import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
-import by.tsvirko.task04.service.*;
+import by.tsvirko.task04.service.ArraySearchService;
+import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 import by.tsvirko.task04.service.impl.ArraysInitServiceImpl;
 import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
+import by.tsvirko.task04.service.impl.JaggedArraysInitImpl;
+import by.tsvirko.task04.service.impl.JaggedArraysSearchServiceImpl;
 
-import java.util.List;
 import java.util.Scanner;
 
-public class ArraysController implements ArraysWrapperController {
-    private ArraysInitService arraysInitService = new ArraysInitServiceImpl();
-    private ArraySearchService searchService = new ArraysSearchServiceImpl();
+public class JaggedArraysController implements ArraysWrapperController {
+    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
+    private ArraysInitService arraysInitService = new JaggedArraysInitImpl();
+    private ArraySearchService searchService = new JaggedArraysSearchServiceImpl();
     private static ArraysWrapper arraysWrapper;
-    private ArraysOperationsController arraysOperationsController = new ArraysOperationsController();
+    private JaggedOperationsController arraysOperationsController = new JaggedOperationsController();
 
 
     @Override
@@ -58,25 +60,5 @@ public class ArraysController implements ArraysWrapperController {
 
     public int findMin() {
         return searchService.findMin(arraysWrapper);
-    }
-
-    public ArraysWrapper sort(int sortOption) {
-        return arraysOperationsController.sort(sortOption);
-    }
-
-    public int binarySearch(int key) {
-        return arraysOperationsController.binarySearch(key);
-    }
-
-    public List<Integer> getPtimesInArray() {
-        return arraysOperationsController.getPtimesInArray();
-    }
-
-    public List<Integer> getFibonacciNumInArray() {
-        return arraysOperationsController.getFibonacciNumInArray();
-    }
-
-    public List<Integer> getNumbersWithThreeDifDigits() {
-        return arraysOperationsController.getNumbersWithThreeDifDigits();
     }
 }

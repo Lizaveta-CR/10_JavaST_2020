@@ -1,18 +1,18 @@
 package by.tsvirko.task04.view;
 
-import by.tsvirko.task04.controller.ArraysController;
+import by.tsvirko.task04.controller.ArraysWrapperController;
 import by.tsvirko.task04.entity.ArraysWrapper;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FillArraysView {
-    private ArraysController arraysController;
+    private ArraysWrapperController arraysController;
     private Scanner scanner;
 
-    public FillArraysView(ArraysController controller) {
+    public FillArraysView(ArraysWrapperController controller) {
         scanner = new Scanner(System.in);
-        this.arraysController = controller;
+        arraysController = controller;
     }
 
 

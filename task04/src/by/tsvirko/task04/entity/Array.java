@@ -54,8 +54,8 @@ public class Array extends ArraysWrapper {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Array that = (Array) o;
-        return Arrays.equals(array, that.array);
+        Array array1 = (Array) o;
+        return Arrays.equals(array, array1.array);
     }
 
     @Override
