@@ -2,6 +2,7 @@ package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
 
+import java.util.List;
 import java.util.Scanner;
 
 public interface ArraysWrapperController {
@@ -16,7 +17,4 @@ public interface ArraysWrapperController {
     int findMax();
 
     int findMin();
-
-//    ArraysController getController();
-//    JaggedFa getController();
 }

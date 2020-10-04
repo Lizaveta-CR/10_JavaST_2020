@@ -3,7 +3,9 @@ package by.tsvirko.task04.view;
 import by.tsvirko.task04.controller.ArraysWrapperController;
 import by.tsvirko.task04.entity.ArraysWrapper;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class FillArraysView {
@@ -16,7 +18,7 @@ public class FillArraysView {
     }
 
 
-    public void fillArray() {
+    public ArraysWrapper fillArray() {
         try {
             System.out.println("How do you want to initialize array?\n"
                     + "1-console\n"
@@ -25,38 +27,47 @@ public class FillArraysView {
             int number = scanner.nextInt();
             switch (number) {
                 case 1:
-                    fillArrayConsoleView();
-                    break;
+                    return fillArrayConsoleView();
                 case 2:
-                    fillArrayFileView();
-                    break;
+                    return fillArrayFileView();
                 default:
-                    fillArrayRandomView();
-                    break;
+                    return fillArrayRandomView();
             }
         } catch (InputMismatchException | IllegalStateException e) {
             System.err.println("try again...");
         }
-
+        return null;
     }
 
-    private void fillArrayConsoleView() throws InputMismatchException {
+    private ArraysWrapper fillArrayConsoleView() throws InputMismatchException {
         System.out.println("Enter number of elements: ");
         int size = scanner.nextInt();
         ArraysWrapper arraysWrapper = arraysController.fillArrayConsole(scanner, size);
         System.out.println(arraysWrapper);
+        return arraysWrapper;
     }
 
-    private void fillArrayFileView() throws InputMismatchException {
+    private ArraysWrapper fillArrayFileView() throws InputMismatchException {
         System.out.println("Enter file name: ");
         String fileName = scanner.next();
         ArraysWrapper arraysWrapper = arraysController.fillArrayFile(fileName);
         System.out.println(arraysWrapper);
+        return arraysWrapper;
     }
 
-    private void fillArrayRandomView() throws InputMismatchException {
+    private ArraysWrapper fillArrayRandomView() throws InputMismatchException {
         System.out.println("Random initialization...");
         ArraysWrapper arraysWrapper = arraysController.fillArrayRandom();
         System.out.println(arraysWrapper);
+        return arraysWrapper;
+    }
+
+    public List<ArraysWrapper> fillSeveralArrays(int numOfArrays) {
+        List<ArraysWrapper> list = new ArrayList<>();
+        for (int i = 0; i < numOfArrays; i++) {
+            ArraysWrapper arraysWrapper = fillArray();
+            list.add(arraysWrapper);
+        }
+        return list;
     }
 }

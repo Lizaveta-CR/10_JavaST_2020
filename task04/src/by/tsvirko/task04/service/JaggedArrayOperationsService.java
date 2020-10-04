@@ -13,10 +13,10 @@ public class JaggedArrayOperationsService {
      * @param wrappers - given arrays
      * @return boolean value: tru, if Jagged Arrays are of same dimensions, else - false
      */
-    public boolean isSameDim(ArraysWrapper... wrappers) {
+    public boolean isSameDim(List<ArraysWrapper> wrappers) {
         Set<Array> dimensionsList = new HashSet<>();
-        for (int i = 0; i < wrappers.length; i++) {
-            int[] dimensions = getDimensions(wrappers[i]);
+        for (int i = 0; i < wrappers.size(); i++) {
+            int[] dimensions = getDimensions(wrappers.get(i));
             Array array = new Array(dimensions);
             dimensionsList.add(array);
         }
@@ -39,5 +39,22 @@ public class JaggedArrayOperationsService {
             arrayOfLengths[i] = multiDimensionalArray[i].length;
         }
         return arrayOfLengths;
+    }
+
+    /**
+     * Checks is given array is a square matrix
+     *
+     * @param arraysWrapper
+     * @return boolean value: true, if array is a square matrix, else - false
+     */
+    public boolean isSquare(ArraysWrapper arraysWrapper) {
+        JaggedArray jaggedArray = (JaggedArray) arraysWrapper;
+        int[][] multiDimensionalArray = jaggedArray.getJaggedArray();
+        for (int i = 0, l = multiDimensionalArray.length; i < l; i++) {
+            if (multiDimensionalArray[i].length != l) {
+                return false;
+            }
+        }
+        return true;
     }
 }

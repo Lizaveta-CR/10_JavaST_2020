@@ -1,160 +1,22 @@
 package by.tsvirko.task04.controller;
 
-import by.tsvirko.task04.entity.ArraysWrapper;
-import by.tsvirko.task04.exceptions.ArrayException;
-import by.tsvirko.task04.exceptions.FileArrayException;
-import by.tsvirko.task04.exceptions.InitConsoleException;
-import by.tsvirko.task04.service.*;
-import by.tsvirko.task04.service.factory.ServiceFactory;
-import by.tsvirko.task04.service.impl.*;
-
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 
 public class ArraysFactoryController {
     private ArraysWrapperController arraysWrapperController;
-//    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
-//    private ArraysInitService arraysInitService;
-//    private ArraySearchService searchService;
-//    private ArraysWrapper arraysWrapper;
 
     public ArraysFactoryController() {
     }
 
-//    public ArraysFactoryController(int serviceNum) {
-//        servicesFactory(serviceNum);
-//    }
-
     public ArraysWrapperController controllerFactory(int num) {
         switch (num) {
             case 1:
-                arraysWrapperController = new ArraysController();
+                arraysWrapperController = new ArraysControllerImpl();
                 return arraysWrapperController;
             case 2:
-                arraysWrapperController = new JaggedArraysController();
+                arraysWrapperController = new JaggedArraysControllerImpl();
                 return arraysWrapperController;
             default:
                 throw new IllegalStateException("Unexpected value: " + num);
         }
     }
-
-    //    public void servicesFactory(int num) {
-//        switch (num) {
-//            case 1:
-//                this.arraysInitService = new ArraysInitServiceImpl();
-//                this.searchService = new ArraysSearchServiceImpl();
-//                break;
-//            case 2:
-//                this.arraysInitService = new JaggedArraysInitImpl();
-//                this.searchService = new JaggedArraysSearchServiceImpl();
-//                break;
-//            default:
-//                throw new IllegalStateException("Unexpected value: " + num);
-//        }
-//    }
-//
-//    public ArraysWrapper fillArrayConsole(Scanner scanner, int size) {
-//        try {
-//            arraysWrapper = arraysInitService.init(scanner, size);
-//        } catch (InitConsoleException e) {
-//            System.err.println("Error while initializing file");
-//        }
-//        return arraysWrapper;
-//    }
-//
-//    public ArraysWrapper fillArrayFile(String fileName) {
-//        try {
-//            arraysWrapper = arraysInitService.init(fileName);
-//        } catch (FileArrayException e) {
-//            System.err.println("Check your array and file!");
-//        }
-//        return arraysWrapper;
-//    }
-//
-//    public ArraysWrapper fillArrayRandom() {
-//        arraysWrapper = arraysInitService.init();
-//        return arraysWrapper;
-//    }
-//
-//    public int findElementIndex(int element) {
-//        return arraysWrapper.findElementIndex(element);
-//    }
-//
-//    public int findMax() {
-//        return searchService.findMax(arraysWrapper);
-//    }
-//
-//    public int findMin() {
-//        return searchService.findMin(arraysWrapper);
-//    }
-//
-//    public ArraysWrapper sort(int sortOption) {
-//        ArraysController arraysController = new ArraysController();
-//        arraysController.sort(sortOption);
-//        arraysWrapperController.
-
-//        SortArrayService sortService = serviceFactory.getSortArrayService();
-//        try {
-//            switch (sortOption) {
-//                case 1:
-//                    sortService.heapSort(arraysWrapper);
-//                case 2:
-//                    sortService.insertionSort(arraysWrapper);
-//                case 3:
-//                    sortService.combSort(arraysWrapper);
-//            }
-//        } catch (ClassCastException e) {
-//            System.err.println("This is only for Array!! Read tasks correctly");
-//        }
-//        return arraysWrapper;
-//    }
-
-//    public int binarySearch(int key) {
-//        ArrayBinarySearchService binarySearchService = serviceFactory.getArrayBinarySearchService();
-//        int index = 0;
-//        try {
-//            index = binarySearchService.binarySearch(arraysWrapper, key);
-//        } catch (ClassCastException e) {
-//            System.err.println("This is only for Array!! Read tasks correctly");
-//        }
-//        return index;
-//    }
-//
-//    public List<Integer> getPtimesInArray() {
-//        List<Integer> primes = new ArrayList<>();
-//        try {
-//            ArrayPrimeNumberService primeNumberService = serviceFactory.getPrimeNumberService();
-//            List<Integer> primeNumbersInArray = primeNumberService.findPrimeNumbersInArray(arraysWrapper);
-//            primes.addAll(primeNumbersInArray);
-//        } catch (ArrayException e) {
-//            System.err.println("Something is with array, check it");
-//        }
-//        return primes;
-//    }
-//
-//    public List<Integer> getFibonacciNumInArray() {
-//        ArrayFibonacciService fibonacciService = serviceFactory.getFibonacciService();
-//        return fibonacciService.findFibNumbers(arraysWrapper);
-//    }
-//
-//    public List<Integer> getNumbersWithThreeDifDigits() {
-//        List<Integer> numbers = new ArrayList<>();
-//        try {
-//            NumbersWithThreeDifferentDigitsService differentDigitsService = serviceFactory.getDifferentDigitsService();
-//            numbers.addAll(differentDigitsService.findNumbersWithThreeDifferentDigits(arraysWrapper));
-//        } catch (ParseException e) {
-//            System.err.println("Something is with array, check it");
-//        }
-//        return numbers;
-//    }
-////
-////    public boolean isSameDimJaggedArrays() {
-//////TODO
-////    }
-////
-////    public void createSeveralJaggedArrays(int numOfArrays) {
-////    }
 }

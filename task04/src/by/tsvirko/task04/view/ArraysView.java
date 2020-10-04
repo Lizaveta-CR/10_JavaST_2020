@@ -1,9 +1,9 @@
 package by.tsvirko.task04.view;
 
-import by.tsvirko.task04.controller.ArraysController;
+import by.tsvirko.task04.controller.ArraysControllerImpl;
 import by.tsvirko.task04.controller.ArraysFactoryController;
 import by.tsvirko.task04.controller.ArraysWrapperController;
-import by.tsvirko.task04.controller.JaggedArraysController;
+import by.tsvirko.task04.controller.JaggedArraysControllerImpl;
 import by.tsvirko.task04.entity.ArraysWrapper;
 
 import java.util.InputMismatchException;
@@ -12,9 +12,10 @@ import java.util.Scanner;
 
 public class ArraysView {
     private ArraysFactoryController arraysFactoryController = new ArraysFactoryController();
-    private ArraysController arraysController = new ArraysController();
-    private JaggedArraysController jaggedArraysController = new JaggedArraysController();
+    private ArraysControllerImpl arraysController = new ArraysControllerImpl();
+    private JaggedArraysControllerImpl jaggedArraysController = new JaggedArraysControllerImpl();
     private ArraysWrapperController arraysWrapperController;
+    private FillArraysView fillArraysView;
     private Scanner scanner;
 
     public ArraysView() {
@@ -33,8 +34,9 @@ public class ArraysView {
                     + "7. Получить все числа Фибонначчи, находящиеся в массиве типа Array\n"
                     + "8.\tПолучить все трехзначные числа, в десятичной записи которых нет одинаковых цифр " +
                     "в массиве типа Array.\n"
-                    + "9. Выполнить операции над объектами типа JaggedArray:" +
-                    "9.1 сравнения размерностей\n");
+                    + "9. Выполнить операции над объектами типа JaggedArray:\n" +
+                    "9.1 сравнения размерностей\n"
+                    + "9.2 проверки является ли массив квадратной матрицей");
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -74,10 +76,13 @@ public class ArraysView {
                     List<Integer> numbersWithThreeDifDigits = arraysController.getNumbersWithThreeDifDigits();
                     numbersWithThreeDifDigits.forEach(System.out::println);
                     break;
-//                case 9:
-//                    //TODO:
-//                    createSeveralArraysView();
-//                    break;
+                case 9:
+                    List<ArraysWrapper> severalArraysView = createSeveralArraysView();
+                    boolean sameDim = jaggedArraysController.isSameDim(severalArraysView);
+                    System.out.println("Same dim-s: " + sameDim);
+                    severalArraysView.forEach(arr -> System.out.println("Square= " + jaggedArraysController.isSquare(arr)));
+
+                    break;
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");
@@ -85,18 +90,17 @@ public class ArraysView {
 
     }
 
-    private void createSeveralArraysView() {
-        chooseArray();
+    private List<ArraysWrapper> createSeveralArraysView() {
         System.out.println("How many arrays you want to create?");
         int numOfArrays = scanner.nextInt();
-//        arraysFactoryController.createSeveralJaggedArrays(numOfArrays);
+        return fillArraysView.fillSeveralArrays(numOfArrays);
     }
 
     public void chooseArray() {
         System.out.println("1.Array\n2.Jagged array");
         int num = scanner.nextInt();
         arraysWrapperController = arraysFactoryController.controllerFactory(num);
-        FillArraysView fillArraysView = new FillArraysView(arraysWrapperController);
+        fillArraysView = new FillArraysView(arraysWrapperController);
         fillArraysView.fillArray();
     }
 
