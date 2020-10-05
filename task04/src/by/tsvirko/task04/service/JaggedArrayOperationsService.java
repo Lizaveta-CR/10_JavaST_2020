@@ -114,4 +114,31 @@ public class JaggedArrayOperationsService {
         }
         return new JaggedArray(dif);
     }
+
+    /**
+     * Method transposes given squared Jagged array
+     *
+     * @param arr1
+     * @return JaggedArray - transposed array
+     * @throws JaggedArraysDimensionalException
+     */
+    public JaggedArray transpose(ArraysWrapper arr1) throws JaggedArraysDimensionalException {
+        if (!isSquare(arr1)) {
+            throw new JaggedArraysDimensionalException();
+        }
+        JaggedArray jagArr1 = (JaggedArray) arr1;
+        int[][] jaggedArrayF = jagArr1.getJaggedArray();
+
+        int width = jaggedArrayF.length;
+        int height = jaggedArrayF[0].length;
+
+        int[][] array_new = new int[height][width];
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                array_new[y][x] = jaggedArrayF[x][y];
+            }
+        }
+        return new JaggedArray(array_new);
+    }
 }

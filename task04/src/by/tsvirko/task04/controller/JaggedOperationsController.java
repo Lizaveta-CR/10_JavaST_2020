@@ -35,4 +35,9 @@ public class JaggedOperationsController {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.subtract(wrapper1, wrapper2);
     }
+
+    public ArraysWrapper getTranspose(ArraysWrapper arraysWrapper) throws JaggedArraysDimensionalException {
+        JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+        return service.transpose(arraysWrapper);
+    }
 }

@@ -6,9 +6,8 @@ import by.tsvirko.task04.controller.ArraysWrapperController;
 import by.tsvirko.task04.controller.JaggedArraysControllerImpl;
 import by.tsvirko.task04.entity.ArraysWrapper;
 
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
 public class ArraysView {
     private ArraysFactoryController arraysFactoryController = new ArraysFactoryController();
@@ -17,15 +16,43 @@ public class ArraysView {
     private ArraysWrapperController arraysWrapperController;
     private FillArraysView fillArraysView;
     private Scanner scanner;
+    private ResourceBundle resourceBundle;
 
     public ArraysView() {
+//        locale = Locale.getDefault();
         scanner = new Scanner(System.in);
     }
 
+    public void chooseLocale() {
+        System.out.println("1 - english\n 2 - русский");
+        char i = 0;
+        try {
+            i = (char) System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String country = "";
+        String language = "";
+        switch (i) {
+            case '1':
+                country = "US";
+                language = "EN";
+                break;
+            case '2':
+                country = "RU";
+                language = "RU";
+                break;
+        }
+        resourceBundle = ResourceBundle.getBundle("messages", new Locale(language, country));
+    }
+
     public void showTasks() {
+
         try {
             chooseArray();
-            System.out.println("1.\tОсуществлять поиск элемента массива равного x. \n"
+            System.out.println("" +
+//                    "0. Выберете язык\n " +
+                    "1.\tОсуществлять поиск элемента массива равного x. \n"
                     + "2.\tНаходить максимальный; 3. минимальный элементы массива.\n"
                     + "4.\tСортировать массив типа Array тремя способами (выберите любые 3 алгоритма сортировки," +
                     " которые вы ранее еще не реализовывали).\n"
@@ -37,12 +64,16 @@ public class ArraysView {
                     + "9. Выполнить операции над объектами типа JaggedArray:\n" +
                     "9.1 сравнения размерностей\n"
                     + "9.2 проверки является ли массив квадратной матрицей\n"
-                    + "10.\tсложения,вычитания")
+                    + "10.\tсложения,вычитания\n" +
+                    "11.транспонирование")
             ;
             int option = scanner.nextInt();
             switch (option) {
+                case 0:
+                    chooseLocale();
+                    break;
                 case 1:
-                    System.out.println("Enter number you want to find: ");
+                    System.out.println("message.str1 ");
                     int i = scanner.nextInt();
                     int elementIndex = arraysWrapperController.findElementIndex(i);
                     System.out.println("Index: " + elementIndex);
@@ -88,6 +119,9 @@ public class ArraysView {
                     List<ArraysWrapper> list = sumDifView();
                     System.out.println("Subtraction= " + jaggedArraysController.getDif(list.get(0), list.get(1)));
                     System.out.println("Sum= " + jaggedArraysController.getSum(list.get(0), list.get(1)));
+                case 11:
+                    ArraysWrapper arraysWrapper = fillArraysView.fillArray();
+                    System.out.println("Transposed: " + jaggedArraysController.getTranspose(arraysWrapper));
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");

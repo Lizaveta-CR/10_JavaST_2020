@@ -9,7 +9,7 @@ import java.util.*;
 
 public class FileJaggedArrayReadingImpl implements FileReading {
     private String filename;
-    private final String FILE_PATH = "/Users/elizaveta/Downloads/10_JavaST_2020/task04/resources/";
+    private final String FILE_PATH = "/Users/elizaveta/Downloads/10_JavaST_2020/task04/resource/";
     private final String FILE_EXT = ".txt";
 
     public FileJaggedArrayReadingImpl(String filename) {

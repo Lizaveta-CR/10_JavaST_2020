@@ -6,7 +6,6 @@ import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 import by.tsvirko.task04.service.ArraySearchService;
 import by.tsvirko.task04.service.ArraysInitService;
-import by.tsvirko.task04.service.JaggedArrayOperationsService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 import by.tsvirko.task04.service.impl.JaggedArraysSearchServiceImpl;
 
@@ -72,20 +71,26 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
 
     public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) {
         try {
-            JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
-            return service.sum(wrapper1, wrapper2);
+            return arraysOperationsController.getSum(wrapper1, wrapper2);
         } catch (JaggedArraysDimensionalException e) {
-            System.err.println("Can't add this two arrays");
         }
         return null;
     }
 
     public ArraysWrapper getDif(ArraysWrapper wrapper1, ArraysWrapper wrapper2) {
         try {
-            JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
-            return service.subtract(wrapper1, wrapper2);
+            return arraysOperationsController.getDif(wrapper1, wrapper2);
         } catch (JaggedArraysDimensionalException e) {
             System.err.println("Can't subtract this two arrays");
+        }
+        return null;
+    }
+
+    public ArraysWrapper getTranspose(ArraysWrapper wrapper1) {
+        try {
+            return arraysOperationsController.getTranspose(wrapper1);
+        } catch (JaggedArraysDimensionalException e) {
+            System.err.println("Can't transpose this array");
         }
         return null;
     }
