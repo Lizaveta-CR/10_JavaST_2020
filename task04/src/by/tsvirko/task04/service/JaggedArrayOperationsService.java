@@ -115,15 +115,25 @@ public class JaggedArrayOperationsService {
         return new JaggedArray(dif);
     }
 
+    public void constMultiplication(ArraysWrapper arraysWrapper, int num) {
+        JaggedArray jagArr1 = (JaggedArray) arraysWrapper;
+        int[][] jaggedArray = jagArr1.getJaggedArray();
+        for (int i = 0; i < jaggedArray.length; i++) {
+            for (int j = 0; j < jaggedArray[i].length; j++) {
+                jaggedArray[i][j] *= num;
+            }
+        }
+    }
+
     /**
-     * Method transposes given squared Jagged array
+     * Method transposes given rectangular Jagged array
      *
      * @param arr1
      * @return JaggedArray - transposed array
      * @throws JaggedArraysDimensionalException
      */
     public JaggedArray transpose(ArraysWrapper arr1) throws JaggedArraysDimensionalException {
-        if (!isSquare(arr1)) {
+        if (!isRectangular(arr1)) {
             throw new JaggedArraysDimensionalException();
         }
         JaggedArray jagArr1 = (JaggedArray) arr1;
@@ -134,11 +144,25 @@ public class JaggedArrayOperationsService {
 
         int[][] array_new = new int[height][width];
 
-        for (int x = 0; x < width; x++) {
+        for (
+                int x = 0;
+                x < width; x++) {
             for (int y = 0; y < height; y++) {
                 array_new[y][x] = jaggedArrayF[x][y];
             }
         }
-        return new JaggedArray(array_new);
+        return new
+
+                JaggedArray(array_new);
+
+    }
+
+    private boolean isRectangular(ArraysWrapper arraysWrapper) {
+        HashSet<Integer> set = new HashSet<>();
+        int[] dimensions = getDimensions(arraysWrapper);
+        for (int i = 0; i < dimensions.length; i++) {
+            set.add(dimensions[i]);
+        }
+        return set.size() == 1;
     }
 }

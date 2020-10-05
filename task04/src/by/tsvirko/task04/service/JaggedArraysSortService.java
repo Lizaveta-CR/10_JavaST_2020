@@ -7,4 +7,11 @@ public interface JaggedArraysSortService {
 
     void sortDescSumLines(ArraysWrapper arraysWrapper);
 
+    void sortAscMaxLines(ArraysWrapper arraysWrapper);
+
+    void sortDescMaxLines(ArraysWrapper arraysWrapper);
+
+    void sortAscMinLines(ArraysWrapper arraysWrapper);
+
+    void sortDescMinLines(ArraysWrapper arraysWrapper);
 }

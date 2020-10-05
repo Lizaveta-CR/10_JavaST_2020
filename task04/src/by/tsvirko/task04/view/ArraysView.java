@@ -65,7 +65,10 @@ public class ArraysView {
                     + "9.2 проверки является ли массив квадратной матрицей\n"
                     + "10.\tсложения,вычитания\n" +
                     "11.транспонирование\n"
-                    + "12.")
+                    + "12.умножение на константу"
+                    + "13.в порядке возрастания (убывания) сумм элементов строк матрицы;\n" +
+                    "в порядке возрастания (убывания) максимальных элементов строк матрицы;\n" +
+                    "в порядке возрастания (убывания) минимальных элементов строк матрицы.\n")
             ;
             int option = scanner.nextInt();
             switch (option) {
@@ -119,9 +122,39 @@ public class ArraysView {
                     List<ArraysWrapper> list = sumDifView();
                     System.out.println("Subtraction= " + jaggedArraysController.getDif(list.get(0), list.get(1)));
                     System.out.println("Sum= " + jaggedArraysController.getSum(list.get(0), list.get(1)));
+                    break;
                 case 11:
                     ArraysWrapper arraysWrapper = fillArraysView.fillArray();
                     System.out.println("Transposed: " + jaggedArraysController.getTranspose(arraysWrapper));
+                    break;
+                case 12:
+                    ArraysWrapper arrMult = fillArraysView.fillArray();
+                    System.out.println("Enter const: ");
+                    int constNum = scanner.nextInt();
+                    jaggedArraysController.multiplyConst(arrMult, constNum);
+                    System.out.println(arrMult);
+                    break;
+                case 13:
+                    ArraysWrapper arr = fillArraysView.fillArray();
+                    System.out.println("в порядке возрастания (убывания) сумм элементов строк матрицы:");
+                    jaggedArraysController.sortAscSumms(arr);
+                    System.out.println(arr);
+                    System.out.println("===");
+                    jaggedArraysController.sortDescSumms(arr);
+                    System.out.println(arr);
+                    System.out.println("в порядке возрастания (убывания) максимальных элементов строк матрицы");
+                    jaggedArraysController.sortAscMax(arr);
+                    System.out.println(arr);
+                    System.out.println("===");
+                    jaggedArraysController.sortDescMax(arr);
+                    System.out.println(arr);
+                    System.out.println("в порядке возрастания (убывания) минимальных элементов строк матрицы");
+                    jaggedArraysController.sortAscMin(arr);
+                    System.out.println(arr);
+                    System.out.println("===");
+                    jaggedArraysController.sortDescMin(arr);
+                    System.out.println(arr);
+                    break;
             }
         } catch (InputMismatchException e) {
             System.err.println("Try again...");

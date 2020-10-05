@@ -23,10 +23,6 @@ public class JaggedArray extends ArraysWrapper {
         return arrayList;
     }
 
-    public void setArrayList(List<Array> arrayList) {
-        this.arrayList = arrayList;
-    }
-
     public int[][] getJaggedArray() {
         int[][] ints = new int[arrayList.size()][];
         for (int i = 0; i < ints.length; i++) {
@@ -34,6 +30,18 @@ public class JaggedArray extends ArraysWrapper {
             ints[i] = array;
         }
         return ints;
+    }
+
+    public void setArrayList(List<Array> arrayList) {
+        this.arrayList = arrayList;
+    }
+
+    public void setJaggedArray(int[][] array) {
+        arrayList.clear();
+        for (int i = 0; i < array.length; i++) {
+            Array arr = new Array(array[i]);
+            arrayList.add(arr);
+        }
     }
 
     @Override

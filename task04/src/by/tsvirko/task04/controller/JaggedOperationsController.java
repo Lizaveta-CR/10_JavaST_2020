@@ -3,6 +3,7 @@ package by.tsvirko.task04.controller;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 import by.tsvirko.task04.service.JaggedArrayOperationsService;
+import by.tsvirko.task04.service.JaggedArraysSortService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 
 import java.util.List;
@@ -36,8 +37,43 @@ public class JaggedOperationsController {
         return service.subtract(wrapper1, wrapper2);
     }
 
+    public void multiplyConst(ArraysWrapper wrapper, int num) {
+        JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
+        service.constMultiplication(wrapper, num);
+    }
+
     public ArraysWrapper getTranspose(ArraysWrapper arraysWrapper) throws JaggedArraysDimensionalException {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.transpose(arraysWrapper);
+    }
+
+    public void sortAscSumms(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortAscSumLines(arraysWrapper);
+    }
+
+    public void sortDescSumms(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortDescSumLines(arraysWrapper);
+    }
+
+    public void sortAscMax(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortAscMaxLines(arraysWrapper);
+    }
+
+    public void sortDescMax(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortDescMaxLines(arraysWrapper);
+    }
+
+    public void sortAscMin(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortAscMinLines(arraysWrapper);
+    }
+
+    public void sortDescMin(ArraysWrapper arraysWrapper) {
+        JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
+        jaggedArraysSortService.sortAscMinLines(arraysWrapper);
     }
 }

@@ -13,6 +13,7 @@ public class ServiceFactory {
     private final ArrayFibonacciService fibonacciService = new ArrayFibonacciService();
     private final NumbersWithThreeDifferentDigitsService differentDigitsService = new NumbersWithThreeDifferentDigitsService();
     private final JaggedArrayOperationsService jaggedArrayOperationsService = new JaggedArrayOperationsService();
+    private final JaggedArraysSortService jaggedArraysSortService = new JaggedArraysSortServiceImpl();
 
     private ServiceFactory() {
     }
@@ -51,5 +52,9 @@ public class ServiceFactory {
 
     public ArraysInitService getJagArraysInitService() {
         return jagArraysInitService;
+    }
+
+    public JaggedArraysSortService getJaggedArraysSortService() {
+        return jaggedArraysSortService;
     }
 }

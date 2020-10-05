@@ -86,6 +86,10 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
         return null;
     }
 
+    public void multiplyConst(ArraysWrapper arraysWrapper, int num) {
+        arraysOperationsController.multiplyConst(arraysWrapper, num);
+    }
+
     public ArraysWrapper getTranspose(ArraysWrapper wrapper1) {
         try {
             return arraysOperationsController.getTranspose(wrapper1);
@@ -93,5 +97,29 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
             System.err.println("Can't transpose this array");
         }
         return null;
+    }
+
+    public void sortAscSumms(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortAscSumms(arraysWrapper);
+    }
+
+    public void sortDescSumms(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortDescSumms(arraysWrapper);
+    }
+
+    public void sortAscMax(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortAscMax(arraysWrapper);
+    }
+
+    public void sortDescMax(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortDescMax(arraysWrapper);
+    }
+
+    public void sortAscMin(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortAscMin(arraysWrapper);
+    }
+
+    public void sortDescMin(ArraysWrapper arraysWrapper) {
+        arraysOperationsController.sortDescMin(arraysWrapper);
     }
 }
