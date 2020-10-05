@@ -17,6 +17,14 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
     public JaggedArraysInitImpl() {
     }
 
+    /**
+     * jagged array initialization from console
+     *
+     * @param scanner
+     * @param size
+     * @return JaggedArray
+     * @throws InitConsoleException
+     */
     @Override
     public JaggedArray init(Scanner scanner, int size) throws InitConsoleException {
         ArraysInitServiceImpl service = new ArraysInitServiceImpl();
@@ -30,6 +38,13 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
         return new JaggedArray(newArr);
     }
 
+    /**
+     * jagged array initialization from file
+     *
+     * @param filename
+     * @return JaggedArray
+     * @throws FileArrayException
+     */
     @Override
     public JaggedArray init(String filename) throws FileArrayException {
         try {
@@ -40,6 +55,11 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
         }
     }
 
+    /**
+     * Random jagged array initialization
+     *
+     * @return JaggedArray
+     */
     @Override
     public JaggedArray init() {
         int[][] array = new int[MAX_SIZE_ARRAY][];

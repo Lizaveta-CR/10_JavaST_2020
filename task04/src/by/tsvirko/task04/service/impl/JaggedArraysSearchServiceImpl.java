@@ -11,6 +11,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class JaggedArraysSearchServiceImpl extends ArraysSearchServiceImpl implements ArraySearchService {
+    /**
+     * Finds maximum value in given jagged array
+     *
+     * @param wrapper
+     * @return min
+     */
     @Override
     public int findMax(ArraysWrapper wrapper) {
         JaggedArray jaggedArray = (JaggedArray) wrapper;
@@ -23,6 +29,12 @@ public class JaggedArraysSearchServiceImpl extends ArraysSearchServiceImpl imple
         return Collections.max(maximums);
     }
 
+    /**
+     * Finds minimum value in given jagged array
+     *
+     * @param wrapper
+     * @return min
+     */
     @Override
     public int findMin(ArraysWrapper wrapper) {
         JaggedArray jaggedArray = (JaggedArray) wrapper;

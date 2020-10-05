@@ -18,10 +18,24 @@ public class FileArrayReadingImpl implements FileReading {
         this.filename = FILE_PATH.concat(filename).concat(FILE_EXT);
     }
 
+    /**
+     * Opens file for reading
+     *
+     * @param filename
+     * @return Scanner
+     * @throws FileNotFoundException
+     */
     private Scanner openFile(String filename) throws FileNotFoundException {
         return new Scanner(new File(filename));
     }
 
+    /**
+     * Reads array from file
+     *
+     * @return Array
+     * @throws NoFile
+     * @throws ArrayException
+     */
     public Array readArray() throws NoFile, ArrayException {
         try {
             Scanner scanner = openFile(filename);

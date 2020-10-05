@@ -5,7 +5,12 @@ import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.service.ArraySearchService;
 
 public class ArraysSearchServiceImpl implements ArraySearchService {
-
+    /**
+     * Finds maximum value in given array
+     *
+     * @param wrapper
+     * @return max
+     */
     @Override
     public int findMax(ArraysWrapper wrapper) {
         Array array = (Array) wrapper;
@@ -19,6 +24,12 @@ public class ArraysSearchServiceImpl implements ArraySearchService {
         return max;
     }
 
+    /**
+     * Finds minimum value in given array
+     *
+     * @param wrapper
+     * @return min
+     */
     @Override
     public int findMin(ArraysWrapper wrapper) {
         Array array = (Array) wrapper;

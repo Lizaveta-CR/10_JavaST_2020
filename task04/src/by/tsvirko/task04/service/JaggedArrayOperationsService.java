@@ -157,6 +157,12 @@ public class JaggedArrayOperationsService {
 
     }
 
+    /**
+     * Validates if given jagged array is rectangular
+     *
+     * @param arraysWrapper
+     * @return
+     */
     private boolean isRectangular(ArraysWrapper arraysWrapper) {
         HashSet<Integer> set = new HashSet<>();
         int[] dimensions = getDimensions(arraysWrapper);

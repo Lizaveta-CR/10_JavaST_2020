@@ -16,6 +16,11 @@ public class FileJaggedArrayReadingImpl implements FileReading {
         this.filename = FILE_PATH.concat(filename).concat(FILE_EXT);
     }
 
+    /**
+     * Reads array from file
+     *
+     * @return JaggedArray
+     */
     public JaggedArray readArray() {
         int size = countLines();
         int[][] ints = new int[size][];
@@ -37,6 +42,11 @@ public class FileJaggedArrayReadingImpl implements FileReading {
         return new JaggedArray(ints);
     }
 
+    /**
+     * Counts number of lines in file
+     *
+     * @return number of lines
+     */
     private int countLines() {
         int lines = 0;
         try {

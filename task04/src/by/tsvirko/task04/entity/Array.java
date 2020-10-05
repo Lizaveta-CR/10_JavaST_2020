@@ -68,7 +68,6 @@ public class Array extends ArraysWrapper {
         return Arrays.toString(array);
     }
 
-    //TODO: not in this class
     @Override
     public int findElementIndex(int element) {
         return IntStream.range(0, array.length)

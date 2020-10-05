@@ -17,6 +17,14 @@ public class ArraysInitServiceImpl implements ArraysInitService {
     public ArraysInitServiceImpl() {
     }
 
+    /**
+     * Array initialization using console
+     *
+     * @param scanner
+     * @param size
+     * @return Array
+     * @throws InitConsoleException
+     */
     @Override
     public Array init(Scanner scanner, int size) throws InitConsoleException {
         Array array = new Array(size);
@@ -34,6 +42,13 @@ public class ArraysInitServiceImpl implements ArraysInitService {
         return array;
     }
 
+    /**
+     * Array initialization using file
+     *
+     * @param fileName
+     * @return Array
+     * @throws FileArrayException
+     */
     @Override
     public Array init(String fileName) throws FileArrayException {
         try {
@@ -44,6 +59,11 @@ public class ArraysInitServiceImpl implements ArraysInitService {
         }
     }
 
+    /**
+     * Random array initialization
+     *
+     * @return Array
+     */
     @Override
     public Array init() {
         Array array = new Array(MAX_SIZE_ARRAY);
