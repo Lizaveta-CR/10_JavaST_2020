@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class JaggedArraysControllerImpl implements ArraysWrapperController {
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private ArraysInitService arraysInitService = serviceFactory.getJagArraysInitService();
-    private ArraySearchService searchService = new JaggedArraysSearchServiceImpl();
+    private ArraySearchService searchService = serviceFactory.getJagArraySearchService();
     private static ArraysWrapper arraysWrapper;
     private JaggedOperationsController arraysOperationsController = new JaggedOperationsController();
 
@@ -50,7 +50,7 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
     }
 
     public int findElementIndex(int element) {
-        return arraysWrapper.findElementIndex(element);
+        return searchService.findElementIndex(arraysWrapper, element);
     }
 
     public int findMax() {

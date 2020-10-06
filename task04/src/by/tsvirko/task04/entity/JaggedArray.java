@@ -65,18 +65,4 @@ public class JaggedArray extends ArraysWrapper {
         }
         return sj.toString();
     }
-
-    public int findElementIndex(int element) {
-        int index = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            Array array = arrayList.get(i);
-            index = array.findElementIndex(element);
-            if (index == -1) {
-                continue;
-            } else {
-                return index;
-            }
-        }
-        return index;
-    }
 }

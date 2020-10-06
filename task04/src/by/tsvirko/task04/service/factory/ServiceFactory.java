@@ -14,6 +14,8 @@ public class ServiceFactory {
     private final NumbersWithThreeDifferentDigitsService differentDigitsService = new NumbersWithThreeDifferentDigitsService();
     private final JaggedArrayOperationsService jaggedArrayOperationsService = new JaggedArrayOperationsService();
     private final JaggedArraysSortService jaggedArraysSortService = new JaggedArraysSortServiceImpl();
+    private final ArraySearchService jagArraySearchService = new JaggedArraysSearchServiceImpl();
+    private final ArraySearchService arraySearchService = new ArraysSearchServiceImpl();
 
     private ServiceFactory() {
     }
@@ -56,5 +58,13 @@ public class ServiceFactory {
 
     public JaggedArraysSortService getJaggedArraysSortService() {
         return jaggedArraysSortService;
+    }
+
+    public ArraySearchService getJagArraySearchService() {
+        return jagArraySearchService;
+    }
+
+    public ArraySearchService getArraySearchService() {
+        return arraySearchService;
     }
 }

@@ -67,12 +67,4 @@ public class Array extends ArraysWrapper {
     public String toString() {
         return Arrays.toString(array);
     }
-
-    @Override
-    public int findElementIndex(int element) {
-        return IntStream.range(0, array.length)
-                .filter(i -> element == array[i])
-                .findFirst()
-                .orElse(-1);
-    }
 }

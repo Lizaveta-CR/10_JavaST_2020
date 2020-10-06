@@ -6,4 +6,6 @@ public interface ArraySearchService {
     int findMax(ArraysWrapper wrapper);
 
     int findMin(ArraysWrapper wrapper);
+
+    int findElementIndex(ArraysWrapper wrapper, int element);
 }

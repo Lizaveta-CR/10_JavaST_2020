@@ -1,12 +1,9 @@
 package by.tsvirko.task04.controller;
 
-import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.factory.ServiceFactory;
-import by.tsvirko.task04.service.impl.ArraysInitServiceImpl;
-import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -20,12 +17,14 @@ public class ArraysOperationsController {
         SortArrayService sortService = serviceFactory.getSortArrayService();
         try {
             switch (sortOption) {
-                case 1:
-                    sortService.heapSort(arraysWrapper);
                 case 2:
                     sortService.insertionSort(arraysWrapper);
+                    break;
                 case 3:
                     sortService.combSort(arraysWrapper);
+                    break;
+                default:
+                    sortService.heapSort(arraysWrapper);
             }
         } catch (ClassCastException e) {
             System.err.println("This is only for Array!! Read tasks correctly");

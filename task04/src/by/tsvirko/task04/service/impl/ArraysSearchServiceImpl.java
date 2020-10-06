@@ -4,6 +4,8 @@ import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.service.ArraySearchService;
 
+import java.util.stream.IntStream;
+
 public class ArraysSearchServiceImpl implements ArraySearchService {
     /**
      * Finds maximum value in given array
@@ -41,5 +43,14 @@ public class ArraysSearchServiceImpl implements ArraySearchService {
             }
         }
         return min;
+    }
+
+    @Override
+    public int findElementIndex(ArraysWrapper wrapper, int element) {
+        Array array = (Array) wrapper;
+        return IntStream.range(0, array.getLength())
+                .filter(i -> element == array.getArray()[i])
+                .findFirst()
+                .orElse(-1);
     }
 }

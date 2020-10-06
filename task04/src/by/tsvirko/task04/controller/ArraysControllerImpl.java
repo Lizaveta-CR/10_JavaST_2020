@@ -4,15 +4,15 @@ import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.*;
-import by.tsvirko.task04.service.impl.ArraysInitServiceImpl;
-import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
+import by.tsvirko.task04.service.factory.ServiceFactory;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class ArraysControllerImpl implements ArraysWrapperController {
-    private ArraysInitService arraysInitService = new ArraysInitServiceImpl();
-    private ArraySearchService searchService = new ArraysSearchServiceImpl();
+    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
+    private ArraysInitService arraysInitService = serviceFactory.getArraysInitService();
+    private ArraySearchService searchService = serviceFactory.getArraySearchService();
     private static ArraysWrapper arraysWrapper;
     private ArraysOperationsController arraysOperationsController = new ArraysOperationsController();
 
@@ -47,7 +47,7 @@ public class ArraysControllerImpl implements ArraysWrapperController {
     }
 
     public int findElementIndex(int element) {
-        return arraysWrapper.findElementIndex(element);
+        return searchService.findElementIndex(arraysWrapper, element);
     }
 
     public int findMax() {

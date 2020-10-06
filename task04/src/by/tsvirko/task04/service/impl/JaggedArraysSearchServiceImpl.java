@@ -4,7 +4,6 @@ import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
 import by.tsvirko.task04.service.ArraySearchService;
-import by.tsvirko.task04.service.impl.ArraysSearchServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,6 +44,22 @@ public class JaggedArraysSearchServiceImpl extends ArraysSearchServiceImpl imple
             minimums.add(max);
         }
         return Collections.min(minimums);
+    }
+
+    public int findElementIndex(ArraysWrapper wrapper, int element) {
+        JaggedArray jaggedArray = (JaggedArray) wrapper;
+        List<Array> arrayList = jaggedArray.getArrayList();
+        int index = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            Array array = arrayList.get(i);
+            index = super.findElementIndex(array, element);
+            if (index == -1) {
+                continue;
+            } else {
+                return index;
+            }
+        }
+        return index;
     }
 }
 
