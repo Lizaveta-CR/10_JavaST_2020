@@ -9,6 +9,7 @@ import by.tsvirko.task04.exceptions.NoFile;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.FileReading;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements ArraysInitService {
@@ -27,6 +28,9 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
      */
     @Override
     public JaggedArray init(Scanner scanner, int size) throws InitConsoleException {
+        if (size <= 0) {
+            throw new InitConsoleException();
+        }
         ArraysInitServiceImpl service = new ArraysInitServiceImpl();
         int[][] newArr = new int[size][];
         for (int i = 0; i < size; i++) {

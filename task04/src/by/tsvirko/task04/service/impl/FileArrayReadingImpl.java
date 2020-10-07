@@ -2,6 +2,7 @@ package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.exceptions.ArrayException;
+import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.NoFile;
 import by.tsvirko.task04.service.FileReading;
 
@@ -42,6 +43,9 @@ public class FileArrayReadingImpl implements FileReading {
             ArrayList<Integer> fileNumbers = new ArrayList<>();
             while (scanner.hasNextInt()) {
                 fileNumbers.add(scanner.nextInt());
+            }
+            if (fileNumbers.isEmpty()) {
+                throw new ArrayException();
             }
             int size = fileNumbers.size();
             Array array = new Array(size);

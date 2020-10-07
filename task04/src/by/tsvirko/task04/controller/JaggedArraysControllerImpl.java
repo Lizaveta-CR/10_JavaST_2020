@@ -1,16 +1,15 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 import by.tsvirko.task04.service.ArraySearchService;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.factory.ServiceFactory;
-import by.tsvirko.task04.service.impl.JaggedArraysSearchServiceImpl;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class JaggedArraysControllerImpl implements ArraysWrapperController {
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
@@ -18,14 +17,21 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
     private ArraySearchService searchService = serviceFactory.getJagArraySearchService();
     private static ArraysWrapper arraysWrapper;
     private JaggedOperationsController arraysOperationsController = new JaggedOperationsController();
+    private static ResourceBundle rb;
 
+    public JaggedArraysControllerImpl() {
+    }
+
+    public JaggedArraysControllerImpl(ResourceBundle rb) {
+        this.rb = rb;
+    }
 
     @Override
     public ArraysWrapper fillArrayConsole(Scanner scanner, int size) {
         try {
             arraysWrapper = arraysInitService.init(scanner, size);
         } catch (InitConsoleException e) {
-            System.err.println("Error while initializing file");
+            System.err.println(rb.getString("message.error1"));
         }
         arraysOperationsController.setArraysWrapper(arraysWrapper);
         return arraysWrapper;
@@ -36,7 +42,7 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
         try {
             arraysWrapper = arraysInitService.init(fileName);
         } catch (FileArrayException e) {
-            System.err.println("Check your array and file!");
+            System.err.println(rb.getString("message.error2"));
         }
         arraysOperationsController.setArraysWrapper(arraysWrapper);
         return arraysWrapper;
@@ -73,6 +79,7 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
         try {
             return arraysOperationsController.getSum(wrapper1, wrapper2);
         } catch (JaggedArraysDimensionalException e) {
+            System.err.println(rb.getString("message.error61"));
         }
         return null;
     }
@@ -81,22 +88,30 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
         try {
             return arraysOperationsController.getDif(wrapper1, wrapper2);
         } catch (JaggedArraysDimensionalException e) {
-            System.err.println("Can't subtract this two arrays");
+            System.err.println(rb.getString("message.error6"));
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error8"));
         }
         return null;
     }
 
     public void multiplyConst(ArraysWrapper arraysWrapper, int num) {
-        arraysOperationsController.multiplyConst(arraysWrapper, num);
+        try {
+            arraysOperationsController.multiplyConst(arraysWrapper, num);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error8"));
+        }
     }
 
     public ArraysWrapper getTranspose(ArraysWrapper wrapper1) {
         try {
             return arraysOperationsController.getTranspose(wrapper1);
         } catch (JaggedArraysDimensionalException e) {
-            System.err.println("Can't transpose this array");
+            System.err.println(rb.getString("message.error7"));
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error8"));
         }
-        return null;
+        return wrapper1;
     }
 
     public void sortAscSumms(ArraysWrapper arraysWrapper) {

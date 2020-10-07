@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ArraysView {
-    private ArraysFactoryController arraysFactoryController = new ArraysFactoryController();
+    private ArraysFactoryController arraysFactoryController;
     private ArraysControllerImpl arraysController = new ArraysControllerImpl();
     private JaggedArraysControllerImpl jaggedArraysController = new JaggedArraysControllerImpl();
     private ArraysWrapperController arraysWrapperController;
@@ -19,7 +19,6 @@ public class ArraysView {
     private ResourceBundle resourceBundle;
 
     public ArraysView() {
-//        locale = Locale.getDefault();
         scanner = new Scanner(System.in);
     }
 
@@ -43,51 +42,48 @@ public class ArraysView {
                 language = "RU";
                 break;
         }
-        resourceBundle = ResourceBundle.getBundle("messages", new Locale(language, country));
+        resourceBundle = ResourceBundle.getBundle("property.messages", new Locale(language, country));
+        arraysFactoryController = new ArraysFactoryController(resourceBundle);
     }
 
     public void showTasks() {
 
         try {
+            chooseLocale();
             chooseArray();
-            System.out.println("" +
-//                    "0. Выберете язык\n " +
-                    "1.\tОсуществлять поиск элемента массива равного x. \n"
-                    + "2.\tНаходить максимальный; 3. минимальный элементы массива.\n"
-                    + "4.\tСортировать массив типа Array тремя способами\n"
-                    + "5. Осуществлять бинарный поиск элемента массива типа Array\n"
-                    + "6. Получить все простые числа, находящиеся в массиве типа Array.\n"
-                    + "7. Получить все числа Фибонначчи, находящиеся в массиве типа Array\n"
-                    + "8.\tПолучить все трехзначные числа, в десятичной записи которых нет одинаковых цифр " +
-                    "в массиве типа Array.\n"
-                    + "9. Выполнить операции над объектами типа JaggedArray:\n" +
-                    "9.1 сравнения размерностей\n"
-                    + "9.2 проверки является ли массив квадратной матрицей\n"
-                    + "10.\tсложения,вычитания\n" +
-                    "11.транспонирование\n"
-                    + "12.умножение на константу"
-                    + "13.в порядке возрастания (убывания) сумм элементов строк матрицы;\n" +
-                    "в порядке возрастания (убывания) максимальных элементов строк матрицы;\n" +
-                    "в порядке возрастания (убывания) минимальных элементов строк матрицы.\n")
+            System.out.println(resourceBundle.getString("message.task1")
+                    + resourceBundle.getString("message.task2")
+                    + resourceBundle.getString("message.task3")
+                    + resourceBundle.getString("message.task4")
+                    + resourceBundle.getString("message.task5")
+                    + resourceBundle.getString("message.task6")
+                    + resourceBundle.getString("message.task7")
+                    + resourceBundle.getString("message.task8")
+                    + resourceBundle.getString("message.task9")
+                    + resourceBundle.getString("message.task91")
+                    + resourceBundle.getString("message.task92")
+                    + resourceBundle.getString("message.task10")
+                    + resourceBundle.getString("message.task11")
+                    + resourceBundle.getString("message.task12")
+                    + resourceBundle.getString("message.task131")
+                    + resourceBundle.getString("message.task132")
+                    + resourceBundle.getString("message.task133"))
             ;
             int option = scanner.nextInt();
             switch (option) {
-                case 0:
-                    chooseLocale();
-                    break;
                 case 1:
-                    System.out.println("message.str1 ");
+                    System.out.println(resourceBundle.getString("message.str8"));
                     int i = scanner.nextInt();
                     int elementIndex = arraysWrapperController.findElementIndex(i);
-                    System.out.println("Index: " + elementIndex);
+                    System.out.println(resourceBundle.getString("message.str9") + elementIndex);
                     break;
                 case 2:
                     int max = arraysWrapperController.findMax();
-                    System.out.println("Max =" + max);
+                    System.out.println(resourceBundle.getString("message.str10") + max);
                     break;
                 case 3:
                     int min = arraysWrapperController.findMin();
-                    System.out.println("Min =" + min);
+                    System.out.println(resourceBundle.getString("message.str11") + min);
                     break;
                 case 4:
                     int method = chooseSortMethod();
@@ -95,10 +91,10 @@ public class ArraysView {
                     System.out.println(array);
                     break;
                 case 5:
-                    System.out.println("Enter key: ");
+                    System.out.println(resourceBundle.getString("message.str12"));
                     int key = scanner.nextInt();
                     int index = arraysController.binarySearch(key);
-                    System.out.println("Index= " + index);
+                    System.out.println(resourceBundle.getString("message.str9") + index);
                     break;
                 case 6:
                     List<Integer> ptimesInArray = arraysController.getPtimesInArray();
@@ -115,40 +111,40 @@ public class ArraysView {
                 case 9:
                     List<ArraysWrapper> severalArraysView = createSeveralArraysView();
                     boolean sameDim = jaggedArraysController.isSameDim(severalArraysView);
-                    System.out.println("Same dim-s: " + sameDim);
-                    severalArraysView.forEach(arr -> System.out.println("Square= " + jaggedArraysController.isSquare(arr)));
+                    System.out.println(resourceBundle.getString("message.str13") + sameDim);
+                    severalArraysView.forEach(arr -> System.out.println(resourceBundle.getString("message.str14") + jaggedArraysController.isSquare(arr)));
                     break;
                 case 10:
                     List<ArraysWrapper> list = sumDifView();
-                    System.out.println("Subtraction= " + jaggedArraysController.getDif(list.get(0), list.get(1)));
-                    System.out.println("Sum= " + jaggedArraysController.getSum(list.get(0), list.get(1)));
+                    System.out.println(resourceBundle.getString("message.str15") + "\n" + jaggedArraysController.getDif(list.get(0), list.get(1)));
+                    System.out.println(resourceBundle.getString("message.str16") + "\n" + jaggedArraysController.getSum(list.get(0), list.get(1)));
                     break;
                 case 11:
                     ArraysWrapper arraysWrapper = fillArraysView.fillArray();
-                    System.out.println("Transposed: " + jaggedArraysController.getTranspose(arraysWrapper));
+                    System.out.println(resourceBundle.getString("message.str18") + "\n" + jaggedArraysController.getTranspose(arraysWrapper));
                     break;
                 case 12:
                     ArraysWrapper arrMult = fillArraysView.fillArray();
-                    System.out.println("Enter const: ");
+                    System.out.println(resourceBundle.getString("message.str17") + "\n");
                     int constNum = scanner.nextInt();
                     jaggedArraysController.multiplyConst(arrMult, constNum);
                     System.out.println(arrMult);
                     break;
                 case 13:
                     ArraysWrapper arr = fillArraysView.fillArray();
-                    System.out.println("в порядке возрастания (убывания) сумм элементов строк матрицы:");
+                    System.out.println(resourceBundle.getString("message.task131") + "\n");
                     jaggedArraysController.sortAscSumms(arr);
                     System.out.println(arr);
                     System.out.println("===");
                     jaggedArraysController.sortDescSumms(arr);
                     System.out.println(arr);
-                    System.out.println("в порядке возрастания (убывания) максимальных элементов строк матрицы");
+                    System.out.println(resourceBundle.getString("message.task132") + "\n");
                     jaggedArraysController.sortAscMax(arr);
                     System.out.println(arr);
                     System.out.println("===");
                     jaggedArraysController.sortDescMax(arr);
                     System.out.println(arr);
-                    System.out.println("в порядке возрастания (убывания) минимальных элементов строк матрицы");
+                    System.out.println(resourceBundle.getString("message.task133") + "\n");
                     jaggedArraysController.sortAscMin(arr);
                     System.out.println(arr);
                     System.out.println("===");
@@ -157,13 +153,13 @@ public class ArraysView {
                     break;
             }
         } catch (InputMismatchException e) {
-            System.err.println("Try again...");
+            System.err.println(resourceBundle.getString("message.tryAgain"));
         }
 
     }
 
     private List<ArraysWrapper> createSeveralArraysView() {
-        System.out.println("How many arrays you want to create?");
+        System.out.println(resourceBundle.getString("message.str19"));
         int numOfArrays = scanner.nextInt();
         return fillArraysView.fillSeveralArrays(numOfArrays);
     }
@@ -172,7 +168,7 @@ public class ArraysView {
         System.out.println("1.Array\n2.Jagged array");
         int num = scanner.nextInt();
         arraysWrapperController = arraysFactoryController.controllerFactory(num);
-        fillArraysView = new FillArraysView(arraysWrapperController);
+        fillArraysView = new FillArraysView(arraysWrapperController, resourceBundle);
         fillArraysView.fillArray();
     }
 
@@ -182,7 +178,7 @@ public class ArraysView {
     }
 
     public List<ArraysWrapper> sumDifView() {
-        System.out.println("Let's create two arrays:");
+        System.out.println(resourceBundle.getString("message.str20"));
         return fillArraysView.fillSeveralArrays(2);
     }
 }

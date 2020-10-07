@@ -8,10 +8,19 @@ import by.tsvirko.task04.service.factory.ServiceFactory;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class ArraysOperationsController {
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private static ArraysWrapper arraysWrapper;
+    private ResourceBundle rb;
+
+    public ArraysOperationsController() {
+    }
+
+    public ArraysOperationsController(ResourceBundle rb) {
+        this.rb = rb;
+    }
 
     public ArraysWrapper sort(int sortOption) {
         SortArrayService sortService = serviceFactory.getSortArrayService();
@@ -27,7 +36,7 @@ public class ArraysOperationsController {
                     sortService.heapSort(arraysWrapper);
             }
         } catch (ClassCastException e) {
-            System.err.println("This is only for Array!! Read tasks correctly");
+            System.err.println(rb.getString("message.error4"));
         }
         return arraysWrapper;
     }
@@ -38,7 +47,7 @@ public class ArraysOperationsController {
         try {
             index = binarySearchService.binarySearch(arraysWrapper, key);
         } catch (ClassCastException e) {
-            System.err.println("This is only for Array!! Read tasks correctly");
+            System.err.println(rb.getString("message.error4"));
         }
         return index;
     }
@@ -50,7 +59,7 @@ public class ArraysOperationsController {
             List<Integer> primeNumbersInArray = primeNumberService.findPrimeNumbersInArray(arraysWrapper);
             primes.addAll(primeNumbersInArray);
         } catch (ArrayException e) {
-            System.err.println("Something is with array, check it");
+            System.err.println(rb.getString("message.error5"));
         }
         return primes;
     }
@@ -66,7 +75,7 @@ public class ArraysOperationsController {
             NumbersWithThreeDifferentDigitsService differentDigitsService = serviceFactory.getDifferentDigitsService();
             numbers.addAll(differentDigitsService.findNumbersWithThreeDifferentDigits(arraysWrapper));
         } catch (ParseException e) {
-            System.err.println("Something is with array, check it");
+            System.err.println(rb.getString("message.error5"));
         }
         return numbers;
     }

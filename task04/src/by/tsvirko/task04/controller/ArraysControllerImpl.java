@@ -7,6 +7,7 @@ import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class ArraysControllerImpl implements ArraysWrapperController {
@@ -14,15 +15,23 @@ public class ArraysControllerImpl implements ArraysWrapperController {
     private ArraysInitService arraysInitService = serviceFactory.getArraysInitService();
     private ArraySearchService searchService = serviceFactory.getArraySearchService();
     private static ArraysWrapper arraysWrapper;
-    private ArraysOperationsController arraysOperationsController = new ArraysOperationsController();
+    private ArraysOperationsController arraysOperationsController;
+    private ResourceBundle rb;
 
+    public ArraysControllerImpl() {
+    }
+
+    public ArraysControllerImpl(ResourceBundle rb) {
+        this.rb = rb;
+        arraysOperationsController = new ArraysOperationsController(rb);
+    }
 
     @Override
     public ArraysWrapper fillArrayConsole(Scanner scanner, int size) {
         try {
             arraysWrapper = arraysInitService.init(scanner, size);
         } catch (InitConsoleException e) {
-            System.err.println("Error while initializing file");
+            System.err.println(rb.getString("message.error1"));
         }
         arraysOperationsController.setArraysWrapper(arraysWrapper);
         return arraysWrapper;
@@ -33,7 +42,7 @@ public class ArraysControllerImpl implements ArraysWrapperController {
         try {
             arraysWrapper = arraysInitService.init(fileName);
         } catch (FileArrayException e) {
-            System.err.println("Check your array and file!");
+            System.err.println(rb.getString("message.error2"));
         }
         arraysOperationsController.setArraysWrapper(arraysWrapper);
         return arraysWrapper;

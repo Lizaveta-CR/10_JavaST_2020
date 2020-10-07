@@ -3,7 +3,6 @@ package by.tsvirko.task04.entity;
 import by.tsvirko.task04.exceptions.ArrayException;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class Array extends ArraysWrapper {
     private int[] array;

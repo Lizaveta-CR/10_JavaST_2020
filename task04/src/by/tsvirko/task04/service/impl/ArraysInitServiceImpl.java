@@ -27,19 +27,19 @@ public class ArraysInitServiceImpl implements ArraysInitService {
      */
     @Override
     public Array init(Scanner scanner, int size) throws InitConsoleException {
-        Array array = new Array(size);
+        if (size <= 0) {
+            throw new InputMismatchException();
+        }
         try {
-            if (size <= 0) {
-                throw new InputMismatchException();
-            }
+            Array array = new Array(size);
             System.out.println("Enter numbers: ");
             for (int i = 0; i < size; i++) {
                 array.setElement(i, scanner.nextInt());
             }
+            return array;
         } catch (ArrayException e) {
             throw new InitConsoleException();
         }
-        return array;
     }
 
     /**

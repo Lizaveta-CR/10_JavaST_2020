@@ -3,6 +3,7 @@ package by.tsvirko.task04.service;
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.JaggedArraysDimensionalException;
 
 import java.util.*;
@@ -95,7 +96,10 @@ public class JaggedArrayOperationsService {
      * @return JaggedArray - difference of two Jagged Arrays
      * @throws JaggedArraysDimensionalException
      */
-    public JaggedArray subtract(ArraysWrapper arr1, ArraysWrapper arr2) throws JaggedArraysDimensionalException {
+    public JaggedArray subtract(ArraysWrapper arr1, ArraysWrapper arr2) throws JaggedArraysDimensionalException, ArrayException {
+        if (arr1 instanceof Array || arr2 instanceof Array) {
+            throw new ArrayException();
+        }
         if (!Arrays.equals(getDimensions(arr1), getDimensions(arr2))) {
             throw new JaggedArraysDimensionalException();
         }
@@ -115,7 +119,10 @@ public class JaggedArrayOperationsService {
         return new JaggedArray(dif);
     }
 
-    public void constMultiplication(ArraysWrapper arraysWrapper, int num) {
+    public void constMultiplication(ArraysWrapper arraysWrapper, int num) throws ArrayException {
+        if (arraysWrapper instanceof Array) {
+            throw new ArrayException();
+        }
         JaggedArray jagArr1 = (JaggedArray) arraysWrapper;
         int[][] jaggedArray = jagArr1.getJaggedArray();
         for (int i = 0; i < jaggedArray.length; i++) {
@@ -132,7 +139,10 @@ public class JaggedArrayOperationsService {
      * @return JaggedArray - transposed array
      * @throws JaggedArraysDimensionalException
      */
-    public JaggedArray transpose(ArraysWrapper arr1) throws JaggedArraysDimensionalException {
+    public JaggedArray transpose(ArraysWrapper arr1) throws JaggedArraysDimensionalException, ArrayException {
+        if (arr1 instanceof Array) {
+            throw new ArrayException();
+        }
         if (!isRectangular(arr1)) {
             throw new JaggedArraysDimensionalException();
         }
