@@ -23,6 +23,10 @@ public class JaggedArray extends ArraysWrapper {
         return arrayList;
     }
 
+    public Array getArray(int i) {
+        return arrayList.get(i);
+    }
+
     public int[][] getJaggedArray() {
         int[][] ints = new int[arrayList.size()][];
         for (int i = 0; i < ints.length; i++) {
