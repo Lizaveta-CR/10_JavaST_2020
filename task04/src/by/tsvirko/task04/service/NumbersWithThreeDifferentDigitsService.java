@@ -2,6 +2,7 @@ package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.EmptyResultException;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -13,9 +14,9 @@ public class NumbersWithThreeDifferentDigitsService {
      *
      * @param arraysWrapper
      * @return List<Integer> - list of numbers with three different digits
-     * @throws ParseException
+     * @throws ParseException,EmptyResultException
      */
-    public List<Integer> findNumbersWithThreeDifferentDigits(ArraysWrapper arraysWrapper) throws ParseException {
+    public List<Integer> findNumbersWithThreeDifferentDigits(ArraysWrapper arraysWrapper) throws ParseException, EmptyResultException {
         Array array = (Array) arraysWrapper;
         String number;
         List<Integer> result = new ArrayList<Integer>();
@@ -27,6 +28,9 @@ public class NumbersWithThreeDifferentDigitsService {
                     && number.charAt(0) != number.charAt(2)) {
                 result.add(arr[i]);
             }
+        }
+        if (result.isEmpty()) {
+            throw new EmptyResultException();
         }
         return result;
     }

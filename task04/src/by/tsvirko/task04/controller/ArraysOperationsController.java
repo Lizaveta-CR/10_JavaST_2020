@@ -2,6 +2,7 @@ package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.exceptions.ArrayException;
+import by.tsvirko.task04.exceptions.EmptyResultException;
 import by.tsvirko.task04.service.*;
 import by.tsvirko.task04.service.factory.ServiceFactory;
 
@@ -13,13 +14,9 @@ import java.util.ResourceBundle;
 public class ArraysOperationsController {
     private ServiceFactory serviceFactory = ServiceFactory.getInstance();
     private static ArraysWrapper arraysWrapper;
-    private ResourceBundle rb;
+    private static ResourceBundle rb;
 
     public ArraysOperationsController() {
-    }
-
-    public ArraysOperationsController(ResourceBundle rb) {
-        this.rb = rb;
     }
 
     public ArraysWrapper sort(int sortOption) {
@@ -76,11 +73,17 @@ public class ArraysOperationsController {
             numbers.addAll(differentDigitsService.findNumbersWithThreeDifferentDigits(arraysWrapper));
         } catch (ParseException e) {
             System.err.println(rb.getString("message.error5"));
+        } catch (EmptyResultException e) {
+            System.err.println(rb.getString("message.errorNullResult"));
         }
         return numbers;
     }
 
     public void setArraysWrapper(ArraysWrapper arraysWrapper) {
         this.arraysWrapper = arraysWrapper;
+    }
+
+    public void setRb(ResourceBundle rb) {
+        this.rb = rb;
     }
 }

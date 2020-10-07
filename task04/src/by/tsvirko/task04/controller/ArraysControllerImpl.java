@@ -15,7 +15,7 @@ public class ArraysControllerImpl implements ArraysWrapperController {
     private ArraysInitService arraysInitService = serviceFactory.getArraysInitService();
     private ArraySearchService searchService = serviceFactory.getArraySearchService();
     private static ArraysWrapper arraysWrapper;
-    private ArraysOperationsController arraysOperationsController;
+    private ArraysOperationsController arraysOperationsController = new ArraysOperationsController();
     private ResourceBundle rb;
 
     public ArraysControllerImpl() {
@@ -23,7 +23,7 @@ public class ArraysControllerImpl implements ArraysWrapperController {
 
     public ArraysControllerImpl(ResourceBundle rb) {
         this.rb = rb;
-        arraysOperationsController = new ArraysOperationsController(rb);
+        this.arraysOperationsController.setRb(rb);
     }
 
     @Override

@@ -2,6 +2,7 @@ package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.entity.JaggedArray;
 import by.tsvirko.task04.service.impl.SortArrayServiceImpl;
 
 public class ArrayBinarySearchService {
