@@ -30,7 +30,7 @@ public class BallView {
         }
         return ballColours[userColorNum];
     }
-//TODO
+
     private int viewUserBallWeight() {
         System.out.println("Enter weight: ");
         return scanner.nextInt();
@@ -49,14 +49,14 @@ public class BallView {
             if (answer.equals(STOP_WORD)) {
                 needBall = false;
                 System.out.println("Your bucket is ready!");
-                return bucketService.finish(balls);
+                return bucketService.finishBucketCreating(balls);
             } else {
                 System.out.println("Enter one more ball: ");
             }
         }
         return null;
     }
-//TODO: different
+
     public void ballWeightAndColourView() {
         System.out.println("What colour would you like to count?");
         BallColour ballColour = viewUserColour();

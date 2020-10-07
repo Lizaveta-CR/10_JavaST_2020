@@ -10,9 +10,6 @@ public class Ball {
     private BigDecimal price;
 
     public Ball(BallColour colour, double weight, BigDecimal price) {
-        if (weight <= 0 || price.compareTo(BigDecimal.ZERO) == 0) {
-            throw new InputMismatchException();
-        }
         this.colour = colour;
         this.weight = weight;
         this.price = price;

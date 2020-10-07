@@ -17,7 +17,9 @@ public class BucketService {
     public Ball fill(BallColour userColour, int ballWeight) {
         BallPriceCounter ballPriceCounter = new BallPriceCounter();
         BigDecimal price = ballPriceCounter.countPrice(userColour, ballWeight);
-        //TODO: validate
+        if (ballWeight <= 0 || price.compareTo(BigDecimal.ZERO) == 0) {
+            throw new InputMismatchException();
+        }
         return new Ball(userColour, ballWeight, price);
     }
 
@@ -27,8 +29,7 @@ public class BucketService {
      * @param balls
      * @return bucket
      */
-    //TODO: rename
-    public Bucket finish(List<Ball> balls) {
+    public Bucket finishBucketCreating(List<Ball> balls) {
         Bucket bucket = new Bucket();
         bucket.setBalls(balls);
         storage.setBucket(bucket);

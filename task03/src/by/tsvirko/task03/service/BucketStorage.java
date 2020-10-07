@@ -12,9 +12,12 @@ public class BucketStorage {
         this.buckets = new ArrayList<>();
     }
 
-    //TODO: getBuskets(int i)
     public List<Bucket> getBuckets() {
         return buckets;
+    }
+
+    public Bucket getBucket(int i) {
+        return buckets.get(i);
     }
 
     public void setBucket(Bucket bucket) {
