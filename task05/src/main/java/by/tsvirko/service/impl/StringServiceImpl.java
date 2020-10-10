@@ -34,5 +34,4 @@ public class StringServiceImpl implements StringService {
         }
         return sb.toString();
     }
-    //TODO: from file
 }
