@@ -13,19 +13,17 @@ public class CommandProvider {
     private final Map<CommandName, Command> repository = new HashMap<>();
 
     public CommandProvider() {
-//        repository.put(CommandName.WRONG_REQUEST, new ?);
         repository.put(CommandName.TASK1, new Task1());
         repository.put(CommandName.TASK2, new Task2());
     }
 
     public Command getCommand(String name) throws RequestException {
-        CommandName commandName = null;
-        Command command = null;
+        CommandName commandName;
+        Command command;
         try {
             commandName = CommandName.valueOf(name.toUpperCase());
             command = repository.get(commandName);
         } catch (IllegalArgumentException | NullPointerException e) {
-            command = repository.get(CommandName.WRONG_REQUEST);
             throw new RequestException("Illegal command name", e);
         }
         return command;
