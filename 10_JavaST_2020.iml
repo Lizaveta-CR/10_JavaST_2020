@@ -13,6 +13,8 @@
       <sourceFolder url="file://$MODULE_DIR$/task03/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/task04/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/task04/resource" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/task05/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/task05/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
