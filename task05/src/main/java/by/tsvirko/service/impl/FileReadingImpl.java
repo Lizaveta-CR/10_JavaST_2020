@@ -3,8 +3,7 @@ package main.java.by.tsvirko.service.impl;
 import main.java.by.tsvirko.service.FileReading;
 import main.java.by.tsvirko.service.exception.FileOpeningException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileReadingImpl implements FileReading {

@@ -1,5 +1,6 @@
 package main.java.by.tsvirko.service.factory;
 
+import main.java.by.tsvirko.service.BigFileReplaceService;
 import main.java.by.tsvirko.service.FileReading;
 import main.java.by.tsvirko.service.StringService;
 import main.java.by.tsvirko.service.impl.FileReadingImpl;
@@ -10,6 +11,7 @@ public class ServiceFactory {
 
     private StringService stringService = new StringServiceImpl();
     private FileReading fileReading = new FileReadingImpl();
+    private BigFileReplaceService bigFileReplaceService = new BigFileReplaceService();
 
     public static ServiceFactory getInstance() {
         return instance;
@@ -21,5 +23,9 @@ public class ServiceFactory {
 
     public FileReading getFileReading() {
         return fileReading;
+    }
+
+    public BigFileReplaceService getBigFileReplaceService() {
+        return bigFileReplaceService;
     }
 }

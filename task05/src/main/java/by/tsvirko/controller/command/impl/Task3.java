@@ -6,7 +6,6 @@ import main.java.by.tsvirko.service.StringService;
 import main.java.by.tsvirko.service.exception.FileOpeningException;
 import main.java.by.tsvirko.service.factory.ServiceFactory;
 
-import java.text.ParseException;
 import java.util.List;
 
 public class Task3 implements Command {

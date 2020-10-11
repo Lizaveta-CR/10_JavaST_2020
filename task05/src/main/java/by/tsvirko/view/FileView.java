@@ -3,6 +3,7 @@ package main.java.by.tsvirko.view;
 import main.java.by.tsvirko.resource.ResourceManager;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,6 +46,14 @@ public class FileView {
         System.out.println(resourceManager.getString("text.consoleTask3Str2"));
         list.add(scanner.next());
         System.out.println(resourceManager.getString("text.consoleTask3Str1"));
+        list.add(scanner.next());
+        return list;
+    }
+
+    public List<String> task4File() {
+        List<String> list = new ArrayList<>();
+        list.add(FILE);
+        System.out.println(resourceManager.getString("text.fileStr1"));
         list.add(scanner.next());
         return list;
     }
