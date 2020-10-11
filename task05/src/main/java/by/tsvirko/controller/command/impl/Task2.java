@@ -1,12 +1,49 @@
 package main.java.by.tsvirko.controller.command.impl;
 
 import main.java.by.tsvirko.controller.command.Command;
+import main.java.by.tsvirko.service.FileReading;
+import main.java.by.tsvirko.service.StringService;
+import main.java.by.tsvirko.service.exception.FileOpeningException;
+import main.java.by.tsvirko.service.factory.ServiceFactory;
 
 import java.util.List;
 
 public class Task2 implements Command {
+    private final int DATA_INDEX = 1;
+    private final int TEXT_INDEX = 2;
+    private final int PRED_LETTER_INDEX = 3;
+    private final int MISTAKE_LETTER_INDEX = 4;
+    private final int CORRECT_LETTER_INDEX = 5;
+
+    private final String CONSOLE = "1";
+    private final String FILE = "2";
+
     @Override
     public String execute(List<String> request) {
-        return "Hello from Task2";
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        StringService stringService = serviceFactory.getStringService();
+        FileReading fileReading = serviceFactory.getFileReading();
+        String response = null;
+
+        String text = request.get(TEXT_INDEX);
+        String predLetter = request.get(PRED_LETTER_INDEX);
+        String mistakeLetter = request.get(MISTAKE_LETTER_INDEX);
+        String correctLetter = request.get(CORRECT_LETTER_INDEX);
+        try {
+            switch (request.get(DATA_INDEX)) {
+                case CONSOLE:
+                    response = stringService.replace(text, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
+                    break;
+                case FILE:
+                    String readText = fileReading.read(text);
+                    response = stringService.replace(readText, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
+
+                    break;
+            }
+        } catch (IllegalArgumentException | FileOpeningException e) {
+            System.err.println(e.getMessage());
+            response = "Can't perform this operation";
+        }
+        return response;
     }
 }

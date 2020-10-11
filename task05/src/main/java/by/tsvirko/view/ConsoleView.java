@@ -32,4 +32,18 @@ public class ConsoleView {
         }
         return b.toString();
     }
+
+    public List<String> task2Console() {
+        List<String> list = new ArrayList<>();
+        list.add(CONSOLE);
+        System.out.println(resourceManager.getString("text.consoleStr1"));
+        list.add(readText());
+        System.out.println(resourceManager.getString("text.consoleTask2Str1"));
+        list.add(scanner.next());
+        System.out.println(resourceManager.getString("text.consoleTask2Str2"));
+        list.add(scanner.next());
+        System.out.println(resourceManager.getString("text.consoleTask2Str3"));
+        list.add(scanner.next());
+        return list;
+    }
 }

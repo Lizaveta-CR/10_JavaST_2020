@@ -29,8 +29,19 @@ public class ViewMain {
 
     public void tasks() {
         chooseLanguage();
+        System.out.println(resourceManager.getString("text.task"));
         System.out.println(resourceManager.getString("text.task1"));
-        System.out.println(controller.executeTask(task1()));
+        System.out.println(resourceManager.getString("text.task2"));
+
+        switch (scanner.nextInt()) {
+            case 1:
+                System.out.println(controller.executeTask(task1()));
+                break;
+            case 2:
+                System.out.println(controller.executeTask(task2()));
+                break;
+        }
+
     }
 
     List<String> task1() {
@@ -49,4 +60,19 @@ public class ViewMain {
         return list;
     }
 
+    List<String> task2() {
+        List<String> list = new ArrayList<>();
+        list.add("task2");
+        System.out.println(resourceManager.getString("text.chooseInput"));
+        int option = scanner.nextInt();
+        switch (option) {
+            case 1:
+                list.addAll(1, consoleView.task2Console());
+                break;
+            case 2:
+                list.addAll(1, fileView.task2File());
+                break;
+        }
+        return list;
+    }
 }
