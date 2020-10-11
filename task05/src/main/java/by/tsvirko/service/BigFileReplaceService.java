@@ -5,16 +5,34 @@ import java.io.*;
 public class BigFileReplaceService {
     private final String FILE_PATH = "task05/src/main/resources/files/";
 
+    /**
+     * Removes all non alphanumeric symbols in str
+     *
+     * @param str
+     * @return this edited str
+     */
     public String removeNonAlphanumeric(String str) {
         str = str.replaceAll("[^\\p{L}\\s]", "");
         str = str.replaceAll("\\s{2,}", " ").trim();
         return str;
     }
 
+    /**
+     * Removes all non alphanumeric symbols, extra spaces in file
+     *
+     * @param filename
+     * @return this edited str
+     */
     public void removeNonAlphanumericFile(String filename) throws IOException {
         readBigFile(filename);
     }
 
+    /**
+     * Reads and writes file using BufferedReader and PrintStream
+     *
+     * @param fileName
+     * @throws IOException
+     */
     private void readBigFile(String fileName) throws IOException {
         File file = new File(FILE_PATH.concat(fileName));
         File temp = File.createTempFile(file.getName(), null);
