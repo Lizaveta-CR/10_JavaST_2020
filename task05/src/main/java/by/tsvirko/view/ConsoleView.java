@@ -3,6 +3,7 @@ package main.java.by.tsvirko.view;
 import main.java.by.tsvirko.resource.ResourceManager;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 
@@ -43,6 +44,18 @@ public class ConsoleView {
         System.out.println(resourceManager.getString("text.consoleTask2Str2"));
         list.add(scanner.next());
         System.out.println(resourceManager.getString("text.consoleTask2Str3"));
+        list.add(scanner.next());
+        return list;
+    }
+
+    public List<String> task3Console() {
+        List<String> list = new ArrayList<>();
+        list.add(CONSOLE);
+        System.out.println(resourceManager.getString("text.consoleStr1"));
+        list.add(readText());
+        System.out.println(resourceManager.getString("text.consoleTask3Str2"));
+        list.add(scanner.next());
+        System.out.println(resourceManager.getString("text.consoleTask3Str1"));
         list.add(scanner.next());
         return list;
     }

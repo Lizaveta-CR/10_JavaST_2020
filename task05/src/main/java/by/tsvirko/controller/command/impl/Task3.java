@@ -6,14 +6,14 @@ import main.java.by.tsvirko.service.StringService;
 import main.java.by.tsvirko.service.exception.FileOpeningException;
 import main.java.by.tsvirko.service.factory.ServiceFactory;
 
+import java.text.ParseException;
 import java.util.List;
 
-public class Task2 implements Command {
+public class Task3 implements Command {
     private final int DATA_INDEX = 1;
     private final int TEXT_INDEX = 2;
-    private final int PRED_LETTER_INDEX = 3;
-    private final int MISTAKE_LETTER_INDEX = 4;
-    private final int CORRECT_LETTER_INDEX = 5;
+    private final int LENGTH_INDEX = 3;
+    private final int SUBSTRING_INDEX = 4;
 
     private final String CONSOLE = "1";
     private final String FILE = "2";
@@ -26,21 +26,19 @@ public class Task2 implements Command {
         String response = null;
 
         String text = request.get(TEXT_INDEX);
-        String predLetter = request.get(PRED_LETTER_INDEX);
-        String mistakeLetter = request.get(MISTAKE_LETTER_INDEX);
-        String correctLetter = request.get(CORRECT_LETTER_INDEX);
+        String length = request.get(LENGTH_INDEX);
+        String substring = request.get(SUBSTRING_INDEX);
         try {
             switch (request.get(DATA_INDEX)) {
                 case CONSOLE:
-                    response = stringService.replace(text, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
+                    response = stringService.replaceWithSubstring(text, substring, Integer.parseInt(length));
                     break;
                 case FILE:
                     String readText = fileReading.read(text);
-                    response = stringService.replace(readText, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
-
+                    response = stringService.replaceWithSubstring(readText, substring, Integer.parseInt(length));
                     break;
             }
-        } catch (FileOpeningException e) {
+        } catch (FileOpeningException | NumberFormatException e) {
             System.err.println(e.getMessage());
             response = "Can't perform this operation";
         }

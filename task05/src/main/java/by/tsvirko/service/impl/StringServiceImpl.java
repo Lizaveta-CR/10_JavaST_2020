@@ -2,6 +2,9 @@ package main.java.by.tsvirko.service.impl;
 
 import main.java.by.tsvirko.service.StringService;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringServiceImpl implements StringService {
     /**
      * Method in each word replaces the k-th letter with the given symbol
@@ -63,5 +66,43 @@ public class StringServiceImpl implements StringService {
             sb.append(strings[i] + " ");
         }
         return sb.toString();
+    }
+
+    /**
+     * Replaces words of given length in the text with given string
+     *
+     * @param text
+     * @param substring
+     * @param wordLengthToReplace
+     * @return new replaced text
+     */
+    @Override
+    public String replaceWithSubstring(String text, String substring, int wordLengthToReplace) {
+        StringBuilder builder = new StringBuilder(text);
+        Pattern compile = Pattern.compile("\\b\\w{" + wordLengthToReplace + "}\\b", Pattern.MULTILINE);
+        Matcher matcher = compile.matcher(text);
+        while (matcher.find()) {
+            replaceAll(builder, matcher.group(0), substring);
+        }
+        return builder.toString();
+    }
+
+    /**
+     * Since StringBuilder does not have replaceAll() method, this method allows to replace given occurrence
+     * in whole text without creating new object
+     *
+     * @param sb
+     * @param find
+     * @param replace
+     */
+    private void replaceAll(StringBuilder sb, String find, String replace) {
+        Pattern p = Pattern.compile(find);
+        Matcher matcher = p.matcher(sb);
+
+        int startIndex = 0;
+        while (matcher.find(startIndex)) {
+            sb.replace(matcher.start(), matcher.end(), replace);
+            startIndex = matcher.start() + replace.length();
+        }
     }
 }

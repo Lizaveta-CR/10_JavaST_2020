@@ -4,6 +4,7 @@ import main.java.by.tsvirko.controller.command.Command;
 import main.java.by.tsvirko.controller.command.CommandName;
 import main.java.by.tsvirko.controller.command.impl.Task1;
 import main.java.by.tsvirko.controller.command.impl.Task2;
+import main.java.by.tsvirko.controller.command.impl.Task3;
 import main.java.by.tsvirko.controller.exception.RequestException;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class CommandProvider {
     public CommandProvider() {
         repository.put(CommandName.TASK1, new Task1());
         repository.put(CommandName.TASK2, new Task2());
+        repository.put(CommandName.TASK3, new Task3());
     }
 
     public Command getCommand(String name) throws RequestException {
