@@ -1,6 +1,7 @@
 package main.java.by.tsvirko.controller.command.impl;
 
 import main.java.by.tsvirko.controller.command.Command;
+import main.java.by.tsvirko.resource.ResourceManager;
 import main.java.by.tsvirko.service.FileReading;
 import main.java.by.tsvirko.service.StringService;
 import main.java.by.tsvirko.service.exception.FileOpeningException;
@@ -20,6 +21,7 @@ public class Task1 implements Command {
     @Override
     public String execute(List<String> request) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        ResourceManager manager = ResourceManager.INSTANCE;
         StringService stringService = serviceFactory.getStringService();
         FileReading fileReading = serviceFactory.getFileReading();
         String response = null;
@@ -39,7 +41,7 @@ public class Task1 implements Command {
             }
         } catch (IllegalArgumentException | FileOpeningException e) {
             System.err.println(e.getMessage());
-            response = "Can't perform this operation";
+            response = manager.getString("text.executeExceptionText");
         }
         return response;
     }

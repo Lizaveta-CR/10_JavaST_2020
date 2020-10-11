@@ -1,6 +1,7 @@
 package main.java.by.tsvirko.controller.command.impl;
 
 import main.java.by.tsvirko.controller.command.Command;
+import main.java.by.tsvirko.resource.ResourceManager;
 import main.java.by.tsvirko.service.BigFileReplaceService;
 import main.java.by.tsvirko.service.factory.ServiceFactory;
 
@@ -18,6 +19,7 @@ public class Task4 implements Command {
     public String execute(List<String> request) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         BigFileReplaceService replaceService = serviceFactory.getBigFileReplaceService();
+        ResourceManager manager = ResourceManager.INSTANCE;
         String response = null;
 
         String text = request.get(TEXT_INDEX);
@@ -28,11 +30,11 @@ public class Task4 implements Command {
                     break;
                 case FILE:
                     replaceService.removeNonAlphanumericFile(text);
-                    return response = "Check file";
+                    return response = manager.getString("text.checkFile");
             }
         } catch (NumberFormatException | IOException e) {
             System.err.println(e.getMessage());
-            response = "Can't perform this operation";
+            response = manager.getString("text.executeExceptionText");
         }
         return response;
     }
