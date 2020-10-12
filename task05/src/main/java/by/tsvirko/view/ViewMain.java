@@ -34,6 +34,7 @@ public class ViewMain {
         System.out.println(resourceManager.getString("text.task2"));
         System.out.println(resourceManager.getString("text.task3"));
         System.out.println(resourceManager.getString("text.task4"));
+        System.out.println(resourceManager.getString("text.task5"));
 
         switch (scanner.nextInt()) {
             case 1:
@@ -47,6 +48,9 @@ public class ViewMain {
                 break;
             case 4:
                 System.out.println(controller.executeTask(task4()));
+                break;
+            case 5:
+                System.out.println(controller.executeTask(task5()));
                 break;
         }
 
@@ -116,4 +120,19 @@ public class ViewMain {
         return list;
     }
 
+    private List<String> task5() {
+        List<String> list = new ArrayList<>();
+        list.add("task5");
+        System.out.println(resourceManager.getString("text.chooseInput"));
+        int option = scanner.nextInt();
+        switch (option) {
+            case 1:
+                list.addAll(1, consoleView.task5Console());
+                break;
+            case 2:
+                list.addAll(1, fileView.task5File());
+                break;
+        }
+        return list;
+    }
 }

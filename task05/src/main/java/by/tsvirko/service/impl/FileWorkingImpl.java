@@ -1,15 +1,15 @@
 package main.java.by.tsvirko.service.impl;
 
-import main.java.by.tsvirko.service.FileReading;
+import main.java.by.tsvirko.service.FileWorking;
 import main.java.by.tsvirko.service.exception.FileOpeningException;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class FileReadingImpl implements FileReading {
+public class FileWorkingImpl implements FileWorking {
     private final String FILE_PATH = "task05/src/main/resources/files/";
 
-    public FileReadingImpl() {
+    public FileWorkingImpl() {
     }
 
     /**
@@ -48,5 +48,16 @@ public class FileReadingImpl implements FileReading {
             throw new FileOpeningException("Fill your file with words!");
         }
         return text.toString();
+    }
+
+    @Override
+    public void write(String fileName, String text) throws IOException {
+        try {
+            FileWriter myWriter = new FileWriter(FILE_PATH.concat(fileName));
+            myWriter.write(text);
+            myWriter.close();
+        } catch (IOException e) {
+            throw e;
+        }
     }
 }

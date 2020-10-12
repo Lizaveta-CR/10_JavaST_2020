@@ -105,4 +105,35 @@ public class StringServiceImpl implements StringService {
             startIndex = matcher.start() + replace.length();
         }
     }
+
+    /**
+     * Removes words with special length, whose first letter is consonant
+     *
+     * @param str
+     * @param len
+     * @return
+     */
+    @Override
+    public String removeСonsonantLen(String str, int len) {
+        String[] s = str.split(" ");
+        StringBuilder sb = new StringBuilder();
+        Pattern p = Pattern.compile("\\W");
+        Matcher m;
+        for (int i = 0; i < s.length; i++) {
+            if (s[i].length() == len) {
+                if (!s[i].matches("[0-9+-]*")) {
+                    m = p.matcher(s[i]);
+                    if (m.find()) {
+                        s[i] = s[i].replaceAll("((^|\\s+)[^ауоыиэяюёеАУОЫИЭЯЮЁЕ]([А-я]*))", "");
+                    } else {
+                        s[i] = s[i].replaceAll("((^|\\s+)[^aeiouAEIOU]([A-z]*))", "");
+                    }
+                }
+            }
+            if (!s[i].isEmpty()) {
+                sb.append(s[i] + " ");
+            }
+        }
+        return sb.toString();
+    }
 }

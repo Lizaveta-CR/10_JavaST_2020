@@ -67,4 +67,14 @@ public class ConsoleView {
         list.add(readText());
         return list;
     }
+
+    public List<String> task5Console() {
+        List<String> list = new ArrayList<>();
+        list.add(CONSOLE);
+        System.out.println(resourceManager.getString("text.consoleStr1"));
+        list.add(readText());
+        System.out.println(resourceManager.getString("text.consoleTask5Str1"));
+        list.add(scanner.next());
+        return list;
+    }
 }

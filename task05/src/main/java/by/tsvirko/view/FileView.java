@@ -57,4 +57,14 @@ public class FileView {
         list.add(scanner.next());
         return list;
     }
+
+    public List<String> task5File() {
+        List<String> list = new ArrayList<>();
+        list.add(FILE);
+        System.out.println(resourceManager.getString("text.fileStr1"));
+        list.add(scanner.next());
+        System.out.println(resourceManager.getString("text.consoleTask5Str1"));
+        list.add(scanner.next());
+        return list;
+    }
 }

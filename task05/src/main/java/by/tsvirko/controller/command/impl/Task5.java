@@ -10,42 +10,38 @@ import main.java.by.tsvirko.service.factory.ServiceFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class Task2 implements Command {
+public class Task5 implements Command {
     private final int DATA_INDEX = 1;
     private final int TEXT_INDEX = 2;
-    private final int PRED_LETTER_INDEX = 3;
-    private final int MISTAKE_LETTER_INDEX = 4;
-    private final int CORRECT_LETTER_INDEX = 5;
+    private final int LENGTH_INDEX = 3;
 
     private final String CONSOLE = "1";
     private final String FILE = "2";
-    private final String RESULT_FILE = "Task2";
+    private final String RESULT_FILE = "Task5";
 
     @Override
     public String execute(List<String> request) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        ResourceManager manager = ResourceManager.INSTANCE;
         StringService stringService = serviceFactory.getStringService();
         FileWorking fileReading = serviceFactory.getFileReading();
+        ResourceManager manager = ResourceManager.INSTANCE;
         String response = null;
 
         String text = request.get(TEXT_INDEX);
-        String predLetter = request.get(PRED_LETTER_INDEX);
-        String mistakeLetter = request.get(MISTAKE_LETTER_INDEX);
-        String correctLetter = request.get(CORRECT_LETTER_INDEX);
+        String length = request.get(LENGTH_INDEX);
         try {
             switch (request.get(DATA_INDEX)) {
                 case CONSOLE:
-                    response = stringService.replace(text, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
+                    response = stringService.removeСonsonantLen(text, Integer.parseInt(length));
                     fileReading.write(RESULT_FILE, response);
                     break;
                 case FILE:
                     String readText = fileReading.read(text);
-                    response = stringService.replace(readText, predLetter.charAt(0), mistakeLetter.charAt(0), correctLetter.charAt(0));
+                    response = stringService.removeСonsonantLen(readText, Integer.parseInt(length));
                     fileReading.write(RESULT_FILE, response);
                     break;
             }
-        } catch (FileOpeningException | IOException e) {
+        } catch (NumberFormatException | FileOpeningException | IOException e) {
             System.err.println(e.getMessage());
             response = manager.getString("text.executeExceptionText");
         }

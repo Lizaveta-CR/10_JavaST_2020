@@ -6,4 +6,6 @@ public interface StringService {
     String replace(String text, char predLetter, char mistakeLetter, char correctLetter);
 
     String replaceWithSubstring(String text, String substring, int wordLengthToReplace);
+
+    String removeСonsonantLen(String str, int len);
 }
