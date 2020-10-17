@@ -1,6 +1,7 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.exceptions.FileArrayException;
 import by.tsvirko.task04.exceptions.InitConsoleException;
 import by.tsvirko.task04.service.*;
@@ -60,11 +61,23 @@ public class ArraysControllerImpl implements ArraysWrapperController {
     }
 
     public int findMax() {
-        return searchService.findMax(arraysWrapper);
+        int max = 0;
+        try {
+            max = searchService.findMax(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
+        return max;
     }
 
     public int findMin() {
-        return searchService.findMin(arraysWrapper);
+        int min = 0;
+        try {
+            min = searchService.findMin(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
+        return min;
     }
 
     public ArraysWrapper sort(int sortOption) {

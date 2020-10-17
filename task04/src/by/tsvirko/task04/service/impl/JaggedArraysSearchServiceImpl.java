@@ -3,6 +3,7 @@ package by.tsvirko.task04.service.impl;
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.service.ArraySearchService;
 
 import java.util.ArrayList;
@@ -17,12 +18,11 @@ public class JaggedArraysSearchServiceImpl extends ArraysSearchServiceImpl imple
      * @return min
      */
     @Override
-    public int findMax(ArraysWrapper wrapper) {
+    public int findMax(ArraysWrapper wrapper) throws ArrayException {
         JaggedArray jaggedArray = (JaggedArray) wrapper;
-        List<Array> arrayList = jaggedArray.getArrayList();
         List<Integer> maximums = new ArrayList<>();
-        for (Array array : arrayList) {
-            int max = super.findMax(array);
+        for (int i = 0; i < jaggedArray.getVerticalSize(); i++) {
+            int max = super.findMax(jaggedArray.getArray(i));
             maximums.add(max);
         }
         return Collections.max(maximums);
@@ -35,24 +35,21 @@ public class JaggedArraysSearchServiceImpl extends ArraysSearchServiceImpl imple
      * @return min
      */
     @Override
-    public int findMin(ArraysWrapper wrapper) {
+    public int findMin(ArraysWrapper wrapper) throws ArrayException {
         JaggedArray jaggedArray = (JaggedArray) wrapper;
-        List<Array> arrayList = jaggedArray.getArrayList();
         List<Integer> minimums = new ArrayList<>();
-        for (Array array : arrayList) {
-            int max = super.findMin(array);
-            minimums.add(max);
+        for (int i = 0; i < jaggedArray.getVerticalSize(); i++) {
+            int min = super.findMin(jaggedArray.getArray(i));
+            minimums.add(min);
         }
         return Collections.min(minimums);
     }
 
     public int findElementIndex(ArraysWrapper wrapper, int element) {
         JaggedArray jaggedArray = (JaggedArray) wrapper;
-        List<Array> arrayList = jaggedArray.getArrayList();
         int index = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            Array array = arrayList.get(i);
-            index = super.findElementIndex(array, element);
+        for (int i = 0; i < jaggedArray.getVerticalSize(); i++) {
+            index = super.findElementIndex(jaggedArray.getArray(i), element);
             if (index == -1) {
                 continue;
             } else {

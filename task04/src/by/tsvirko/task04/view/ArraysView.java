@@ -5,6 +5,7 @@ import by.tsvirko.task04.controller.ArraysFactoryController;
 import by.tsvirko.task04.controller.ArraysWrapperController;
 import by.tsvirko.task04.controller.JaggedArraysControllerImpl;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 
 import java.io.IOException;
 import java.util.*;
@@ -112,7 +113,9 @@ public class ArraysView {
                     List<ArraysWrapper> severalArraysView = createSeveralArraysView();
                     boolean sameDim = jaggedArraysController.isSameDim(severalArraysView);
                     System.out.println(resourceBundle.getString("message.str13") + sameDim);
-                    severalArraysView.forEach(arr -> System.out.println(resourceBundle.getString("message.str14") + jaggedArraysController.isSquare(arr)));
+                    severalArraysView.forEach(arr -> {
+                        System.out.println(resourceBundle.getString("message.str14") + jaggedArraysController.isSquare(arr));
+                    });
                     break;
                 case 10:
                     List<ArraysWrapper> list = sumDifView();

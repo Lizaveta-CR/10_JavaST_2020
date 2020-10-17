@@ -23,23 +23,23 @@ public class FileJaggedArrayReadingImpl implements FileReading {
      */
     public JaggedArray readArray() {
         int size = countLines();
-        int[][] ints = new int[size][];
+        List<Array> arrays = new ArrayList<>();
         try {
             FileInputStream fstream = new FileInputStream(filename);
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String strLine;
-            for (int i = 0; i < ints.length; i++) {
+            for (int i = 0; i < size; i++) {
                 strLine = br.readLine();
                 String[] tokens = strLine.split(" ");
                 int[] array = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
-                ints[i] = array;
+                arrays.add(i, new Array(array));
             }
             in.close();
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
-        return new JaggedArray(ints);
+        return new JaggedArray(arrays);
     }
 
     /**

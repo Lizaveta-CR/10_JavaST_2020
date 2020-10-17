@@ -2,6 +2,7 @@ package by.tsvirko.task04.service;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +14,14 @@ public class ArrayFibonacciService {
      * @param wrapper - given array
      * @return List<Integer> - list if Fibonacci numbers
      */
-    public List<Integer> findFibNumbers(ArraysWrapper wrapper) {
+    public List<Integer> findFibNumbers(ArraysWrapper wrapper) throws ArrayException {
         List<Integer> fibNumbers = new ArrayList<>();
         Array array = (Array) wrapper;
-        int[] arr = array.getArray();
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (isPerfectSquare(5 * arr[i] * arr[i] + 4) || isPerfectSquare(5 * arr[i] * arr[i] - 4)) {
-                fibNumbers.add(arr[i]);
+        for (int i = 0; i < array.getLength(); i++) {
+            if (isPerfectSquare(5 * array.getElement(i) * array.getElement(i) + 4)
+                    || isPerfectSquare(5 * array.getElement(i) * array.getElement(i) - 4)) {
+                fibNumbers.add(array.getElement(i));
                 count++;
             }
         }

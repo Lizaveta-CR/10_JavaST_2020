@@ -34,6 +34,8 @@ public class ArraysOperationsController {
             }
         } catch (ClassCastException e) {
             System.err.println(rb.getString("message.error4"));
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
         }
         return arraysWrapper;
     }
@@ -45,6 +47,8 @@ public class ArraysOperationsController {
             index = binarySearchService.binarySearch(arraysWrapper, key);
         } catch (ClassCastException e) {
             System.err.println(rb.getString("message.error4"));
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
         }
         return index;
     }
@@ -62,8 +66,14 @@ public class ArraysOperationsController {
     }
 
     public List<Integer> getFibonacciNumInArray() {
+        List<Integer> fib = new ArrayList<>();
         ArrayFibonacciService fibonacciService = serviceFactory.getFibonacciService();
-        return fibonacciService.findFibNumbers(arraysWrapper);
+        try {
+            fib = fibonacciService.findFibNumbers(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
+        return fib;
     }
 
     public List<Integer> getNumbersWithThreeDifDigits() {
@@ -71,7 +81,7 @@ public class ArraysOperationsController {
         try {
             NumbersWithThreeDifferentDigitsService differentDigitsService = serviceFactory.getDifferentDigitsService();
             numbers.addAll(differentDigitsService.findNumbersWithThreeDifferentDigits(arraysWrapper));
-        } catch (ParseException e) {
+        } catch (ParseException | ArrayException e) {
             System.err.println(rb.getString("message.error5"));
         } catch (EmptyResultException e) {
             System.err.println(rb.getString("message.errorNullResult"));

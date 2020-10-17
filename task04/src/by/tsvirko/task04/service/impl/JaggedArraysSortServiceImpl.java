@@ -4,6 +4,7 @@ package by.tsvirko.task04.service.impl;
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.service.ArraySearchService;
 import by.tsvirko.task04.service.JaggedArraysSortService;
 
@@ -17,17 +18,15 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortAscSumLines(ArraysWrapper arraysWrapper) {
+    public void sortAscSumLines(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArray array = (JaggedArray) arraysWrapper;
-        int[][] jaggedArray = array.getJaggedArray();
-        for (int row = 0; row < jaggedArray.length; row++) {
-            for (int nextRow = 0; nextRow < jaggedArray.length; nextRow++) {
-                if (compareSums(jaggedArray[row], jaggedArray[nextRow]) < 0) {
-                    JaggedRowSwapper(jaggedArray, row, nextRow);
+        for (int row = 0; row < array.getVerticalSize(); row++) {
+            for (int nextRow = 0; nextRow < array.getVerticalSize(); nextRow++) {
+                if (compareSums(array.getArray(row), array.getArray(nextRow)) < 0) {
+                    JaggedRowSwapper(array, row, nextRow);
                 }
             }
         }
-        array.setJaggedArray(jaggedArray);
     }
 
     /**
@@ -36,10 +35,10 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param array
      * @return sum of elements
      */
-    private int arraySum(int[] array) {
+    private int arraySum(Array array) throws ArrayException {
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (int i = 0; i < array.getLength(); i++) {
+            sum += array.getElement(i);
         }
         return sum;
     }
@@ -51,7 +50,7 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arr2
      * @return 1, if arr1's sum>arr2's sum, -1 - arr1's sum<arr2's sum, 0 - equal
      */
-    private int compareSums(int[] arr1, int[] arr2) {
+    private int compareSums(Array arr1, Array arr2) throws ArrayException {
         if (arraySum(arr1) > arraySum(arr2)) {
             return 1;
         } else if (arraySum(arr1) < arraySum(arr2)) {
@@ -67,7 +66,7 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortDescSumLines(ArraysWrapper arraysWrapper) {
+    public void sortDescSumLines(ArraysWrapper arraysWrapper) throws ArrayException {
         sortAscSumLines(arraysWrapper);
         reverse((JaggedArray) arraysWrapper);
     }
@@ -78,17 +77,15 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortAscMaxLines(ArraysWrapper arraysWrapper) {
+    public void sortAscMaxLines(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArray array = (JaggedArray) arraysWrapper;
-        int[][] jaggedArray = array.getJaggedArray();
-        for (int row = 0; row < jaggedArray.length; row++) {
-            for (int nextRow = 0; nextRow < jaggedArray.length; nextRow++) {
-                if (compareLargestValues(jaggedArray[row], jaggedArray[nextRow]) < 0) {
-                    JaggedRowSwapper(jaggedArray, row, nextRow);
+        for (int row = 0; row < array.getVerticalSize(); row++) {
+            for (int nextRow = 0; nextRow < array.getVerticalSize(); nextRow++) {
+                if (compareLargestValues(array.getArray(row), array.getArray(nextRow)) < 0) {
+                    JaggedRowSwapper(array, row, nextRow);
                 }
             }
         }
-        array.setJaggedArray(jaggedArray);
     }
 
     /**
@@ -98,11 +95,11 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arrayS
      * @return
      */
-    public int compareLargestValues(int[] arrayF, int[] arrayS) {
+    public int compareLargestValues(Array arrayF, Array arrayS) throws ArrayException {
         ArraySearchService service = new ArraysSearchServiceImpl();
-        if (service.findMax(new Array(arrayF)) > service.findMax(new Array(arrayS))) {
+        if (service.findMax(arrayF) > service.findMax(arrayS)) {
             return 1;
-        } else if (service.findMax(new Array(arrayS)) > service.findMax(new Array(arrayF))) {
+        } else if (service.findMax(arrayS) > service.findMax(arrayF)) {
             return -1;
         } else {
             return 0;
@@ -115,7 +112,7 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortDescMaxLines(ArraysWrapper arraysWrapper) {
+    public void sortDescMaxLines(ArraysWrapper arraysWrapper) throws ArrayException {
         sortAscSumLines(arraysWrapper);
         reverse((JaggedArray) arraysWrapper);
     }
@@ -126,17 +123,15 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortAscMinLines(ArraysWrapper arraysWrapper) {
+    public void sortAscMinLines(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArray array = (JaggedArray) arraysWrapper;
-        int[][] jaggedArray = array.getJaggedArray();
-        for (int row = 0; row < jaggedArray.length; row++) {
-            for (int nextRow = 0; nextRow < jaggedArray.length; nextRow++) {
-                if (compareMinValues(jaggedArray[row], jaggedArray[nextRow]) < 0) {
-                    JaggedRowSwapper(jaggedArray, row, nextRow);
+        for (int row = 0; row < array.getVerticalSize(); row++) {
+            for (int nextRow = 0; nextRow < array.getVerticalSize(); nextRow++) {
+                if (compareMinValues(array.getArray(row), array.getArray(nextRow)) < 0) {
+                    JaggedRowSwapper(array, row, nextRow);
                 }
             }
         }
-        array.setJaggedArray(jaggedArray);
     }
 
     /**
@@ -146,11 +141,11 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arrayS
      * @return
      */
-    private int compareMinValues(int[] arrayF, int[] arrayS) {
+    private int compareMinValues(Array arrayF, Array arrayS) throws ArrayException {
         ArraySearchService service = new ArraysSearchServiceImpl();
-        if (service.findMin(new Array(arrayF)) > service.findMin(new Array(arrayS))) {
+        if (service.findMin(arrayF) > service.findMin(arrayS)) {
             return 1;
-        } else if (service.findMin(new Array(arrayS)) > service.findMin(new Array(arrayF))) {
+        } else if (service.findMin(arrayS) > service.findMin(arrayF)) {
             return -1;
         } else {
             return 0;
@@ -163,7 +158,7 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param arraysWrapper - given array
      */
     @Override
-    public void sortDescMinLines(ArraysWrapper arraysWrapper) {
+    public void sortDescMinLines(ArraysWrapper arraysWrapper) throws ArrayException {
         sortAscMinLines(arraysWrapper);
         reverse((JaggedArray) arraysWrapper);
     }
@@ -173,10 +168,15 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      *
      * @param array
      */
-    private void reverse(JaggedArray array) {
-        List<Array> arrayList = array.getArrayList();
+    private void reverse(JaggedArray array) throws ArrayException {
+        List<Array> arrayList = new ArrayList<>();
+        for (int i = 0; i < array.getVerticalSize(); i++) {
+            arrayList.add(array.getArray(i));
+        }
         Collections.reverse(arrayList);
-        array.setArrayList(arrayList);
+        for (int i = 0; i < arrayList.size(); i++) {
+            array.setArray(arrayList.get(i), i);
+        }
     }
 
     /**
@@ -186,12 +186,19 @@ public class JaggedArraysSortServiceImpl implements JaggedArraysSortService {
      * @param rowLength
      * @param nextRowLength
      */
-    private void JaggedRowSwapper(int[][] jagged, int rowLength, int nextRowLength) {
-        int[] jaggedArrayRowSwap = new int[jagged[rowLength].length];
+    private void JaggedRowSwapper(JaggedArray jagged, int rowLength, int nextRowLength) throws ArrayException {
+        Array jaggedArrayRowSwap = new Array(jagged.getArray(rowLength).getLength());
 
-        jaggedArrayRowSwap = jagged[nextRowLength];
-        jagged[nextRowLength] = jagged[rowLength];
-        jagged[rowLength] = jaggedArrayRowSwap;
-
+        Array arrayNextRow = jagged.getArray(nextRowLength);
+        for (int j = 0; j < arrayNextRow.getLength(); j++) {
+            jaggedArrayRowSwap.setElement(j, arrayNextRow.getElement(j));
+        }
+        Array arrayRow = jagged.getArray(rowLength);
+        for (int j = 0; j < arrayRow.getLength(); j++) {
+            arrayNextRow.setElement(j, arrayRow.getElement(j));
+        }
+        for (int i = 0; i < jaggedArrayRowSwap.getLength(); i++) {
+            arrayRow.setElement(i, jaggedArrayRowSwap.getElement(i));
+        }
     }
 }

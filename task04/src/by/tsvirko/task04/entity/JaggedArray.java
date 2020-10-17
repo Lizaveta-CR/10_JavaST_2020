@@ -1,11 +1,14 @@
 package by.tsvirko.task04.entity;
 
+import by.tsvirko.task04.exceptions.ArrayException;
+
 import java.util.*;
 
 public class JaggedArray extends ArraysWrapper {
-    private List<Array> arrayList = new ArrayList<>();
+    private List<Array> arrayList;
 
     public JaggedArray() {
+        arrayList = new ArrayList<>();
     }
 
     public JaggedArray(List<Array> arrayList) {
@@ -13,31 +16,36 @@ public class JaggedArray extends ArraysWrapper {
     }
 
     public JaggedArray(int[][] array) {
+        arrayList = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             Array arr = new Array(array[i]);
             arrayList.add(arr);
         }
     }
 
-    public List<Array> getArrayList() {
-        return arrayList;
+    public int getArrayListElement(int i, int j) throws ArrayException {
+        if (checkRange(i)) {
+            return arrayList.get(i).getElement(j);
+        }
+        throw new ArrayException();
+    }
+
+    private boolean checkRange(int i) {
+        if (i < 0 || i > arrayList.size() - 1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public Array getArray(int i) {
         return arrayList.get(i);
     }
 
-    public int[][] getJaggedArray() {
-        int[][] ints = new int[arrayList.size()][];
-        for (int i = 0; i < ints.length; i++) {
-            int[] array = arrayList.get(i).getArray();
-            ints[i] = array;
+    public void setArrayListElement(int i, int j, int value) throws ArrayException {
+        if (checkRange(i)) {
+            arrayList.get(i).setElement(j, value);
         }
-        return ints;
-    }
-
-    public void setArrayList(List<Array> arrayList) {
-        this.arrayList = arrayList;
     }
 
     public void setJaggedArray(int[][] array) {
@@ -46,6 +54,21 @@ public class JaggedArray extends ArraysWrapper {
             Array arr = new Array(array[i]);
             arrayList.add(arr);
         }
+    }
+
+    public void setArray(Array array, int i) throws ArrayException {
+        if (i > arrayList.size()) {
+            throw new ArrayException();
+        }
+        arrayList.add(i, array);
+    }
+
+    public int getVerticalSize() {
+        return arrayList.size();
+    }
+
+    public int getHorizontalSize(int i) {
+        return arrayList.get(i).getLength();
     }
 
     @Override

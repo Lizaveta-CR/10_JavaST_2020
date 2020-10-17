@@ -3,6 +3,7 @@ package by.tsvirko.task04.service;
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
 import by.tsvirko.task04.entity.JaggedArray;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.service.impl.SortArrayServiceImpl;
 
 public class ArrayBinarySearchService {
@@ -17,23 +18,22 @@ public class ArrayBinarySearchService {
      * @param key
      * @return index of key element
      */
-    public int binarySearch(ArraysWrapper wrapper, int key) throws ClassCastException {
+    public int binarySearch(ArraysWrapper wrapper, int key) throws ClassCastException, ArrayException {
         Array array = (Array) wrapper;
-        if (!isArraySorted(array.getArray(), array.getLength())) {
+        if (!isArraySorted(array, array.getLength())) {
             service.heapSort(array);
         }
-        int[] sortedArray = array.getArray();
         int index = -1;
         int low = 0;
-        int high = sortedArray.length;
+        int high = array.getLength();
 
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (sortedArray[mid] < key) {
+            if (array.getElement(mid) < key) {
                 low = mid + 1;
-            } else if (sortedArray[mid] > key) {
+            } else if (array.getElement(mid) > key) {
                 high = mid - 1;
-            } else if (sortedArray[mid] == key) {
+            } else if (array.getElement(mid) == key) {
                 index = mid;
                 break;
             }
@@ -48,12 +48,12 @@ public class ArrayBinarySearchService {
      * @param n
      * @return true - sorted, false -not sorted
      */
-    private boolean isArraySorted(int arr[], int n) {
+    private boolean isArraySorted(Array arr, int n) throws ArrayException {
         if (n == 0 || n == 1) {
             return true;
         }
         for (int i = 1; i < n; i++) {
-            if (arr[i - 1] > arr[i]) {
+            if (arr.getElement(i - 1) > arr.getElement(i)) {
                 return false;
             }
         }

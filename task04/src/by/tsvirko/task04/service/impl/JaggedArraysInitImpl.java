@@ -9,7 +9,9 @@ import by.tsvirko.task04.exceptions.NoFile;
 import by.tsvirko.task04.service.ArraysInitService;
 import by.tsvirko.task04.service.FileReading;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements ArraysInitService {
@@ -32,14 +34,14 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
             throw new InitConsoleException();
         }
         ArraysInitServiceImpl service = new ArraysInitServiceImpl();
-        int[][] newArr = new int[size][];
+        List<Array> newArrays = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             System.out.println("Enter number of elements: ");
             int arrSize = scanner.nextInt();
             Array init = service.init(scanner, arrSize);
-            newArr[i] = init.getArray();
+            newArrays.add(i, init);
         }
-        return new JaggedArray(newArr);
+        return new JaggedArray(newArrays);
     }
 
     /**
@@ -66,14 +68,12 @@ public class JaggedArraysInitImpl extends ArraysSearchServiceImpl implements Arr
      */
     @Override
     public JaggedArray init() {
-        int[][] array = new int[MAX_SIZE_ARRAY][];
-        for (int i = 0; i < array.length; i++) {
-            int[] ints = new int[(int) (Math.random() * MAX_SIZE_ARRAY) + 1];
-            for (int i1 = 0; i1 < ints.length; i1++) {
-                ints[i1] = (int) (Math.random() * MAX_SIZE_ARRAY) + 1;
-            }
-            array[i] = ints;
+        ArraysInitServiceImpl service = new ArraysInitServiceImpl();
+        List<Array> arrays = new ArrayList<>(MAX_SIZE_ARRAY);
+        for (int i = 0; i < MAX_SIZE_ARRAY; i++) {
+            Array init = service.init();
+            arrays.add(init);
         }
-        return new JaggedArray(array);
+        return new JaggedArray(arrays);
     }
 }

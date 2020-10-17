@@ -18,10 +18,6 @@ public class Array extends ArraysWrapper {
         this.array = array;
     }
 
-    public int[] getArray() {
-        return array;
-    }
-
     public int getElement(int i) throws ArrayException {
         if (checkRange(i)) {
             return array[i];

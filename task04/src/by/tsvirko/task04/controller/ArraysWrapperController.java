@@ -1,6 +1,7 @@
 package by.tsvirko.task04.controller;
 
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 
 import java.util.Scanner;
 

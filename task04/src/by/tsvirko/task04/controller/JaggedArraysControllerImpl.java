@@ -60,25 +60,48 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
     }
 
     public int findMax() {
-        return searchService.findMax(arraysWrapper);
+        int max = 0;
+        try {
+            max = searchService.findMax(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
+        return max;
     }
 
     public int findMin() {
-        return searchService.findMin(arraysWrapper);
+        int min = 0;
+        try {
+            min = searchService.findMin(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
+        return min;
     }
 
     public boolean isSameDim(List<ArraysWrapper> wrappers) {
-        return arraysOperationsController.isSameDim(wrappers);
+        try {
+            return arraysOperationsController.isSameDim(wrappers);
+        } catch (ArrayException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public boolean isSquare(ArraysWrapper wrapper) {
-        return arraysOperationsController.isSquare(wrapper);
+        boolean isSquare = false;
+        try {
+            isSquare = arraysOperationsController.isSquare(wrapper);
+        } catch (ArrayException e) {
+            e.printStackTrace();
+        }
+        return isSquare;
     }
 
     public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) {
         try {
             return arraysOperationsController.getSum(wrapper1, wrapper2);
-        } catch (JaggedArraysDimensionalException e) {
+        } catch (JaggedArraysDimensionalException | ArrayException e) {
             System.err.println(rb.getString("message.error61"));
         }
         return null;
@@ -115,26 +138,50 @@ public class JaggedArraysControllerImpl implements ArraysWrapperController {
     }
 
     public void sortAscSumms(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortAscSumms(arraysWrapper);
+        try {
+            arraysOperationsController.sortAscSumms(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 
     public void sortDescSumms(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortDescSumms(arraysWrapper);
+        try {
+            arraysOperationsController.sortDescSumms(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 
     public void sortAscMax(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortAscMax(arraysWrapper);
+        try {
+            arraysOperationsController.sortAscMax(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 
     public void sortDescMax(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortDescMax(arraysWrapper);
+        try {
+            arraysOperationsController.sortDescMax(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 
     public void sortAscMin(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortAscMin(arraysWrapper);
+        try {
+            arraysOperationsController.sortAscMin(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 
     public void sortDescMin(ArraysWrapper arraysWrapper) {
-        arraysOperationsController.sortDescMin(arraysWrapper);
+        try {
+            arraysOperationsController.sortDescMin(arraysWrapper);
+        } catch (ArrayException e) {
+            System.err.println(rb.getString("message.error5"));
+        }
     }
 }

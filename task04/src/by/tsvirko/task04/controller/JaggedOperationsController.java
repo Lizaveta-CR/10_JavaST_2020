@@ -27,17 +27,17 @@ public class JaggedOperationsController {
     }
 
 
-    public boolean isSameDim(List<ArraysWrapper> wrappers) {
+    public boolean isSameDim(List<ArraysWrapper> wrappers) throws ArrayException {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.isSameDim(wrappers);
     }
 
-    public boolean isSquare(ArraysWrapper arraysWrapper) {
+    public boolean isSquare(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.isSquare(arraysWrapper);
     }
 
-    public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) throws JaggedArraysDimensionalException {
+    public ArraysWrapper getSum(ArraysWrapper wrapper1, ArraysWrapper wrapper2) throws JaggedArraysDimensionalException, ArrayException {
         JaggedArrayOperationsService service = serviceFactory.getJaggedArrayOperationsService();
         return service.sum(wrapper1, wrapper2);
     }
@@ -57,32 +57,32 @@ public class JaggedOperationsController {
         return service.transpose(arraysWrapper);
     }
 
-    public void sortAscSumms(ArraysWrapper arraysWrapper) {
+    public void sortAscSumms(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortAscSumLines(arraysWrapper);
     }
 
-    public void sortDescSumms(ArraysWrapper arraysWrapper) {
+    public void sortDescSumms(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortDescSumLines(arraysWrapper);
     }
 
-    public void sortAscMax(ArraysWrapper arraysWrapper) {
+    public void sortAscMax(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortAscMaxLines(arraysWrapper);
     }
 
-    public void sortDescMax(ArraysWrapper arraysWrapper) {
+    public void sortDescMax(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortDescMaxLines(arraysWrapper);
     }
 
-    public void sortAscMin(ArraysWrapper arraysWrapper) {
+    public void sortAscMin(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortAscMinLines(arraysWrapper);
     }
 
-    public void sortDescMin(ArraysWrapper arraysWrapper) {
+    public void sortDescMin(ArraysWrapper arraysWrapper) throws ArrayException {
         JaggedArraysSortService jaggedArraysSortService = serviceFactory.getJaggedArraysSortService();
         jaggedArraysSortService.sortDescMinLines(arraysWrapper);
     }

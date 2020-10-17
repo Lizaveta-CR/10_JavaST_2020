@@ -2,6 +2,7 @@ package by.tsvirko.task04.service.impl;
 
 import by.tsvirko.task04.entity.Array;
 import by.tsvirko.task04.entity.ArraysWrapper;
+import by.tsvirko.task04.exceptions.ArrayException;
 import by.tsvirko.task04.service.ArraySearchService;
 
 import java.util.stream.IntStream;
@@ -14,13 +15,13 @@ public class ArraysSearchServiceImpl implements ArraySearchService {
      * @return max
      */
     @Override
-    public int findMax(ArraysWrapper wrapper) {
+    public int findMax(ArraysWrapper wrapper) throws ArrayException {
         Array array = (Array) wrapper;
-        int[] arr = array.getArray();
         int max = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (max < arr[i]) {
-                max = arr[i];
+        for (int i = 0; i < array.getLength(); i++) {
+            int element = array.getElement(i);
+            if (max < element) {
+                max = element;
             }
         }
         return max;
@@ -33,13 +34,13 @@ public class ArraysSearchServiceImpl implements ArraySearchService {
      * @return min
      */
     @Override
-    public int findMin(ArraysWrapper wrapper) {
+    public int findMin(ArraysWrapper wrapper) throws ArrayException {
         Array array = (Array) wrapper;
-        int[] arr = array.getArray();
-        int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+        int min = array.getElement(0);
+        for (int i = 0; i < array.getLength(); i++) {
+            int element = array.getElement(i);
+            if (element < min) {
+                min = element;
             }
         }
         return min;
@@ -49,7 +50,13 @@ public class ArraysSearchServiceImpl implements ArraySearchService {
     public int findElementIndex(ArraysWrapper wrapper, int element) {
         Array array = (Array) wrapper;
         return IntStream.range(0, array.getLength())
-                .filter(i -> element == array.getArray()[i])
+                .filter(i -> {
+                    try {
+                        return element == array.getElement(i);
+                    } catch (ArrayException e) {
+                        return false;
+                    }
+                })
                 .findFirst()
                 .orElse(-1);
     }
