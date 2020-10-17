@@ -69,5 +69,4 @@ public class FillArraysView {
         }
         return list;
     }
-
 }

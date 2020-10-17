@@ -48,14 +48,6 @@ public class JaggedArray extends ArraysWrapper {
         }
     }
 
-    public void setJaggedArray(int[][] array) {
-        arrayList.clear();
-        for (int i = 0; i < array.length; i++) {
-            Array arr = new Array(array[i]);
-            arrayList.add(arr);
-        }
-    }
-
     public void setArray(Array array, int i) throws ArrayException {
         if (i > arrayList.size()) {
             throw new ArrayException();
