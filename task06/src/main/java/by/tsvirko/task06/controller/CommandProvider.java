@@ -17,6 +17,7 @@ public class CommandProvider {
         repository.put(CommandName.INIT_STORAGE, new InitStorage());
         repository.put(CommandName.REMOVE_BOOK, new RemoveBook());
         repository.put(CommandName.SORT, new SortBooks());
+        repository.put(CommandName.FIND, new FindBooks());
     }
 
     public Command getCommand(String name) throws RequestException {

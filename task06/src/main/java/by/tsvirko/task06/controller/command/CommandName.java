@@ -5,5 +5,6 @@ public enum CommandName {
     BOOK_FIELDS,
     ADD_BOOK,
     REMOVE_BOOK,
-    SORT
+    SORT,
+    FIND
 }

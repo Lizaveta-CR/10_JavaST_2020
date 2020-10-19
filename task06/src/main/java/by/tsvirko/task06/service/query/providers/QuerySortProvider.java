@@ -1,7 +1,9 @@
-package by.tsvirko.task06.service.query;
+package by.tsvirko.task06.service.query.providers;
 
 import by.tsvirko.task06.controller.exception.RequestException;
+import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.sort_query.SortTitleQuery;
+import by.tsvirko.task06.service.query.enums.QuerySortEnum;
 
 import java.util.HashMap;
 import java.util.Map;

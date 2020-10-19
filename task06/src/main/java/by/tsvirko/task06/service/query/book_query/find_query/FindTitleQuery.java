@@ -1,9 +1,9 @@
 package by.tsvirko.task06.service.query.book_query.find_query;
 
 
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.service.query.Query;
+import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class FindTitleQuery implements Query<Book> {
     }
 
     @Override
-    public List<Book> query(List<Book> storage) throws BookStorageElementException {
+    public List<Book> query(List<Book> storage) throws FindException {
         List<Book> result = new ArrayList<>();
         for (int i = 0; i < storage.size(); i++) {
             Book storageElement = storage.get(i);
@@ -24,6 +24,10 @@ public class FindTitleQuery implements Query<Book> {
                 result.add(storageElement);
             }
         }
-        return result;
+        if (result.isEmpty()) {
+            throw new FindException();
+        } else {
+            return result;
+        }
     }
 }

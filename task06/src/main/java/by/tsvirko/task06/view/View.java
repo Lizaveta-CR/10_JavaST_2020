@@ -14,6 +14,7 @@ public class View {
         System.out.println("1. Add book");
         System.out.println("2. Remove book");
         System.out.println("3. Sort books");
+        System.out.println("4. Find books");
         switch (scanner.nextInt()) {
             case 1:
                 addBook();
@@ -24,10 +25,31 @@ public class View {
             case 3:
                 sort();
                 tasks();
+            case 4:
+                find();
+                tasks();
             default:
                 //TODO: file result
                 break;
         }
+    }
+
+    private void find() {
+        String s = bookFields();
+        System.out.println("Enter find type: ");
+        Map<Integer, String> finds = new HashMap<>();
+        int fieldIndex = 0;
+        for (String field : s.split(" ")) {
+            finds.put(fieldIndex, field);
+            System.out.println(fieldIndex + " - " + field);
+            fieldIndex++;
+        }
+        List<String> task = new ArrayList<>();
+        task.add(CommandName.FIND.toString());
+        task.add(finds.get(scanner.nextInt()));
+        System.out.println("Enter what book do you want to find: ");
+        task.add(scanner.next());
+        controller.executeTask(task);
     }
 
     private void sort() {

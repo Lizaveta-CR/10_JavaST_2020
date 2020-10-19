@@ -7,6 +7,7 @@ import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.repository.BookRepository;
 import by.tsvirko.task06.service.query.Query;
+import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> query(Query<Book> bookQuery) throws BookStorageElementException {
+    public List<Book> query(Query<Book> bookQuery) throws BookStorageElementException, FindException {
         ArrayList<Book> result = new ArrayList<>();
         List<Book> query = bookQuery.query(bookDao.readAll());
         result.addAll(query);
