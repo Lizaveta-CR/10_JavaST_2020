@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f256e8f-2d19-4d67-ae44-2465ec169892" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Books.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/dao/BookDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/dao/exception/BookStorageElementException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/dao/impl/BookDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/entity/BookStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/entity/exception/NoAuthorsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/FileBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/impl/BookRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/impl/FileBookRepositorympl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/query/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/query/QueryEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/query/book_query/find_query/FindTitleQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/query/book_query/sort_query/AbstractSortQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/repository/query/book_query/sort_query/SortTitleQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/view/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../10_JavaST_2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../10_JavaST_2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task02/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1j3DgesAAEsEDxPsxXsSpp1pZx4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.tsvirko.repository" />
+      <recent name="by.tsvirko.repository.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.FileBookRepositorympl">
+    <configuration name="FileBookDaoImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.tsvirko.dao.impl.FileBookDaoImpl" />
+      <module name="task06" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.tsvirko.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileBookRepositorympl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.tsvirko.repository.impl.FileBookRepositorympl" />
+      <module name="task06" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.tsvirko.repository.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Person" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="by.tsvirko.dao.Person" />
+      <module name="task06" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="by.tsvirko.dao.Person" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FileBookRepositorympl" />
+        <item itemvalue="Application.FileBookDaoImpl" />
+        <item itemvalue="Application.Person" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f256e8f-2d19-4d67-ae44-2465ec169892" name="Default Changelist" comment="" />
+      <created>1603023993062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603023993062</updated>
+      <workItem from="1603023998495" duration="5474000" />
+      <workItem from="1603030351273" duration="83000" />
+      <workItem from="1603030437230" duration="5209000" />
+      <workItem from="1603037975091" duration="6556000" />
+      <workItem from="1603051168830" duration="20000" />
+      <workItem from="1603086535376" duration="23000" />
+      <workItem from="1603091390139" duration="1028000" />
+      <workItem from="1603097581057" duration="268000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="117" key="#Inspections" timestamp="1603030115731">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="117" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1603030115731" />
+    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603026996677">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1603026996677" />
+    <state x="533" y="174" key="#com.intellij.ide.util.MemberChooser" timestamp="1603043066970">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="174" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1603043066970" />
+    <state x="239" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603038924989">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="239" y="381" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1603038924989" />
+    <state x="482" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603036392345">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="482" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1603036392345" />
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603042284579">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603042284579" />
+    <state x="312" y="37" key="CommitChangelistDialog2" timestamp="1603097849030">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="312" y="37" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603097849030" />
+    <state width="1398" height="172" key="GridCell.Tab.0.bottom" timestamp="1603097850827">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="172" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603097850827" />
+    <state width="1398" height="172" key="GridCell.Tab.0.center" timestamp="1603097850825">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="172" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603097850825" />
+    <state width="1398" height="172" key="GridCell.Tab.0.left" timestamp="1603097850824">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="172" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603097850824" />
+    <state width="1398" height="172" key="GridCell.Tab.0.right" timestamp="1603097850826">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="172" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603097850826" />
+    <state width="1398" height="87" key="GridCell.Tab.1.bottom" timestamp="1603036945818">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="87" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603036945818" />
+    <state width="1398" height="87" key="GridCell.Tab.1.center" timestamp="1603036945817">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="87" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1603036945817" />
+    <state width="1398" height="87" key="GridCell.Tab.1.left" timestamp="1603036945816">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="87" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1603036945816" />
+    <state width="1398" height="87" key="GridCell.Tab.1.right" timestamp="1603036945817">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="87" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603036945817" />
+    <state x="492" y="178" key="RollbackChangesDialog" timestamp="1603039717137">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="492" y="178" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603039717137" />
+    <state x="229" y="23" width="1024" height="797" key="SettingsEditor" timestamp="1603031380339">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="23" width="1024" height="797" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603031380339" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603043572527">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1603035178206" />
+    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.797@0.23.1440.797" timestamp="1603043572527" />
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1603097581884">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1603097581884" />
+    <state x="114" y="155" key="new project wizard" timestamp="1603024135463">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="114" y="155" key="new project wizard/0.0.1440.900@0.0.1440.900" timestamp="1603024135463" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1603092207322">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1603092207322" />
+  </component>
+</project>

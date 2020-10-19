@@ -15,7 +15,10 @@
       <sourceFolder url="file://$MODULE_DIR$/task04/resource" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/task05/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/task05/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/task06/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/task06/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/task05/target" />
+      <excludeFolder url="file://$MODULE_DIR$/task06/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
