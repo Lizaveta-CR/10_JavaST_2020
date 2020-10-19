@@ -17,6 +17,20 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void addBook(List<String> bookFieldsUser) throws NumberFormatException, BookStorageElementException {
+        Book book = createBook(bookFieldsUser);
+        BookRepository bookRepository = factory.getBookRepository();
+        bookRepository.addBook(book);
+    }
+
+    @Override
+    public void removeBook(List<String> bookFieldsUser) throws BookStorageElementException {
+        Book book = createBook(bookFieldsUser);
+
+        BookRepository bookRepository = factory.getBookRepository();
+        bookRepository.removeBook(book);
+    }
+
+    Book createBook(List<String> bookFieldsUser) {
         Book book = new Book();
 
         book.setTitle(bookFieldsUser.get(0));
@@ -25,8 +39,7 @@ public class BookServiceImpl implements BookService {
         book.setPublishingHouse(bookFieldsUser.get(3));
         book.setYearOfPublishing(Integer.valueOf(bookFieldsUser.get(4)));
 
-        BookRepository bookRepository = factory.getBookRepository();
-        bookRepository.addBook(book);
+        return book;
     }
 
     @Override

@@ -3,5 +3,6 @@ package by.tsvirko.task06.controller.command;
 public enum CommandName {
     INIT_STORAGE,
     BOOK_FIELDS,
-    ADD_BOOK
+    ADD_BOOK,
+    REMOVE_BOOK
 }

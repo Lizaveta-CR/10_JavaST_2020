@@ -8,5 +8,7 @@ import java.util.List;
 public interface BookService {
     void addBook(List<String> book) throws BookStorageElementException;
 
+    void removeBook(List<String> book) throws BookStorageElementException;
+
     void initBookStorageFromFile() throws IOException, ClassNotFoundException, BookStorageElementException;
 }
