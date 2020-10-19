@@ -23,6 +23,16 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
+    public Book getBook(Book book) throws BookStorageElementException {
+        return bookStorage.getStorageElement(book);
+    }
+
+    @Override
+    public Book getBook(int i) throws BookStorageElementException {
+        return bookStorage.getStorageElement(i);
+    }
+
+    @Override
     public List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException {
         return bookQuery.query(bookStorage);
     }

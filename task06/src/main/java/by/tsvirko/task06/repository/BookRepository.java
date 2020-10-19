@@ -13,5 +13,9 @@ public interface BookRepository {
 
     void removeBook(Book book) throws BookStorageElementException;
 
+    Book getBook(Book book) throws BookStorageElementException;
+
+    Book getBook(int i) throws BookStorageElementException;
+
     List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException;
 }

@@ -4,6 +4,7 @@ import by.tsvirko.task06.entity.exception.NoAuthorsException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -11,10 +12,13 @@ public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String title;
-    private Set<String> authors;
+    private Set<String> authors = new HashSet<>();
     private int numberOfPages;
     private String publishingHouse;
     private int yearOfPublishing;
+
+    public Book() {
+    }
 
     public Book(String title, Set<String> authors, int numberOfPages, String publishingHouse, int yearOfPublishing) {
         this.title = title;

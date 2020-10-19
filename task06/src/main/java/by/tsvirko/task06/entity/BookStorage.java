@@ -4,6 +4,7 @@ import by.tsvirko.task06.dao.exception.BookStorageElementException;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class BookStorage {
@@ -23,6 +24,18 @@ public class BookStorage {
         } catch (IndexOutOfBoundsException e) {
             throw new BookStorageElementException("No such book!");
         }
+    }
+
+    public Book getStorageElement(Book book) throws BookStorageElementException {
+        Iterator<Book> it = storage.iterator();
+
+        while (it.hasNext()) {
+            Book nextBook = it.next();
+            if (nextBook.equals(book)) {
+                return nextBook;
+            }
+        }
+        throw new BookStorageElementException("No such book!");
     }
 
     public void setStorageElement(Book book) throws BookStorageElementException {

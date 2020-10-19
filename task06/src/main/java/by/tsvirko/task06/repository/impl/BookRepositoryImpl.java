@@ -38,6 +38,16 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
+    public Book getBook(Book book) throws BookStorageElementException {
+        return bookDao.getBook(book);
+    }
+
+    @Override
+    public Book getBook(int i) throws BookStorageElementException {
+        return bookDao.getBook(i);
+    }
+
+    @Override
     public List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException {
         return bookDao.query(bookQuery);
     }
