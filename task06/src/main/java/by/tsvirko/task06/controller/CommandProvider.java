@@ -4,6 +4,7 @@ import by.tsvirko.task06.controller.command.Command;
 import by.tsvirko.task06.controller.command.CommandName;
 import by.tsvirko.task06.controller.command.impl.AddBook;
 import by.tsvirko.task06.controller.command.impl.BookFields;
+import by.tsvirko.task06.controller.command.impl.InitStorage;
 import by.tsvirko.task06.controller.exception.RequestException;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class CommandProvider {
     public CommandProvider() {
         repository.put(CommandName.ADD_BOOK, new AddBook());
         repository.put(CommandName.BOOK_FIELDS, new BookFields());
+        repository.put(CommandName.INIT_STORAGE, new InitStorage());
     }
 
     public Command getCommand(String name) throws RequestException {

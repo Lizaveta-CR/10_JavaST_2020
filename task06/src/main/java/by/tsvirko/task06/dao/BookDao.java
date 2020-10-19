@@ -9,13 +9,13 @@ import by.tsvirko.task06.repository.query.Query;
 import java.util.List;
 
 public interface BookDao {
-    void addBook(Book book) throws BookStorageElementException;
+    void create(Book book) throws BookStorageElementException;
 
-    void removeBook(Book book) throws BookStorageElementException;
+    void delete(Book book) throws BookStorageElementException;
 
-    Book getBook(Book book) throws BookStorageElementException;
+    Book read(Book book) throws BookStorageElementException;
 
-    Book getBook(int i) throws BookStorageElementException;
+    Book read(int i) throws BookStorageElementException;
 
     List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException;
 //    Set<Book> getBooks() throws BookStorageElementException;

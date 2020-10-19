@@ -5,11 +5,15 @@ import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.repository.BookRepository;
 import by.tsvirko.task06.repository.factory.RepositoryFactory;
 import by.tsvirko.task06.service.BookService;
+import by.tsvirko.task06.service.FileBookService;
+import by.tsvirko.task06.service.factory.ServiceFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 public class BookServiceImpl implements BookService {
-    private RepositoryFactory factory = new RepositoryFactory();
+    private RepositoryFactory factory = RepositoryFactory.getInstance();
+    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
 
     @Override
     public void addBook(List<String> bookFieldsUser) throws NumberFormatException, BookStorageElementException {
@@ -23,5 +27,15 @@ public class BookServiceImpl implements BookService {
 
         BookRepository bookRepository = factory.getBookRepository();
         bookRepository.addBook(book);
+    }
+
+    @Override
+    public void initBookStorageFromFile() throws IOException, ClassNotFoundException, BookStorageElementException {
+        FileBookService fileBookService = serviceFactory.getFileBookService();
+        BookRepository bookRepository = factory.getBookRepository();
+        List<Book> read = fileBookService.read();
+        for (Book book : read) {
+            bookRepository.addBook(book);
+        }
     }
 }

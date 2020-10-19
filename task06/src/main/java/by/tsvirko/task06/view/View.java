@@ -10,6 +10,14 @@ public class View {
     private Scanner scanner = new Scanner(System.in);
     private Controller controller = new Controller();
 
+    private void initStorage() {
+        String task = "INIT_STORAGE";
+        List<String> taskFields = new ArrayList<>();
+        taskFields.add(task);
+        System.out.println("Library will open soon...");
+        controller.executeTask(taskFields);
+    }
+
     private void addBook() {
         String taskF = "BOOK_FIELDS";
         List<String> taskFields = new ArrayList<>();
@@ -27,6 +35,6 @@ public class View {
     }
 
     public static void main(String[] args) {
-        new View().addBook();
+        new View().initStorage();
     }
 }

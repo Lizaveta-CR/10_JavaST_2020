@@ -13,22 +13,22 @@ public class BookDaoImpl implements BookDao {
     private BookStorage bookStorage = BookStorage.getInstance();
 
     @Override
-    public void addBook(Book book) throws BookStorageElementException {
+    public void create(Book book) throws BookStorageElementException {
         bookStorage.setStorageElement(book);
     }
 
     @Override
-    public void removeBook(Book book) throws BookStorageElementException {
+    public void delete(Book book) throws BookStorageElementException {
         bookStorage.removeStorageElement(book);
     }
 
     @Override
-    public Book getBook(Book book) throws BookStorageElementException {
+    public Book read(Book book) throws BookStorageElementException {
         return bookStorage.getStorageElement(book);
     }
 
     @Override
-    public Book getBook(int i) throws BookStorageElementException {
+    public Book read(int i) throws BookStorageElementException {
         return bookStorage.getStorageElement(i);
     }
 

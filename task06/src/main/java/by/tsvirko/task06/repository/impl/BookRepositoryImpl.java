@@ -6,45 +6,41 @@ import by.tsvirko.task06.dao.impl.BookDaoImpl;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.repository.BookRepository;
-import by.tsvirko.task06.repository.FileBookRepository;
 import by.tsvirko.task06.repository.query.Query;
 
-import java.io.IOException;
 import java.util.List;
 
 public class BookRepositoryImpl implements BookRepository {
-    private FileBookRepository fileBookRepository = new FileBookRepositorympl();
     private BookDao bookDao = new BookDaoImpl();
-
-
-    public void initBookDao(Book book) {
-        try {
-            fileBookRepository.write(book);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//
+//    public void initBookDao(Book book) {
+//        try {
+//            fileBookRepository.write(book);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     public void addBook(Book book) throws BookStorageElementException {
         //TODO:file
-        bookDao.addBook(book);
+        bookDao.create(book);
     }
 
     @Override
     public void removeBook(Book book) throws BookStorageElementException {
-        bookDao.removeBook(book);
+        bookDao.delete(book);
     }
 
     @Override
     public Book getBook(Book book) throws BookStorageElementException {
-        return bookDao.getBook(book);
+        return bookDao.read(book);
     }
 
     @Override
     public Book getBook(int i) throws BookStorageElementException {
-        return bookDao.getBook(i);
+        return bookDao.read(i);
     }
 
     @Override

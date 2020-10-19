@@ -21,7 +21,7 @@
         <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
-        <Logger name="by.tsvirko.task06.repository.impl.FileBookRepositorympl" level="debug" additivity="true">
+        <Logger name="by.tsvirko.task06.service.impl.FileBookServicempl" level="debug" additivity="true">
 <!--            <AppenderRef ref="Console" />-->
             <AppenderRef ref="TxtFile" />
         </Logger>
