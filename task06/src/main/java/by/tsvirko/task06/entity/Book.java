@@ -1,6 +1,6 @@
-package by.tsvirko.entity;
+package by.tsvirko.task06.entity;
 
-import by.tsvirko.entity.exception.NoAuthorsException;
+import by.tsvirko.task06.entity.exception.NoAuthorsException;
 
 import java.io.Serializable;
 import java.util.ArrayList;

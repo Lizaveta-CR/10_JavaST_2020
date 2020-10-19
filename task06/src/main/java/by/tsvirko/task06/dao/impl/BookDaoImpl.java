@@ -1,10 +1,10 @@
-package by.tsvirko.dao.impl;
+package by.tsvirko.task06.dao.impl;
 
-import by.tsvirko.dao.BookDao;
-import by.tsvirko.dao.exception.BookStorageElementException;
-import by.tsvirko.entity.Book;
-import by.tsvirko.entity.BookStorage;
-import by.tsvirko.repository.query.Query;
+import by.tsvirko.task06.dao.BookDao;
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.repository.query.Query;
 
 import java.util.List;
 

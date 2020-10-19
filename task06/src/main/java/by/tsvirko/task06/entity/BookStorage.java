@@ -1,6 +1,6 @@
-package by.tsvirko.entity;
+package by.tsvirko.task06.entity;
 
-import by.tsvirko.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
 
 import java.util.ArrayList;
 import java.util.HashSet;

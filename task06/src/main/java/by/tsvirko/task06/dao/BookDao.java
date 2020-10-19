@@ -1,13 +1,12 @@
-package by.tsvirko.dao;
+package by.tsvirko.task06.dao;
 
 
-import by.tsvirko.dao.exception.BookStorageElementException;
-import by.tsvirko.entity.Book;
-import by.tsvirko.entity.BookStorage;
-import by.tsvirko.repository.query.Query;
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.repository.query.Query;
 
 import java.util.List;
-import java.util.Set;
 
 public interface BookDao {
     void addBook(Book book) throws BookStorageElementException;

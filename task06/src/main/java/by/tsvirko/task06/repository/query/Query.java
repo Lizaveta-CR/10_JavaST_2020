@@ -1,7 +1,7 @@
-package by.tsvirko.repository.query;
+package by.tsvirko.task06.repository.query;
 
 
-import by.tsvirko.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package by.tsvirko.repository;
+package by.tsvirko.task06.repository;
 
 
-import by.tsvirko.entity.Book;
+import by.tsvirko.task06.entity.Book;
 
 import java.io.IOException;
 import java.util.List;

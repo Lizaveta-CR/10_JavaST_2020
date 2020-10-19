@@ -1,10 +1,10 @@
-package by.tsvirko.repository.query.book_query.find_query;
+package by.tsvirko.task06.repository.query.book_query.find_query;
 
 
-import by.tsvirko.dao.exception.BookStorageElementException;
-import by.tsvirko.entity.Book;
-import by.tsvirko.entity.BookStorage;
-import by.tsvirko.repository.query.Query;
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.repository.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;

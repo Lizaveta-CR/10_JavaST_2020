@@ -1,4 +1,4 @@
-package by.tsvirko.entity.exception;
+package by.tsvirko.task06.entity.exception;
 
 public class NoAuthorsException extends Exception {
     public NoAuthorsException() {
