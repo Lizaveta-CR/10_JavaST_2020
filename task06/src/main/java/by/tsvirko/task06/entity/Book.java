@@ -43,6 +43,10 @@ public class Book implements Serializable {
         return new ArrayList<>(authors).get(i);
     }
 
+    public int getAuthorsSize() {
+        return authors.size();
+    }
+
     public void setAuthor(String author) {
         authors.add(author);
     }

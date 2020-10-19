@@ -34,7 +34,7 @@ public class QuerySortServiceController {
                 fileBookServicempl.write(books.get(i), file);
             }
             response = "Sort has been done";
-        } catch (RequestException | BookStorageElementException | FindException e) {
+        } catch (RequestException | FindException e) {
             response = "No such sort";
             System.err.println(e.getCause());
         }

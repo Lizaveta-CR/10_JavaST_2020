@@ -11,7 +11,7 @@ import java.util.List;
 public class SortTitleQuery extends AbstractSortQuery {
 
     @Override
-    public List<Book> query(List<Book> storage) throws BookStorageElementException {
+    public List<Book> query(List<Book> storage){
         List<Book> result = new ArrayList<>();
         for (int i = 0; i < storage.size(); i++) {
             result.add(storage.get(i));

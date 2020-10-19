@@ -9,7 +9,6 @@ import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.impl.FileBookServicempl;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 import by.tsvirko.task06.service.query.providers.QueryFindProvider;
-import by.tsvirko.task06.service.query.providers.QuerySortProvider;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,7 +23,7 @@ public class QueryFindServiceController {
 
         try {
             commandName = request.get(0);
-            QueryFindProvider provider = new QueryFindProvider(request.get(1));
+            QueryFindProvider provider = new QueryFindProvider(request);
             query = provider.getCommand(commandName);
             BookRepository bookRepository = factory.getBookRepository();
             List<Book> books = bookRepository.query(query);
@@ -35,7 +34,7 @@ public class QueryFindServiceController {
                 fileBookServicempl.write(books.get(i), file);
             }
             response = "Sort has been done";
-        } catch (RequestException | BookStorageElementException | FindException e) {
+        } catch (RequestException | FindException e) {
             response = "No such sort";
             System.err.println(e.getCause());
         }

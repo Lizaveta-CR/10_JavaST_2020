@@ -36,9 +36,14 @@ public class BookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<Book> query(Query<Book> bookQuery) throws BookStorageElementException, FindException {
+    public List<Book> query(Query<Book> bookQuery) throws FindException {
         ArrayList<Book> result = new ArrayList<>();
-        List<Book> query = bookQuery.query(bookDao.readAll());
+        List<Book> query = null;
+        try {
+            query = bookQuery.query(bookDao.readAll());
+        } catch (BookStorageElementException | FindException e) {
+            throw new FindException(e.getCause());
+        }
         result.addAll(query);
         return result;
     }

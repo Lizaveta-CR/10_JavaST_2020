@@ -18,5 +18,5 @@ public interface BookRepository {
 
     Book getBook(int i) throws BookStorageElementException;
 
-    List<Book> query(Query<Book> bookQuery) throws BookStorageElementException, FindException;
+    List<Book> query(Query<Book> bookQuery) throws FindException;
 }

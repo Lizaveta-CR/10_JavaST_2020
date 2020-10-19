@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f256e8f-2d19-4d67-ae44-2465ec169892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/FindBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QueryFindServiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/exception/FindException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/enums/QueryFindEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/providers/QueryFindProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task02/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindAuthorsQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/CommandProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/CommandName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/CommandName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/entity/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/impl/BookRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/impl/BookRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/FileBookServicempl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/FileBookServicempl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/enums/QuerySortEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/providers/QuerySortProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QueryFindServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QueryFindServiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindTitleQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindTitleQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/query_factory/QueryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/query_factory/QueryFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortTitleQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortTitleQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/enums/QueryFindEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/enums/QueryFindEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/providers/QueryFindProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/providers/QueryFindProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +179,8 @@
       <workItem from="1603098140849" duration="6151000" />
       <workItem from="1603108453129" duration="1802000" />
       <workItem from="1603124544805" duration="3608000" />
-      <workItem from="1603129149475" duration="4681000" />
+      <workItem from="1603129149475" duration="4838000" />
+      <workItem from="1603135190385" duration="1701000" />
     </task>
     <task id="LOCAL-00001" summary="Add book to storage +Command Pattern">
       <created>1603104439206</created>
@@ -214,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603132420170</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Find by title+file result with CommandProvider">
+      <created>1603133988709</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603133988709</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,17 +228,18 @@
     <MESSAGE value="Initialize storage from file" />
     <MESSAGE value="RemoveBook" />
     <MESSAGE value="Sort by title+file result+query command pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sort by title+file result+query command pattern" />
+    <MESSAGE value="Find by title+file result with CommandProvider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Find by title+file result with CommandProvider" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1603030115731">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="117" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1603030115731" />
-    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603133927771">
+    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603137024094">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1603133927771" />
+    <state x="456" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1603137024094" />
     <state x="533" y="174" key="#com.intellij.ide.util.MemberChooser" timestamp="1603133279334">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -252,42 +256,42 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603108785191" />
-    <state x="312" y="37" key="CommitChangelistDialog2" timestamp="1603132419929">
+    <state x="312" y="37" key="CommitChangelistDialog2" timestamp="1603133988499">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="312" y="37" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603132419929" />
-    <state width="1398" height="403" key="GridCell.Tab.0.bottom" timestamp="1603133922629">
+    <state x="312" y="37" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603133988499" />
+    <state width="1398" height="354" key="GridCell.Tab.0.bottom" timestamp="1603137021098">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603133922629" />
-    <state width="1398" height="403" key="GridCell.Tab.0.center" timestamp="1603133922627">
+    <state width="1398" height="354" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603137021098" />
+    <state width="1398" height="354" key="GridCell.Tab.0.center" timestamp="1603137021096">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603133922627" />
-    <state width="1398" height="403" key="GridCell.Tab.0.left" timestamp="1603133922626">
+    <state width="1398" height="354" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603137021096" />
+    <state width="1398" height="354" key="GridCell.Tab.0.left" timestamp="1603137021095">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603133922626" />
-    <state width="1398" height="403" key="GridCell.Tab.0.right" timestamp="1603133922628">
+    <state width="1398" height="354" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603137021095" />
+    <state width="1398" height="354" key="GridCell.Tab.0.right" timestamp="1603137021097">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603133922628" />
-    <state width="1398" height="403" key="GridCell.Tab.1.bottom" timestamp="1603133904614">
+    <state width="1398" height="354" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603137021097" />
+    <state width="1398" height="301" key="GridCell.Tab.1.bottom" timestamp="1603136903595">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603133904614" />
-    <state width="1398" height="403" key="GridCell.Tab.1.center" timestamp="1603133904613">
+    <state width="1398" height="301" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603136903595" />
+    <state width="1398" height="301" key="GridCell.Tab.1.center" timestamp="1603136903594">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1603133904613" />
-    <state width="1398" height="403" key="GridCell.Tab.1.left" timestamp="1603133904613">
+    <state width="1398" height="301" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1603136903594" />
+    <state width="1398" height="301" key="GridCell.Tab.1.left" timestamp="1603136903593">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1603133904613" />
-    <state width="1398" height="403" key="GridCell.Tab.1.right" timestamp="1603133904614">
+    <state width="1398" height="301" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1603136903593" />
+    <state width="1398" height="301" key="GridCell.Tab.1.right" timestamp="1603136903595">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="403" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603133904614" />
+    <state width="1398" height="301" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1603136903595" />
     <state x="492" y="178" key="RollbackChangesDialog" timestamp="1603039717137">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -296,19 +300,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="23" width="1024" height="797" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603031380339" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1603132421927">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1603133990260">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603132421927" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603133990260" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603043572527">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1603035178206" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.797@0.23.1440.797" timestamp="1603043572527" />
-    <state x="376" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1603129150619">
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1603135195379">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="376" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1603129150619" />
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1603135195379" />
     <state x="114" y="155" key="new project wizard" timestamp="1603024135463">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -342,14 +346,14 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindTitleQuery.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/FindBooks.java</url>
           <line>17</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindAuthorsQuery.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

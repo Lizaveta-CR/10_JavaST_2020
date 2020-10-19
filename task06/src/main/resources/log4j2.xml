@@ -10,11 +10,11 @@
     </Properties>
     <Appenders>
         <File name="TxtFile" fileName="logs/text.log" bufferedIO="true">
-            <PatternLayout pattern="${patternfull}" />
+            <PatternLayout pattern="${patternfull}"/>
         </File>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="${patternshort}" />
-<!--            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+            <PatternLayout pattern="${patternshort}"/>
+            <!--            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
         </Console>
     </Appenders>
     <Loggers>
@@ -22,8 +22,8 @@
             <AppenderRef ref="Console"/>
         </Root>
         <Logger name="by.tsvirko.task06.service.impl.FileBookServicempl" level="debug" additivity="true">
-<!--            <AppenderRef ref="Console" />-->
-            <AppenderRef ref="TxtFile" />
+            <!--            <AppenderRef ref="Console"/>-->
+            <AppenderRef ref="TxtFile"/>
         </Logger>
     </Loggers>
 </Configuration>
