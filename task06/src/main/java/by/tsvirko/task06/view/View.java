@@ -3,9 +3,7 @@ package by.tsvirko.task06.view;
 import by.tsvirko.task06.controller.Controller;
 import by.tsvirko.task06.controller.command.CommandName;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class View {
     private Scanner scanner = new Scanner(System.in);
@@ -15,6 +13,7 @@ public class View {
         System.out.println("What will we do?");
         System.out.println("1. Add book");
         System.out.println("2. Remove book");
+        System.out.println("3. Sort books");
         switch (scanner.nextInt()) {
             case 1:
                 addBook();
@@ -22,9 +21,29 @@ public class View {
             case 2:
                 removeBook();
                 tasks();
+            case 3:
+                sort();
+                tasks();
             default:
+                //TODO: file result
                 break;
         }
+    }
+
+    private void sort() {
+        String s = bookFields();
+        System.out.println("Enter sort type: ");
+        Map<Integer, String> sorts = new HashMap<>();
+        int fieldIndex = 0;
+        for (String field : s.split(" ")) {
+            sorts.put(fieldIndex, field);
+            System.out.println(fieldIndex + " - " + field);
+            fieldIndex++;
+        }
+        List<String> task = new ArrayList<>();
+        task.add(CommandName.SORT.toString());
+        task.add(sorts.get(scanner.nextInt()));
+        controller.executeTask(task);
     }
 
     private void initStorage() {

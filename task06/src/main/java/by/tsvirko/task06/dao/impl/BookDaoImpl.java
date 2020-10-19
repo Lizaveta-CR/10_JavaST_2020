@@ -4,8 +4,9 @@ import by.tsvirko.task06.dao.BookDao;
 import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
-import by.tsvirko.task06.repository.query.Query;
+import by.tsvirko.task06.service.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,7 +34,11 @@ public class BookDaoImpl implements BookDao {
     }
 
     @Override
-    public List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException {
-        return bookQuery.query(bookStorage);
+    public List<Book> readAll() throws BookStorageElementException {
+        List<Book> books = new ArrayList<>();
+        for (int i = 0; i < bookStorage.getSize(); i++) {
+            books.add(bookStorage.getStorageElement(i));
+        }
+        return books;
     }
 }

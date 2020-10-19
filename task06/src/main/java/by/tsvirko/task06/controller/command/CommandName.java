@@ -4,5 +4,6 @@ public enum CommandName {
     INIT_STORAGE,
     BOOK_FIELDS,
     ADD_BOOK,
-    REMOVE_BOOK
+    REMOVE_BOOK,
+    SORT
 }

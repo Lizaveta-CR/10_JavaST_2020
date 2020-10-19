@@ -4,7 +4,7 @@ package by.tsvirko.task06.dao;
 import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
-import by.tsvirko.task06.repository.query.Query;
+import by.tsvirko.task06.service.query.Query;
 
 import java.util.List;
 
@@ -17,6 +17,5 @@ public interface BookDao {
 
     Book read(int i) throws BookStorageElementException;
 
-    List<Book> query(Query<Book, BookStorage> bookQuery) throws BookStorageElementException;
-//    Set<Book> getBooks() throws BookStorageElementException;
+    List<Book> readAll() throws BookStorageElementException;
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public interface FileBookService {
     List<Book> read() throws IOException, ClassNotFoundException;
 
-    void write(Book book) throws IOException;
+    void write(Book book, String fileName) throws IOException;
 
     void writeRandom() throws IOException, BookStorageElementException, ClassNotFoundException;
 }
