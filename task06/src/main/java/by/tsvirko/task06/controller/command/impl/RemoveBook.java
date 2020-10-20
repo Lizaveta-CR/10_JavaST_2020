@@ -10,6 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Class to remove book from storage
+ */
 public class RemoveBook implements Command {
     private static final Logger logger = LogManager.getLogger(RemoveBook.class);
 

@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f256e8f-2d19-4d67-ae44-2465ec169892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/exception/DaoStorageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/entity/exception/BookStorageElementException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/CommandProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/AddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/AddBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/BookFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/BookFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/FindBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/FindBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/InitStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/InitStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/RemoveBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/RemoveBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/exception/BookStorageElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/exception/BookStorageElementException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/SortBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/SortBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/impl/BookDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/dao/impl/BookDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/entity/BookStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/entity/BookStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/impl/BookRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/repository/impl/BookRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/BookFieldsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/BookFieldsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/FileBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/FileBookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/BookFieldsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/BookFieldsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/FileBookServicempl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/impl/FileBookServicempl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QueryFindServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QueryFindServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/QuerySortServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindAuthorsQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindAuthorsQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindNumberOfPagesQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindNumberOfPagesQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindPublishingHouseQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindPublishingHouseQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindTitleQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindTitleQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindYearOfPublishingQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/find_query/FindYearOfPublishingQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortAuthorsQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortAuthorsQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortNumberOfPagesQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortNumberOfPagesQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortPublishingHouseQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortPublishingHouseQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortTitleQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortTitleQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortYearOfPublishingQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortYearOfPublishingQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +201,8 @@
       <workItem from="1603198595685" duration="4742000" />
       <workItem from="1603205850824" duration="2081000" />
       <workItem from="1603213500451" duration="2781000" />
-      <workItem from="1603219587004" duration="2080000" />
+      <workItem from="1603219587004" duration="2317000" />
+      <workItem from="1603223648983" duration="1089000" />
     </task>
     <task id="LOCAL-00001" summary="Add book to storage +Command Pattern">
       <created>1603104439206</created>
@@ -272,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603216278609</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="log4j2.xml was added to some classes+exceptions modification(hierarchy)">
+      <created>1603221897847</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603221897847</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +305,8 @@
     <MESSAGE value="File work moved to DAO" />
     <MESSAGE value="Sort by authors" />
     <MESSAGE value="log4j2.xml was added to some classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="log4j2.xml was added to some classes" />
+    <MESSAGE value="log4j2.xml was added to some classes+exceptions modification(hierarchy)" />
+    <option name="LAST_COMMIT_MESSAGE" value="log4j2.xml was added to some classes+exceptions modification(hierarchy)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1603030115731">
@@ -316,30 +333,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603220347034" />
-    <state x="312" y="23" width="816" height="797" key="CommitChangelistDialog2" timestamp="1603216278492">
+    <state x="312" y="23" width="816" height="797" key="CommitChangelistDialog2" timestamp="1603221897610">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="312" y="23" width="816" height="797" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603216278492" />
+    <state x="312" y="23" width="816" height="797" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1603221897610" />
     <state width="438" height="466" key="DebuggerActiveHint" timestamp="1603207651537">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="438" height="466" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1603207651537" />
-    <state width="1398" height="459" key="GridCell.Tab.0.bottom" timestamp="1603216290612">
+    <state width="1398" height="2" key="GridCell.Tab.0.bottom" timestamp="1603221909466">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603216290612" />
-    <state width="1398" height="459" key="GridCell.Tab.0.center" timestamp="1603216290611">
+    <state width="1398" height="2" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1603221909466" />
+    <state width="1398" height="2" key="GridCell.Tab.0.center" timestamp="1603221909465">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603216290611" />
-    <state width="1398" height="459" key="GridCell.Tab.0.left" timestamp="1603216290610">
+    <state width="1398" height="2" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1603221909465" />
+    <state width="1398" height="2" key="GridCell.Tab.0.left" timestamp="1603221909464">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603216290610" />
-    <state width="1398" height="459" key="GridCell.Tab.0.right" timestamp="1603216290611">
+    <state width="1398" height="2" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1603221909464" />
+    <state width="1398" height="2" key="GridCell.Tab.0.right" timestamp="1603221909465">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="459" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603216290611" />
+    <state width="1398" height="2" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1603221909465" />
     <state width="1398" height="103" key="GridCell.Tab.1.bottom" timestamp="1603208585841">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -364,19 +381,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="23" width="1024" height="797" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603031380339" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1603216280596">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1603221900096">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603216280596" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603221900096" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603221672206">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1603221672206" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.797@0.23.1440.797" timestamp="1603043572527" />
-    <state x="376" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1603219586587">
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1603223664195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="376" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1603219586587" />
+    <state x="376" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1603223664195" />
     <state x="376" y="274" key="com.intellij.ide.util.TipDialog/0.23.1440.797@0.23.1440.797" timestamp="1603198772760" />
     <state x="400" y="186" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1603189033808">
       <screen x="0" y="0" width="1440" height="900" />
@@ -396,23 +413,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/controller/command/impl/RemoveBook.java</url>
-          <line>19</line>
+          <line>24</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortAuthorsQuery.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortAuthorsQuery.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/tsvirko/task06/service/query/book_query/sort_query/SortAuthorsQuery.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

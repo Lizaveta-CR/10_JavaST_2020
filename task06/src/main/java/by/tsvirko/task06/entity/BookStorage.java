@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * Class to store books - Singleton
+ */
 public class BookStorage {
     private static BookStorage instance;
     private Set<Book> storage = new HashSet<>();

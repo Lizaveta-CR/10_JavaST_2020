@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Class to return entity fields
+ */
 public class BookFields implements Command {
     private static final Logger logger = LogManager.getLogger(BookFields.class);
 

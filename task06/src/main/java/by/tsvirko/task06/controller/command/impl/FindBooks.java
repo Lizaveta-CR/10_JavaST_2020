@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Class to find books
+ */
 public class FindBooks implements Command {
     private static final Logger logger = LogManager.getLogger(FindBooks.class);
 

@@ -10,6 +10,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class that provides different commands to user
+ */
 public class CommandProvider {
     private final Map<CommandName, Command> repository = new HashMap<>();
     private static final Logger logger = LogManager.getLogger(CommandProvider.class);

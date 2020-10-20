@@ -10,6 +10,9 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds books in storage by given author
+ */
 public class FindAuthorsQuery implements Query<Book, BookStorage> {
     private String author;
 

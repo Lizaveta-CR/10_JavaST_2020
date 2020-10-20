@@ -9,6 +9,9 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds books in storage by given number of pages
+ */
 public class FindNumberOfPagesQuery implements Query<Book, BookStorage> {
     private String pages;
 

@@ -14,6 +14,9 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Finds special 'sort' query by command and using RepositoryFactory writes result to file
+ */
 public class QuerySortServiceController {
     private static final Logger logger = LogManager.getLogger(QuerySortServiceController.class);
 

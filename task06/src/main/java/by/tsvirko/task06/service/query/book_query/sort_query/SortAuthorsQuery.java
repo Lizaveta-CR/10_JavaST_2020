@@ -7,6 +7,9 @@ import by.tsvirko.task06.repository.exception.BookStorageElementException;
 
 import java.util.*;
 
+/**
+ * Sorts bookStorage by authors
+ */
 public class SortAuthorsQuery extends AbstractSortQuery {
     @Override
     public List<Book> query(BookStorage storage) throws BookStorageElementException {

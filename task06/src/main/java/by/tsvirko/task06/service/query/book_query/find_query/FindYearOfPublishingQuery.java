@@ -9,6 +9,9 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds books in storage by given year of publishing
+ */
 public class FindYearOfPublishingQuery implements Query<Book, BookStorage> {
     private String year;
 

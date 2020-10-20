@@ -3,7 +3,6 @@ package by.tsvirko.task06.dao.impl;
 import by.tsvirko.task06.dao.BookDao;
 import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.repository.impl.BookRepositoryImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +15,12 @@ public class BookDaoImpl implements BookDao {
     private final String FILE_PATH = "Books";
     private static final Logger logger = LogManager.getLogger(BookDaoImpl.class);
 
-
+    /**
+     * Writes(creates) book in file
+     *
+     * @param book
+     * @throws DaoStorageException
+     */
     @Override
     public void create(Book book) throws DaoStorageException {
         try {
@@ -37,6 +41,12 @@ public class BookDaoImpl implements BookDao {
         }
     }
 
+    /**
+     * Deletes book from file
+     *
+     * @param book
+     * @throws DaoStorageException
+     */
     @Override
     public void delete(Book book) throws DaoStorageException {
         List<Book> books = null;
@@ -60,6 +70,13 @@ public class BookDaoImpl implements BookDao {
         }
     }
 
+    /**
+     * Reads book from file
+     *
+     * @param book
+     * @return
+     * @throws DaoStorageException
+     */
     @Override
     public Book read(Book book) throws DaoStorageException {
         Book resultBook = null;
@@ -79,6 +96,12 @@ public class BookDaoImpl implements BookDao {
         return resultBook;
     }
 
+    /**
+     * Reads all books from file. Only for BookDAO class use!
+     *
+     * @return
+     * @throws IOException
+     */
     private List<Book> readAll() throws IOException {
         List<Book> books = new ArrayList<>();
         FileInputStream fis = null;

@@ -8,6 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Class to initialize storage
+ */
 public class InitStorage implements Command {
     private static final Logger logger = LogManager.getLogger(InitStorage.class);
 

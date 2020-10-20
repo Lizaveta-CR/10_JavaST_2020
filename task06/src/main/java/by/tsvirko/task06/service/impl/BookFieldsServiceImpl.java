@@ -10,6 +10,11 @@ import java.lang.reflect.Field;
 public class BookFieldsServiceImpl implements BookFieldsService {
     private static final Logger logger = LogManager.getLogger(BookServiceImpl.class);
 
+    /**
+     * Gives Book fields
+     *
+     * @return StringBuilder-fields
+     */
     @Override
     public StringBuilder getBookFields() {
         StringBuilder sb = new StringBuilder();

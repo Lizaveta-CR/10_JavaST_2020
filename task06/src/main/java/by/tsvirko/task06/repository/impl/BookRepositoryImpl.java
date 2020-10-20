@@ -24,6 +24,12 @@ public class BookRepositoryImpl implements BookRepository {
     private BookDao bookDao = new BookDaoImpl();
     private BookStorage bookStorage = BookStorage.getInstance();
 
+    /**
+     * Adds book to storage and passes it to BookDao
+     *
+     * @param book
+     * @throws BookStorageElementException
+     */
     @Override
     public void addBook(Book book) throws BookStorageElementException {
         bookStorage.setStorageElement(book);
@@ -35,6 +41,12 @@ public class BookRepositoryImpl implements BookRepository {
         }
     }
 
+    /**
+     * Removes book from storage and passes it to BookDao
+     *
+     * @param book
+     * @throws BookStorageElementException
+     */
     @Override
     public void removeBook(Book book) throws BookStorageElementException {
         bookStorage.removeStorageElement(book);
@@ -46,16 +58,25 @@ public class BookRepositoryImpl implements BookRepository {
         }
     }
 
+    /**
+     * Gets book from storage
+     *
+     * @param book
+     * @return
+     * @throws BookStorageElementException
+     */
     @Override
     public Book getBook(Book book) throws BookStorageElementException {
         return bookStorage.getStorageElement(book);
     }
 
-    @Override
-    public Book getBook(int i) throws BookStorageElementException {
-        return bookStorage.getStorageElement(i);
-    }
-
+    /**
+     * Makes user's operations with storage
+     *
+     * @param bookQuery
+     * @return
+     * @throws FindException
+     */
     @Override
     public List<Book> query(Query<Book, BookStorage> bookQuery) throws FindException {
         List<Book> books = new ArrayList<>();
@@ -72,6 +93,11 @@ public class BookRepositoryImpl implements BookRepository {
         return query;
     }
 
+    /**
+     * Adds random books to storage and passes it to BookDAO
+     *
+     * @throws BookStorageElementException
+     */
     @Override
     public void addRandomBook() throws BookStorageElementException {
         Set<String> harry = new HashSet<>();

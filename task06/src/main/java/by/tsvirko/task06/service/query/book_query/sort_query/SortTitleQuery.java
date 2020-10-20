@@ -8,7 +8,9 @@ import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
+/**
+ * Sorts bookStorage by title
+ */
 public class SortTitleQuery extends AbstractSortQuery {
 
     @Override

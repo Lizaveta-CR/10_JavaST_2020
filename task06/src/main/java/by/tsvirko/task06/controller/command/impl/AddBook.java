@@ -10,6 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Adds book to storage
+ */
 public class AddBook implements Command {
     private static final Logger logger = LogManager.getLogger(AddBook.class);
 

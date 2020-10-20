@@ -17,6 +17,12 @@ public class BookServiceImpl implements BookService {
 
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
+    /**
+     * Calls BookRepository to add book to storage
+     *
+     * @param bookFieldsUser
+     * @throws ServiceInitException
+     */
     @Override
     public void addBook(List<String> bookFieldsUser) throws ServiceInitException {
         Book book = null;
@@ -30,6 +36,12 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    /**
+     * Calls BookRepository to remove book from storage
+     *
+     * @param bookFieldsUser
+     * @throws ServiceInitException
+     */
     @Override
     public void removeBook(List<String> bookFieldsUser) throws ServiceInitException {
         Book book = null;
@@ -44,6 +56,11 @@ public class BookServiceImpl implements BookService {
 
     }
 
+    /**
+     * Calls BookRepository to add random books to storage
+     *
+     * @throws ServiceInitException
+     */
     @Override
     public void initBookStorageRandom() throws ServiceInitException {
         BookRepository bookRepository = factory.getBookRepository();
@@ -55,6 +72,13 @@ public class BookServiceImpl implements BookService {
         }
     }
 
+    /**
+     * Creates new book
+     *
+     * @param bookFieldsUser
+     * @return
+     * @throws ServiceInitException
+     */
     Book createBook(List<String> bookFieldsUser) throws ServiceInitException {
         Book book = new Book();
 
