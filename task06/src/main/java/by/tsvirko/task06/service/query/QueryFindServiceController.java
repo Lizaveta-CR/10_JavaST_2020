@@ -1,7 +1,6 @@
 package by.tsvirko.task06.service.query;
 
 import by.tsvirko.task06.controller.exception.RequestException;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.repository.BookRepository;
 import by.tsvirko.task06.repository.factory.RepositoryFactory;

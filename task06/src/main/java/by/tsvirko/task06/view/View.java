@@ -9,6 +9,10 @@ public class View {
     private Scanner scanner = new Scanner(System.in);
     private Controller controller = new Controller();
 
+    public View() {
+        initStorage();
+    }
+
     public void tasks() {
         System.out.println("What will we do?");
         System.out.println("1. Add book");
@@ -112,11 +116,5 @@ public class View {
         List<String> taskFields = new ArrayList<>();
         taskFields.add(taskF);
         return controller.executeTask(taskFields);
-    }
-
-    public static void main(String[] args) {
-        View view = new View();
-        view.initStorage();
-        view.tasks();
     }
 }

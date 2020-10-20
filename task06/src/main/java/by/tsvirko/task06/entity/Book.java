@@ -3,16 +3,13 @@ package by.tsvirko.task06.entity;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String title;
-    private Set<String> authors = new HashSet<>();
+    private Set<String> authors = new TreeSet<>();
     private int numberOfPages;
     private String publishingHouse;
     private int yearOfPublishing;
