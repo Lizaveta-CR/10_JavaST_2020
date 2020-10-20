@@ -2,7 +2,7 @@ package by.tsvirko.task06.controller;
 
 import by.tsvirko.task06.controller.command.Command;
 import by.tsvirko.task06.controller.exception.RequestException;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

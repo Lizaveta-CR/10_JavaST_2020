@@ -1,22 +1,26 @@
 package by.tsvirko.task06.repository.impl;
 
 import by.tsvirko.task06.dao.BookDao;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.dao.impl.BookDaoImpl;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
 import by.tsvirko.task06.repository.BookRepository;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class BookRepositoryImpl implements BookRepository {
+    private static final Logger logger = LogManager.getLogger(BookRepositoryImpl.class);
+
     private BookDao bookDao = new BookDaoImpl();
     private BookStorage bookStorage = BookStorage.getInstance();
 
@@ -25,7 +29,8 @@ public class BookRepositoryImpl implements BookRepository {
         bookStorage.setStorageElement(book);
         try {
             bookDao.create(book);
-        } catch (IOException e) {
+        } catch (DaoStorageException e) {
+            logger.info("Book repository can not save element", e.getMessage());
             throw new BookStorageElementException("Element can't be saved");
         }
     }
@@ -35,8 +40,9 @@ public class BookRepositoryImpl implements BookRepository {
         bookStorage.removeStorageElement(book);
         try {
             bookDao.delete(book);
-        } catch (IOException e) {
-            throw new BookStorageElementException("Element can't be saved");
+        } catch (DaoStorageException e) {
+            logger.info("Book repository can not delete element", e.getMessage());
+            throw new BookStorageElementException("Element can't be deleted");
         }
     }
 
@@ -59,29 +65,34 @@ public class BookRepositoryImpl implements BookRepository {
                 books.add(bookStorage.getStorageElement(i));
             }
             query = bookQuery.query(bookStorage);
-        } catch (BookStorageElementException | FindException | NoAuthorsException e) {
+        } catch (FindException | NoAuthorsException | BookStorageElementException e) {
+            logger.info(e.getMessage());
             throw new FindException(e.getCause());
         }
         return query;
     }
 
     @Override
-    public void addRandomBook() throws IOException, BookStorageElementException {
+    public void addRandomBook() throws BookStorageElementException {
         Set<String> harry = new HashSet<>();
         harry.add("J.K.Rowling");
         Book book = new Book("Harry Potter", harry, 10000, "USA House", 2000);
         Set<String> warAndPiece = new HashSet<>();
         warAndPiece.add("Tolstoy");
         Book book1 = new Book("War and piece", warAndPiece, 1225, "unknown", 1865);
-        //TODO: add logSet<String> warAndPiece = new HashSet<>();
         Set<String> q = new HashSet<>();
         q.add("q");
         Book book2 = new Book("q", q, 1, "q", 1);
         bookStorage.setStorageElement(book);
         bookStorage.setStorageElement(book1);
         bookStorage.setStorageElement(book2);
-        bookDao.create(book);
-        bookDao.create(book1);
-        bookDao.create(book2);
+        try {
+            bookDao.create(book);
+            bookDao.create(book1);
+            bookDao.create(book2);
+        } catch (DaoStorageException e) {
+            throw new BookStorageElementException("Can not save books to storage");
+        }
+
     }
 }

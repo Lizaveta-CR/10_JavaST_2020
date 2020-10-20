@@ -1,9 +1,9 @@
 package by.tsvirko.task06.service.query.book_query.sort_query;
 
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 
 import java.util.*;
 

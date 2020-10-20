@@ -1,7 +1,6 @@
 package by.tsvirko.task06.controller.command.impl;
 
 import by.tsvirko.task06.controller.command.Command;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.service.query.QueryFindServiceController;
 import by.tsvirko.task06.service.query.query_factory.QueryFactory;
 import org.apache.logging.log4j.LogManager;

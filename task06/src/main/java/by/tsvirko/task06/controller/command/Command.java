@@ -1,6 +1,6 @@
 package by.tsvirko.task06.controller.command;
 
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 
 import java.util.List;
 

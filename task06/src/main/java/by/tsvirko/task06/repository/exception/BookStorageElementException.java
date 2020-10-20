@@ -1,4 +1,4 @@
-package by.tsvirko.task06.dao.exception;
+package by.tsvirko.task06.repository.exception;
 
 public class BookStorageElementException extends Exception {
     public BookStorageElementException() {

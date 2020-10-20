@@ -1,13 +1,11 @@
 package by.tsvirko.task06.service.impl;
 
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.repository.BookRepository;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.repository.factory.RepositoryFactory;
 import by.tsvirko.task06.service.BookService;
-import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.exception.ServiceInitException;
-import by.tsvirko.task06.service.factory.ServiceFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,30 +18,30 @@ public class BookServiceImpl implements BookService {
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
     @Override
-    public void addBook(List<String> bookFieldsUser) throws BookStorageElementException {
+    public void addBook(List<String> bookFieldsUser) throws ServiceInitException {
         Book book = null;
         try {
             book = createBook(bookFieldsUser);
-        } catch (ServiceInitException e) {
+            BookRepository bookRepository = factory.getBookRepository();
+            bookRepository.addBook(book);
+        } catch (ServiceInitException | BookStorageElementException e) {
             logger.debug(e.getMessage());
-            throw new BookStorageElementException(e.getMessage());
+            throw new ServiceInitException(e.getMessage());
         }
-        BookRepository bookRepository = factory.getBookRepository();
-        bookRepository.addBook(book);
     }
 
     @Override
-    public void removeBook(List<String> bookFieldsUser) throws BookStorageElementException {
+    public void removeBook(List<String> bookFieldsUser) throws ServiceInitException {
         Book book = null;
         try {
             book = createBook(bookFieldsUser);
-        } catch (ServiceInitException e) {
+            BookRepository bookRepository = factory.getBookRepository();
+            bookRepository.removeBook(book);
+        } catch (BookStorageElementException e) {
             logger.debug(e.getMessage());
-            throw new BookStorageElementException(e.getMessage());
+            throw new ServiceInitException(e.getMessage());
         }
 
-        BookRepository bookRepository = factory.getBookRepository();
-        bookRepository.removeBook(book);
     }
 
     @Override
@@ -51,7 +49,7 @@ public class BookServiceImpl implements BookService {
         BookRepository bookRepository = factory.getBookRepository();
         try {
             bookRepository.addRandomBook();
-        } catch (IOException | BookStorageElementException e) {
+        } catch (BookStorageElementException e) {
             logger.debug("initBookStorageRandom in service error", e.getMessage());
             throw new ServiceInitException("Can't initialize books");
         }

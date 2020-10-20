@@ -1,9 +1,9 @@
 package by.tsvirko.task06.controller.command.impl;
 
-import by.tsvirko.task06.controller.CommandProvider;
 import by.tsvirko.task06.controller.command.Command;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.service.BookService;
+import by.tsvirko.task06.service.exception.ServiceInitException;
 import by.tsvirko.task06.service.factory.ServiceFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +22,7 @@ public class AddBook implements Command {
             bookService.addBook(request);
             response = "Book was added";
             logger.info(response);
-        } catch (BookStorageElementException e) {
+        } catch (BookStorageElementException | ServiceInitException e) {
             response = "Book can't be added";
             logger.error(response, e.getMessage());
         }
