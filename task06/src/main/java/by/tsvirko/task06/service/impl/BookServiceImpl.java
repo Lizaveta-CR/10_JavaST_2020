@@ -6,6 +6,7 @@ import by.tsvirko.task06.repository.BookRepository;
 import by.tsvirko.task06.repository.factory.RepositoryFactory;
 import by.tsvirko.task06.service.BookService;
 import by.tsvirko.task06.service.FileBookService;
+import by.tsvirko.task06.service.exception.ServiceInitException;
 import by.tsvirko.task06.service.factory.ServiceFactory;
 
 import java.io.IOException;
@@ -13,7 +14,6 @@ import java.util.List;
 
 public class BookServiceImpl implements BookService {
     private RepositoryFactory factory = RepositoryFactory.getInstance();
-    private ServiceFactory serviceFactory = ServiceFactory.getInstance();
 
     @Override
     public void addBook(List<String> bookFieldsUser) throws NumberFormatException, BookStorageElementException {
@@ -30,6 +30,17 @@ public class BookServiceImpl implements BookService {
         bookRepository.removeBook(book);
     }
 
+    @Override
+    public void initBookStorageRandom() throws ServiceInitException {
+        BookRepository bookRepository = factory.getBookRepository();
+        try {
+            bookRepository.addRandomBook();
+        } catch (IOException | BookStorageElementException e) {
+            throw new ServiceInitException("Can't initialize books");
+        }
+        //logger
+    }
+
     Book createBook(List<String> bookFieldsUser) {
         Book book = new Book();
 
@@ -40,15 +51,5 @@ public class BookServiceImpl implements BookService {
         book.setYearOfPublishing(Integer.valueOf(bookFieldsUser.get(4)));
 
         return book;
-    }
-
-    @Override
-    public void initBookStorageFromFile() throws IOException, ClassNotFoundException, BookStorageElementException {
-        FileBookService fileBookService = serviceFactory.getFileBookService();
-        BookRepository bookRepository = factory.getBookRepository();
-        List<Book> read = fileBookService.read();
-        for (Book book : read) {
-            bookRepository.addBook(book);
-        }
     }
 }

@@ -1,6 +1,8 @@
 package by.tsvirko.task06.service.query.book_query.find_query;
 
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
@@ -8,7 +10,7 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindAuthorsQuery implements Query<Book> {
+public class FindAuthorsQuery implements Query<Book, BookStorage> {
     private String author;
 
     public FindAuthorsQuery(String authors) {
@@ -16,10 +18,10 @@ public class FindAuthorsQuery implements Query<Book> {
     }
 
     @Override
-    public List<Book> query(List<Book> storage) throws FindException {
+    public List<Book> query(BookStorage storage) throws FindException, BookStorageElementException {
         List<Book> result = new ArrayList<>();
-        for (int i = 0; i < storage.size(); i++) {
-            Book storageElement = storage.get(i);
+        for (int i = 0; i < storage.getSize(); i++) {
+            Book storageElement = storage.getStorageElement(i);
             for (int j = 0; j < storageElement.getAuthorsSize(); j++) {
                 try {
                     if (storageElement.getAuthor(j).equals(author)) {

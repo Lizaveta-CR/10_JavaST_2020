@@ -1,6 +1,7 @@
 package by.tsvirko.task06.service;
 
 import by.tsvirko.task06.dao.exception.BookStorageElementException;
+import by.tsvirko.task06.service.exception.ServiceInitException;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,5 +11,5 @@ public interface BookService {
 
     void removeBook(List<String> book) throws BookStorageElementException;
 
-    void initBookStorageFromFile() throws IOException, ClassNotFoundException, BookStorageElementException;
+    void initBookStorageRandom() throws ServiceInitException;
 }

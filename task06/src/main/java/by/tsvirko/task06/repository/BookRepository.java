@@ -7,10 +7,13 @@ import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface BookRepository {
     void addBook(Book book) throws BookStorageElementException;
+
+    void addRandomBook() throws IOException, BookStorageElementException;
 
     void removeBook(Book book) throws BookStorageElementException;
 
@@ -18,5 +21,5 @@ public interface BookRepository {
 
     Book getBook(int i) throws BookStorageElementException;
 
-    List<Book> query(Query<Book> bookQuery) throws FindException;
+    List<Book> query(Query<Book, BookStorage> bookQuery) throws FindException;
 }

@@ -15,22 +15,25 @@ public class View {
         System.out.println("2. Remove book");
         System.out.println("3. Sort books");
         System.out.println("4. Find books");
-        switch (scanner.nextInt()) {
-            case 1:
-                addBook();
-                tasks();
-            case 2:
-                removeBook();
-                tasks();
-            case 3:
-                sort();
-                tasks();
-            case 4:
-                find();
-                tasks();
-            default:
-                //TODO: file result
-                break;
+        try {
+            switch (scanner.nextInt()) {
+                case 1:
+                    addBook();
+                    tasks();
+                case 2:
+                    removeBook();
+                    tasks();
+                case 3:
+                    sort();
+                    tasks();
+                case 4:
+                    find();
+                    tasks();
+                default:
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            return;
         }
     }
 

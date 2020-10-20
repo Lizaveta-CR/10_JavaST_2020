@@ -1,13 +1,15 @@
 package by.tsvirko.task06.service.query.book_query.find_query;
 
+import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.BookStorage;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindNumberOfPagesQuery implements Query<Book> {
+public class FindNumberOfPagesQuery implements Query<Book, BookStorage> {
     private String pages;
 
     public FindNumberOfPagesQuery(String pages) {
@@ -15,16 +17,16 @@ public class FindNumberOfPagesQuery implements Query<Book> {
     }
 
     @Override
-    public List<Book> query(List<Book> storage) throws FindException {
+    public List<Book> query(BookStorage storage) throws FindException {
         List<Book> result = new ArrayList<>();
         try {
-            for (int i = 0; i < storage.size(); i++) {
-                Book storageElement = storage.get(i);
+            for (int i = 0; i < storage.getSize(); i++) {
+                Book storageElement = storage.getStorageElement(i);
                 if (storageElement.getNumberOfPages() == Integer.parseInt(pages)) {
                     result.add(storageElement);
                 }
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | BookStorageElementException e) {
             throw new FindException();
         }
         if (result.isEmpty()) {

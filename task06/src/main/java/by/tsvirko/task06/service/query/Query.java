@@ -9,6 +9,6 @@ import java.util.List;
 
 //TODO: move to Command
 
-public interface Query<Entity> {
-    List<Entity> query(List<Entity> storage) throws FindException;
+public interface Query<Entity, EntityStorage> {
+    List<Entity> query(EntityStorage storage) throws FindException, NoAuthorsException, BookStorageElementException;
 }

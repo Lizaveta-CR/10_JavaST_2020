@@ -31,7 +31,7 @@ public class QueryFindServiceController {
             String resultSortFile = "ResultFind";
             String file = resultSortFile.concat(commandName);
             for (int i = 0; i < books.size(); i++) {
-                fileBookServicempl.write(books.get(i), file);
+                fileBookServicempl.writeResult(books.get(i), file);
             }
             response = "Sort has been done";
         } catch (RequestException | FindException e) {
