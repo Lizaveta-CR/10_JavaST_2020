@@ -8,5 +8,5 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.List;
 
 public interface Query<Entity, EntityStorage> {
-    List<Entity> query(EntityStorage storage) throws FindException, NoAuthorsException, BookStorageElementException, BookStorageElementException;
+    List<Entity> query(EntityStorage storage) throws FindException, NoAuthorsException, BookStorageElementException;
 }
