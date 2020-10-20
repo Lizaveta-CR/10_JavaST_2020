@@ -8,11 +8,15 @@ import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.impl.FileBookServicempl;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 import by.tsvirko.task06.service.query.providers.QueryFindProvider;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
 public class QueryFindServiceController {
+    private static final Logger logger = LogManager.getLogger(QueryFindServiceController.class);
+
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
     public String find(List<String> request) throws IOException {
@@ -32,10 +36,11 @@ public class QueryFindServiceController {
             for (int i = 0; i < books.size(); i++) {
                 fileBookServicempl.writeResult(books.get(i), file);
             }
-            response = "Sort has been done";
+            response = "Finding has been done";
+            logger.info(response);
         } catch (RequestException | FindException e) {
-            response = "No such sort";
-            System.err.println(e.getCause());
+            response = "No such find method";
+            logger.debug(response, e.getMessage());
         }
         return response;
     }

@@ -6,11 +6,15 @@ import by.tsvirko.task06.repository.factory.RepositoryFactory;
 import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.exception.ServiceInitException;
 import by.tsvirko.task06.service.factory.ServiceFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
 public class InitStorage implements Command {
+    private static final Logger logger = LogManager.getLogger(InitStorage.class);
+
     @Override
     public String execute(List<String> request) {
         ServiceFactory instance = ServiceFactory.getInstance();
@@ -18,9 +22,10 @@ public class InitStorage implements Command {
         try {
             instance.getBookService().initBookStorageRandom();
             response = "Info has been written";
+            logger.debug(response);
         } catch (ServiceInitException e) {
-            System.err.println(e.getCause());
-            response = "Error";
+            response = "Error with storage initialization";
+            logger.error(response, e.getMessage());
         }
         return response;
     }

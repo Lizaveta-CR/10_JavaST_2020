@@ -2,13 +2,18 @@ package by.tsvirko.task06.service.query.providers;
 
 import by.tsvirko.task06.controller.exception.RequestException;
 import by.tsvirko.task06.service.query.Query;
+import by.tsvirko.task06.service.query.QueryFindServiceController;
 import by.tsvirko.task06.service.query.book_query.sort_query.*;
 import by.tsvirko.task06.service.query.enums.QuerySortEnum;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class QuerySortProvider {
+    private static final Logger logger = LogManager.getLogger(QuerySortProvider.class);
+
     private final Map<QuerySortEnum, Query> repository = new HashMap<>();
 
     public QuerySortProvider() {
@@ -26,7 +31,8 @@ public class QuerySortProvider {
         try {
             querySortEnum = QuerySortEnum.valueOf(name.toUpperCase());
             query = repository.get(querySortEnum);
-        } catch (IllegalArgumentException | NullPointerException e) {
+        } catch (IllegalArgumentException e) {
+            logger.debug("Illegal command name", e.getMessage());
             throw new RequestException("Illegal command name", e);
         }
         return query;

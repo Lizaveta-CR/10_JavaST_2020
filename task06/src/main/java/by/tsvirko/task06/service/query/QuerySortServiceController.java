@@ -1,7 +1,6 @@
 package by.tsvirko.task06.service.query;
 
 import by.tsvirko.task06.controller.exception.RequestException;
-import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.repository.BookRepository;
 import by.tsvirko.task06.repository.factory.RepositoryFactory;
@@ -9,11 +8,15 @@ import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.impl.FileBookServicempl;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 import by.tsvirko.task06.service.query.providers.QuerySortProvider;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
 public class QuerySortServiceController {
+    private static final Logger logger = LogManager.getLogger(QuerySortServiceController.class);
+
     private final QuerySortProvider provider = new QuerySortProvider();
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
@@ -34,9 +37,10 @@ public class QuerySortServiceController {
                 fileBookServicempl.writeResult(books.get(i), file);
             }
             response = "Sort has been done";
+            logger.info(response);
         } catch (RequestException | FindException e) {
             response = "No such sort";
-            System.err.println(e.getCause());
+            logger.debug(response, e.getMessage());
         }
         return response;
     }

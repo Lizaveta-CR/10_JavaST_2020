@@ -3,8 +3,6 @@ package by.tsvirko.task06.dao.impl;
 import by.tsvirko.task06.dao.BookDao;
 import by.tsvirko.task06.dao.exception.BookStorageElementException;
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.entity.BookStorage;
-import by.tsvirko.task06.service.query.Query;
 
 import java.io.*;
 import java.util.ArrayList;
