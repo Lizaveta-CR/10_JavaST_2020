@@ -32,7 +32,7 @@ public class CommandProvider {
         try {
             commandName = CommandName.valueOf(name.toUpperCase());
             command = repository.get(commandName);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | NullPointerException e) {
             logger.debug("Illegal command name occurred", e);
             throw new RequestException("Illegal command name", e);
         }

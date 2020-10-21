@@ -31,7 +31,7 @@ public class QueryFindProvider {
         try {
             queryFindEnum = QueryFindEnum.valueOf(name.toUpperCase());
             query = repository.get(queryFindEnum);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | NullPointerException e) {
             logger.debug("Illegal command name", e.getMessage());
             throw new RequestException("Illegal command name", e);
         }

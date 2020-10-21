@@ -31,7 +31,7 @@ public class QuerySortProvider {
         try {
             querySortEnum = QuerySortEnum.valueOf(name.toUpperCase());
             query = repository.get(querySortEnum);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | NullPointerException e) {
             logger.debug("Illegal command name", e.getMessage());
             throw new RequestException("Illegal command name", e);
         }

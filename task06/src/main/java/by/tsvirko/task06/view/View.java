@@ -2,10 +2,13 @@ package by.tsvirko.task06.view;
 
 import by.tsvirko.task06.controller.Controller;
 import by.tsvirko.task06.controller.command.CommandName;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 public class View {
+    private static final Logger logger = LogManager.getLogger(View.class);
     private Scanner scanner = new Scanner(System.in);
     private Controller controller = new Controller();
 
@@ -37,6 +40,7 @@ public class View {
                     break;
             }
         } catch (InputMismatchException e) {
+            logger.info("Application stopped", e.getMessage());
             return;
         }
     }
