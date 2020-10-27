@@ -19,12 +19,16 @@ public class View {
 
     public void tasksBook() {
         System.out.println("What will we do?");
+        System.out.println("0.Register observer");
         System.out.println("1. Add publication");
         System.out.println("2. Remove publication");
         System.out.println("3. Sort books");
         System.out.println("4. Find books");
         try {
             switch (scanner.nextInt()) {
+                case 0:
+                    register();
+                    tasksBook();
                 case 1:
                     addPublication();
                     tasksBook();
@@ -44,6 +48,22 @@ public class View {
             logger.info("Application stopped", e.getMessage());
             return;
         }
+    }
+
+    private void register() {
+        List<String> task = new ArrayList<>();
+        task.add(CommandName.OBSERVER.toString());
+        String observer = null;
+        System.out.println("1.Librarian");
+        switch (scanner.nextInt()) {
+            case 1:
+                observer = "LIBRARIAN";
+                break;
+        }
+        task.add(observer);
+        System.out.println("Enter name: ");
+        task.add(scanner.next());
+        controller.executeTask(task);
     }
 
     private void find() {

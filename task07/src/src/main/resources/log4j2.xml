@@ -35,6 +35,9 @@
         <Logger name="by.tsvirko.task06.view" level="info" additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>
+        <Logger name="by.tsvirko.task06.entity" level="debug" additivity="true">
+            <AppenderRef ref="TxtFile"/>
+        </Logger>
     </Loggers>
 </Configuration>
 

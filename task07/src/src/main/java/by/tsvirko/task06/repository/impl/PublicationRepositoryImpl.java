@@ -8,8 +8,11 @@ import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
+import by.tsvirko.task06.entity.observer.Librarian;
+import by.tsvirko.task06.entity.observer.Observer;
 import by.tsvirko.task06.repository.PublicationRepository;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
+import by.tsvirko.task06.repository.repositoryFactory.RepositoryFactory;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PublicationRepositoryImpl implements PublicationRepository {
+public final class PublicationRepositoryImpl implements PublicationRepository {
     private static final Logger logger = LogManager.getLogger(PublicationRepositoryImpl.class);
 
     private PublicationDao publicationDao = new PublicationDaoImpl();
@@ -93,6 +96,11 @@ public class PublicationRepositoryImpl implements PublicationRepository {
             throw new FindException(e.getCause());
         }
         return query;
+    }
+
+    @Override
+    public void setObserver(Observer observer) {
+        bookStorage.register(observer);
     }
 
     /**

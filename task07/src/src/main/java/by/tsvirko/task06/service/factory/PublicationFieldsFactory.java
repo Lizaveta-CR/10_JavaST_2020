@@ -4,6 +4,9 @@ import by.tsvirko.task06.service.PublicationFieldsCreator;
 import by.tsvirko.task06.service.impl.book.BookFieldsCreator;
 import by.tsvirko.task06.service.impl.magazine.MagazineFieldsCreator;
 
+/**
+ * Class to delegate finding publication fields
+ */
 public abstract class PublicationFieldsFactory {
     public static PublicationFieldsCreator getFields(PublicationType publicationType) {
         PublicationFieldsCreator publication = null;

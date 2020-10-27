@@ -4,6 +4,9 @@ import by.tsvirko.task06.service.PublicationCreator;
 import by.tsvirko.task06.service.impl.book.BookCreator;
 import by.tsvirko.task06.service.impl.magazine.MagazineCreator;
 
+/**
+ * Class to delegate creating publications
+ */
 public abstract class PublicationFactory {
     public static PublicationCreator getPublication(PublicationType publicationType) {
         PublicationCreator publication = null;
