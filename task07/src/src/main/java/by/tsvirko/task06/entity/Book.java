@@ -5,32 +5,19 @@ import by.tsvirko.task06.entity.exception.NoAuthorsException;
 import java.io.Serializable;
 import java.util.*;
 
-public class Book implements Serializable {
+public class Book extends Publication implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String title;
     private Set<String> authors = new TreeSet<>();
-    private int numberOfPages;
-    private String publishingHouse;
     private int yearOfPublishing;
 
     public Book() {
     }
 
     public Book(String title, Set<String> authors, int numberOfPages, String publishingHouse, int yearOfPublishing) {
-        this.title = title;
+        super(title, numberOfPages, publishingHouse);
         this.authors = authors;
-        this.numberOfPages = numberOfPages;
-        this.publishingHouse = publishingHouse;
         this.yearOfPublishing = yearOfPublishing;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getAuthor(int i) throws NoAuthorsException {
@@ -48,22 +35,6 @@ public class Book implements Serializable {
         authors.add(author);
     }
 
-    public int getNumberOfPages() {
-        return numberOfPages;
-    }
-
-    public void setNumberOfPages(int numberOfPages) {
-        this.numberOfPages = numberOfPages;
-    }
-
-    public String getPublishingHouse() {
-        return publishingHouse;
-    }
-
-    public void setPublishingHouse(String publishingHouse) {
-        this.publishingHouse = publishingHouse;
-    }
-
     public int getYearOfPublishing() {
         return yearOfPublishing;
     }
@@ -76,26 +47,24 @@ public class Book implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Book book = (Book) o;
-        return numberOfPages == book.numberOfPages &&
-                yearOfPublishing == book.yearOfPublishing &&
-                Objects.equals(title, book.title) &&
-                Objects.equals(authors, book.authors) &&
-                Objects.equals(publishingHouse, book.publishingHouse);
+        return yearOfPublishing == book.yearOfPublishing &&
+                Objects.equals(authors, book.authors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, authors, numberOfPages, publishingHouse, yearOfPublishing);
+        return Objects.hash(super.hashCode(), authors, yearOfPublishing);
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + title + '\'' +
+                "title='" + getTitle() + '\'' +
                 ", authors=" + authors +
-                ", numberOfPages=" + numberOfPages +
-                ", publishingHouse='" + publishingHouse + '\'' +
+                ", numberOfPages=" + getNumberOfPages() +
+                ", publishingHouse='" + getPublishingHouse() + '\'' +
                 ", yearOfPublishing=" + yearOfPublishing +
                 '}';
     }

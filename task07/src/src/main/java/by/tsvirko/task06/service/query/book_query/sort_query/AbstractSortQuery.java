@@ -2,10 +2,10 @@ package by.tsvirko.task06.service.query.book_query.sort_query;
 
 
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.service.query.Query;
 
-public abstract class AbstractSortQuery implements Query<Book,BookStorage> {
+public abstract class AbstractSortQuery implements Query<Book, PublicationStorage> {
     /**
      * Determines whether sorting occurs in descending or ascending order
      */

@@ -1,7 +1,8 @@
 package by.tsvirko.task06.service.query.book_query.sort_query;
 
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.entity.Publication;
+import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
 
@@ -12,12 +13,13 @@ import java.util.*;
  */
 public class SortAuthorsQuery extends AbstractSortQuery {
     @Override
-    public List<Book> query(BookStorage storage) throws BookStorageElementException {
+    public List<Book> query(PublicationStorage storage) throws BookStorageElementException {
         List<Book> result = new ArrayList<>();
         Map<String, Book> map = new TreeMap<>();
 
         for (int i = 0; i < storage.getSize(); i++) {
-            Book book = storage.getStorageElement(i);
+            Publication publication = storage.getStorageElement(i);
+            Book book = (Book) publication;
             try {
                 map.put(book.getAuthor(0), book);
             } catch (NoAuthorsException e) {

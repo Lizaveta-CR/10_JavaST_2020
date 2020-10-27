@@ -19,7 +19,7 @@ public class InitStorage implements Command {
         ServiceFactory instance = ServiceFactory.getInstance();
         String response = null;
         try {
-            instance.getBookService().initBookStorageRandom();
+            instance.getPublicationService().initStorageRandom();
             response = "Info has been written";
             logger.debug(response);
         } catch (ServiceInitException e) {

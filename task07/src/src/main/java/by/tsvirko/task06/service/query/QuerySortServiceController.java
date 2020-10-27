@@ -2,10 +2,10 @@ package by.tsvirko.task06.service.query;
 
 import by.tsvirko.task06.controller.exception.RequestException;
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.repository.BookRepository;
-import by.tsvirko.task06.repository.factory.RepositoryFactory;
+import by.tsvirko.task06.repository.PublicationRepository;
+import by.tsvirko.task06.repository.repositoryFactory.RepositoryFactory;
 import by.tsvirko.task06.service.FileBookService;
-import by.tsvirko.task06.service.impl.FileBookServicempl;
+import by.tsvirko.task06.service.impl.book.FileBookServicempl;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
 import by.tsvirko.task06.service.query.providers.QuerySortProvider;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +31,7 @@ public class QuerySortServiceController {
         try {
             commandName = request;
             query = provider.getCommand(commandName);
-            BookRepository bookRepository = factory.getBookRepository();
+            PublicationRepository bookRepository = factory.getBookRepository();
             List<Book> books = bookRepository.query(query);
             FileBookService fileBookServicempl = new FileBookServicempl();
             String resultSortFile = "ResultSort";

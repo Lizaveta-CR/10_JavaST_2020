@@ -11,31 +11,32 @@ public class View {
     private static final Logger logger = LogManager.getLogger(View.class);
     private Scanner scanner = new Scanner(System.in);
     private Controller controller = new Controller();
+    private String publication;
 
     public View() {
         initStorage();
     }
 
-    public void tasks() {
+    public void tasksBook() {
         System.out.println("What will we do?");
-        System.out.println("1. Add book");
-        System.out.println("2. Remove book");
+        System.out.println("1. Add publication");
+        System.out.println("2. Remove publication");
         System.out.println("3. Sort books");
         System.out.println("4. Find books");
         try {
             switch (scanner.nextInt()) {
                 case 1:
-                    addBook();
-                    tasks();
+                    addPublication();
+                    tasksBook();
                 case 2:
-                    removeBook();
-                    tasks();
+                    removePublication();
+                    tasksBook();
                 case 3:
                     sort();
-                    tasks();
+                    tasksBook();
                 case 4:
                     find();
-                    tasks();
+                    tasksBook();
                 default:
                     break;
             }
@@ -87,28 +88,30 @@ public class View {
         controller.executeTask(taskFields);
     }
 
-    private void addBook() {
+    private void addPublication() {
         String fields = bookFields();
         String taskAdd = CommandName.ADD_BOOK.toString();
         List<String> taskAddBook = new ArrayList<>();
         taskAddBook.add(taskAdd);
+        taskAddBook.add(publication);
         for (String field : fields.split(" ")) {
-            System.out.println("Enter book field '" + field + "'");
+            System.out.println("Enter publication field '" + field + "'");
             String userField = scanner.next();
             taskAddBook.add(userField);
         }
         controller.executeTask(taskAddBook);
     }
 
-    private void removeBook() {
+    private void removePublication() {
         String fields = bookFields();
 
         String task = CommandName.REMOVE_BOOK.toString();
         List<String> taskFields = new ArrayList<>();
         taskFields.add(task);
+        taskFields.add(publication);
 
         for (String field : fields.split(" ")) {
-            System.out.println("Enter book field '" + field + "'");
+            System.out.println("Enter publication field '" + field + "'");
             String userField = scanner.next();
             taskFields.add(userField);
         }
@@ -116,9 +119,26 @@ public class View {
     }
 
     private String bookFields() {
+        String publication = choosePublication();
         String taskF = CommandName.BOOK_FIELDS.toString();
         List<String> taskFields = new ArrayList<>();
         taskFields.add(taskF);
+        taskFields.add(publication);
         return controller.executeTask(taskFields);
+    }
+
+    private String choosePublication() {
+        String publication = null;
+        System.out.println("1.Book\n2.Magazine");
+        switch (scanner.nextInt()) {
+            case 1:
+                publication = "BOOK";
+                break;
+            case 2:
+                publication = "MAGAZINE";
+                break;
+        }
+        this.publication = publication;
+        return publication;
     }
 }

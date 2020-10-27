@@ -1,7 +1,8 @@
 package by.tsvirko.task06.service.query.book_query.find_query;
 
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.entity.BookStorage;
+import by.tsvirko.task06.entity.Publication;
+import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Finds books in storage by given number of pages
  */
-public class FindNumberOfPagesQuery implements Query<Book, BookStorage> {
+public class FindNumberOfPagesQuery implements Query<Book, PublicationStorage> {
     private String pages;
 
     public FindNumberOfPagesQuery(String pages) {
@@ -20,13 +21,14 @@ public class FindNumberOfPagesQuery implements Query<Book, BookStorage> {
     }
 
     @Override
-    public List<Book> query(BookStorage storage) throws FindException {
+    public List<Book> query(PublicationStorage storage) throws FindException {
         List<Book> result = new ArrayList<>();
         try {
             for (int i = 0; i < storage.getSize(); i++) {
-                Book storageElement = storage.getStorageElement(i);
-                if (storageElement.getNumberOfPages() == Integer.parseInt(pages)) {
-                    result.add(storageElement);
+                Publication storageElement = storage.getStorageElement(i);
+                Book book = (Book) storageElement;
+                if (book.getNumberOfPages() == Integer.parseInt(pages)) {
+                    result.add(book);
                 }
             }
         } catch (NumberFormatException | BookStorageElementException e) {

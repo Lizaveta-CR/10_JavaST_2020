@@ -2,7 +2,10 @@ package by.tsvirko.task06.controller.command.impl;
 
 import by.tsvirko.task06.controller.command.Command;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
-import by.tsvirko.task06.service.BookFieldsService;
+import by.tsvirko.task06.service.FieldsService;
+import by.tsvirko.task06.service.PublicationFieldsCreator;
+import by.tsvirko.task06.service.factory.PublicationFieldsFactory;
+import by.tsvirko.task06.service.factory.PublicationType;
 import by.tsvirko.task06.service.factory.ServiceFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,14 +21,13 @@ public class BookFields implements Command {
     @Override
     public String execute(List<String> request) {
         String response = null;
-        ServiceFactory factory = ServiceFactory.getInstance();
-        BookFieldsService service = factory.getService();
+        PublicationFieldsCreator creator = PublicationFieldsFactory.getFields(PublicationType.valueOf(request.get(0)));
         try {
-            StringBuilder bookFields = service.getBookFields();
+            StringBuilder bookFields = creator.getPublicationFields();
             response = bookFields.toString();
             logger.info(response);
         } catch (BookStorageElementException e) {
-            response = "No book fields";
+            response = "No fields";
             logger.error(response, e.getMessage());
         }
         return response;
