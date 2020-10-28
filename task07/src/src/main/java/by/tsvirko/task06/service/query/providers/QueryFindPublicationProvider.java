@@ -2,10 +2,8 @@ package by.tsvirko.task06.service.query.providers;
 
 import by.tsvirko.task06.controller.exception.RequestException;
 import by.tsvirko.task06.service.query.Query;
-import by.tsvirko.task06.service.query.book_query.find_query.*;
-import by.tsvirko.task06.service.query.enums.QueryFindEnum;
 import by.tsvirko.task06.service.query.enums.QueryFindPublicationEnum;
-import by.tsvirko.task06.service.query.publication_query.find_query.FindByIdPublicationQuery;
+import by.tsvirko.task06.service.query.publication_query.find_query.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,9 +17,10 @@ public class QueryFindPublicationProvider {
     private final Map<QueryFindPublicationEnum, Query> repository = new HashMap<>();
 
     public QueryFindPublicationProvider(List<String> findField) {
-//        repository.put(QueryFindEnum.TITLE, new FindTitleQuery(findField.get(1)));
-//        repository.put(QueryFindEnum.NUMBEROFPAGES, new FindNumberOfPagesQuery(findField.get(1)));
-//        repository.put(QueryFindEnum.PUBLISHINGHOUSE, new FindPublishingHouseQuery(findField.get(1)));
+        repository.put(QueryFindPublicationEnum.TITLE, new FindByTitlePublicationQuery(findField.get(1)));
+        repository.put(QueryFindPublicationEnum.TITLEFIRSTLETTERS, new FindByTitleFirstLetterPublicationQuery(findField.get(1)));
+        repository.put(QueryFindPublicationEnum.NUMBEROFPAGES, new FindByNumOfPagesPublicationQuery(findField.get(1)));
+        repository.put(QueryFindPublicationEnum.PUBLISHINGHOUSE, new FindByPublishingHousePublicationQuery(findField.get(1)));
         repository.put(QueryFindPublicationEnum.ID, new FindByIdPublicationQuery(findField.get(1)));
     }
 

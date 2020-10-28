@@ -54,8 +54,6 @@ public class View {
         }
     }
 
-    //TODO: all publications
-    //TODO: с полями поменять, а то в Find непраивльно приходит
     private void update() {
         List<String> task = new ArrayList<>();
         task.add(CommandName.UPDATE.toString());
@@ -93,11 +91,35 @@ public class View {
         List<String> task = new ArrayList<>();
         System.out.println("Enter find type: ");
         System.out.println("1. ID");
-
+        System.out.println("2. Title");
+        System.out.println("3. Title first letters");
+        System.out.println("4. Number of pages");
+        System.out.println("5. Publishing house");
         switch (scanner.nextInt()) {
             case 1:
                 task.add(CommandName.FIND.toString());
                 task.add("ID");
+                task.add(scanner.next());
+                break;
+            case 2:
+                task.add(CommandName.FIND.toString());
+                task.add("Title");
+                task.add(scanner.next());
+                break;
+            case 3:
+                task.add(CommandName.FIND.toString());
+                task.add("Titlefirstletters");
+                System.out.println("Enter first titles' letters: ");
+                task.add(scanner.next());
+                break;
+            case 4:
+                task.add(CommandName.FIND.toString());
+                task.add("numberofpages");
+                task.add(scanner.next());
+                break;
+            case 5:
+                task.add(CommandName.FIND.toString());
+                task.add("publishinghouse");
                 task.add(scanner.next());
                 break;
             default:

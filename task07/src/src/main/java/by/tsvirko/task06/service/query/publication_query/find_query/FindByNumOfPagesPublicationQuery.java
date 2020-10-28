@@ -9,11 +9,11 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindByTitlePublicationQuery implements Query<Publication, PublicationStorage> {
-    private String title;
+public class FindByNumOfPagesPublicationQuery implements Query<Publication, PublicationStorage> {
+    private String pages;
 
-    public FindByTitlePublicationQuery(String title) {
-        this.title = title;
+    public FindByNumOfPagesPublicationQuery(String pages) {
+        this.pages = pages;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class FindByTitlePublicationQuery implements Query<Publication, Publicati
         try {
             for (int i = 0; i < storage.getSize(); i++) {
                 Publication storageElement = storage.getStorageElement(i);
-                if (storageElement.getTitle().equals(title)) {
+                if (storageElement.getNumberOfPages() == Integer.parseInt(pages)) {
                     result.add(storageElement);
                     break;
                 }
