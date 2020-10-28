@@ -22,7 +22,9 @@ public class BookFieldsCreator extends PublicationFieldsCreator {
 
         for (Field declaredField : Publication.class.getDeclaredFields()) {
             String name = declaredField.getName();
-            sb.append(name + " ");
+            if (!name.equals("id")) {
+                sb.append(name + " ");
+            }
         }
 
         Field[] declaredFields = Book.class.getDeclaredFields();

@@ -26,7 +26,8 @@ public class MagazineCreator extends PublicationCreator {
         try {
             magazine.setTitle(fieldsUser.get(0));
             magazine.setNumberOfPages(Integer.valueOf(fieldsUser.get(1)));
-            magazine.setPublishingHouse(fieldsUser.get(2));
+            magazine.setCoverHeading(fieldsUser.get(2));
+            magazine.setPublishingHouse(fieldsUser.get(3));
         } catch (NumberFormatException e) {
             logger.debug("Create magazine error", e.getMessage());
             throw new ServiceInitException("Invalid parametres");

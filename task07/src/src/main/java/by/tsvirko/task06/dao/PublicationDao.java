@@ -13,4 +13,6 @@ public interface PublicationDao {
     void delete(Publication publication) throws DaoStorageException;
 
     Publication read(Publication publication) throws DaoStorageException;
+
+    void update(Publication publicationOld, Publication publicationNew) throws DaoStorageException;
 }

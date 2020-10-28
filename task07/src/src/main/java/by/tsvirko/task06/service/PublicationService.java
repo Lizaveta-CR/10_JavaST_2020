@@ -11,5 +11,7 @@ public interface PublicationService {
 
     void removePublication(Publication publication) throws BookStorageElementException, ServiceInitException;
 
+    void updatePublication(Publication publicationOld, Publication publicationNew) throws ServiceInitException;
+
     void initStorageRandom() throws ServiceInitException;
 }

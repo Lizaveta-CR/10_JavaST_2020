@@ -49,6 +49,23 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     /**
+     * Updates publicationOld with publicationNew in storage and passes it to publication repository
+     * <p>
+     *
+     * @param publication,publicationNew
+     */
+    @Override
+    public void updatePublication(Publication publication, Publication publicationNew) throws ServiceInitException {
+        PublicationRepository bookRepository = factory.getBookRepository();
+        try {
+            bookRepository.updatePublication(publication, publicationNew);
+        } catch (BookStorageElementException e) {
+            logger.debug(e.getMessage());
+            throw new ServiceInitException(e.getMessage());
+        }
+    }
+
+    /**
      * Calls BookRepository to add random publications to storage
      *
      * @throws ServiceInitException

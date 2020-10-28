@@ -18,10 +18,7 @@ import by.tsvirko.task06.service.query.book_query.find_query.exception.FindExcep
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public final class PublicationRepositoryImpl implements PublicationRepository {
     private static final Logger logger = LogManager.getLogger(PublicationRepositoryImpl.class);
@@ -37,6 +34,7 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
      */
     @Override
     public void addPublication(Publication publication) throws BookStorageElementException {
+        publication.setId(UUID.randomUUID().toString());
         bookStorage.setStorageElement(publication);
         try {
             publicationDao.create(publication);
@@ -61,6 +59,28 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
             logger.info("Book repository can not delete element", e.getMessage());
             throw new BookStorageElementException("Element can't be deleted");
         }
+    }
+
+    /**
+     * Updates publicationOld with publicationNew in storage and passes it to dao
+     * <p>
+     *
+     * @param publicationOld,publicationNew
+     */
+    @Override
+    public void updatePublication(Publication publicationOld, Publication publicationNew) throws BookStorageElementException {
+        try {
+
+            String id = publicationOld.getId();
+            bookStorage.removeStorageElement(publicationOld);
+            publicationNew.setId(id);
+            bookStorage.setStorageElement(publicationNew);
+            publicationDao.update(publicationOld, publicationNew);
+        } catch (BookStorageElementException | DaoStorageException e) {
+            logger.info("Book repository can not update publication", e.getMessage());
+            throw new BookStorageElementException("Element can't be updated");
+        }
+
     }
 
     /**
@@ -112,6 +132,7 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
     public void addRandomPublication() throws BookStorageElementException {
         Set<String> harry = new HashSet<>();
         harry.add("J.K.Rowling");
+        //TODO:fabric
         Publication book = new Book("Harry Potter", harry, 10000, "USA House", 2000);
         Set<String> warAndPiece = new HashSet<>();
         warAndPiece.add("Tolstoy");
@@ -120,18 +141,23 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
         q.add("q");
         Publication book2 = new Book("q", q, 1, "q", 1);
         Publication magazine1 = new Magazine("Vogue", 123, "gloss", "q");
-        Publication magazine2 = new Magazine("Bazar", 123, "gloss", "w");
+//        Publication magazine2 = new Magazine("Bazar", 123, "gloss", "w");
+        book.setId("li");
+        book1.setId(UUID.randomUUID().toString());
+        book2.setId(UUID.randomUUID().toString());
+        magazine1.setId("il");
+//        magazine2.setId(UUID.randomUUID().toString());
         bookStorage.setStorageElement(book);
         bookStorage.setStorageElement(book1);
         bookStorage.setStorageElement(book2);
         bookStorage.setStorageElement(magazine1);
-        bookStorage.setStorageElement(magazine2);
+//        bookStorage.setStorageElement(magazine2);
         try {
             publicationDao.create(book);
             publicationDao.create(book1);
             publicationDao.create(book2);
-            publicationDao.create(magazine1);
-            publicationDao.create(magazine2);
+//            publicationDao.create(magazine1);
+//            publicationDao.create(magazine2);
         } catch (DaoStorageException e) {
             throw new BookStorageElementException("Can not save publications to storage");
         }

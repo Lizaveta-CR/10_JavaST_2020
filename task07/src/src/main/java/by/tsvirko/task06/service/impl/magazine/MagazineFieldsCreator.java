@@ -22,7 +22,9 @@ public class MagazineFieldsCreator extends PublicationFieldsCreator {
 
         for (Field declaredField : Publication.class.getDeclaredFields()) {
             String name = declaredField.getName();
-            sb.append(name + " ");
+            if (!name.equals("id")) {
+                sb.append(name + " ");
+            }
         }
 
         Field[] declaredFields = new Magazine().getClass().getDeclaredFields();

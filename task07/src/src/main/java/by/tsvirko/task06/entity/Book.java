@@ -6,8 +6,8 @@ import java.io.Serializable;
 import java.util.*;
 
 public class Book extends Publication implements Serializable {
-    private static final long serialVersionUID = 1L;
 
+    private static final long serialVersionUID = 1L;
     private Set<String> authors = new TreeSet<>();
     private int yearOfPublishing;
 
@@ -61,7 +61,8 @@ public class Book extends Publication implements Serializable {
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + getTitle() + '\'' +
+                "id=" + getId() +
+                ", title=" + getTitle() + '\'' +
                 ", authors=" + authors +
                 ", numberOfPages=" + getNumberOfPages() +
                 ", publishingHouse='" + getPublishingHouse() + '\'' +

@@ -65,6 +65,25 @@ public class PublicationStorage implements Subject {
     }
 
     /**
+     * Gets publication from storage by publication id
+     *
+     * @param id
+     * @return Publication
+     * @throws BookStorageElementException
+     */
+    public Publication getStorageElement(String id) throws BookStorageElementException {
+        Iterator<Publication> it = storage.iterator();
+
+        while (it.hasNext()) {
+            Publication nextBook = it.next();
+            if (nextBook.getId().equals(id)) {
+                return nextBook;
+            }
+        }
+        throw new BookStorageElementException("No such publication!");
+    }
+
+    /**
      * Adds publication to Set,  internally calls notifyAllObservers( publication,  message) method
      * after adding.
      *

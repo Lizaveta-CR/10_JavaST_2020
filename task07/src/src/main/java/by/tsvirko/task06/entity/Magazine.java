@@ -40,7 +40,8 @@ public class Magazine extends Publication implements Serializable {
     @Override
     public String toString() {
         return "Magazine{" +
-                "title='" + getTitle() + '\'' +
+                "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
                 ", numOfPages=" + getNumberOfPages() +
                 ", coverHeading='" + coverHeading + '\'' +
                 ", publishingHouse='" + getPublishingHouse() + '\'' +

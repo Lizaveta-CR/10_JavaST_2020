@@ -7,5 +7,6 @@ public enum CommandName {
     ADD_BOOK,
     REMOVE_BOOK,
     SORT,
-    FIND
+    FIND,
+    UPDATE
 }

@@ -3,6 +3,7 @@ package by.tsvirko.task06.entity;
 import java.util.Objects;
 
 public class Publication {
+    private String id;
     private String title;
     private int numberOfPages;
     private String publishingHouse;
@@ -55,10 +56,19 @@ public class Publication {
         return Objects.hash(title, numberOfPages, publishingHouse);
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Publication{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", numberOfPages=" + numberOfPages +
                 ", publishingHouse='" + publishingHouse + '\'' +
                 '}';

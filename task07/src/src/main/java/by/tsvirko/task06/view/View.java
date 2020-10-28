@@ -24,6 +24,7 @@ public class View {
         System.out.println("2. Remove publication");
         System.out.println("3. Sort books");
         System.out.println("4. Find books");
+        System.out.println("5. Update publication");
         try {
             switch (scanner.nextInt()) {
                 case 0:
@@ -41,6 +42,9 @@ public class View {
                 case 4:
                     find();
                     tasksBook();
+                case 5:
+                    update();
+                    tasksBook();
                 default:
                     break;
             }
@@ -48,6 +52,25 @@ public class View {
             logger.info("Application stopped", e.getMessage());
             return;
         }
+    }
+
+    //TODO: all publications
+    //TODO: с полями поменять, а то в Find непраивльно приходит
+    private void update() {
+        List<String> task = new ArrayList<>();
+        task.add(CommandName.UPDATE.toString());
+        task.add("ID");
+        choosePublication();
+        System.out.println("Enter publication ID: ");
+        task.add(scanner.next());
+        task.add(publication);
+        String fields = bookFields();
+        for (String field : fields.split(" ")) {
+            System.out.println("Enter publication field '" + field + "'");
+            String userField = scanner.next();
+            task.add(userField);
+        }
+        controller.executeTask(task);
     }
 
     private void register() {
@@ -67,20 +90,19 @@ public class View {
     }
 
     private void find() {
-        String s = bookFields();
-        System.out.println("Enter find type: ");
-        Map<Integer, String> finds = new HashMap<>();
-        int fieldIndex = 0;
-        for (String field : s.split(" ")) {
-            finds.put(fieldIndex, field);
-            System.out.println(fieldIndex + " - " + field);
-            fieldIndex++;
-        }
         List<String> task = new ArrayList<>();
-        task.add(CommandName.FIND.toString());
-        task.add(finds.get(scanner.nextInt()));
-        System.out.println("Enter what book do you want to find: ");
-        task.add(scanner.next());
+        System.out.println("Enter find type: ");
+        System.out.println("1. ID");
+
+        switch (scanner.nextInt()) {
+            case 1:
+                task.add(CommandName.FIND.toString());
+                task.add("ID");
+                task.add(scanner.next());
+                break;
+            default:
+                break;
+        }
         controller.executeTask(task);
     }
 
@@ -147,10 +169,20 @@ public class View {
         return controller.executeTask(taskFields);
     }
 
+    private void publicationFields() {
+        String taskF = CommandName.BOOK_FIELDS.toString();
+        List<String> taskFields = new ArrayList<>();
+        taskFields.add(taskF);
+        taskFields.add(publication);
+        controller.executeTask(taskFields);
+    }
+
     private String choosePublication() {
         String publication = null;
-        System.out.println("1.Book\n2.Magazine");
+        System.out.println("0.Don't remember\n1.Book\n2.Magazine");
         switch (scanner.nextInt()) {
+            case 0:
+                publication = "";
             case 1:
                 publication = "BOOK";
                 break;

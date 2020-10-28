@@ -17,6 +17,8 @@ public interface PublicationRepository {
 
     void removePublication(Publication publication) throws BookStorageElementException;
 
+    void updatePublication(Publication publicationOld, Publication publicationNew) throws BookStorageElementException;
+
     Publication getPublication(Publication publication) throws BookStorageElementException;
 
     List<Publication> query(Query<Publication, PublicationStorage> bookQuery) throws FindException;

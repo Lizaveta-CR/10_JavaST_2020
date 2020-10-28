@@ -2,6 +2,7 @@ package by.tsvirko.task06.dao.impl;
 
 import by.tsvirko.task06.dao.PublicationDao;
 import by.tsvirko.task06.dao.exception.DaoStorageException;
+import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.Publication;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -97,6 +98,17 @@ public class PublicationDaoImpl implements PublicationDao {
     }
 
     /**
+     * Updates publicationOld with publicationNew in storage
+     *
+     * @param publicationOld,publicationNew
+     */
+    @Override
+    public void update(Publication publicationOld, Publication publicationNew) throws DaoStorageException {
+        delete(publicationOld);
+        create(publicationNew);
+    }
+
+    /**
      * Reads all books from file. Only for BookDAO class use!
      *
      * @return
@@ -117,5 +129,11 @@ public class PublicationDaoImpl implements PublicationDao {
                 fis.close();
         }
         return books;
+    }
+
+    public static void main(String[] args) throws IOException {
+        for (Publication publication : new PublicationDaoImpl().readAll()) {
+            System.out.println(publication);
+        }
     }
 }
