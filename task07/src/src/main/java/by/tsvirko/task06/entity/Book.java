@@ -5,9 +5,8 @@ import by.tsvirko.task06.entity.exception.NoAuthorsException;
 import java.io.Serializable;
 import java.util.*;
 
-public class Book extends Publication implements Serializable {
+public class Book extends Publication {
 
-    private static final long serialVersionUID = 1L;
     private Set<String> authors = new TreeSet<>();
     private int yearOfPublishing;
 

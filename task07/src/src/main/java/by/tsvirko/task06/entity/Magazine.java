@@ -3,8 +3,7 @@ package by.tsvirko.task06.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Magazine extends Publication implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Magazine extends Publication {
     private String coverHeading;
 
     public Magazine() {

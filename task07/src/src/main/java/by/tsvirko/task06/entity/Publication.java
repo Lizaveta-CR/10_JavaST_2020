@@ -1,11 +1,15 @@
 package by.tsvirko.task06.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Publication {
+public class Publication implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String title;
     private int numberOfPages;
+    //TODO:enum
     private String publishingHouse;
 
     public Publication() {

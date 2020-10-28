@@ -22,7 +22,7 @@ public class BookFieldsCreator extends PublicationFieldsCreator {
 
         for (Field declaredField : Publication.class.getDeclaredFields()) {
             String name = declaredField.getName();
-            if (!name.equals("id")) {
+            if (!name.equals("id") && !name.equals("serialVersionUID")) {
                 sb.append(name + " ");
             }
         }
@@ -30,9 +30,7 @@ public class BookFieldsCreator extends PublicationFieldsCreator {
         Field[] declaredFields = Book.class.getDeclaredFields();
         for (Field declaredField : declaredFields) {
             String name = declaredField.getName();
-            if (!name.equals("serialVersionUID")) {
-                sb.append(name + " ");
-            }
+            sb.append(name + " ");
         }
 
         logger.debug("book fields were given");

@@ -3,6 +3,7 @@ package by.tsvirko.task06.dao.impl;
 import by.tsvirko.task06.dao.PublicationDao;
 import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.entity.Book;
+import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class PublicationDaoImpl implements PublicationDao {
@@ -121,7 +124,13 @@ public class PublicationDaoImpl implements PublicationDao {
             fis = new FileInputStream(new File(FILE_PATH));
             while (true) {
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                books.add((Publication) ois.readObject());
+                Object o = ois.readObject();
+                if (o instanceof Book) {
+                    books.add((Book) o);
+                } else {
+                    books.add((Magazine) o);
+                }
+//                books.add((Publication) ois.readObject());
             }
         } catch (EOFException | ClassNotFoundException e) {
         } finally {
@@ -131,9 +140,11 @@ public class PublicationDaoImpl implements PublicationDao {
         return books;
     }
 
-    public static void main(String[] args) throws IOException {
-        for (Publication publication : new PublicationDaoImpl().readAll()) {
-            System.out.println(publication);
-        }
-    }
+//    public static void main(String[] args) throws IOException, DaoStorageException {
+//
+//        PublicationDaoImpl publicationDao = new PublicationDaoImpl();
+//        for (Publication publication : publicationDao.readAll()) {
+//            System.out.println(publication);
+//        }
+//}
 }
