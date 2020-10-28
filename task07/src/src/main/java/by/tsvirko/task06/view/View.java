@@ -179,15 +179,15 @@ public class View {
 
     private String choosePublication() {
         String publication = null;
-        System.out.println("0.Don't remember\n1.Book\n2.Magazine");
+        System.out.println("1.Book\n2.Magazine");
         switch (scanner.nextInt()) {
-            case 0:
-                publication = "";
             case 1:
                 publication = "BOOK";
                 break;
             case 2:
                 publication = "MAGAZINE";
+                break;
+            default:
                 break;
         }
         this.publication = publication;
