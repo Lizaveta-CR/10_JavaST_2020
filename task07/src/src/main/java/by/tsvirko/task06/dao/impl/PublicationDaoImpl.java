@@ -5,14 +5,12 @@ import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
+import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 
 public class PublicationDaoImpl implements PublicationDao {
@@ -31,7 +29,6 @@ public class PublicationDaoImpl implements PublicationDao {
             FileOutputStream f = new FileOutputStream(new File(FILE_PATH), true);
 
             ObjectOutputStream o = new ObjectOutputStream(f);
-
             o.writeObject(publication);
 
             o.close();
@@ -56,7 +53,7 @@ public class PublicationDaoImpl implements PublicationDao {
         List<Publication> books = null;
         try {
             books = readAll();
-        } catch (IOException e) {
+        } catch (DaoStorageException e) {
             throw new DaoStorageException(e.getMessage());
         }
 
@@ -69,7 +66,7 @@ public class PublicationDaoImpl implements PublicationDao {
                 create(b);
             } catch (DaoStorageException e) {
                 logger.info("DAO exception: " + e.getMessage());
-                throw new DaoStorageException("Can not create publication");
+                throw new DaoStorageException("Can not create publication in file");
             }
         }
     }
@@ -93,7 +90,7 @@ public class PublicationDaoImpl implements PublicationDao {
                 }
             }
             logger.info("Publication was read from file");
-        } catch (IOException e) {
+        } catch (DaoStorageException e) {
             logger.info("DAO read(Publication publ) exception: " + e.getMessage());
             throw new DaoStorageException("No such publ");
         }
@@ -111,40 +108,65 @@ public class PublicationDaoImpl implements PublicationDao {
         create(publicationNew);
     }
 
+    @Override
+    public void createRandom() throws DaoStorageException {
+        Set<String> harry = new HashSet<>();
+        harry.add("J.K.Rowling");
+        Publication book = new Book("sls", harry, 10000, "USA House", 2000);
+        Set<String> warAndPiece = new HashSet<>();
+        warAndPiece.add("Tolstoy");
+        Publication book1 = new Book("War and piece", warAndPiece, 1225, "unknown", 1865);
+        Set<String> q = new HashSet<>();
+        q.add("q");
+        Publication book2 = new Book("q", q, 1, "q", 1);
+        Publication magazine1 = new Magazine("Vogue", 123, "gloss", "q");
+        Publication magazine2 = new Magazine("Bazar", 123, "gloss", "w");
+        try {
+            create(book);
+            create(book1);
+            create(book2);
+            create(magazine1);
+            create(magazine2);
+        } catch (DaoStorageException e) {
+            throw new DaoStorageException("Can not save publications to file");
+        }
+    }
+
     /**
-     * Reads all books from file. Only for BookDAO class use!
+     * Reads all books from file
      *
      * @return
      * @throws IOException
      */
-    private List<Publication> readAll() throws IOException {
+    public List<Publication> readAll() throws DaoStorageException {
         List<Publication> books = new ArrayList<>();
         FileInputStream fis = null;
+        ObjectInputStream ois = null;
         try {
             fis = new FileInputStream(new File(FILE_PATH));
             while (true) {
-                ObjectInputStream ois = new ObjectInputStream(fis);
-                Object o = ois.readObject();
-                if (o instanceof Book) {
-                    books.add((Book) o);
-                } else {
-                    books.add((Magazine) o);
-                }
-//                books.add((Publication) ois.readObject());
+                ois = new ObjectInputStream(fis);
+                books.add((Publication) ois.readObject());
             }
-        } catch (EOFException | ClassNotFoundException e) {
+        } catch (ClassNotFoundException | IOException e) {
         } finally {
-            if (fis != null)
-                fis.close();
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    throw new DaoStorageException("Can't read file information");
+                }
+            }
         }
         return books;
     }
 
-//    public static void main(String[] args) throws IOException, DaoStorageException {
-//
-//        PublicationDaoImpl publicationDao = new PublicationDaoImpl();
-//        for (Publication publication : publicationDao.readAll()) {
-//            System.out.println(publication);
-//        }
-//}
+    public static void main(String[] args) throws DaoStorageException {
+
+        PublicationDaoImpl publicationDao = new PublicationDaoImpl();
+        publicationDao.createRandom();
+        for (Publication publication : publicationDao.readAll()) {
+            System.out.println(publication);
+        }
+    }
 }

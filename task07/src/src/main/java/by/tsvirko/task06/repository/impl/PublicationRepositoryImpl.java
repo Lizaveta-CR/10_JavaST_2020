@@ -124,43 +124,20 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
     }
 
     /**
-     * Adds random books to storage and passes it to BookDAO
+     * Adds random books to storage
      *
      * @throws BookStorageElementException
      */
     @Override
     public void addRandomPublication() throws BookStorageElementException {
-        Set<String> harry = new HashSet<>();
-        harry.add("J.K.Rowling");
-        //TODO:fabric
-        Publication book = new Book("Harry Potter", harry, 10000, "USA House", 2000);
-        Set<String> warAndPiece = new HashSet<>();
-        warAndPiece.add("Tolstoy");
-        Publication book1 = new Book("War and piece", warAndPiece, 1225, "unknown", 1865);
-        Set<String> q = new HashSet<>();
-        q.add("q");
-        Publication book2 = new Book("q", q, 1, "q", 1);
-        Publication magazine1 = new Magazine("Vogue", 123, "gloss", "q");
-//        Publication magazine2 = new Magazine("Bazar", 123, "gloss", "w");
-        book.setId("li");
-        book1.setId(UUID.randomUUID().toString());
-        book2.setId(UUID.randomUUID().toString());
-        magazine1.setId("il");
-//        magazine2.setId(UUID.randomUUID().toString());
-        bookStorage.setStorageElement(book);
-        bookStorage.setStorageElement(book1);
-        bookStorage.setStorageElement(book2);
-        bookStorage.setStorageElement(magazine1);
-//        bookStorage.setStorageElement(magazine2);
         try {
-            publicationDao.create(book);
-            publicationDao.create(book1);
-            publicationDao.create(book2);
-//            publicationDao.create(magazine1);
-//            publicationDao.create(magazine2);
+            publicationDao.createRandom();
+            for (Publication publication : publicationDao.readAll()) {
+                publication.setId(UUID.randomUUID().toString());
+                bookStorage.setStorageElement(publication);
+            }
         } catch (DaoStorageException e) {
             throw new BookStorageElementException("Can not save publications to storage");
         }
-
     }
 }
