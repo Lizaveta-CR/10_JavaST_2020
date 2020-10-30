@@ -6,21 +6,18 @@ import by.tsvirko.task06.repository.PublicationRepository;
 import by.tsvirko.task06.repository.repositoryFactory.RepositoryFactory;
 import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.impl.book.FileBookServicempl;
-import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
-import by.tsvirko.task06.service.query.providers.QuerySortProvider;
+import by.tsvirko.task06.service.query.providers.QuerySortPublicationProvider;
+import by.tsvirko.task06.service.query.publication_query.find_query.exception.FindException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Finds special 'sort' query by command and using RepositoryFactory writes result to file
- */
-public class QuerySortServiceController {
-    private static final Logger logger = LogManager.getLogger(QuerySortServiceController.class);
+public class QuerySortPublicationServiceController {
+    private static final Logger logger = LogManager.getLogger(QuerySortPublicationServiceController.class);
 
-    private final QuerySortProvider provider = new QuerySortProvider();
+    private final QuerySortPublicationProvider provider = new QuerySortPublicationProvider();
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
     public String sort(String request) throws IOException {
@@ -48,3 +45,4 @@ public class QuerySortServiceController {
         return response;
     }
 }
+

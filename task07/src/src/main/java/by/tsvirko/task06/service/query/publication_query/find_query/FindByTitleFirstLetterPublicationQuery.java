@@ -4,7 +4,7 @@ import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.service.query.Query;
-import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
+import by.tsvirko.task06.service.query.publication_query.find_query.exception.FindException;
 
 import java.util.ArrayList;
 import java.util.List;

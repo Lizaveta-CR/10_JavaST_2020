@@ -1,4 +1,4 @@
-package by.tsvirko.task06.service.query.book_query.find_query.exception;
+package by.tsvirko.task06.service.query.publication_query.find_query.exception;
 
 public class FindException extends Exception {
     public FindException() {

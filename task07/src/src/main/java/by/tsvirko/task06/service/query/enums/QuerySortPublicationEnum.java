@@ -1,9 +1,9 @@
 package by.tsvirko.task06.service.query.enums;
 
-public enum QuerySortEnum {
+public enum QuerySortPublicationEnum {
+    ID,
     TITLE,
-    AUTHORS,
+    TITLENUMBEROFPAGES,
     NUMBEROFPAGES,
     PUBLISHINGHOUSE,
-    YEAROFPUBLISHING
 }

@@ -22,8 +22,8 @@ public class View {
         System.out.println("0.Register observer");
         System.out.println("1. Add publication");
         System.out.println("2. Remove publication");
-        System.out.println("3. Sort books");
-        System.out.println("4. Find books");
+        System.out.println("3. Sort publications");
+        System.out.println("4. Find publications");
         System.out.println("5. Update publication");
         try {
             switch (scanner.nextInt()) {
@@ -129,18 +129,38 @@ public class View {
     }
 
     private void sort() {
-        String s = bookFields();
-        System.out.println("Enter sort type: ");
-        Map<Integer, String> sorts = new HashMap<>();
-        int fieldIndex = 0;
-        for (String field : s.split(" ")) {
-            sorts.put(fieldIndex, field);
-            System.out.println(fieldIndex + " - " + field);
-            fieldIndex++;
-        }
         List<String> task = new ArrayList<>();
-        task.add(CommandName.SORT.toString());
-        task.add(sorts.get(scanner.nextInt()));
+        System.out.println("Enter sort type: ");
+        System.out.println("1. ID");
+        System.out.println("2. Title");
+        System.out.println("3. Title and number of pages");
+        System.out.println("4. Number of pages");
+        System.out.println("5. Publishing house");
+        switch (scanner.nextInt()) {
+            case 1:
+                task.add(CommandName.SORT.toString());
+                task.add("ID");
+                task.add(scanner.next());
+                break;
+            case 2:
+                task.add(CommandName.SORT.toString());
+                task.add("Title");
+                break;
+            case 3:
+                task.add(CommandName.SORT.toString());
+                task.add("TITLENUMBEROFPAGES");
+                break;
+            case 4:
+                task.add(CommandName.SORT.toString());
+                task.add("numberofpages");
+                break;
+            case 5:
+                task.add(CommandName.SORT.toString());
+                task.add("publishinghouse");
+                break;
+            default:
+                break;
+        }
         controller.executeTask(task);
     }
 

@@ -1,15 +1,13 @@
 package by.tsvirko.task06.service.query;
 
 import by.tsvirko.task06.controller.exception.RequestException;
-import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.repository.PublicationRepository;
 import by.tsvirko.task06.repository.repositoryFactory.RepositoryFactory;
 import by.tsvirko.task06.service.FileBookService;
 import by.tsvirko.task06.service.impl.book.FileBookServicempl;
-import by.tsvirko.task06.service.query.book_query.find_query.exception.FindException;
-import by.tsvirko.task06.service.query.providers.QueryFindProvider;
 import by.tsvirko.task06.service.query.providers.QueryFindPublicationProvider;
+import by.tsvirko.task06.service.query.publication_query.find_query.exception.FindException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

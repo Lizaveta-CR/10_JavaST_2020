@@ -141,11 +141,10 @@ public class PublicationDaoImpl implements PublicationDao {
     public List<Publication> readAll() throws DaoStorageException {
         List<Publication> books = new ArrayList<>();
         FileInputStream fis = null;
-        ObjectInputStream ois = null;
         try {
             fis = new FileInputStream(new File(FILE_PATH));
             while (true) {
-                ois = new ObjectInputStream(fis);
+                ObjectInputStream ois = new ObjectInputStream(fis);
                 books.add((Publication) ois.readObject());
             }
         } catch (ClassNotFoundException | IOException e) {

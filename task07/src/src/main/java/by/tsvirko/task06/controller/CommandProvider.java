@@ -22,7 +22,7 @@ public class CommandProvider {
         repository.put(CommandName.BOOK_FIELDS, new BookFields());
         repository.put(CommandName.INIT_STORAGE, new InitStorage());
         repository.put(CommandName.REMOVE_BOOK, new RemoveBook());
-        repository.put(CommandName.SORT, new SortBooks());
+        repository.put(CommandName.SORT, new SortPublication());
         repository.put(CommandName.FIND, new FindPublication());
         repository.put(CommandName.OBSERVER, new AddObserver());
         repository.put(CommandName.UPDATE, new UpdatePublication());

@@ -15,7 +15,7 @@ public class PublicationStorage implements Subject {
     private static final Logger logger = LogManager.getLogger(PublicationStorage.class);
 
     private static PublicationStorage instance;
-    private Set<Publication> storage = new HashSet<>();
+    private Set<Publication> storage = new LinkedHashSet<>();
     private List<Observer> librarians = new ArrayList<>();
 
     private PublicationStorage() {
