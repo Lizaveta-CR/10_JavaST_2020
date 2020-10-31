@@ -22,8 +22,6 @@ public class MagazineCreatorTest {
 
     @DataProvider(name = "correctDataForCreating")
     public Object[][] createCorrectData() {
-        Set<String> authors = new HashSet<>();
-        authors.add("J.K.Rowling");
         return new Object[][]{
                 {Arrays.asList("Title", "200", "2020", "USAPublication", "gloss"), new Magazine("Title", 200,
                         2020, "USAPublication",
