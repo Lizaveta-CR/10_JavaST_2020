@@ -27,7 +27,6 @@ public class FindByTitlePublicationQuery implements Query<Publication, Publicati
                 Publication storageElement = storage.getStorageElement(i);
                 if (storageElement.getTitle().equals(title)) {
                     result.add(storageElement);
-                    break;
                 }
             }
         } catch (NumberFormatException | BookStorageElementException e) {

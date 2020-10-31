@@ -26,7 +26,6 @@ public class FindByTitleFirstLetterPublicationQuery implements Query<Publication
                 Publication storageElement = storage.getStorageElement(i);
                 if (storageElement.getTitle().toUpperCase().startsWith(letter.toUpperCase())) {
                     result.add(storageElement);
-                    break;
                 }
             }
         } catch (NumberFormatException | BookStorageElementException e) {

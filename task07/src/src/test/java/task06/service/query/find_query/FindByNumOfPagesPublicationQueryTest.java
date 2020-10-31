@@ -12,15 +12,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertThrows;
 
-public class FindByIdPublicationQueryTest {
-    private FindByIdPublicationQuery query;
+public class FindByNumOfPagesPublicationQueryTest {
+    private FindByNumOfPagesPublicationQuery query;
     private PublicationStorage storage = PublicationStorage.getInstance();
 
     @BeforeTest
@@ -29,11 +27,9 @@ public class FindByIdPublicationQueryTest {
         authors.add("J.K.Rowling");
         Book book = new Book("Title", 200, 2020, "USAPublication",
                 authors);
-        book.setId("1");
         storage.setStorageElement(book);
         Magazine magazine = new Magazine("Title", 200, 2020, "USAPublication",
                 "gloss");
-        magazine.setId("2");
         storage.setStorageElement(magazine);
         System.out.println("Storage has been initialized");
     }
@@ -43,9 +39,10 @@ public class FindByIdPublicationQueryTest {
         Set<String> authors = new HashSet<>();
         authors.add("J.K.Rowling");
         return new Object[][]{
-                {"1", new Book("Title", 200, 2020, "USAPublication",
-                        authors)
-                }};
+                {"200", Arrays.asList(new Book("Title", 200, 2020, "USAPublication",
+                                authors)
+                        , new Magazine("Title", 200, 2020, "USAPublication",
+                                "gloss"))}};
     }
 
     @DataProvider(name = "incorrectData")
@@ -54,17 +51,17 @@ public class FindByIdPublicationQueryTest {
                 "128", "3ii2", null};
     }
 
-    @Test(description = "testing finding by id", dataProvider = "correctData")
-    public void testIdCorrect(String id, Book publication) throws FindException {
-        this.query = new FindByIdPublicationQuery(id);
+    @Test(description = "testing finding by pages", dataProvider = "correctData")
+    public void testPagesCorrect(String pages, List<Publication> publication) throws FindException {
+        this.query = new FindByNumOfPagesPublicationQuery(pages);
         List<Publication> actual = this.query.query(storage);
-        Book expected = publication;
-        assertEquals(actual.get(0), expected);
+        List<Publication> expected = publication;
+        assertEquals(actual, expected);
     }
 
-    @Test(description = "testing finding by id", dataProvider = "incorrectData")
-    public void testPagesIncorrect(String id) {
-        this.query = new FindByIdPublicationQuery(id);
+    @Test(description = "testing finding by pages", dataProvider = "incorrectData")
+    public void testPagesIncorrect(String page) {
+        this.query = new FindByNumOfPagesPublicationQuery(page);
         assertThrows(FindException.class, () -> query.query(storage));
     }
 }

@@ -27,7 +27,6 @@ public class FindByPublishingHousePublicationQuery implements Query<Publication,
                 Publication storageElement = storage.getStorageElement(i);
                 if (storageElement.getPublishingHouse().equals(publHouse)) {
                     result.add(storageElement);
-                    break;
                 }
             }
         } catch (NumberFormatException | BookStorageElementException e) {
