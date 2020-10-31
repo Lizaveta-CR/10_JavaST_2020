@@ -15,7 +15,7 @@ public class PublicationServiceImpl implements PublicationService {
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
     /**
-     * Calls BookRepository to add publication to storage
+     * Calls BookRepository to add publication to storage.
      *
      * @param publication
      * @throws ServiceInitException
@@ -32,7 +32,7 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     /**
-     * Calls BookRepository to remove publication from storage
+     * Calls BookRepository to remove publication from storage.
      *
      * @param publication
      * @throws ServiceInitException
@@ -66,7 +66,7 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     /**
-     * Calls BookRepository to add random publications to storage
+     * Calls BookRepository to add random publications to storage.
      *
      * @throws ServiceInitException
      */

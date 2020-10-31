@@ -134,9 +134,9 @@ public class PublicationDaoImpl implements PublicationDao {
     }
 
     /**
-     * Reads all books from file
+     * Reads all books from file.
      *
-     * @return
+     * @return List<Publication>
      * @throws IOException
      */
     public List<Publication> readAll() throws DaoStorageException {
