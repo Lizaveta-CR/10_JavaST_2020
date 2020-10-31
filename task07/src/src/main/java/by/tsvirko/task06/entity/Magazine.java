@@ -8,7 +8,7 @@ public class Magazine extends Publication {
     public Magazine() {
     }
 
-    public Magazine(String title, int numOfPages, int year, String coverHeading, String publishingHouse) {
+    public Magazine(String title, int numOfPages, int year, String publishingHouse, String coverHeading) {
         super(title, numOfPages, year, publishingHouse);
         this.coverHeading = coverHeading;
     }

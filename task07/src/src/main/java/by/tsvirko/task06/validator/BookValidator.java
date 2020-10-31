@@ -20,10 +20,6 @@ public class BookValidator implements Validator {
     }
 
     private boolean checkFields(Book publication) {
-
-        if (publication.getTitle() == null || publication.getPublishingHouse() == null) {
-            return false;
-        }
-        return true;
+        return !(publication.getTitle() == null || publication.getPublishingHouse() == null);
     }
 }

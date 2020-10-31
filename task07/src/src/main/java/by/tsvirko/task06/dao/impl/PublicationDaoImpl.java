@@ -11,6 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 
@@ -111,6 +113,12 @@ public class PublicationDaoImpl implements PublicationDao {
 
     @Override
     public void createRandom() throws DaoStorageException {
+        try {
+            Files.deleteIfExists(Paths.get(FILE_PATH));
+        } catch (IOException e) {
+            logger.info("Cannot delete file");
+            throw new DaoStorageException("Can not save publications to file");
+        }
         Set<String> harry = new HashSet<>();
         harry.add("J.K.Rowling");
         Publication book = new Book("sls", 2000, -100, "USA House", harry);
@@ -120,8 +128,8 @@ public class PublicationDaoImpl implements PublicationDao {
         Set<String> q = new HashSet<>();
         q.add("q");
         Publication book2 = new Book("q", 1, 1, "q", q);
-        Publication magazine1 = new Magazine("Vogue", 123, 2000, "gloss", "q");
-        Publication magazine2 = new Magazine("Bazar", 123, 2000, "gloss", "w");
+        Publication magazine1 = new Magazine("Vogue", 123, 2000, "q", "gloss");
+        Publication magazine2 = new Magazine("Bazar", 123, 2000, "w", "gloss");
         try {
             create(book);
             create(book1);

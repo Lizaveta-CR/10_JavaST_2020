@@ -1,5 +1,6 @@
 package by.tsvirko.task06.validator;
 
+import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
 
@@ -8,7 +9,7 @@ public class MagazineValidator implements Validator {
 
     public boolean validate(Publication publication) {
         Magazine book = (Magazine) publication;
-        return checkPages(book.getNumberOfPages()) && checkYear(book.getYear());
+        return checkPages(book.getNumberOfPages()) && checkYear(book.getYear()) && checkFields(book);
     }
 
     private boolean checkYear(int yearOfPublishing) {
@@ -17,5 +18,9 @@ public class MagazineValidator implements Validator {
 
     private boolean checkPages(int pages) {
         return pages > 0;
+    }
+
+    private boolean checkFields(Magazine publication) {
+        return !(publication.getTitle() == null || publication.getPublishingHouse() == null);
     }
 }

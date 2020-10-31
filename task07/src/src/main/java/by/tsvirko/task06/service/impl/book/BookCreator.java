@@ -32,13 +32,10 @@ public class BookCreator extends PublicationCreator {
             book.setYear(Integer.valueOf(bookFieldsUser.get(2)));
             book.setPublishingHouse(bookFieldsUser.get(3));
             Optional<String> author = Optional.ofNullable(bookFieldsUser.get(4));
-            if (author.isPresent()) {
-                book.setAuthor(bookFieldsUser.get(4));
+            if (!author.isPresent() || !bookValidator.validate(book)) {
+                throw new ServiceInitException("Invalid parametres");
             } else {
-                throw new ServiceInitException("Invalid parametres");
-            }
-            if (!bookValidator.validate(book)) {
-                throw new ServiceInitException("Invalid parametres");
+                book.setAuthor(bookFieldsUser.get(4));
             }
         } catch (NumberFormatException | ClassCastException | IndexOutOfBoundsException e) {
             logger.debug("Create book error", e.getMessage());

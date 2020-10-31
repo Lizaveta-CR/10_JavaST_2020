@@ -4,6 +4,7 @@ import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.service.PublicationCreator;
 import by.tsvirko.task06.service.exception.ServiceInitException;
+import by.tsvirko.task06.validator.MagazineValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,6 +12,8 @@ import java.util.List;
 
 public class MagazineCreator extends PublicationCreator {
     private static final Logger logger = LogManager.getLogger(MagazineCreator.class);
+
+    private MagazineValidator magazineValidator = new MagazineValidator();
 
     /**
      * Creates new Publication depending on users' fields
@@ -29,7 +32,10 @@ public class MagazineCreator extends PublicationCreator {
             magazine.setYear(Integer.valueOf(fieldsUser.get(2)));
             magazine.setPublishingHouse(fieldsUser.get(3));
             magazine.setCoverHeading(fieldsUser.get(4));
-        } catch (NumberFormatException e) {
+            if (!magazineValidator.validate(magazine)) {
+                throw new ServiceInitException("Invalid parametres");
+            }
+        } catch (NumberFormatException | ClassCastException | IndexOutOfBoundsException e) {
             logger.debug("Create magazine error", e.getMessage());
             throw new ServiceInitException("Invalid parametres");
         }
