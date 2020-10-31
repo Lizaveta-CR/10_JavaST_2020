@@ -1,5 +1,6 @@
 package by.tsvirko.task06.entity;
 
+import by.tsvirko.task06.entity.observer.Action;
 import by.tsvirko.task06.entity.observer.Observer;
 import by.tsvirko.task06.entity.observer.Subject;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
@@ -94,7 +95,7 @@ public class PublicationStorage implements Subject {
         if (!storage.add(publication)) {
             throw new BookStorageElementException("Books already presents in storage!");
         }
-        notifyAllObservers(publication, " - setting");
+        notifyAllObservers(publication, Action.ADD);
     }
 
     /**
@@ -108,7 +109,7 @@ public class PublicationStorage implements Subject {
         if (!storage.remove(publication)) {
             throw new BookStorageElementException("No such publication");
         }
-        notifyAllObservers(publication, " - deleting");
+        notifyAllObservers(publication, Action.REMOVE);
     }
 
     /**
@@ -146,9 +147,9 @@ public class PublicationStorage implements Subject {
      * Notify all the registered librarians
      */
     @Override
-    public void notifyAllObservers(Publication publication, String message) {
+    public void notifyAllObservers(Publication publication, Action action) {
         for (Observer librarian : librarians) {
-            librarian.update(publication, message);
+            librarian.update(publication, action);
         }
         System.out.println();
     }

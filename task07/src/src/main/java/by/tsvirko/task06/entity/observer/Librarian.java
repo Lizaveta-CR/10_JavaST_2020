@@ -1,8 +1,10 @@
 package by.tsvirko.task06.entity.observer;
 
 import by.tsvirko.task06.entity.Publication;
+import by.tsvirko.task06.entity.observer.info.PublicationInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 public class Librarian implements Observer {
     private static final Logger logger = LogManager.getLogger(Librarian.class);
@@ -17,14 +19,16 @@ public class Librarian implements Observer {
     }
 
     /**
-     * This method will be called to librarians regarding the publication modification
+     * This method will be called to librarians regarding the publication modification (Action)
      *
      * @param publication
-     * @param message
+     * @param action
      */
     @Override
-    public void update(Publication publication, String message) {
-        logger.info(name + " has received " + publication + " action " + message);
+    public void update(Publication publication, Action action) {
+        PublicationInfo instance = PublicationInfo.getInstance();
+        logger.info("Librarian received publications. Counting... ");
+        instance.update(publication, publication.getYear(), action);
     }
 
     @Override

@@ -14,12 +14,13 @@ public class View {
     private String publication;
 
     public View() {
+        System.out.println("Let's register observer: ");
+        register();
         initStorage();
     }
 
     public void tasksBook() {
         System.out.println("What will we do?");
-        System.out.println("0.Register observer");
         System.out.println("1. Add publication");
         System.out.println("2. Remove publication");
         System.out.println("3. Sort publications");
@@ -27,9 +28,6 @@ public class View {
         System.out.println("5. Update publication");
         try {
             switch (scanner.nextInt()) {
-                case 0:
-                    register();
-                    tasksBook();
                 case 1:
                     addPublication();
                     tasksBook();

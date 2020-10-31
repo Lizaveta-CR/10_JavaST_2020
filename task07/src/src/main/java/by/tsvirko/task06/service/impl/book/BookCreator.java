@@ -26,9 +26,9 @@ public class BookCreator extends PublicationCreator {
         try {
             book.setTitle(bookFieldsUser.get(0));
             book.setNumberOfPages(Integer.valueOf(bookFieldsUser.get(1)));
-            book.setPublishingHouse(bookFieldsUser.get(2));
-            book.setAuthor(bookFieldsUser.get(3));
-            book.setYearOfPublishing(Integer.valueOf(bookFieldsUser.get(4)));
+            book.setYear(Integer.valueOf(bookFieldsUser.get(2)));
+            book.setPublishingHouse(bookFieldsUser.get(3));
+            book.setAuthor(bookFieldsUser.get(4));
         } catch (NumberFormatException e) {
             logger.debug("Create book error", e.getMessage());
             throw new ServiceInitException("Invalid parametres");

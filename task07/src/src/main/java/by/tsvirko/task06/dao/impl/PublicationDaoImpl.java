@@ -112,15 +112,15 @@ public class PublicationDaoImpl implements PublicationDao {
     public void createRandom() throws DaoStorageException {
         Set<String> harry = new HashSet<>();
         harry.add("J.K.Rowling");
-        Publication book = new Book("sls", harry, 10000, "USA House", 2000);
+        Publication book = new Book("sls", harry, -100, "USA House", 2000);
         Set<String> warAndPiece = new HashSet<>();
         warAndPiece.add("Tolstoy");
         Publication book1 = new Book("War and piece", warAndPiece, 1225, "unknown", 1865);
         Set<String> q = new HashSet<>();
         q.add("q");
         Publication book2 = new Book("q", q, 1, "q", 1);
-        Publication magazine1 = new Magazine("Vogue", 123, "gloss", "q");
-        Publication magazine2 = new Magazine("Bazar", 123, "gloss", "w");
+        Publication magazine1 = new Magazine("Vogue", 123, 2000, "gloss", "q");
+        Publication magazine2 = new Magazine("Bazar", 123, 2000, "gloss", "w");
         try {
             create(book);
             create(book1);
@@ -158,14 +158,5 @@ public class PublicationDaoImpl implements PublicationDao {
             }
         }
         return books;
-    }
-
-    public static void main(String[] args) throws DaoStorageException {
-
-        PublicationDaoImpl publicationDao = new PublicationDaoImpl();
-        publicationDao.createRandom();
-        for (Publication publication : publicationDao.readAll()) {
-            System.out.println(publication);
-        }
     }
 }

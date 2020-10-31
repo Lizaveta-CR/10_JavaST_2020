@@ -9,15 +9,17 @@ public class Publication implements Serializable {
     private String id;
     private String title;
     private int numberOfPages;
+    private int year;
     //TODO:enum
     private String publishingHouse;
 
     public Publication() {
     }
 
-    public Publication(String title, int numberOfPages, String publishingHouse) {
+    public Publication(String title, int numberOfPages, int year, String publishingHouse) {
         this.title = title;
         this.numberOfPages = numberOfPages;
+        this.year = year;
         this.publishingHouse = publishingHouse;
     }
 
@@ -45,19 +47,12 @@ public class Publication implements Serializable {
         this.publishingHouse = publishingHouse;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Publication that = (Publication) o;
-        return numberOfPages == that.numberOfPages &&
-                Objects.equals(title, that.title) &&
-                Objects.equals(publishingHouse, that.publishingHouse);
+    public int getYear() {
+        return year;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, numberOfPages, publishingHouse);
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getId() {
@@ -69,11 +64,28 @@ public class Publication implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Publication that = (Publication) o;
+        return numberOfPages == that.numberOfPages &&
+                year == that.year &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(publishingHouse, that.publishingHouse);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, numberOfPages, year, publishingHouse);
+    }
+
+    @Override
     public String toString() {
         return "Publication{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", numberOfPages=" + numberOfPages +
+                ", year=" + year +
                 ", publishingHouse='" + publishingHouse + '\'' +
                 '}';
     }

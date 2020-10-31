@@ -4,17 +4,17 @@ import by.tsvirko.task06.dao.PublicationDao;
 import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.dao.impl.PublicationDaoImpl;
 import by.tsvirko.task06.entity.Book;
-import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.entity.exception.NoAuthorsException;
-import by.tsvirko.task06.entity.observer.Librarian;
 import by.tsvirko.task06.entity.observer.Observer;
 import by.tsvirko.task06.repository.PublicationRepository;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
-import by.tsvirko.task06.repository.repositoryFactory.RepositoryFactory;
 import by.tsvirko.task06.service.query.Query;
 import by.tsvirko.task06.service.query.publication_query.find_query.exception.FindException;
+import by.tsvirko.task06.validator.BookValidator;
+import by.tsvirko.task06.validator.MagazineValidator;
+import by.tsvirko.task06.validator.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -130,11 +130,23 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
      */
     @Override
     public void addRandomPublication() throws BookStorageElementException {
+        Validator validatorBook = new BookValidator();
+        Validator validatorMagazine = new MagazineValidator();
         try {
             publicationDao.createRandom();
             for (Publication publication : publicationDao.readAll()) {
-                publication.setId(UUID.randomUUID().toString());
-                bookStorage.setStorageElement(publication);
+                if (publication instanceof Book) {
+                    if (validatorBook.validate(publication)) {
+                        publication.setId(UUID.randomUUID().toString());
+                        bookStorage.setStorageElement(publication);
+                    }
+                } else {
+                    if (validatorMagazine.validate(publication)) {
+                        publication.setId(UUID.randomUUID().toString());
+                        bookStorage.setStorageElement(publication);
+                    }
+                }
+
             }
         } catch (DaoStorageException e) {
             throw new BookStorageElementException("Can not save publications to storage");

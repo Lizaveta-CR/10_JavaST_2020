@@ -1,6 +1,5 @@
 package by.tsvirko.task06.entity;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 public class Magazine extends Publication {
@@ -9,8 +8,8 @@ public class Magazine extends Publication {
     public Magazine() {
     }
 
-    public Magazine(String title, int numOfPages, String coverHeading, String publishingHouse) {
-        super(title, numOfPages, publishingHouse);
+    public Magazine(String title, int numOfPages, int year, String coverHeading, String publishingHouse) {
+        super(title, numOfPages, year, publishingHouse);
         this.coverHeading = coverHeading;
     }
 
@@ -42,6 +41,7 @@ public class Magazine extends Publication {
                 "id=" + getId() +
                 ", title='" + getTitle() + '\'' +
                 ", numOfPages=" + getNumberOfPages() +
+                ", year=" + getYear() +
                 ", coverHeading='" + coverHeading + '\'' +
                 ", publishingHouse='" + getPublishingHouse() + '\'' +
                 '}';

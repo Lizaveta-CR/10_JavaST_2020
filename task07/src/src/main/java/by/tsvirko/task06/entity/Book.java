@@ -8,15 +8,13 @@ import java.util.*;
 public class Book extends Publication {
 
     private Set<String> authors = new TreeSet<>();
-    private int yearOfPublishing;
 
     public Book() {
     }
 
     public Book(String title, Set<String> authors, int numberOfPages, String publishingHouse, int yearOfPublishing) {
-        super(title, numberOfPages, publishingHouse);
+        super(title, numberOfPages, yearOfPublishing, publishingHouse);
         this.authors = authors;
-        this.yearOfPublishing = yearOfPublishing;
     }
 
     public String getAuthor(int i) throws NoAuthorsException {
@@ -34,27 +32,18 @@ public class Book extends Publication {
         authors.add(author);
     }
 
-    public int getYearOfPublishing() {
-        return yearOfPublishing;
-    }
-
-    public void setYearOfPublishing(int yearOfPublishing) {
-        this.yearOfPublishing = yearOfPublishing;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Book book = (Book) o;
-        return yearOfPublishing == book.yearOfPublishing &&
-                Objects.equals(authors, book.authors);
+        return Objects.equals(authors, book.authors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), authors, yearOfPublishing);
+        return Objects.hash(super.hashCode(), authors);
     }
 
     @Override
@@ -65,7 +54,7 @@ public class Book extends Publication {
                 ", authors=" + authors +
                 ", numberOfPages=" + getNumberOfPages() +
                 ", publishingHouse='" + getPublishingHouse() + '\'' +
-                ", yearOfPublishing=" + yearOfPublishing +
+                ", yearOfPublishing=" + getYear() +
                 '}';
     }
 }
