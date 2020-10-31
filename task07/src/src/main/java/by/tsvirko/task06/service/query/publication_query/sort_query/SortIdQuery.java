@@ -7,7 +7,9 @@ import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
+/**
+ * Sorts publication by id
+ */
 public class SortIdQuery extends AbstractSortQuery {
 
     @Override

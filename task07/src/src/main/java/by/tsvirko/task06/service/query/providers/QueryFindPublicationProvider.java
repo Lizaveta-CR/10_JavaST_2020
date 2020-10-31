@@ -24,6 +24,13 @@ public class QueryFindPublicationProvider {
         repository.put(QueryFindPublicationEnum.ID, new FindByIdPublicationQuery(findField.get(1)));
     }
 
+    /**
+     * Gets command from repository
+     *
+     * @param name
+     * @return Query - command
+     * @throws RequestException
+     */
     public Query getCommand(String name) throws RequestException {
         QueryFindPublicationEnum queryFindEnum;
         Query query;

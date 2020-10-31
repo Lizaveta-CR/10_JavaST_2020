@@ -9,6 +9,9 @@ import by.tsvirko.task06.service.query.publication_query.find_query.exception.Fi
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds publication by number of pages
+ */
 public class FindByNumOfPagesPublicationQuery implements Query<Publication, PublicationStorage> {
     private String pages;
 

@@ -19,9 +19,9 @@ public class CommandProvider {
 
     public CommandProvider() {
         repository.put(CommandName.ADD_BOOK, new AddBook());
-        repository.put(CommandName.BOOK_FIELDS, new BookFields());
+        repository.put(CommandName.BOOK_FIELDS, new Fields());
         repository.put(CommandName.INIT_STORAGE, new InitStorage());
-        repository.put(CommandName.REMOVE_BOOK, new RemoveBook());
+        repository.put(CommandName.REMOVE_BOOK, new RemovePublication());
         repository.put(CommandName.SORT, new SortPublication());
         repository.put(CommandName.FIND, new FindPublication());
         repository.put(CommandName.OBSERVER, new AddObserver());

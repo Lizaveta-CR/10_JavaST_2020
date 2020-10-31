@@ -5,10 +5,10 @@ import by.tsvirko.task06.entity.observer.info.PublicationInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 public class Librarian implements Observer {
     private static final Logger logger = LogManager.getLogger(Librarian.class);
 
+    //Librarian name
     private String name;
 
     public Librarian() {

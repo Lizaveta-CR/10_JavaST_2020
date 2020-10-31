@@ -6,6 +6,6 @@ import by.tsvirko.task06.entity.Publication;
 
 import java.io.IOException;
 
-public interface FileBookService {
+public interface WritingService {
     void writeResult(Publication publication, String fileName) throws IOException;
 }

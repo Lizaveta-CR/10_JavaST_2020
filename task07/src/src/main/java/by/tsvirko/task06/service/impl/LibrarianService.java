@@ -10,6 +10,11 @@ import org.apache.logging.log4j.Logger;
 public class LibrarianService extends StorageObserverCreator {
     private RepositoryFactory factory = RepositoryFactory.getInstance();
 
+    /**
+     * Calls repository to add observer
+     *
+     * @param name - observer name
+     */
     @Override
     public void addObserver(String name) {
         PublicationRepository bookRepository = factory.getBookRepository();

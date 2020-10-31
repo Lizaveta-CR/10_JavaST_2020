@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Stores information about books: year - amount
+ */
 public class BookInfo {
     private static final Logger logger = LogManager.getLogger(BookInfo.class);
 
@@ -15,6 +18,15 @@ public class BookInfo {
     //stores year as key and number of books as a value
     private Map<Integer, Integer> yearCountMapBook = new HashMap<>();
 
+    private BookInfo() {
+    }
+
+    /**
+     * Updates yearCountMapBook
+     *
+     * @param year
+     * @param action
+     */
     public void update(int year, Action action) {
         Optional<Integer> count = Optional.ofNullable(yearCountMapBook.get(year));
         switch (action) {
@@ -34,6 +46,11 @@ public class BookInfo {
         }
     }
 
+    /**
+     * Returns BookInfo instance
+     *
+     * @return BookInfo
+     */
     public static BookInfo getInstance() {
         return (instance == null) ? instance = new BookInfo() : instance;
     }

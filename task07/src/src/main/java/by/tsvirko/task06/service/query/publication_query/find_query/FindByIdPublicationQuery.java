@@ -9,6 +9,9 @@ import by.tsvirko.task06.service.query.publication_query.find_query.exception.Fi
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds publication by id
+ */
 public class FindByIdPublicationQuery implements Query<Publication, PublicationStorage> {
     private String id;
 

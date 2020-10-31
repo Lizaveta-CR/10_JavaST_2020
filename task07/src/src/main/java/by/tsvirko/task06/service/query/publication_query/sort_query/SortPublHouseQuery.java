@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Sorts publication by publishing house
+ */
 public class SortPublHouseQuery extends AbstractSortQuery {
 
     @Override

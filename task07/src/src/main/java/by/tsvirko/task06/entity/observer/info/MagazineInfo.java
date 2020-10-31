@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Stores information about magazines: year - amount
+ */
 public class MagazineInfo {
     private static final Logger logger = LogManager.getLogger(MagazineInfo.class);
 
@@ -16,6 +19,15 @@ public class MagazineInfo {
     //stores year as key and number of magazines as a value
     private Map<Integer, Integer> yearCountMapMagazine = new HashMap<>();
 
+    private MagazineInfo() {
+    }
+
+    /**
+     * Updates yearCountMapMagazine
+     *
+     * @param year
+     * @param action
+     */
     public void update(int year, Action action) {
         Optional<Integer> count = Optional.ofNullable(yearCountMapMagazine.get(year));
         switch (action) {
@@ -35,6 +47,11 @@ public class MagazineInfo {
         }
     }
 
+    /**
+     * Returns MagazineInfo instance
+     *
+     * @return MagazineInfo
+     */
     public static MagazineInfo getInstance() {
         return (instance == null) ? instance = new MagazineInfo() : instance;
     }

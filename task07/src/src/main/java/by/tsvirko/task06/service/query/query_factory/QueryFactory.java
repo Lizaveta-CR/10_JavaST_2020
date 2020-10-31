@@ -6,8 +6,6 @@ import by.tsvirko.task06.service.query.QuerySortPublicationServiceController;
 public class QueryFactory {
     private static final QueryFactory factory = new QueryFactory();
 
-    //    private QuerySortServiceController querySortServiceController = new QuerySortServiceController();
-//    private QueryFindServiceController queryFindServiceController = new QueryFindServiceController();
     private QueryFindPublicationServiceController queryFindPublicationServiceController = new QueryFindPublicationServiceController();
     private QuerySortPublicationServiceController querySortPublicationServiceController = new QuerySortPublicationServiceController();
 

@@ -8,7 +8,9 @@ import by.tsvirko.task06.service.query.publication_query.find_query.exception.Fi
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Finds publication by titles'first letter
+ */
 public class FindByTitleFirstLetterPublicationQuery implements Query<Publication, PublicationStorage> {
     private String letter;
 

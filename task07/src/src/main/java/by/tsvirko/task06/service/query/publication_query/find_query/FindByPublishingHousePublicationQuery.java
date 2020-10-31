@@ -9,6 +9,9 @@ import by.tsvirko.task06.service.query.publication_query.find_query.exception.Fi
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Finds publication by publishing house
+ */
 public class FindByPublishingHousePublicationQuery implements Query<Publication, PublicationStorage> {
     private String publHouse;
 

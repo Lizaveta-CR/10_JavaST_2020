@@ -134,7 +134,8 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
         Validator validatorMagazine = new MagazineValidator();
         try {
             publicationDao.createRandom();
-            for (Publication publication : publicationDao.readAll()) {
+            List<Publication> publications = publicationDao.readAll();
+            for (Publication publication : publications) {
                 if (publication instanceof Book) {
                     if (validatorBook.validate(publication)) {
                         publication.setId(UUID.randomUUID().toString());

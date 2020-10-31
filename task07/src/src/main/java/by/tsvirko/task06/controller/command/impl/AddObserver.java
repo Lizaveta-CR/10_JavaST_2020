@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Delegates observers' adding
+ */
 public class AddObserver implements Command {
     private static final Logger logger = LogManager.getLogger(AddObserver.class);
 

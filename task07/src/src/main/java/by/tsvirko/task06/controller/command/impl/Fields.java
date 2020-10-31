@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * Class to return entity fields
  */
-public class BookFields implements Command {
-    private static final Logger logger = LogManager.getLogger(BookFields.class);
+public class Fields implements Command {
+    private static final Logger logger = LogManager.getLogger(Fields.class);
 
     @Override
     public String execute(List<String> request) {

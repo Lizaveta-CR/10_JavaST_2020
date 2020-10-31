@@ -23,6 +23,13 @@ public class QuerySortPublicationProvider {
         repository.put(QuerySortPublicationEnum.PUBLISHINGHOUSE, new SortPublHouseQuery());
     }
 
+    /**
+     * Gets command from repository
+     *
+     * @param name
+     * @return Query - command
+     * @throws RequestException
+     */
     public Query getCommand(String name) throws RequestException {
         QuerySortPublicationEnum querySortEnum;
         Query query;

@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Sorts publication by number of pages
+ */
 public class SortNumOfPagesQuery extends AbstractSortQuery {
 
     @Override

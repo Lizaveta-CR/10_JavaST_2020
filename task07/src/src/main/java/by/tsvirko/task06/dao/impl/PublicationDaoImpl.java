@@ -5,6 +5,7 @@ import by.tsvirko.task06.dao.exception.DaoStorageException;
 import by.tsvirko.task06.entity.Book;
 import by.tsvirko.task06.entity.Magazine;
 import by.tsvirko.task06.entity.Publication;
+import by.tsvirko.task06.entity.observer.Librarian;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
