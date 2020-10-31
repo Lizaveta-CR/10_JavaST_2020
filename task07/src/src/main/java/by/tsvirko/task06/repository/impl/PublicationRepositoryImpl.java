@@ -70,7 +70,9 @@ public final class PublicationRepositoryImpl implements PublicationRepository {
     @Override
     public void updatePublication(Publication publicationOld, Publication publicationNew) throws BookStorageElementException {
         try {
-
+            if (publicationOld.equals(publicationNew)) {
+                throw new BookStorageElementException("Nothing to update!");
+            }
             String id = publicationOld.getId();
             bookStorage.removeStorageElement(publicationOld);
             publicationNew.setId(id);

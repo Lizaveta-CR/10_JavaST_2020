@@ -33,7 +33,7 @@ public class FindByIdPublicationQueryTest {
                 "gloss");
         magazine.setId("2");
         storage.setStorageElement(magazine);
-        System.out.println("Initialized");
+        System.out.println("Storage has been initialized");
     }
 
     @DataProvider(name = "correctData")
