@@ -6,7 +6,6 @@ import by.tsvirko.task06.entity.Publication;
 import by.tsvirko.task06.entity.PublicationStorage;
 import by.tsvirko.task06.repository.exception.BookStorageElementException;
 import by.tsvirko.task06.service.query.publication_query.find_query.FindByIdPublicationQuery;
-import by.tsvirko.task06.service.query.publication_query.find_query.FindByNumOfPagesPublicationQuery;
 import by.tsvirko.task06.service.query.publication_query.find_query.exception.FindException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
