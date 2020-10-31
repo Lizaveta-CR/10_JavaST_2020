@@ -8,7 +8,7 @@ public class BookValidator implements Validator {
 
     public boolean validate(Publication publication) {
         Book book = (Book) publication;
-        return checkPages(book.getNumberOfPages()) && checkYear(book.getYear());
+        return checkPages(book.getNumberOfPages()) && checkYear(book.getYear()) && checkFields(book);
     }
 
     private boolean checkYear(int yearOfPublishing) {
@@ -17,5 +17,13 @@ public class BookValidator implements Validator {
 
     private boolean checkPages(int pages) {
         return pages > 0;
+    }
+
+    private boolean checkFields(Book publication) {
+
+        if (publication.getTitle() == null || publication.getPublishingHouse() == null) {
+            return false;
+        }
+        return true;
     }
 }

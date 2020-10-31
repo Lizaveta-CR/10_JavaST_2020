@@ -12,7 +12,7 @@ public class Book extends Publication {
     public Book() {
     }
 
-    public Book(String title, Set<String> authors, int numberOfPages, String publishingHouse, int yearOfPublishing) {
+    public Book(String title, int numberOfPages, int yearOfPublishing, String publishingHouse, Set<String> authors) {
         super(title, numberOfPages, yearOfPublishing, publishingHouse);
         this.authors = authors;
     }

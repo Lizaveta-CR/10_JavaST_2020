@@ -113,13 +113,13 @@ public class PublicationDaoImpl implements PublicationDao {
     public void createRandom() throws DaoStorageException {
         Set<String> harry = new HashSet<>();
         harry.add("J.K.Rowling");
-        Publication book = new Book("sls", harry, -100, "USA House", 2000);
+        Publication book = new Book("sls", 2000, -100, "USA House", harry);
         Set<String> warAndPiece = new HashSet<>();
         warAndPiece.add("Tolstoy");
-        Publication book1 = new Book("War and piece", warAndPiece, 1225, "unknown", 1865);
+        Publication book1 = new Book("War and piece", 1225, 1865, "unknown", warAndPiece);
         Set<String> q = new HashSet<>();
         q.add("q");
-        Publication book2 = new Book("q", q, 1, "q", 1);
+        Publication book2 = new Book("q", 1, 1, "q", q);
         Publication magazine1 = new Magazine("Vogue", 123, 2000, "gloss", "q");
         Publication magazine2 = new Magazine("Bazar", 123, 2000, "gloss", "w");
         try {
