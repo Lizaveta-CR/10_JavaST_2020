@@ -10,7 +10,6 @@ public class Publication implements Serializable {
     private String title;
     private int numberOfPages;
     private int year;
-    //TODO:enum
     private String publishingHouse;
 
     public Publication() {
