@@ -42,29 +42,4 @@ public class FindByNumOfPagesPublicationQuery implements Query<Publication, Publ
             return result;
         }
     }
-
-    public static void main(String[] args) throws BookStorageElementException, FindException {
-        FindByNumOfPagesPublicationQuery find = new FindByNumOfPagesPublicationQuery("200");
-        PublicationStorage storage = PublicationStorage.getInstance();
-
-        Set<String> authors = new HashSet<>();
-        authors.add("J.K.Rowling");
-        Book book = new Book("Title", 200, 2020, "USAPublication",
-                authors);
-        storage.setStorageElement(book);
-        Magazine magazine = new Magazine("Title", 200, 2020, "USAPublication",
-                "gloss");
-        storage.setStorageElement(magazine);
-//        System.out.println(find.query(storage));
-        List<Publication> query = find.query(storage);
-        List<Publication> objects = new ArrayList<>();
-        Book book1 = new Book("Title", 200, 2020, "USAPublication",
-                authors);
-        Magazine magazine1 = new Magazine("Title", 200, 2020, "USAPublication",
-                "gloss");
-        objects.add(book1);
-        objects.add(magazine1);
-
-        System.out.println(query.equals(objects));
-    }
 }
