@@ -13,6 +13,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
@@ -62,18 +63,24 @@ public class MatrixInitServiceImpl implements MatrixInitService {
         int columns = rows;
         Matrix matrix = new Matrix(rows, columns);
         try {
-            while (input.hasNextLine()) {
-                String nextLine = input.nextLine();
+            try {
                 for (int i = 0; i < matrix.getVerticalSize(); i++) {
-                    String[] line = nextLine.trim().split(" ");
+                    String[] line = input.nextLine().trim().split(" ");
                     for (int j = 0; j < matrix.getHorizontalSize(); j++) {
                         matrix.setElement(i, j, Integer.parseInt(line[j]));
                     }
                 }
+            } catch (NoSuchElementException e) {
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new ServiceInitException("Too big input values");
         }
         return matrix;
+    }
+
+    public static void main(String[] args) throws MatrixException, ServiceInitException {
+        MatrixInitServiceImpl matrixInitService = new MatrixInitServiceImpl();
+        Matrix init = matrixInitService.init("matrix.txt", 3, 6);
+        System.out.println(init);
     }
 }
