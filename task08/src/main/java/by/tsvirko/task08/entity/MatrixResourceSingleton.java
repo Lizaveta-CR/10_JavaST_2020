@@ -1,6 +1,5 @@
 package by.tsvirko.task08.entity;
 
-import by.tsvirko.task08.entity.exception.ArrayException;
 import by.tsvirko.task08.entity.exception.MatrixException;
 
 import java.util.concurrent.locks.ReentrantLock;

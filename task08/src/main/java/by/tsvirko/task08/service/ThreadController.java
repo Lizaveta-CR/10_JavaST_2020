@@ -8,6 +8,7 @@ import by.tsvirko.task08.entity.state.StateFabric;
 import java.util.Random;
 
 public class ThreadController {
+    private final int INIT_NUMBER = 666;
     private MatrixResourceSingleton resourceSingleton = MatrixResourceSingleton.getInstance();
 
     public ThreadController() {
@@ -17,7 +18,7 @@ public class ThreadController {
         for (int i = 0; i < resourceSingleton.matrixDiagonalSize(); i++) {
             MatrixItem element = resourceSingleton.getPrincipalDiagonalElement(i);
             if (element.getState().equals(StateFabric.getState().getStartState())) {
-                element.setValue(new Random().nextInt(10));
+                element.setValue(INIT_NUMBER);
                 element.setState(StateFabric.getState().getStopState());
             }
         }
