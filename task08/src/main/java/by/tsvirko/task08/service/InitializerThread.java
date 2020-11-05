@@ -6,9 +6,7 @@ import by.tsvirko.task08.entity.MatrixItem;
 import by.tsvirko.task08.entity.MatrixResourceSingleton;
 import by.tsvirko.task08.entity.exception.ArrayException;
 import by.tsvirko.task08.entity.exception.MatrixException;
-import by.tsvirko.task08.entity.state.StartState;
 import by.tsvirko.task08.entity.state.StateFabric;
-import by.tsvirko.task08.entity.state.StopState;
 import by.tsvirko.task08.service.exception.ServiceInitException;
 
 import java.util.concurrent.TimeUnit;
@@ -40,8 +38,9 @@ public class InitializerThread extends Thread {
                         element.setState(state.getStopState());
                         resource.setPrincipalDiagonalElement(element.getI(), initNumber);
                         element.setState(state.getStopState());
-                        System.out.println(Thread.currentThread().getName() + "changed" + i + "," + j);
-                        TimeUnit.MILLISECONDS.sleep(1000);
+                        System.out.println(Thread.currentThread().getName() + " changed " + i + ", " + j
+                                + "with " + initNumber);
+                        TimeUnit.MILLISECONDS.sleep(10);
                         j++;
                     }
                     i++;
@@ -53,23 +52,6 @@ public class InitializerThread extends Thread {
         } finally {
             locker.unlock();
         }
-    }
-
-    public static void main(String[] args) throws ServiceInitException, MatrixException, ArrayException {
-        Matrix matrix = new MatrixInitServiceImpl().init("matrix.txt", 2, 2);
-        Array array = new ThreadInitServiceImpl().init("threadNumbers.txt", 2, 2);
-        ReentrantLock locker = new ReentrantLock();
-        for (int i = 0; i < array.getLength(); i++) {
-            InitializerThread thread = new InitializerThread(locker, array.getElement(i), array.getLength());
-            thread.setName("Thread " + i);
-            thread.start();
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println(matrix);
     }
 }
 
