@@ -7,5 +7,5 @@ import by.tsvirko.task08.entity.exception.MatrixException;
 import by.tsvirko.task08.service.exception.ServiceInitException;
 
 public interface InitService {
-    ArrayWrapper init(String fileName, int n1, int n2) throws MatrixException, ServiceInitException, ArrayException;
+    ArrayWrapper init(String fileName, int n) throws MatrixException, ServiceInitException, ArrayException;
 }

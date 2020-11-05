@@ -5,6 +5,7 @@ import by.tsvirko.task08.entity.exception.MatrixException;
 import by.tsvirko.task08.repository.MatrixRepository;
 import by.tsvirko.task08.repository.MatrixRepositoryImpl;
 import by.tsvirko.task08.service.exception.ServiceInitException;
+import by.tsvirko.task08.service.validator.ValidatorMatrix;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,15 +28,14 @@ public class MatrixInitServiceImpl implements InitService {
      * Method to read matrix from file
      *
      * @param fileName
-     * @param n1       - boundary
-     * @param n2       - boundary
+     * @param n        - boundary
      * @return Matrix
      * @throws MatrixException
      * @throws ServiceInitException
      */
     @Override
-    public Matrix init(String fileName, int n1, int n2) throws MatrixException, ServiceInitException {
-        if (!new Validator().validate(n1, n2)) {
+    public Matrix init(String fileName, int n) throws MatrixException, ServiceInitException {
+        if (!new ValidatorMatrix().validate(n)) {
             throw new ServiceInitException("Wrong parameters");
         }
         URI uri = null;
@@ -53,15 +53,7 @@ public class MatrixInitServiceImpl implements InitService {
             logger.info("No such file exception");
             throw new ServiceInitException("No such file");
         }
-        int rows = 0;
-
-        if (n1 > n2) {
-            rows = n2 + (int) (Math.random() * ((n1 - n2) + 1));
-        } else if (n1 < n2) {
-            rows = n1 + (int) (Math.random() * ((n2 - n1) + 1));
-        } else {
-            rows = n1;
-        }
+        int rows = n;
 
         int columns = rows;
         Matrix matrix = new Matrix();
@@ -82,10 +74,10 @@ public class MatrixInitServiceImpl implements InitService {
         return matrix;
     }
 
-    public static void main(String[] args) throws MatrixException, ServiceInitException {
-        MatrixInitServiceImpl matrixInitService = new MatrixInitServiceImpl();
-        Matrix init = matrixInitService.init("matrix.txt", 6, 6);
-        System.out.println(init.getElement(1, 0));
-        System.out.println(init);
-    }
+//    public static void main(String[] args) throws MatrixException, ServiceInitException {
+//        MatrixInitServiceImpl matrixInitService = new MatrixInitServiceImpl();
+//        Matrix init = matrixInitService.init("matrix.txt", 6);
+//        System.out.println(init.getElement(1, 0));
+//        System.out.println(init);
+//    }
 }

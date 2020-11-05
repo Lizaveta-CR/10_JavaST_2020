@@ -3,6 +3,8 @@ package by.tsvirko.task08.service;
 import by.tsvirko.task08.entity.Array;
 import by.tsvirko.task08.entity.exception.ArrayException;
 import by.tsvirko.task08.service.exception.ServiceInitException;
+import by.tsvirko.task08.service.validator.ValidatorMatrix;
+import by.tsvirko.task08.service.validator.ValidatorThread;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,8 +22,8 @@ public class ThreadInitServiceImpl implements InitService {
     private static final Logger logger = LogManager.getLogger(ThreadInitServiceImpl.class);
 
     @Override
-    public Array init(String fileName, int m1, int m2) throws ServiceInitException, ArrayException {
-        if (!new Validator().validate(m1, m2)) {
+    public Array init(String fileName, int m) throws ServiceInitException, ArrayException {
+        if (!new ValidatorThread().validate(m)) {
             throw new ServiceInitException("Wrong parameters");
         }
         URI uri = null;
@@ -39,15 +41,7 @@ public class ThreadInitServiceImpl implements InitService {
             logger.info("No such file exception");
             throw new ServiceInitException("No such file");
         }
-        int threadAmount = 0;
-
-        if (m1 > m2) {
-            threadAmount = m2 + (int) (Math.random() * ((m1 - m2) + 1));
-        } else if (m1 < m2) {
-            threadAmount = m1 + (int) (Math.random() * ((m2 - m1) + 1));
-        } else {
-            threadAmount = m1;
-        }
+        int threadAmount = m;
         Array array = new Array(threadAmount);
         try {
             try {

@@ -19,15 +19,11 @@ public class View {
                 task.add(CommandName.FIRST.toString());
                 System.out.println("Enter matrix file name: ");
                 task.add(scanner.next());
-                System.out.println("Enter n1: ");
-                task.add(scanner.next());
-                System.out.println("Enter n2: ");
+                System.out.println("Enter n: ");
                 task.add(scanner.next());
                 System.out.println("Enter threads' numbers file name: ");
                 task.add(scanner.next());
-                System.out.println("Enter m1: ");
-                task.add(scanner.next());
-                System.out.println("Enter m2: ");
+                System.out.println("Enter m: ");
                 task.add(scanner.next());
                 controller.executeTask(task);
         }

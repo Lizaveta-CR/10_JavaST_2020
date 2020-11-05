@@ -12,9 +12,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SolutionService {
     private MatrixRepository repository = new MatrixRepositoryImpl();
 
-    public Array compute(String fileName, int m1, int m2) throws ServiceInitException, ArrayException, MatrixException {
+    public Array compute(String fileName, int m) throws ServiceInitException, ArrayException, MatrixException {
         ReentrantLock lock = new ReentrantLock();
-        Array array = (Array) new ThreadInitServiceImpl().init(fileName, m1, m2);
+        Array array = (Array) new ThreadInitServiceImpl().init(fileName, m);
         for (int i = 0; i < array.getLength(); i++) {
             InitializerThread thread = new InitializerThread(lock, array.getElement(i), array.getLength());
             thread.start();

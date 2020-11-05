@@ -15,9 +15,9 @@ public class FirstSolution implements Command {
         ServiceFactory factory = ServiceFactory.getFactory();
         try {
             factory.getMatrixInitService().init(request.get(0)
-                    , Integer.parseInt(request.get(1)), Integer.parseInt(request.get(2)));
-            factory.getSolutionService().compute(request.get(3)
-                    , Integer.parseInt(request.get(4)), Integer.parseInt(request.get(5)));
+                    , Integer.parseInt(request.get(1)));
+            factory.getSolutionService().compute(request.get(2)
+                    , Integer.parseInt(request.get(3)));
             response = "success";
         } catch (MatrixException | ServiceInitException | ArrayException e) {
             response = "fail";
