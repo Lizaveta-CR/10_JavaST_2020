@@ -2,57 +2,70 @@ package by.tsvirko.task08.entity;
 
 import by.tsvirko.task08.entity.exception.MatrixException;
 
-public class Matrix {
-    private int[][] array;
+import java.util.*;
 
-    public Matrix(int n, int m) throws MatrixException {
-        if ((n < 1) || (m < 1)) {
-            throw new MatrixException();
-        }
-        array = new int[n][m];
+public class Matrix extends ArrayWrapper {
+    private List<MatrixItem> items;
+
+    public Matrix() {
+        this.items = new ArrayList<>();
     }
 
     public int getVerticalSize() {
-        return array.length;
+        Set<Integer> itemsSize = new HashSet<>();
+        for (MatrixItem item : items) {
+            itemsSize.add(item.getI());
+        }
+        return itemsSize.size();
     }
 
     public int getHorizontalSize() {
-        return array[0].length;
+        Set<Integer> itemsSize = new HashSet<>();
+        for (MatrixItem item : items) {
+            itemsSize.add(item.getJ());
+        }
+        return itemsSize.size();
     }
 
     public int getElement(int i, int j) throws MatrixException {
-        if (checkRange(i, j)) {
-            return array[i][j];
+        for (MatrixItem item : items) {
+            if (item.getI() == i && item.getJ() == j) {
+                return item.getValue();
+            }
         }
         throw new MatrixException();
     }
 
-    public void setElement(int i, int j, int value) throws MatrixException {
-        if (checkRange(i, j)) {
-            array[i][j] = value;
-        } else {
-            throw new MatrixException();
+    public void setElement(int i, int j, int value) {
+        items.add(new MatrixItem(i, j, value));
+    }
+
+    public MatrixItem getCell(int i, int j) throws MatrixException {
+        for (MatrixItem item : items) {
+            if (item.getI() == i && item.getJ() == j) {
+                return item;
+            }
         }
+        throw new MatrixException();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Matrix matrix = (Matrix) o;
+        return Objects.equals(items, matrix.items);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(items);
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("\nMatrix :" + array.length + "x" + array[0].length + "\n");
-        for (int[] row : array) {
-            for (int value : row) {
-                sb.append(value + " ");
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
-    private boolean checkRange(int i, int j) {
-        if (i < 0 || i > array.length - 1 || j < 0 || j > array[0].length - 1) {
-            return false;
-        } else {
-            return true;
-        }
+        return "Matrix{" + items +
+                '}';
     }
 }
 

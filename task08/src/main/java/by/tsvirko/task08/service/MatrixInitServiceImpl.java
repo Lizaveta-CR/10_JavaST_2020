@@ -2,6 +2,8 @@ package by.tsvirko.task08.service;
 
 import by.tsvirko.task08.entity.Matrix;
 import by.tsvirko.task08.entity.exception.MatrixException;
+import by.tsvirko.task08.repository.MatrixRepository;
+import by.tsvirko.task08.repository.MatrixRepositoryImpl;
 import by.tsvirko.task08.service.exception.ServiceInitException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +19,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
-public class MatrixInitServiceImpl implements MatrixInitService {
+public class MatrixInitServiceImpl implements InitService {
     private static final Logger logger = LogManager.getLogger(MatrixInitServiceImpl.class);
+    private MatrixRepository repository = new MatrixRepositoryImpl();
 
     /**
      * Method to read matrix from file
@@ -61,12 +64,12 @@ public class MatrixInitServiceImpl implements MatrixInitService {
         }
 
         int columns = rows;
-        Matrix matrix = new Matrix(rows, columns);
+        Matrix matrix = new Matrix();
         try {
             try {
-                for (int i = 0; i < matrix.getVerticalSize(); i++) {
+                for (int i = 0; i < rows; i++) {
                     String[] line = input.nextLine().trim().split(" ");
-                    for (int j = 0; j < matrix.getHorizontalSize(); j++) {
+                    for (int j = 0; j < columns; j++) {
                         matrix.setElement(i, j, Integer.parseInt(line[j]));
                     }
                 }
@@ -75,12 +78,14 @@ public class MatrixInitServiceImpl implements MatrixInitService {
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new ServiceInitException("Too big input values");
         }
+        repository.add(matrix);
         return matrix;
     }
 
     public static void main(String[] args) throws MatrixException, ServiceInitException {
         MatrixInitServiceImpl matrixInitService = new MatrixInitServiceImpl();
-        Matrix init = matrixInitService.init("matrix.txt", 3, 6);
+        Matrix init = matrixInitService.init("matrix.txt", 6, 6);
+        System.out.println(init.getElement(1, 0));
         System.out.println(init);
     }
 }

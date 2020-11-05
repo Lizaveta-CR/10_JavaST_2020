@@ -1,5 +1,8 @@
 package by.tsvirko.task08.entity;
 
+import by.tsvirko.task08.entity.exception.ArrayException;
+import by.tsvirko.task08.entity.exception.MatrixException;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MatrixResourceSingleton {
@@ -22,11 +25,28 @@ public class MatrixResourceSingleton {
         return instance;
     }
 
-    public Matrix getMatrix() {
-        return matrix;
+    public MatrixItem getPrincipalDiagonalElement(int index) throws MatrixException {
+        try {
+            return matrix.getCell(index, index);
+        } catch (MatrixException e) {
+            throw new MatrixException("Principal diagonal getting exception");
+        }
+    }
+
+    public void setPrincipalDiagonalElement(int index, int value) throws MatrixException {
+        MatrixItem cell = matrix.getCell(index, index);
+        cell.setValue(value);
+    }
+
+    public int matrixDiagonalSize() {
+        return matrix.getHorizontalSize();
     }
 
     public void setMatrix(Matrix matrix) {
         this.matrix = matrix;
+    }
+
+    public void setMatrixElement(int i, int j, int value) {
+        matrix.setElement(i, j, value);
     }
 }
