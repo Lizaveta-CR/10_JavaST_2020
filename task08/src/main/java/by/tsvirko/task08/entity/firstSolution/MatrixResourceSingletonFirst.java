@@ -1,22 +1,27 @@
-package by.tsvirko.task08.entity;
+package by.tsvirko.task08.entity.firstSolution;
 
+import by.tsvirko.task08.entity.Matrix;
+import by.tsvirko.task08.entity.MatrixItem;
 import by.tsvirko.task08.entity.exception.MatrixException;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class MatrixResourceSingleton {
-    private static MatrixResourceSingleton instance = null;
+/**
+ * Is used for first solution
+ */
+public class MatrixResourceSingletonFirst {
+    private static MatrixResourceSingletonFirst instance = null;
     private static ReentrantLock lock = new ReentrantLock();
     private Matrix matrix;
 
-    private MatrixResourceSingleton() {
+    private MatrixResourceSingletonFirst() {
     }
 
-    public static MatrixResourceSingleton getInstance() {
+    public static MatrixResourceSingletonFirst getInstance() {
         lock.lock();
         try {
             if (instance == null) {
-                instance = new MatrixResourceSingleton();
+                instance = new MatrixResourceSingletonFirst();
             }
         } finally {
             lock.unlock();

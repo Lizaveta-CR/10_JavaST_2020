@@ -2,6 +2,7 @@ package by.tsvirko.task08.controller;
 
 import by.tsvirko.task08.controller.command.Command;
 import by.tsvirko.task08.controller.command.exception.RequestException;
+import by.tsvirko.task08.entity.Array;
 import by.tsvirko.task08.entity.exception.ArrayException;
 import by.tsvirko.task08.entity.exception.MatrixException;
 import by.tsvirko.task08.service.exception.ServiceInitException;
@@ -15,10 +16,10 @@ public class ControllerLayer {
     private static final Logger logger = LogManager.getLogger(ControllerLayer.class);
 
 
-    public String executeTask(List<String> request) {
+    public Array executeTask(List<String> request) {
         String commandName;
         Command executionCommand;
-        String response = null;
+        Array response = null;
 
         try {
             commandName = request.get(0);
@@ -26,8 +27,7 @@ public class ControllerLayer {
             request.remove(0);
             response = executionCommand.execute(request);
         } catch (RequestException | MatrixException | ServiceInitException | ArrayException e) {
-            response = "No enum constant";
-            logger.error(response, e.getMessage());
+            logger.error("No such operation, controller error");
         }
         return response;
     }

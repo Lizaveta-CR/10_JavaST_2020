@@ -1,15 +1,13 @@
-package by.tsvirko.task08.service;
+package by.tsvirko.task08.service.firstService;
 
 import by.tsvirko.task08.entity.MatrixItem;
-import by.tsvirko.task08.entity.MatrixResourceSingleton;
+import by.tsvirko.task08.entity.firstSolution.MatrixResourceSingletonFirst;
 import by.tsvirko.task08.entity.exception.MatrixException;
 import by.tsvirko.task08.entity.state.StateFabric;
 
-import java.util.Random;
-
 public class ThreadController {
-    private final int INIT_NUMBER = 666;
-    private MatrixResourceSingleton resourceSingleton = MatrixResourceSingleton.getInstance();
+    private int initNumber = 666;
+    private MatrixResourceSingletonFirst resourceSingleton = MatrixResourceSingletonFirst.getInstance();
 
     public ThreadController() {
     }
@@ -18,7 +16,7 @@ public class ThreadController {
         for (int i = 0; i < resourceSingleton.matrixDiagonalSize(); i++) {
             MatrixItem element = resourceSingleton.getPrincipalDiagonalElement(i);
             if (element.getState().equals(StateFabric.getState().getStartState())) {
-                element.setValue(INIT_NUMBER);
+                element.setValue(initNumber);
                 element.setState(StateFabric.getState().getStopState());
             }
         }

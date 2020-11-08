@@ -1,13 +1,9 @@
-package by.tsvirko.task08.service;
+package by.tsvirko.task08.service.firstService;
 
-import by.tsvirko.task08.entity.Array;
-import by.tsvirko.task08.entity.Matrix;
 import by.tsvirko.task08.entity.MatrixItem;
-import by.tsvirko.task08.entity.MatrixResourceSingleton;
-import by.tsvirko.task08.entity.exception.ArrayException;
 import by.tsvirko.task08.entity.exception.MatrixException;
+import by.tsvirko.task08.entity.firstSolution.MatrixResourceSingletonFirst;
 import by.tsvirko.task08.entity.state.StateFabric;
-import by.tsvirko.task08.service.exception.ServiceInitException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,7 +15,7 @@ public class InitializerThread extends Thread {
 
     private int initNumber;
     private int threadAmount;
-    private MatrixResourceSingleton resource = MatrixResourceSingleton.getInstance();
+    private MatrixResourceSingletonFirst resource = MatrixResourceSingletonFirst.getInstance();
     private ReentrantLock locker;
 
     public InitializerThread() {
@@ -60,31 +56,5 @@ public class InitializerThread extends Thread {
             locker.unlock();
         }
     }
-
-//    public static void main(String[] args) throws ServiceInitException, MatrixException, ArrayException {
-//        Matrix matrix = new MatrixInitServiceImpl().init("matrix.txt", 5, 5);
-//        Array array = new ThreadInitServiceImpl().init("threadNumbers.txt", 2, 2);
-//        ReentrantLock locker = new ReentrantLock();
-//        for (int i = 0; i < array.getLength(); i++) {
-//            InitializerThread thread = new InitializerThread(locker, array.getElement(i), array.getLength());
-//            thread.setName("Thread " + i);
-//            thread.start();
-//            try {
-//                thread.join();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        new ThreadController().control();
-//        System.out.println("=======");
-//        for (int k = 0; k < matrix.getVerticalSize(); k++) {
-//            for (int j = 0; j < matrix.getHorizontalSize(); j++) {
-//                if (k == j) {
-//                    System.out.println(matrix.getCell(k, j));
-//                }
-//            }
-//        }
-//        System.out.println(matrix);
-//    }
 }
 

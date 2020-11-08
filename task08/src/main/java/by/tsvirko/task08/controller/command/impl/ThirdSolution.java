@@ -9,7 +9,7 @@ import by.tsvirko.task08.service.exception.ServiceInitException;
 
 import java.util.List;
 
-public class FirstSolution implements Command {
+public class ThirdSolution implements Command {
     @Override
     public Array execute(List<String> request) {
         Array response = null;
@@ -17,7 +17,7 @@ public class FirstSolution implements Command {
         try {
             factory.getMatrixInitService().init(request.get(0)
                     , Integer.parseInt(request.get(1)));
-            Array compute = factory.getSolutionService().compute(request.get(2)
+            Array compute = factory.getServiceThird().compute(request.get(2)
                     , Integer.parseInt(request.get(3)));
             response = compute;
         } catch (MatrixException | ServiceInitException | ArrayException e) {
@@ -26,3 +26,4 @@ public class FirstSolution implements Command {
         return response;
     }
 }
+

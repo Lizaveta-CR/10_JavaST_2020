@@ -4,6 +4,8 @@ import by.tsvirko.task08.controller.command.Command;
 import by.tsvirko.task08.controller.command.CommandName;
 import by.tsvirko.task08.controller.command.exception.RequestException;
 import by.tsvirko.task08.controller.command.impl.FirstSolution;
+import by.tsvirko.task08.controller.command.impl.FourthSolution;
+import by.tsvirko.task08.controller.command.impl.ThirdSolution;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +21,8 @@ public class CommandProvider {
 
     public CommandProvider() {
         repository.put(CommandName.FIRST, new FirstSolution());
+        repository.put(CommandName.THIRD, new ThirdSolution());
+        repository.put(CommandName.FOURTH, new FourthSolution());
     }
 
     public Command getCommand(String name) throws RequestException {
