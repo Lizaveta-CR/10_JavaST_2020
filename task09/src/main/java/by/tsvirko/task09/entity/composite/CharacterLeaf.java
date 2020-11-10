@@ -1,6 +1,6 @@
 package by.tsvirko.task09.entity.composite;
 
-public class Leaf implements Component {
+public class CharacterLeaf implements Component {
     private char character;
 
     public void add(Component c) {
