@@ -25,11 +25,18 @@ public abstract class Composite implements Component {
 
     public String collect() {
         String text = "";
+        String delimiter = "";
         int size = components.size();
         for (int i = 0; i < size; i++) {
             Component component = components.get(i);
             text = text.concat(component.collect());
-            text = text.concat(Paragraph.PARAGRAPH_DELIMITER);
+            if (component instanceof SentenceLeaf) {
+                //TODO:
+                delimiter = Sentence.SENTENCE_DELIMITER;
+            } else {
+                delimiter = Paragraph.PARAGRAPH_DELIMITER;
+            }
+            text = text.concat(delimiter);
         }
         return text;
     }

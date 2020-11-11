@@ -1,20 +1,21 @@
 package by.tsvirko.task09.entity.composite;
 
-public class ParagraphLeaf implements Component {
-    private String paragraph;
+public class SentenceLeaf implements Component {
+    String sentence;
 
-    public ParagraphLeaf(String paragraph) {
-        this.paragraph = paragraph;
+    public SentenceLeaf(String sentence) {
+        this.sentence = sentence;
     }
 
     @Override
     public void add(Component c) {
+
     }
 
     @Override
     public Object getChild(int i) {
         if (i == 0) {
-            return paragraph;
+            return sentence;
         }
         throw new UnsupportedOperationException();
     }
@@ -26,13 +27,13 @@ public class ParagraphLeaf implements Component {
 
     @Override
     public String collect() {
-        return paragraph;
+        return sentence;
     }
 
     @Override
     public String toString() {
-        return "ParagraphLeaf{" +
-                "paragraph='" + paragraph + '\'' +
+        return "SentenceLeaf{" +
+                "sentence='" + sentence + '\'' +
                 '}';
     }
 }

@@ -23,3 +23,378 @@
 2020-11-10 22:23:17.403 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
 2020-11-10 22:23:17.403 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
 2020-11-10 22:23:17.404 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 10:46:06.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 10:46:18.120 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 10:46:20.263 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 10:46:21.896 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 10:46:23.417 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 10:46:24.487 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 11:14:47.994 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 11:15:03.775 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:13:56.426 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:15:53.738 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:15:53.743 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:15:53.748 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:15:53.749 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:15:53.751 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:15:53.752 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:15:53.753 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:15:53.754 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:15:53.755 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:34:24.235 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:34:42.368 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:34:45.852 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:34:49.736 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:35:18.995 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:36:26.415 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:36:26.423 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.425 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:36:26.426 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:36:26.427 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.428 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.429 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:36:26.429 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:36:26.430 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.430 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:36:26.430 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:36:26.430 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:36:26.430 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:36:26.431 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:36:26.431 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:38:28.307 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:38:28.313 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.314 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.314 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:38:28.314 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:38:28.315 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.315 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.316 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:38:28.316 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:38:28.316 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.317 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:38:28.318 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:38:28.318 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:38:28.319 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:38:28.322 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:38:28.322 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:39:26.825 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:39:28.089 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:39:28.094 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:39:28.097 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:41:04.491 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:41:08.326 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:41:08.332 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:41:08.335 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:41:33.695 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:41:37.977 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:41:37.979 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:41:54.580 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:41:56.693 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:41:56.698 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:42:04.994 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:42:35.209 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:46:15.768 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:46:15.825 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.826 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.826 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:15.826 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:15.827 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.831 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.831 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:15.832 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:15.833 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.834 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:15.838 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:15.839 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:15.839 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:15.840 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:15.841 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:46:41.240 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:46:41.249 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.250 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.250 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:41.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:41.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:41.253 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:41.256 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.256 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:41.257 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:41.259 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:46:41.260 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:46:41.261 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:46:41.261 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 12:51:24.413 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 12:51:24.422 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.422 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.422 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:51:24.423 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:51:24.423 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.423 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:51:24.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:51:24.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:51:24.424 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:51:24.425 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 12:51:24.425 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 12:51:24.426 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 12:51:24.426 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 15:58:17.756 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 15:58:17.775 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.777 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.778 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 15:58:17.779 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 15:58:17.781 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.781 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.782 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 15:58:17.783 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 15:58:17.784 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.784 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 15:58:17.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 15:58:17.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 15:58:17.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 15:58:17.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 15:58:17.786 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:01:35.099 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:01:35.115 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.116 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.116 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:35.117 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:35.117 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.117 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.117 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:35.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:35.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:35.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:35.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:35.119 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:35.119 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:35.119 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:01:46.171 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:01:46.179 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.184 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.184 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:46.186 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:46.188 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.188 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.188 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:46.189 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:46.189 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.189 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:46.189 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:46.189 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:01:46.191 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:01:46.191 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:01:46.191 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:08:39.491 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:08:39.498 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.499 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.499 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:08:39.499 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:08:39.500 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.500 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.500 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:08:39.500 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:08:39.501 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.501 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:08:39.501 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:08:39.502 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:08:39.502 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:08:39.502 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:08:39.502 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:10:36.822 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:10:36.830 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.831 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.831 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:10:36.831 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:10:36.832 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.833 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.833 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:10:36.833 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:10:36.834 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.834 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:10:36.834 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:10:36.835 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:10:36.837 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:10:36.837 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:10:36.837 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:13:05.773 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:13:05.782 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.782 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.783 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:13:05.784 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:13:05.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.785 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:13:05.793 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:13:05.794 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.794 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:13:05.794 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:13:05.794 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:13:05.794 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:13:05.795 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:13:05.795 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:14:24.612 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:14:24.643 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.644 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.645 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:14:24.645 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:14:24.647 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.647 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.648 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:14:24.648 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:14:24.649 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.650 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:14:24.650 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:14:24.654 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:14:24.656 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:14:24.656 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:14:24.656 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:16:35.147 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:16:35.155 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.155 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.155 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:35.155 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:35.156 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.157 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.157 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:35.157 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:35.157 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.158 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:35.158 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:35.158 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:35.158 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:35.158 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:35.159 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:16:50.784 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:16:50.791 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.791 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.791 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:50.791 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:50.792 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.792 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.792 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:50.792 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:50.793 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.793 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:50.795 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:50.796 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:16:50.796 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:16:50.797 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:16:50.797 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:17:06.628 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:17:06.635 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.636 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.636 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:17:06.637 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:17:06.638 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.638 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.638 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:17:06.639 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:17:06.639 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.639 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:17:06.639 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:17:06.639 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:17:06.641 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:17:06.641 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:17:06.641 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:18:02.106 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:18:02.117 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.118 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.120 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:18:02.120 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:18:02.122 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.123 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.123 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:18:02.123 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:18:02.123 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.124 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:18:02.124 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:18:02.125 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:18:02.126 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:18:02.126 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:18:02.126 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:19:35.258 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:19:35.266 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.266 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.267 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:19:35.267 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:19:35.268 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.269 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.269 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:19:35.269 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:19:35.269 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.270 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:19:35.270 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:19:35.270 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:19:35.270 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:19:35.272 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:19:35.272 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:20:07.569 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:20:07.582 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.582 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.584 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:07.584 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:07.586 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.587 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.588 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:07.589 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:07.590 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.593 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:07.593 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:07.594 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:07.594 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:07.594 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:07.595 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:20:51.339 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:20:51.350 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.350 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.350 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:51.351 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:51.351 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.351 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.351 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:51.352 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:51.352 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.352 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:51.353 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:51.353 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:20:51.354 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:20:51.354 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:20:51.354 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:21:03.426 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:21:03.457 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.458 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.458 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:03.458 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:03.458 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.461 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.461 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:03.461 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:03.463 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.463 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:03.463 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:03.463 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:03.463 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:03.464 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:03.464 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 16:21:14.244 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 16:21:14.250 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.250 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:14.251 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:14.252 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.252 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.252 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:14.253 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:14.253 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.253 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:14.253 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:14.254 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeSentence added sentenceLeaf
+2020-11-11 16:21:14.254 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - SentenceParser done
+2020-11-11 16:21:14.254 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 16:21:14.254 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
