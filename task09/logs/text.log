@@ -3283,3 +3283,311 @@
 2020-11-11 18:40:20.305 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
 2020-11-11 18:40:20.305 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
 2020-11-11 18:40:20.305 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 19:01:07.973 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.978 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.979 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.980 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.980 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.981 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.981 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.982 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.982 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.982 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.982 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.982 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.983 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:07.984 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:07.985 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.985 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.985 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.986 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.986 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.986 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.986 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.987 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.987 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.987 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.987 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.988 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.988 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.988 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.989 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.989 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.989 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.989 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.989 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.990 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.991 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:07.992 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:07.992 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.992 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.992 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.992 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.993 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.994 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.994 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.994 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.995 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.995 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.995 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.995 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.996 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.997 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:07.997 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:07.997 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.998 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:07.999 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.000 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.001 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:08.002 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.003 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.004 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.004 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.004 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.004 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.005 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.005 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.005 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.006 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.009 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:01:08.010 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:01:08.011 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:03:36.553 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 19:03:36.559 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.559 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.560 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.561 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.561 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.562 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.562 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:03:36.562 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.563 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.563 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.563 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.564 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.564 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.564 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.564 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.564 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.565 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.566 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:03:36.567 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.568 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:03:36.568 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:03:36.568 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.569 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:03:36.569 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:03:36.569 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
+2020-11-11 19:32:05.576 [main] INFO  tsvirko.task09.service.chainOfResponsibility.TextParser - TextParser did his job
+2020-11-11 19:32:05.587 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.590 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.590 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.591 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.592 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.592 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.593 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.598 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.600 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.600 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.600 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.601 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.601 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.602 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.602 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.602 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.602 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.603 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.603 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.604 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.604 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.604 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.605 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.605 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.606 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.606 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.606 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.607 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.607 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.608 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.608 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.609 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.612 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.613 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.614 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.614 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.615 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.615 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.616 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.617 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.618 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:32:05.618 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.618 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.618 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.619 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.620 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.621 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.622 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.622 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.622 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.623 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.624 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.624 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.625 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.626 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.626 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.627 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.628 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.628 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.628 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.628 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.629 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.630 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.631 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.632 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:32:05.632 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.632 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.632 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.633 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.633 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.633 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.633 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.634 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.635 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.635 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.637 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.645 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.646 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.646 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.646 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.656 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.657 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.657 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.659 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.660 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.660 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.660 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:32:05.660 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.661 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - compositeLexeme added lexemeLeaf
+2020-11-11 19:32:05.662 [main] INFO  tsvirko.task09.service.chainOfResponsibility.LexemeParser - LexemeParser done
+2020-11-11 19:32:05.662 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.662 [main] INFO  tsvirko.task09.service.chainOfResponsibility.SentenceParser - ParagraphParser done
+2020-11-11 19:32:05.662 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - compositeParagraph added paragraphLeaf
+2020-11-11 19:32:05.664 [main] INFO  tsvirko.task09.service.chainOfResponsibility.ParagraphParser - ParagraphParser done
