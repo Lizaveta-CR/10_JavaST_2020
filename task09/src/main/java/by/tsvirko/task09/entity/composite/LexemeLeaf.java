@@ -1,10 +1,10 @@
 package by.tsvirko.task09.entity.composite;
 
-public class SentenceLeaf implements Component {
-    String sentence;
+public class LexemeLeaf implements Component {
+    String lexeme;
 
-    public SentenceLeaf(String sentence) {
-        this.sentence = sentence;
+    public LexemeLeaf(String lexeme) {
+        this.lexeme = lexeme;
     }
 
     @Override
@@ -15,7 +15,7 @@ public class SentenceLeaf implements Component {
     @Override
     public Object getChild(int i) {
         if (i == 0) {
-            return sentence;
+            return lexeme;
         }
         throw new UnsupportedOperationException();
     }
@@ -27,13 +27,13 @@ public class SentenceLeaf implements Component {
 
     @Override
     public String collect() {
-        return sentence;
+        return lexeme;
     }
 
     @Override
     public String toString() {
-        return "SentenceLeaf{" +
-                "sentence='" + sentence + '\'' +
+        return "LexemeLeaf{" +
+                "lexeme='" + lexeme + '\'' +
                 '}';
     }
 }

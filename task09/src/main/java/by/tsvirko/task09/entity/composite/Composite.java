@@ -19,24 +19,24 @@ public abstract class Composite implements Component {
         components.remove(c);
     }
 
-    public int size() {
-        return components.size();
-    }
-
     public String collect() {
         String text = "";
         String delimiter = "";
         int size = components.size();
         for (int i = 0; i < size; i++) {
             Component component = components.get(i);
-            text = text.concat(component.collect());
-            if (component instanceof SentenceLeaf) {
-                //TODO:
-                delimiter = Sentence.SENTENCE_DELIMITER;
-            } else {
+            String collectText = component.collect();
+            if (component instanceof LexemeLeaf) {
+                delimiter = Lexeme.LEXEME_DELIMITER;
+            }
+            if (component instanceof Sentence) {
                 delimiter = Paragraph.PARAGRAPH_DELIMITER;
             }
+//            if (component instanceof Paragraph) {
+//                delimiter = Paragraph.PARAGRAPH_DELIMITER;
+//            }
             text = text.concat(delimiter);
+            text = text.concat(collectText);
         }
         return text;
     }
