@@ -24,6 +24,10 @@ public abstract class Composite implements Component {
         components.remove(c);
     }
 
+//    private int size() {
+//        return components.size();
+//    }
+
     public String collect() {
         String text = "";
         String delimiter = "";
@@ -36,11 +40,13 @@ public abstract class Composite implements Component {
             }
             if (component instanceof Sentence) {
                 collectText = collectText.replaceFirst("(?: )+", "");
-                delimiter = Paragraph.PARAGRAPH_DELIMITER;
+                if (i != 0) {
+                    delimiter = Paragraph.PARAGRAPH_DELIMITER;
+                }
             }
 
             if (component instanceof Paragraph) {
-                collectText = collectText.replaceFirst("\n", "");
+                collectText = collectText.replaceFirst("", "\t\t");
             }
             text = text.concat(delimiter);
             text = text.concat(collectText);
