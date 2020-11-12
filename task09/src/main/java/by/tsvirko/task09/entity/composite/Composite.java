@@ -24,10 +24,6 @@ public abstract class Composite implements Component {
         components.remove(c);
     }
 
-//    private int size() {
-//        return components.size();
-//    }
-
     public String collect() {
         String text = "";
         String delimiter = "";

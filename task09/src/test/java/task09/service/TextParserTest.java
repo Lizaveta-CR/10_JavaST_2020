@@ -29,7 +29,7 @@ public class TextParserTest {
         };
     }
 
-    @Test(description = "Testing TextParsers' parse() method",
+    @Test(description = "Testing TextParsers' parse() and collect() method",
             dataProvider = "composite_correct_data")
     public void testCollect(String compos) {
         Composite compositeText = new Text();
