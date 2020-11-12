@@ -41,6 +41,7 @@ public class FileInitialization {
         } catch (IOException e) {
             logger.debug("IOException " + e.getMessage());
         }
+        logger.info("File " + filename + "was initialized");
         return text;
     }
 }

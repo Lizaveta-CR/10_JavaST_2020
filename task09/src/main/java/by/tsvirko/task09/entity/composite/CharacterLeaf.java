@@ -1,6 +1,7 @@
 package by.tsvirko.task09.entity.composite;
 
 public class CharacterLeaf implements Component {
+
     private char character;
 
     public CharacterLeaf(char character) {
@@ -8,7 +9,7 @@ public class CharacterLeaf implements Component {
     }
 
     public void add(Component c) {
-//просто лог о ничего неделании
+        throw new UnsupportedOperationException();
     }
 
     public Object getChild(int i) {

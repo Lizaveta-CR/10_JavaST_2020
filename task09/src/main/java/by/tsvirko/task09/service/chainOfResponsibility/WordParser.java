@@ -17,14 +17,13 @@ public class WordParser extends Parser {
     }
 
     @Override
-    public Composite parse(Composite compositeLexeme, String text) {
+    public Composite parse(Composite compositeLexeme, String lexem) {
         Composite compositeWord = new Word();
         Pattern sentencePatternToLexeme = Pattern.compile(REGEX_WORD);
-        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(text);
+        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(lexem);
         while (sentenceMatcherToLexeme.find()) {
             String word = sentenceMatcherToLexeme.group().trim();
             compositeWord = characterParser.parse(compositeWord, word);
-            logger.info("compositeWord added wordLeaf");
         }
         compositeLexeme.add(compositeWord);
         logger.info("WordParser done");

@@ -25,7 +25,6 @@ public class ParagraphParser extends Parser {
         while (textMatcherToParagraph.find()) {
             String paragraphAndListing = textMatcherToParagraph.group().trim();
             compositeParagraph = sentenceParser.parse(compositeParagraph, paragraphAndListing);
-            logger.info("compositeParagraph added paragraphLeaf");
         }
         compositeText.add(compositeParagraph);
         logger.info("ParagraphParser done");

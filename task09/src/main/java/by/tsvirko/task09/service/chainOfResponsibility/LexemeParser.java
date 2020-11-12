@@ -18,11 +18,11 @@ public class LexemeParser extends Parser {
     }
 
     @Override
-    public Composite parse(Composite compositeSentence, String text) {
+    public Composite parse(Composite compositeSentence, String sentence) {
         Composite compositeLexeme = new Lexeme();
         Component characterLeaf;
         Pattern sentencePatternToLexeme = Pattern.compile(REGEX_LEXEME);
-        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(text);
+        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(sentence);
         Pattern lexemePatternToPunctuation = Pattern.compile(REGEX_PUNCTUATION);
 
         while (sentenceMatcherToLexeme.find()) {
@@ -35,19 +35,9 @@ public class LexemeParser extends Parser {
                 characterLeaf = new CharacterLeaf(punctuation.charAt(0));
                 compositeLexeme.add(characterLeaf);
             }
-            logger.info("compositeLexeme added compositeLexeme");
         }
         compositeSentence.add(compositeLexeme);
         logger.info("LexemeParser done");
         return compositeSentence;
-    }
-
-    public static void main(String[] args) {
-        String text = "The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.";
-        Pattern compile = Pattern.compile(REGEX_LEXEME);
-        Matcher matcher = compile.matcher(text);
-        while (matcher.find()) {
-            System.out.println(matcher.group());
-        }
     }
 }

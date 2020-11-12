@@ -17,15 +17,14 @@ public class SentenceParser extends Parser {
     }
 
     @Override
-    public Composite parse(Composite compositeParagraph, String text) {
+    public Composite parse(Composite compositeParagraph, String paragraph) {
         Composite compositeSentence = new Sentence();
         Pattern paragraphPatternToSentence = Pattern.compile(REGEX_SENTENCE);
-        Matcher paragraphMatcherToSentence = paragraphPatternToSentence.matcher(text);
+        Matcher paragraphMatcherToSentence = paragraphPatternToSentence.matcher(paragraph);
 
         while (paragraphMatcherToSentence.find()) {
             String sentence = paragraphMatcherToSentence.group().trim();
             compositeSentence = lexemeParser.parse(compositeSentence, sentence);
-            logger.info("compositeParagraph added paragraphLeaf");
         }
         compositeParagraph.add(compositeSentence);
         logger.info("ParagraphParser done");
