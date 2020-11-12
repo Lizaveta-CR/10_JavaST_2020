@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class LexemParserTest {
+public class LexemeParserTest {
     private LexemeParser parser = new LexemeParser(new WordParser(new CharacterParser()));
     private String text;
 
