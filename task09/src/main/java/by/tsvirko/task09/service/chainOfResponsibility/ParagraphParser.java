@@ -23,7 +23,7 @@ public class ParagraphParser extends Parser {
         Matcher textMatcherToParagraph = textPatternToParagraph.matcher(text);
 
         while (textMatcherToParagraph.find()) {
-            String paragraphAndListing = textMatcherToParagraph.group().trim();
+            String paragraphAndListing = textMatcherToParagraph.group();
             compositeParagraph = sentenceParser.parse(compositeParagraph, paragraphAndListing);
         }
         compositeText.add(compositeParagraph);

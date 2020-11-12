@@ -22,7 +22,7 @@ public class WordParser extends Parser {
         Pattern sentencePatternToLexeme = Pattern.compile(REGEX_WORD);
         Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(lexem);
         while (sentenceMatcherToLexeme.find()) {
-            String word = sentenceMatcherToLexeme.group().trim();
+            String word = sentenceMatcherToLexeme.group();
             compositeWord = characterParser.parse(compositeWord, word);
         }
         compositeLexeme.add(compositeWord);

@@ -31,7 +31,7 @@ public class LexemeParser extends Parser {
 
             Matcher lexemeMatcherToPunctuation = lexemePatternToPunctuation.matcher(lexeme);
             while (lexemeMatcherToPunctuation.find()) {
-                String punctuation = lexemeMatcherToPunctuation.group().trim();
+                String punctuation = lexemeMatcherToPunctuation.group();
                 characterLeaf = new CharacterLeaf(punctuation.charAt(0));
                 compositeLexeme.add(characterLeaf);
             }

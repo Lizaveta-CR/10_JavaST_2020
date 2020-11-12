@@ -23,7 +23,7 @@ public class SentenceParser extends Parser {
         Matcher paragraphMatcherToSentence = paragraphPatternToSentence.matcher(paragraph);
 
         while (paragraphMatcherToSentence.find()) {
-            String sentence = paragraphMatcherToSentence.group().trim();
+            String sentence = paragraphMatcherToSentence.group();
             compositeSentence = lexemeParser.parse(compositeSentence, sentence);
         }
         compositeParagraph.add(compositeSentence);

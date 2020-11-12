@@ -32,7 +32,13 @@ public abstract class Composite implements Component {
             Component component = components.get(i);
             String collectText = component.collect();
             if (component instanceof CharacterComp) {
-                delimiter = Lexeme.LEXEME_DELIMITER;
+                delimiter = " ";
+            }
+            if (component instanceof Word) {
+                delimiter = "";
+            }
+            if (component instanceof Lexeme) {
+                delimiter = "";
             }
             if (component instanceof Sentence) {
                 collectText = collectText.replaceFirst("(?: )+", "");
@@ -40,7 +46,6 @@ public abstract class Composite implements Component {
                     delimiter = Paragraph.PARAGRAPH_DELIMITER;
                 }
             }
-
             if (component instanceof Paragraph) {
                 collectText = collectText.replaceFirst("", "\t\t");
             }
