@@ -3,19 +3,33 @@ package by.tsvirko.task09.entity.composite;
 public class CharacterLeaf implements Component {
     private char character;
 
+    public CharacterLeaf(char character) {
+        this.character = character;
+    }
+
     public void add(Component c) {
 //просто лог о ничего неделании
     }
 
     public Object getChild(int i) {
+        if (i == 0) {
+            return character;
+        }
         throw new UnsupportedOperationException();
     }
 
     public void remove(Component c) {
-
+        throw new UnsupportedOperationException();
     }
 
     public String collect() {
-        throw new UnsupportedOperationException();
+        return Character.toString(character);
+    }
+
+    @Override
+    public String toString() {
+        return "CharacterLeaf{" +
+                "character=" + character +
+                '}';
     }
 }

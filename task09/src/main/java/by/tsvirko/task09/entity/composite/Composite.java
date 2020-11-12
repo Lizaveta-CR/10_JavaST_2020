@@ -26,7 +26,12 @@ public abstract class Composite implements Component {
         for (int i = 0; i < size; i++) {
             Component component = components.get(i);
             String collectText = component.collect();
-            if (component instanceof LexemeLeaf) {
+//            if (component instanceof PunctuationLeaf) {
+//                if (component.getChild(0).equals("'")) {
+//                    delimiter = "";
+//                }
+//            }
+            if (component instanceof CharacterComp) {
                 delimiter = Lexeme.LEXEME_DELIMITER;
             }
             if (component instanceof Sentence) {
