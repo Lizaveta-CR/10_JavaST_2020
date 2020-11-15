@@ -69,14 +69,4 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
                 .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
         return sortedMap;
     }
-
-    public static void main(String[] args) {
-        String initialize = new FileInitialization("input.txt").initialize();
-        Composite composite = new Text();
-        TextParser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
-        Composite parse = parser.parse(composite, initialize);
-        AbstractSortQuery sortParagraphsBySentences = new SortParagraphsBySentences(false);
-        TextStorageRepository textStorageRepository = RepositoryFactory.getInstance().getTextStorageRepository();
-        textStorageRepository.query(sortParagraphsBySentences);
-    }
 }
