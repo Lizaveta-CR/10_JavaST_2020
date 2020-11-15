@@ -4,7 +4,7 @@
 <suite name="Suite1" allow-return-values="true">
     <test name="all-tests">
         <packages>
-            <package name="task09.service"/>
+            <package name="task09.service.chainOfResponsibility"/>
         </packages>
     </test>
 </suite>

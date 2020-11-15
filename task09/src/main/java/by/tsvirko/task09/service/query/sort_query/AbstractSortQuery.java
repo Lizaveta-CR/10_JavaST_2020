@@ -1,10 +1,11 @@
 package by.tsvirko.task09.service.query.sort_query;
 
 
+import by.tsvirko.task09.entity.TextStorage;
 import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.service.query.Query;
 
-public abstract class AbstractSortQuery implements Query<Composite> {
+public abstract class AbstractSortQuery implements Query<Composite, TextStorage> {
     /**
      * Determines whether sorting occurs in descending or ascending order
      */

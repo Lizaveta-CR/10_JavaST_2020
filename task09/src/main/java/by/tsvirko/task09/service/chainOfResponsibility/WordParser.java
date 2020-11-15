@@ -1,6 +1,8 @@
 package by.tsvirko.task09.service.chainOfResponsibility;
 
 import by.tsvirko.task09.entity.composite.*;
+import by.tsvirko.task09.repository.TextStorageRepository;
+import by.tsvirko.task09.repository.TextStorageRepositoryImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,10 +19,10 @@ public class WordParser extends Parser {
     }
 
     @Override
-    public Composite parse(Composite compositeLexeme, String lexem) {
+    public Composite parse(Composite compositeLexeme, String lexeme) {
         Composite compositeWord = new Word();
         Pattern sentencePatternToLexeme = Pattern.compile(REGEX_WORD);
-        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(lexem);
+        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(lexeme);
         while (sentenceMatcherToLexeme.find()) {
             String word = sentenceMatcherToLexeme.group();
             compositeWord = characterParser.parse(compositeWord, word);

@@ -1,8 +1,11 @@
 package by.tsvirko.task09.service.query.sort_query;
 
+import by.tsvirko.task09.entity.TextStorage;
 import by.tsvirko.task09.entity.composite.Component;
 import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.entity.composite.Text;
+import by.tsvirko.task09.repository.RepositoryFactory;
+import by.tsvirko.task09.repository.TextStorageRepository;
 import by.tsvirko.task09.service.FileInitialization;
 import by.tsvirko.task09.service.chainOfResponsibility.*;
 
@@ -16,10 +19,9 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
 
     public SortParagraphsBySentences() {
     }
-
     @Override
-    public Composite query(Composite text) {
-        Composite paragraph = (Composite) text.getChild(0);
+    public Composite query(TextStorage text) {
+        Composite paragraph = (Composite) text.getComponent(0);
         Map<Component, Integer> map = new HashMap<>();
 
         int paragraphSize = paragraph.getSize();
@@ -66,5 +68,15 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
                 .sorted(Map.Entry.<Component, Integer>comparingByValue(Comparator.reverseOrder()))
                 .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
         return sortedMap;
+    }
+
+    public static void main(String[] args) {
+        String initialize = new FileInitialization("input.txt").initialize();
+        Composite composite = new Text();
+        TextParser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
+        Composite parse = parser.parse(composite, initialize);
+        AbstractSortQuery sortParagraphsBySentences = new SortParagraphsBySentences(false);
+        TextStorageRepository textStorageRepository = RepositoryFactory.getInstance().getTextStorageRepository();
+        textStorageRepository.query(sortParagraphsBySentences);
     }
 }

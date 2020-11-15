@@ -1,4 +1,4 @@
-package task09.service;
+package task09.service.chainOfResponsibility;
 
 import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.entity.composite.Text;
