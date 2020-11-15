@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Composite implements Component {
+public abstract class Composite implements Component, Comparable<Composite> {
     private static final Logger logger = LogManager.getLogger(Composite.class);
 
     private List<Component> components = new ArrayList<Component>();
@@ -56,6 +56,10 @@ public abstract class Composite implements Component {
         return text;
     }
 
+    public int getSize() {
+        return components.size();
+    }
+
     @Override
     public String toString() {
         return "Composite{" +
@@ -76,9 +80,8 @@ public abstract class Composite implements Component {
         return Objects.hash(components);
     }
 
-    public static void main(String[] args) {
-        String text = " kkkkk";
-        text = text.replaceFirst("(?: )+", "");
-        System.out.println(text);
+    @Override
+    public int compareTo(Composite o) {
+        return Integer.compare(components.size(), o.components.size());
     }
 }

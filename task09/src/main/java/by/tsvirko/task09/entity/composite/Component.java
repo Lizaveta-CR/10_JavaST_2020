@@ -8,4 +8,6 @@ public interface Component {
     void remove(Component c);
 
     String collect();
+
+    int getSize();
 }

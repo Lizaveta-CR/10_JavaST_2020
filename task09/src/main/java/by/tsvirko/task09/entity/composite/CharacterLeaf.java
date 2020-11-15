@@ -28,6 +28,11 @@ public class CharacterLeaf implements Component {
     }
 
     @Override
+    public int getSize() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public String toString() {
         return "CharacterLeaf{" +
                 "character=" + character +
