@@ -3,11 +3,6 @@ package by.tsvirko.task09.service.query.sort_query;
 import by.tsvirko.task09.entity.TextStorage;
 import by.tsvirko.task09.entity.composite.Component;
 import by.tsvirko.task09.entity.composite.Composite;
-import by.tsvirko.task09.entity.composite.Text;
-import by.tsvirko.task09.repository.RepositoryFactory;
-import by.tsvirko.task09.repository.TextStorageRepository;
-import by.tsvirko.task09.service.FileInitialization;
-import by.tsvirko.task09.service.chainOfResponsibility.*;
 
 import java.util.*;
 
@@ -19,6 +14,7 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
 
     public SortParagraphsBySentences() {
     }
+
     @Override
     public Composite query(TextStorage text) {
         Composite paragraph = (Composite) text.getComponent(0);
@@ -55,7 +51,9 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
 
         map.entrySet()
                 .stream()
-                .sorted(Map.Entry.<Component, Integer>comparingByValue())
+                .sorted(Map.Entry.<Component, Integer>comparingByValue()
+                        .thenComparing(componentIntegerEntry ->
+                                ((Composite) componentIntegerEntry.getKey().getChild(0)).getSize()))
                 .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
         return sortedMap;
     }
@@ -65,7 +63,9 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
 
         map.entrySet()
                 .stream()
-                .sorted(Map.Entry.<Component, Integer>comparingByValue(Comparator.reverseOrder()))
+                .sorted(Map.Entry.<Component, Integer>comparingByValue(Comparator.reverseOrder())
+                        .thenComparing(componentIntegerEntry ->
+                                ((Composite) componentIntegerEntry.getKey().getChild(0)).getSize()))
                 .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
         return sortedMap;
     }

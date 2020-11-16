@@ -1,5 +1,6 @@
 package by.tsvirko.task09.service;
 
+import by.tsvirko.task09.service.query.exception.FileServiceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,12 +21,16 @@ public class FileInitialization {
         this.filename = filename;
     }
 
-    public String initialize() {
+    public FileInitialization() {
+    }
+
+    public String initialize() throws FileServiceException {
         URI uri = null;
         try {
             uri = ClassLoader.getSystemResource("data").toURI();
         } catch (URISyntaxException e) {
             logger.info("no such uri", e.getMessage());
+            throw new FileServiceException(e.getMessage());
         }
         String mainPath = Paths.get(uri).toString();
         Path path = Paths.get(mainPath, filename);
@@ -38,10 +43,20 @@ public class FileInitialization {
             text = new String(str);
         } catch (FileNotFoundException e) {
             logger.debug("No such file " + filename);
+            throw new FileServiceException(e.getMessage());
         } catch (IOException e) {
             logger.debug("IOException " + e.getMessage());
+            throw new FileServiceException(e.getMessage());
         }
         logger.info("File " + filename + "was initialized");
+
+        if (text.isEmpty()) {
+            throw new FileServiceException("Write information into file!");
+        }
         return text;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }
