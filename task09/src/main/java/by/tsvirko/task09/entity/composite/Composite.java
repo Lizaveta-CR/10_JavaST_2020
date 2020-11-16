@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Composite implements Component, Comparable<Composite> {
+public abstract class Composite implements Component<String>, Comparable<Composite> {
     private static final Logger logger = LogManager.getLogger(Composite.class);
 
     private List<Component> components = new ArrayList<Component>();
@@ -30,7 +30,7 @@ public abstract class Composite implements Component, Comparable<Composite> {
         int size = components.size();
         for (int i = 0; i < size; i++) {
             Component component = components.get(i);
-            String collectText = component.collect();
+            String collectText = (String) component.collect();
             if (component instanceof CharacterComp) {
                 delimiter = " ";
             }

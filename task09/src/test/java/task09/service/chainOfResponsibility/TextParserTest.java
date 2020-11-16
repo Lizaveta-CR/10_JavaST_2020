@@ -4,6 +4,7 @@ import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.entity.composite.Text;
 import by.tsvirko.task09.service.FileInitialization;
 import by.tsvirko.task09.service.chainOfResponsibility.*;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -32,7 +33,7 @@ public class TextParserTest {
 
     @Test(description = "Testing TextParsers' parse() and collect() method",
             dataProvider = "composite_correct_data")
-    public void testCollect(String compos) {
+    public void testCollect(String compos) throws HandlerException {
         Composite compositeText = new Text();
         Composite composite = parser.parse(compositeText, text);
         String actual = composite.collect();

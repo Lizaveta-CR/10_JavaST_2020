@@ -6,6 +6,7 @@ import by.tsvirko.task09.repository.RepositoryFactory;
 import by.tsvirko.task09.repository.TextStorageRepository;
 import by.tsvirko.task09.service.FileInitialization;
 import by.tsvirko.task09.service.chainOfResponsibility.*;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
 import by.tsvirko.task09.service.query.sort_query.SortParagraphsBySentences;
 import org.testng.annotations.BeforeTest;
@@ -19,7 +20,7 @@ public class SortParagraphsBySentencesTest {
     private TextStorageRepository storageRepository = RepositoryFactory.getInstance().getTextStorageRepository();
 
     @BeforeTest
-    public void initText() throws FileServiceException {
+    public void initText() throws FileServiceException, HandlerException {
         String text = new FileInitialization("input.txt").initialize();
         TextParser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
         Composite compositeText = new Text();

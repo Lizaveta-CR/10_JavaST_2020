@@ -48,7 +48,6 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
 
     private Map<Component, Integer> sortByValuesAsc(Map<Component, Integer> map) {
         Map<Component, Integer> sortedMap = new LinkedHashMap<>();
-
         map.entrySet()
                 .stream()
                 .sorted(Map.Entry.<Component, Integer>comparingByValue()

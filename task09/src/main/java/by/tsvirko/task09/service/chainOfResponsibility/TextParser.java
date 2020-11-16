@@ -4,6 +4,7 @@ import by.tsvirko.task09.entity.composite.Component;
 import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.repository.RepositoryFactory;
 import by.tsvirko.task09.repository.TextStorageRepository;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,9 +18,14 @@ public class TextParser extends Parser {
         this.paragraphParser = paragraphParser;
     }
 
-    public Composite parse(Composite textComposite, String text) {
+    public Composite parse(Composite textComposite, String text) throws HandlerException {
         Composite parse = paragraphParser.parse(textComposite, text);
-        repository.setComponent((Component) parse.getChild(0));
+        try {
+            repository.setComponent((Component) parse.getChild(0));
+        } catch (IndexOutOfBoundsException e) {
+            logger.debug("Component can not be saved " + e.getMessage());
+            throw new HandlerException("Component can not be saved");
+        }
         logger.info("TextParser did his job");
         return parse;
     }

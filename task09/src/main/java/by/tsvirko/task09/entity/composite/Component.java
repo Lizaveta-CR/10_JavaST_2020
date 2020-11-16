@@ -1,13 +1,14 @@
 package by.tsvirko.task09.entity.composite;
 
-public interface Component {
+
+public interface Component<T> {
     void add(Component c);
 
     Object getChild(int i);
 
     void remove(Component c);
 
-    String collect();
+    T collect();
 
     int getSize();
 }

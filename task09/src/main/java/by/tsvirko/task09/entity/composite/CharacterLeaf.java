@@ -1,6 +1,6 @@
 package by.tsvirko.task09.entity.composite;
 
-public class CharacterLeaf implements Component {
+public class CharacterLeaf implements Component<String> {
 
     private char character;
 
