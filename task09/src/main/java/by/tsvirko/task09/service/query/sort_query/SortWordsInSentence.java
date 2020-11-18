@@ -47,11 +47,14 @@ public class SortWordsInSentence extends AbstractSortQuery {
                 int sizeWords = words.size();
                 Composite lexemeList = new Lexeme();
                 for (int s = 0; s < sizeWords; s++) {
-                    if (map.containsKey(words.get(s))) {
-                        lexemeList.add(map.get(words.get(s)));
-                        map.remove(words.get(s));
+                    Component word = words.get(s);
+                    if (map.containsKey(word)) {
+                        lexemeList.add(word);
+                        lexemeList.add(map.get(word));
+                        map.remove(word);
+                    } else {
+                        lexemeList.add(word);
                     }
-                    lexemeList.add(words.get(s));
                 }
                 sentenceList.add(lexemeList);
             }
