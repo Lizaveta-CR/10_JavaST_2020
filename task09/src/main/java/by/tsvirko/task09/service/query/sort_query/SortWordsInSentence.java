@@ -2,16 +2,14 @@ package by.tsvirko.task09.service.query.sort_query;
 
 import by.tsvirko.task09.entity.TextStorage;
 import by.tsvirko.task09.entity.composite.*;
-import by.tsvirko.task09.repository.RepositoryFactory;
-import by.tsvirko.task09.repository.TextStorageRepository;
-import by.tsvirko.task09.service.FileInitialization;
-import by.tsvirko.task09.service.chainOfResponsibility.*;
-import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
-import by.tsvirko.task09.service.query.exception.FileServiceException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 public class SortWordsInSentence extends AbstractSortQuery {
+    private static final Logger logger = LogManager.getLogger(SortWordsInSentence.class);
+
     @Override
     public Composite query(TextStorage textStorage) {
         Composite paragraph = (Composite) textStorage.getComponent(0);
@@ -60,6 +58,7 @@ public class SortWordsInSentence extends AbstractSortQuery {
             }
             paragraphList.add(sentenceList);
         }
+        logger.info("SortWordsInSentence' query() has been done");
         return paragraphList;
     }
 }

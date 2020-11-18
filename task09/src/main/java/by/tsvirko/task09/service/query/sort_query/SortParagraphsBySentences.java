@@ -3,10 +3,14 @@ package by.tsvirko.task09.service.query.sort_query;
 import by.tsvirko.task09.entity.TextStorage;
 import by.tsvirko.task09.entity.composite.Component;
 import by.tsvirko.task09.entity.composite.Composite;
+import by.tsvirko.task09.service.query.QuerySortServiceController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 public class SortParagraphsBySentences extends AbstractSortQuery {
+    private static final Logger logger = LogManager.getLogger(SortParagraphsBySentences.class);
 
     public SortParagraphsBySentences(boolean descending) {
         super(descending);
@@ -42,7 +46,7 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
         for (Map.Entry<Component, Integer> entry : sortedMap.entrySet()) {
             paragraph.add(entry.getKey());
         }
-
+        logger.info("SortParagraphsBySentences' query() has been done");
         return paragraph;
     }
 
