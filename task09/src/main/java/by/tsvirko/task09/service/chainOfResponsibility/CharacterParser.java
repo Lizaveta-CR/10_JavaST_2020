@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class CharacterParser extends Parser {
     private static final Logger logger = LogManager.getLogger(CharacterParser.class);
-    private static final String REGEX_CHARACTER = "\\w|'|-";
+    private static final String REGEX_CHARACTER = "\\w|'|-|\\(|\\)";
 
 
     @Override

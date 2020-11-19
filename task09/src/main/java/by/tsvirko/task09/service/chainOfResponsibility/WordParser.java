@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 public class WordParser extends Parser {
     private static final Logger logger = LogManager.getLogger(WordParser.class);
-    private static final String REGEX_WORD = "[А-ЯA-Zа-яa-z-']+";
+    private static final String REGEX_WORD = "[А-ЯA-Zа-яa-z-'(\\()(\\))]+";
     private CharacterParser characterParser;
 
     public WordParser(CharacterParser characterParser) {
