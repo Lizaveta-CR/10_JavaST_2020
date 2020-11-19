@@ -3,11 +3,13 @@ package by.tsvirko.task09.service.query.providers;
 import by.tsvirko.task09.service.query.Query;
 import by.tsvirko.task09.service.query.SortQueryEnum;
 import by.tsvirko.task09.service.query.exception.RequestException;
+import by.tsvirko.task09.service.query.sort_query.SortLexemesBySymbols;
 import by.tsvirko.task09.service.query.sort_query.SortParagraphsBySentences;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class QuerySortProvider {
@@ -17,6 +19,11 @@ public class QuerySortProvider {
 
     public QuerySortProvider() {
         repository.put(SortQueryEnum.PARAGRAPH_BY_SENTENCES, new SortParagraphsBySentences());
+        repository.put(SortQueryEnum.WORDS_IN_SENTENCE, new SortParagraphsBySentences());
+    }
+
+    public QuerySortProvider(List<String> parameters) {
+        repository.put(SortQueryEnum.LEXEMES_BY_SYMBOLS, new SortLexemesBySymbols(parameters.get(0).charAt(0)));
     }
 
     public Query getCommand(String name) throws RequestException {
