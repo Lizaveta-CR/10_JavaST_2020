@@ -70,7 +70,7 @@ public class SortWordsInSentenceTest {
                 int size = words.size();
                 for (int w = 0; w < size - 1; w++) {
                     wordLengthBooActual = words.get(i).getSize() <= words.get(i + 1).getSize();
-                    assertTrue(wordLengthBooActual);
+                    assertTrue(wordLengthBooActual==true);
                 }
             }
         }
