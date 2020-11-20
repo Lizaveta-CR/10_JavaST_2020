@@ -97,12 +97,12 @@ public class ReversePolishNotation {
         return res;
     }
 
-    public static boolean isOperator(String c) {
+    private boolean isOperator(String c) {
         return c.equals("~") || c.equals("&") || c.equals("|") || c.equals("^") || c.equals(">>") || c.equals("<<")
                 || c.equals(">>>") || c.equals("(") || c.equals(")");
     }
 
-    public boolean isNum(char c) {
+    private boolean isNum(char c) {
         return c - '0' >= 0 && c - '0' <= 9;
     }
 }

@@ -1,17 +1,22 @@
 package by.tsvirko.task09.interpreter;
 
+import by.tsvirko.task09.interpreter.exception.NoExpressionException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CalculateExpression {
     private ArrayList<AbstractExpression> listExpression = new ArrayList<>();
 
-    public CalculateExpression(String expression) {
+    public CalculateExpression(String expression) throws NoExpressionException {
+        if (expression == null || expression.isEmpty()) {
+            throw new NoExpressionException("No expression has been found");
+        }
         String polishNotation = (new ReversePolishNotation()).convertToReversePolish(expression);
         parse(polishNotation);
     }
 
-    public void parse(String expression) {
+    private void parse(String expression) {
         for (String lexeme : expression.split("\\p{Blank}+")) {
             if (lexeme.isEmpty()) {
                 continue;
@@ -49,7 +54,7 @@ public class CalculateExpression {
         }
     }
 
-    public Integer calculate() {
+    public int calculate() {
         Context context = new Context();
         for (AbstractExpression terminal : listExpression) {
             terminal.interpret(context);
@@ -57,11 +62,11 @@ public class CalculateExpression {
         return context.popValue();
     }
 
-    public static void main(String[] args) {
-        String exp = "(8^5|1&2<<(2|5>>2&71))|1200 ";
+    public static void main(String[] args) throws NoExpressionException {
+        String exp = "13<<2";
         Integer calculate = new CalculateExpression(exp).calculate();
         System.out.println("Mine =" + calculate);
-        int actual = (8 ^ 5 | 1 & 2 << (2 | 5 >> 2 & 71)) | 1200;
+        int actual = 13 << 2;
         System.out.println("Actual =" + actual);
     }
 }

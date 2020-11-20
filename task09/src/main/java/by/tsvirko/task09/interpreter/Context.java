@@ -9,7 +9,7 @@ public class Context {
     public Context() {
     }
 
-    public Integer popValue() {
+    public int popValue() {
         return contextValues.pop();
     }
 
