@@ -1,4 +1,4 @@
-package by.tsvirko.task09.interpreter.exception;
+package by.tsvirko.task09.service.interpreter.exception;
 
 public class NoExpressionException extends Exception {
     public NoExpressionException() {

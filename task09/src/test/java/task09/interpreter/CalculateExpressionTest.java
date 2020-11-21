@@ -1,7 +1,7 @@
 package task09.interpreter;
 
-import by.tsvirko.task09.interpreter.CalculateExpression;
-import by.tsvirko.task09.interpreter.exception.NoExpressionException;
+import by.tsvirko.task09.service.interpreter.CalculateExpression;
+import by.tsvirko.task09.service.interpreter.exception.NoExpressionException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

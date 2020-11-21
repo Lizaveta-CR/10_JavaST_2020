@@ -8,6 +8,7 @@ import by.tsvirko.task09.service.chainOfResponsibility.CharacterParser;
 import by.tsvirko.task09.service.chainOfResponsibility.LexemeParser;
 import by.tsvirko.task09.service.chainOfResponsibility.SentenceParser;
 import by.tsvirko.task09.service.chainOfResponsibility.WordParser;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -43,7 +44,7 @@ public class LexemeParserTest {
 
     @Test(description = "Testing TextParsers' parse() and collect() method",
             dataProvider = "composite_correct_data")
-    public void testCollect(String compos) {
+    public void testCollect(String compos) throws HandlerException {
         Composite compositeLexeme = new Lexeme();
         Composite composite = parser.parse(compositeLexeme, text);
         String actual = composite.collect();

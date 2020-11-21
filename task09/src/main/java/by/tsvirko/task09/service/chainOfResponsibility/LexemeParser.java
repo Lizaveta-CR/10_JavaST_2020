@@ -1,6 +1,7 @@
 package by.tsvirko.task09.service.chainOfResponsibility;
 
 import by.tsvirko.task09.entity.composite.*;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,8 +10,11 @@ import java.util.regex.Pattern;
 
 public class LexemeParser extends Parser {
     private static final Logger logger = LogManager.getLogger(LexemeParser.class);
-    private static final String REGEX_LEXEME = "((\\s*)([А-ЯA-Zа-яa-z-(')(\\(\\))])*(\\p{Blank}|\\p{Punct})|(\\p{Punct}\\p{Blank}))";
-    private static final String REGEX_PUNCTUATION = "(?![\\(\\)'-])\\p{Punct}";
+    //    private static final String REGEX_LEXEME = "((\\s*)([А-ЯA-Zа-яa-z-(')(\\(\\))])*(\\p{Blank}|\\p{Punct})|(\\p{Punct}\\p{Blank}))";
+    private static final String REGEX_LEXEME = "((\\s*)([[А-ЯA-Zа-яa-z-'\\(\\)]|"
+            + "((\\()?(\\~)?\\d+)([\\(|\\)|\\~|\\(|\\)|\\>|\\<|\\~|\\&|\\||\\^]*[\\d+|\\)])*])"
+            + "*(\\p{Blank}|\\p{Punct})|(\\p{Punct}\\p{Blank}))";
+    private static final String REGEX_PUNCTUATION = "(?![\\<\\>[\\(0-9\\)]\\~\\>\\&\\^\\|'-])\\p{Punct}";
     private WordParser wordParser;
 
     public LexemeParser(WordParser wordParser) {
@@ -18,7 +22,7 @@ public class LexemeParser extends Parser {
     }
 
     @Override
-    public Composite parse(Composite compositeSentence, String sentence) {
+    public Composite parse(Composite compositeSentence, String sentence) throws HandlerException {
         Composite compositeLexeme = new Lexeme();
         Component characterLeaf;
         Pattern sentencePatternToLexeme = Pattern.compile(REGEX_LEXEME);

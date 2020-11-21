@@ -1,6 +1,6 @@
-package by.tsvirko.task09.interpreter;
+package by.tsvirko.task09.service.interpreter;
 
-import by.tsvirko.task09.interpreter.exception.NoExpressionException;
+import by.tsvirko.task09.service.interpreter.exception.NoExpressionException;
 
 import java.util.ArrayList;
 import java.util.Scanner;

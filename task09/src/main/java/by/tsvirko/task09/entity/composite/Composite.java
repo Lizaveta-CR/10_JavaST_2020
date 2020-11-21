@@ -30,7 +30,13 @@ public abstract class Composite implements Component<String>, Comparable<Composi
         int size = components.size();
         for (int i = 0; i < size; i++) {
             Component component = components.get(i);
-            String collectText = (String) component.collect();
+            String collectText = "";
+            try {
+                collectText = (String) component.collect();
+            } catch (ClassCastException e) {
+                collectText = " " + String.valueOf((Integer) component.collect());
+            }
+
             if (component instanceof CharacterComp) {
                 delimiter = " ";
             }

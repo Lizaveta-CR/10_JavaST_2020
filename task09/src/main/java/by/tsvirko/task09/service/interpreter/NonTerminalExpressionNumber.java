@@ -1,4 +1,4 @@
-package by.tsvirko.task09.interpreter;
+package by.tsvirko.task09.service.interpreter;
 
 //содержит ссылку на следующий объект типа TerminalExpression и вызывает, если необходимо, методы interpret() для других подклассов
 public class NonTerminalExpressionNumber extends AbstractExpression {

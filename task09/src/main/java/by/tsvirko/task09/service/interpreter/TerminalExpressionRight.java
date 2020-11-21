@@ -1,4 +1,4 @@
-package by.tsvirko.task09.interpreter;
+package by.tsvirko.task09.service.interpreter;
 
 public class TerminalExpressionRight extends AbstractExpression {
     @Override

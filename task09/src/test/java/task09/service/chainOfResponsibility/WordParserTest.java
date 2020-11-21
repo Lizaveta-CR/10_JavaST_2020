@@ -7,6 +7,7 @@ import by.tsvirko.task09.service.FileInitialization;
 import by.tsvirko.task09.service.chainOfResponsibility.CharacterParser;
 import by.tsvirko.task09.service.chainOfResponsibility.LexemeParser;
 import by.tsvirko.task09.service.chainOfResponsibility.WordParser;
+import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -37,7 +38,7 @@ public class WordParserTest {
 
     @Test(description = "Testing TextParsers' parse() and collect() method",
             dataProvider = "composite_correct_data")
-    public void testCollect(String compos) {
+    public void testCollect(String compos) throws HandlerException {
         Composite compositeWord = new Word();
         Composite composite = parser.parse(compositeWord, text);
         String actual = composite.collect();
