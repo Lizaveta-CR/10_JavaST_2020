@@ -1,6 +1,8 @@
 package by.tsvirko.task09.service.interpreter;
 
 import by.tsvirko.task09.service.interpreter.exception.NoExpressionException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -60,13 +62,5 @@ public class CalculateExpression {
             terminal.interpret(context);
         }
         return context.popValue();
-    }
-
-    public static void main(String[] args) throws NoExpressionException {
-        String exp = "13<<2";
-        Integer calculate = new CalculateExpression(exp).calculate();
-        System.out.println("Mine =" + calculate);
-        int actual = 13 << 2;
-        System.out.println("Actual =" + actual);
     }
 }

@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 
 public class LexemeParser extends Parser {
     private static final Logger logger = LogManager.getLogger(LexemeParser.class);
-    //    private static final String REGEX_LEXEME = "((\\s*)([А-ЯA-Zа-яa-z-(')(\\(\\))])*(\\p{Blank}|\\p{Punct})|(\\p{Punct}\\p{Blank}))";
     private static final String REGEX_LEXEME = "((\\s*)([[А-ЯA-Zа-яa-z-'\\(\\)]|"
             + "((\\()?(\\~)?\\d+)([\\(|\\)|\\~|\\(|\\)|\\>|\\<|\\~|\\&|\\||\\^]*[\\d+|\\)])*])"
             + "*(\\p{Blank}|\\p{Punct})|(\\p{Punct}\\p{Blank}))";

@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 public class ParagraphParser extends Parser {
     private static final Logger logger = LogManager.getLogger(ParagraphParser.class);
-    //        private static final String REGEX_PARAGRAPH = "((\t)[^\t|#{2}]+)";
     private static final String REGEX_PARAGRAPH = "((\t)(.*)?)[^\t|#{2}]+";
     private SentenceParser sentenceParser;
 

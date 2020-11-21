@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 public class SentenceParser extends Parser {
     private static final Logger logger = LogManager.getLogger(SentenceParser.class);
         private static final String REGEX_SENTENCE = "((\\s*)[А-ЯA-Z]([^?!.])*([.?!]*([!?...])))";
-//    private static final String REGEX_SENTENCE = "((\\s*)[А-ЯA-Z\\W*]([^?!.])*([.?!]*([!?...])))";
     private LexemeParser lexemeParser;
 
     public SentenceParser(LexemeParser lexemeParser) {

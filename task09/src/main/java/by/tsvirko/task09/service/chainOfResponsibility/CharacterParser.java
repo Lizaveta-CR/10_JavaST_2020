@@ -9,10 +9,7 @@ import java.util.regex.Pattern;
 
 public class CharacterParser extends Parser {
     private static final Logger logger = LogManager.getLogger(CharacterParser.class);
-    //    private static final String REGEX_CHARACTER = "(?![[\\(0-9\\)]|\\|])[А-ЯA-Zа-яa-z-'-]";
-    //TODO:
     private static final String REGEX_CHARACTER = "[А-ЯA-Zа-яa-z-'-\\(\\)]";
-
 
     @Override
     public Composite parse(Composite compositeWord, String word) {
@@ -29,16 +26,5 @@ public class CharacterParser extends Parser {
         compositeWord.add(compositeCharacter);
         logger.info("CharacterParser done");
         return compositeWord;
-    }
-
-    public static void main(String[] args) {
-        String exp = "not only (five) centuries, but also the leap into ";
-        Pattern sentencePatternToLexeme = Pattern.compile(REGEX_CHARACTER);
-        Matcher sentenceMatcherToLexeme = sentencePatternToLexeme.matcher(exp);
-        while (sentenceMatcherToLexeme.find()) {
-            String group = sentenceMatcherToLexeme.group();
-            System.out.println(group);
-//            System.out.println(group.equals(expr));
-        }
     }
 }
