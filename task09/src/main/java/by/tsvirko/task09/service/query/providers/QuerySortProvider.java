@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Provider for sorting
+ */
 public class QuerySortProvider {
     private static final Logger logger = LogManager.getLogger(QuerySortProvider.class);
 

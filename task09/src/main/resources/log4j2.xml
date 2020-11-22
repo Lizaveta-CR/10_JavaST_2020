@@ -23,6 +23,9 @@
         <Logger name="by.tsvirko.task09.service" level="debug" additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>
+        <Logger name="by.tsvirko.task09.controller" level="error" additivity="true">
+            <AppenderRef ref="TxtFile"/>
+        </Logger>
     </Loggers>
 </Configuration>
 

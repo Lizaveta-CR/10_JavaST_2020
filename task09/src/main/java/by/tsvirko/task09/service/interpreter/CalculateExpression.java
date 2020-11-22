@@ -7,9 +7,19 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Calculates given expression
+ */
 public class CalculateExpression {
     private ArrayList<AbstractExpression> listExpression = new ArrayList<>();
 
+    /**
+     * CalculateExpression's constructor,
+     * which validates expression, calculates reverse polish notation and parses
+     *
+     * @param expression
+     * @throws NoExpressionException
+     */
     public CalculateExpression(String expression) throws NoExpressionException {
         if (expression == null || expression.isEmpty()) {
             throw new NoExpressionException("No expression has been found");
@@ -56,6 +66,11 @@ public class CalculateExpression {
         }
     }
 
+    /**
+     * Calculates expression
+     *
+     * @return
+     */
     public int calculate() {
         Context context = new Context();
         for (AbstractExpression terminal : listExpression) {

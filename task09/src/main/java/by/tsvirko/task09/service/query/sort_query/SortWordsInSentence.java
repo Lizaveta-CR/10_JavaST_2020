@@ -7,6 +7,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
+/**
+ * Sorts words in sentences by length
+ */
 public class SortWordsInSentence extends AbstractSortQuery {
     private static final Logger logger = LogManager.getLogger(SortWordsInSentence.class);
 

@@ -12,6 +12,9 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * Class to initialize text from file
+ */
 public class FileInitialization {
     private static final Logger logger = LogManager.getLogger(FileInitialization.class);
 
@@ -24,6 +27,11 @@ public class FileInitialization {
     public FileInitialization() {
     }
 
+    /**
+     * Initializes file information
+     * @return String - file's text
+     * @throws FileServiceException
+     */
     public String initialize() throws FileServiceException {
         URI uri = null;
         try {

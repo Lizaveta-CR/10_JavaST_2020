@@ -55,6 +55,12 @@ public class SortLexemesBySymbols extends AbstractSortQuery {
         return text;
     }
 
+    /**
+     * Finds how many times given symbol occures in lexeme
+     *
+     * @param lexeme
+     * @return
+     */
     private int findSymbolFrequency(Component lexeme) {
         int frequency = 0;
         int lexemeSize = lexeme.getSize();
@@ -73,6 +79,11 @@ public class SortLexemesBySymbols extends AbstractSortQuery {
         return frequency;
     }
 
+    /**
+     * Sorts by symbol frequency
+     *
+     * @param lexemes
+     */
     private void sortByFrequency(List<Component> lexemes) {
         Comparator<Component> comparatorFrequency = new Comparator<Component>() {
             @Override

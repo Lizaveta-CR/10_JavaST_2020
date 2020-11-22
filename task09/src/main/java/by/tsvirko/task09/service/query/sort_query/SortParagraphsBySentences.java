@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
+/**
+ * Sorts paragraphs by sentences
+ */
 public class SortParagraphsBySentences extends AbstractSortQuery {
     private static final Logger logger = LogManager.getLogger(SortParagraphsBySentences.class);
 
@@ -50,6 +53,12 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
         return paragraph;
     }
 
+    /**
+     * Sorts map by values in ascending order
+     *
+     * @param map
+     * @return Map<Component, Integer> - new map,where Integer represents frequency
+     */
     private Map<Component, Integer> sortByValuesAsc(Map<Component, Integer> map) {
         Map<Component, Integer> sortedMap = new LinkedHashMap<>();
         map.entrySet()
@@ -61,6 +70,12 @@ public class SortParagraphsBySentences extends AbstractSortQuery {
         return sortedMap;
     }
 
+    /**
+     * Sorts map by values in descending order
+     *
+     * @param map
+     * @return Map<Component, Integer> - new map,where Integer represents frequency
+     */
     private Map<Component, Integer> sortByValuesDesc(Map<Component, Integer> map) {
         Map<Component, Integer> sortedMap = new LinkedHashMap<>();
 

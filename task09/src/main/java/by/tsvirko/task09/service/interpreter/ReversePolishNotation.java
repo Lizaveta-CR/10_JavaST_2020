@@ -2,6 +2,9 @@ package by.tsvirko.task09.service.interpreter;
 
 import java.util.Stack;
 
+/**
+ * Class to calculate reverse polish notation using Stack
+ */
 public class ReversePolishNotation {
 
     public String convertToReversePolish(String exp) {
@@ -97,11 +100,23 @@ public class ReversePolishNotation {
         return res;
     }
 
+    /**
+     * Checks is string is operator
+     *
+     * @param c
+     * @return
+     */
     private boolean isOperator(String c) {
         return c.equals("~") || c.equals("&") || c.equals("|") || c.equals("^") || c.equals(">>") || c.equals("<<")
                 || c.equals(">>>") || c.equals("(") || c.equals(")");
     }
 
+    /**
+     * Checks is char is number
+     *
+     * @param c
+     * @return
+     */
     private boolean isNum(char c) {
         return c - '0' >= 0 && c - '0' <= 9;
     }
