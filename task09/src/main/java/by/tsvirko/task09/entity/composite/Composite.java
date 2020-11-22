@@ -13,7 +13,7 @@ import java.util.Objects;
 public abstract class Composite implements Component<String>, Comparable<Composite> {
     private static final Logger logger = LogManager.getLogger(Composite.class);
 
-    private List<Component> components = new ArrayList<Component>();
+    private List<Component> components = new ArrayList<>();
 
     public void add(Component c) {
         components.add(c);
@@ -42,7 +42,7 @@ public abstract class Composite implements Component<String>, Comparable<Composi
             try {
                 collectText = (String) component.collect();
             } catch (ClassCastException e) {
-                collectText = " " + String.valueOf((Integer) component.collect());
+                collectText = " " + component.collect();
             }
 
             if (component instanceof CharacterComp) {
