@@ -8,6 +8,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Lexeme parser.
+ */
 public class LexemeParser extends Parser {
     private static final Logger logger = LogManager.getLogger(LexemeParser.class);
     private static final String REGEX_LEXEME = "((\\s*)([[А-ЯA-Zа-яa-z-'\\(\\)]|"
@@ -20,6 +23,13 @@ public class LexemeParser extends Parser {
         this.wordParser = wordParser;
     }
 
+    /**
+     * Parses sentence into words and punctuation
+     * @param compositeSentence
+     * @param sentence
+     * @return sentence composite
+     * @throws HandlerException
+     */
     @Override
     public Composite parse(Composite compositeSentence, String sentence) throws HandlerException {
         Composite compositeLexeme = new Lexeme();

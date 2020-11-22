@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Paragraph parser.
+ */
 public class ParagraphParser extends Parser {
     private static final Logger logger = LogManager.getLogger(ParagraphParser.class);
     private static final String REGEX_PARAGRAPH = "((\t)(.*)?)[^\t|#{2}]+";
@@ -18,6 +21,14 @@ public class ParagraphParser extends Parser {
         this.sentenceParser = sentenceParser;
     }
 
+    /**
+     * Parses text into paragraphs
+     *
+     * @param compositeText
+     * @param text
+     * @return text composite
+     * @throws HandlerException
+     */
     public Composite parse(Composite compositeText, String text) throws HandlerException {
         Composite compositeParagraph = new Paragraph();
         Pattern textPatternToParagraph = Pattern.compile(REGEX_PARAGRAPH);

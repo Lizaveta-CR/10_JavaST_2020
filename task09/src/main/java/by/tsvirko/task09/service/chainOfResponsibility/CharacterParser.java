@@ -7,10 +7,20 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Parses Characters.
+ */
 public class CharacterParser extends Parser {
     private static final Logger logger = LogManager.getLogger(CharacterParser.class);
     private static final String REGEX_CHARACTER = "[А-ЯA-Zа-яa-z-'-\\(\\)]";
 
+    /**
+     * Parses words into characters and returnes word composite.
+     *
+     * @param compositeWord
+     * @param word
+     * @return word composite
+     */
     @Override
     public Composite parse(Composite compositeWord, String word) {
         Composite compositeCharacter = new CharacterComp();

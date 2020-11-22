@@ -1,5 +1,8 @@
 package by.tsvirko.task09.repository;
 
+/**
+ * Factory for repository classes
+ */
 public class RepositoryFactory {
     private static RepositoryFactory instance = new RepositoryFactory();
     private TextStorageRepository textStorageRepository = new TextStorageRepositoryImpl();

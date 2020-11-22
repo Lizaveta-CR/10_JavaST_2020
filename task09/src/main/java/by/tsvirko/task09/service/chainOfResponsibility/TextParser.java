@@ -8,6 +8,9 @@ import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerExceptio
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Class to parse text
+ */
 public class TextParser extends Parser {
     private static final Logger logger = LogManager.getLogger(TextParser.class);
 
@@ -18,6 +21,14 @@ public class TextParser extends Parser {
         this.paragraphParser = paragraphParser;
     }
 
+    /**
+     * Parses text and sets text to storage in repository
+     *
+     * @param textComposite
+     * @param text
+     * @return
+     * @throws HandlerException
+     */
     public Composite parse(Composite textComposite, String text) throws HandlerException {
         Composite parse = paragraphParser.parse(textComposite, text);
         try {

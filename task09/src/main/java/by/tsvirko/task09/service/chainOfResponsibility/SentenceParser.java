@@ -8,6 +8,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class for parsing sentences.
+ */
 public class SentenceParser extends Parser {
     private static final Logger logger = LogManager.getLogger(SentenceParser.class);
         private static final String REGEX_SENTENCE = "((\\s*)[А-ЯA-Z]([^?!.])*([.?!]*([!?...])))";
@@ -17,6 +20,13 @@ public class SentenceParser extends Parser {
         this.lexemeParser = lexemeParser;
     }
 
+    /**
+     * Parses paragraph into sentences
+     * @param compositeParagraph
+     * @param paragraph
+     * @return paragraph composite
+     * @throws HandlerException
+     */
     @Override
     public Composite parse(Composite compositeParagraph, String paragraph) throws HandlerException {
         Composite compositeSentence = new Sentence();

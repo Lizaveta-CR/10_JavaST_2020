@@ -10,6 +10,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class to parse words
+ */
 public class WordParser extends Parser {
     private static final Logger logger = LogManager.getLogger(WordParser.class);
     private static final String REGEX_WORD = "[А-ЯA-Zа-яa-z-'\\)\\)" +
@@ -22,6 +25,14 @@ public class WordParser extends Parser {
         this.characterParser = characterParser;
     }
 
+    /**
+     * Parses lexeme into words and expressions
+     *
+     * @param compositeLexeme
+     * @param lexeme
+     * @return lexeme composite
+     * @throws HandlerException
+     */
     @Override
     public Composite parse(Composite compositeLexeme, String lexeme) throws HandlerException {
         Composite compositeWord = new Word();
