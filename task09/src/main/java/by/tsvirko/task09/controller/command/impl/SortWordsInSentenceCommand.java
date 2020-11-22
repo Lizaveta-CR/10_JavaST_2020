@@ -10,7 +10,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Command to sort words in sentence
+ */
 public class SortWordsInSentenceCommand implements Command {
     private static final Logger logger = LogManager.getLogger(SortLexemesBySymbolsCommand.class);
 

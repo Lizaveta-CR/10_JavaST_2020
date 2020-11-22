@@ -14,6 +14,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Optional;
 
+/*
+Command to parse and collect text
+ */
 public class ParseCollectText implements Command {
     private static final Logger logger = LogManager.getLogger(ParseCollectText.class);
 

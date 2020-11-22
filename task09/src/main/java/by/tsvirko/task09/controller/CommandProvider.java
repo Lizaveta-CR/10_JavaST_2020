@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class that provides different commands to user
+ * Class that provides different commands
  */
 public class CommandProvider {
     private final Map<CommandName, Command> repository = new HashMap<>();

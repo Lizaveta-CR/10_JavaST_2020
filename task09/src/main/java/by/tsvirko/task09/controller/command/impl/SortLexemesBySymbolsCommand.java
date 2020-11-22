@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Command to sort lexemes by symbols
+ */
 public class SortLexemesBySymbolsCommand implements Command {
     private static final Logger logger = LogManager.getLogger(SortLexemesBySymbolsCommand.class);
 
