@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Abstract class, stores composite and indivisible components and defines their behavior
+ */
 public abstract class Composite implements Component<String>, Comparable<Composite> {
     private static final Logger logger = LogManager.getLogger(Composite.class);
 

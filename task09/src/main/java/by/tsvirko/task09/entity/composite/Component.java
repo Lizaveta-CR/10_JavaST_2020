@@ -1,6 +1,10 @@
 package by.tsvirko.task09.entity.composite;
 
-
+/**
+ *Sets the interface for all compound objects
+ *
+ * @param <T>
+ */
 public interface Component<T> {
     void add(Component c);
 

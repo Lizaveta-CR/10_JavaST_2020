@@ -1,5 +1,8 @@
 package by.tsvirko.task09.entity.composite;
 
+/**
+ * Leaf class (has no childes), which represent Character
+ */
 public class CharacterLeaf implements Component<String> {
 
     private char character;

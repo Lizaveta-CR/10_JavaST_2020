@@ -4,6 +4,9 @@ import by.tsvirko.task09.entity.composite.Component;
 import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.entity.composite.Text;
 
+/**
+ * Singleton class, stores text
+ */
 public class TextStorage {
     private static TextStorage instance;
     private Composite text = new Text();
