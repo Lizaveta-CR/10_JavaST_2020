@@ -1,7 +1,7 @@
 package by.tsvirko.task09.entity.composite;
 
 /**
- *Sets the interface for all compound objects
+ *Sets the interface for all compound objects.
  *
  * @param <T>
  */

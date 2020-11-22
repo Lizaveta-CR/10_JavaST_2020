@@ -1,7 +1,7 @@
 package by.tsvirko.task09.entity.composite;
 
 /**
- * Leaf class (has no childes), which represent Numbers
+ * Leaf class (has no childes), which represent Numbers.
  */
 public class NumericLeaf implements Component<Integer> {
 
