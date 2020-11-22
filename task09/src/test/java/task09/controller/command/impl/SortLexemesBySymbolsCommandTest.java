@@ -23,7 +23,7 @@ public class SortLexemesBySymbolsCommandTest {
     @BeforeTest
     public void initText() throws FileServiceException, HandlerException {
         String text = new FileInitialization("input.txt").initialize();
-        TextParser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
+        Parser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
         Composite compositeText = new Text();
         parser.parse(compositeText, text);
     }
