@@ -4,10 +4,7 @@ import by.tsvirko.task09.entity.composite.Composite;
 import by.tsvirko.task09.entity.composite.Lexeme;
 import by.tsvirko.task09.entity.composite.Sentence;
 import by.tsvirko.task09.service.FileInitialization;
-import by.tsvirko.task09.service.chainOfResponsibility.CharacterParser;
-import by.tsvirko.task09.service.chainOfResponsibility.LexemeParser;
-import by.tsvirko.task09.service.chainOfResponsibility.SentenceParser;
-import by.tsvirko.task09.service.chainOfResponsibility.WordParser;
+import by.tsvirko.task09.service.chainOfResponsibility.*;
 import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
 import org.testng.annotations.BeforeTest;
@@ -17,7 +14,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class LexemeParserTest {
-    private LexemeParser parser = new LexemeParser(new WordParser(new CharacterParser()));
+    private Parser parser = new LexemeParser(new WordParser(new CharacterParser()));
     private String text;
 
     @BeforeTest

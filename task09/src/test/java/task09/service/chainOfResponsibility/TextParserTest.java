@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class TextParserTest {
-    private TextParser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
+    private Parser parser = new TextParser(new ParagraphParser(new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())))));
     private String text;
 
     public void initTextNoNumbers(String filename) throws FileServiceException {

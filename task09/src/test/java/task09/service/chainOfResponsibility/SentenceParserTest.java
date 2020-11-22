@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class SentenceParserTest {
-    private SentenceParser parser = new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())));
+    private Parser parser = new SentenceParser(new LexemeParser(new WordParser(new CharacterParser())));
     private String text;
 
     @BeforeTest

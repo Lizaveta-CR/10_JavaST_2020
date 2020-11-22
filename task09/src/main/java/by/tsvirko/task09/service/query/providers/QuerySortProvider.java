@@ -2,7 +2,7 @@ package by.tsvirko.task09.service.query.providers;
 
 import by.tsvirko.task09.service.query.Query;
 import by.tsvirko.task09.service.query.SortQueryEnum;
-import by.tsvirko.task09.service.query.exception.RequestException;
+import by.tsvirko.task09.service.query.exception.RequestExceptionService;
 import by.tsvirko.task09.service.query.sort_query.SortLexemesBySymbols;
 import by.tsvirko.task09.service.query.sort_query.SortParagraphsBySentences;
 import org.apache.logging.log4j.LogManager;
@@ -17,16 +17,13 @@ public class QuerySortProvider {
 
     private final Map<SortQueryEnum, Query> repository = new HashMap<>();
 
-    public QuerySortProvider() {
+    public QuerySortProvider(List<String> parameters) {
         repository.put(SortQueryEnum.PARAGRAPH_BY_SENTENCES, new SortParagraphsBySentences());
         repository.put(SortQueryEnum.WORDS_IN_SENTENCE, new SortParagraphsBySentences());
-    }
-
-    public QuerySortProvider(List<String> parameters) {
         repository.put(SortQueryEnum.LEXEMES_BY_SYMBOLS, new SortLexemesBySymbols(parameters.get(0).charAt(0)));
     }
 
-    public Query getCommand(String name) throws RequestException {
+    public Query getCommand(String name) throws RequestExceptionService {
         SortQueryEnum querySortEnum;
         Query query;
         try {
@@ -34,8 +31,9 @@ public class QuerySortProvider {
             query = repository.get(querySortEnum);
         } catch (IllegalArgumentException | NullPointerException e) {
             logger.debug("Illegal command name", e.getMessage());
-            throw new RequestException("Illegal command name", e);
+            throw new RequestExceptionService("Illegal command name", e);
         }
         return query;
     }
+
 }

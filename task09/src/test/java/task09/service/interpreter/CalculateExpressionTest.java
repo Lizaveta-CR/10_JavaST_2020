@@ -1,4 +1,4 @@
-package task09.interpreter;
+package task09.service.interpreter;
 
 import by.tsvirko.task09.service.interpreter.CalculateExpression;
 import by.tsvirko.task09.service.interpreter.exception.NoExpressionException;

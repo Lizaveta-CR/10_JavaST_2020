@@ -6,6 +6,7 @@ import by.tsvirko.task09.entity.composite.Word;
 import by.tsvirko.task09.service.FileInitialization;
 import by.tsvirko.task09.service.chainOfResponsibility.CharacterParser;
 import by.tsvirko.task09.service.chainOfResponsibility.LexemeParser;
+import by.tsvirko.task09.service.chainOfResponsibility.Parser;
 import by.tsvirko.task09.service.chainOfResponsibility.WordParser;
 import by.tsvirko.task09.service.chainOfResponsibility.exception.HandlerException;
 import by.tsvirko.task09.service.query.exception.FileServiceException;
@@ -16,7 +17,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class WordParserTest {
-    private WordParser parser = new WordParser(new CharacterParser());
+    private Parser parser = new WordParser(new CharacterParser());
     private String text;
 
     @BeforeTest
