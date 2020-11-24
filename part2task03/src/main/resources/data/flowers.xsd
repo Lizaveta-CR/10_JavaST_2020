@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-        xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tsvirko.by/flower"
-        xmlns:tns="http://tsvirko.by/flower">
 
-    <element name="flower" type="tns:FlowerType" abstract="false"></element>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tsvirko.by/flower"
+        xmlns:tns="http://tsvirko.by/flower"
+        attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+    <element name="flower" type="tns:Flower" abstract="false"></element>
     <element name="wild_growing" type="tns:WildGrowingFlower" substitutionGroup="tns:flower"></element>
     <element name="cultivated" type="tns:CultivatedFlower" substitutionGroup="tns:flower"></element>
 
@@ -18,18 +19,19 @@
     <complexType name="Flower">
         <sequence>
             <element name="name" type="string"/>
-            <element name="soil" type="string"/>
+            <element name="origin" type="string"/>
             <element name="visual_parameters" type="tns:VisualParameters"/>
             <element name="multiplying" type="string" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
+        <attribute name="soil" type="tns:soil" use="optional" default="ground"/>
+        <attribute name="id" type="tns:Id" use="required"/>
     </complexType>
 
     <complexType name="WildGrowingFlower">
         <complexContent>
-            <extension base="tns:FlowerType">
+            <extension base="tns:Flower">
                 <sequence>
                     <element name="life_term" type="int"/>
-                    <element name="origin" type="string"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -37,7 +39,7 @@
 
     <complexType name="CultivatedFlower">
         <complexContent>
-            <extension base="tns:FlowerType">
+            <extension base="tns:Flower">
                 <sequence>
                     <element name="growing_tips" type="tns:GrowingTips"/>
                 </sequence>
@@ -54,10 +56,31 @@
     </complexType>
     <complexType name="GrowingTips">
         <sequence>
-            <element name="temperature" type="int"/>
+            <element name="temperature" type="tns:Temperature"/>
             <element name="light" type="string"/>
             <element name="first_watering" type="date"/>
             <element name="watering" type="double"/>
         </sequence>
     </complexType>
+
+    <simpleType name="Temperature">
+        <restriction base="int">
+            <minInclusive value="-20"/>
+            <maxInclusive value="40"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Id">
+        <restriction base="ID">
+            <pattern value="[A-z]-[0-9]{1,3}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="soil">
+        <restriction base="string">
+            <enumeration value="sod-podzolic"/>
+            <enumeration value="podzolic"/>
+            <enumeration value="ground"/>
+        </restriction>
+    </simpleType>
 </schema>

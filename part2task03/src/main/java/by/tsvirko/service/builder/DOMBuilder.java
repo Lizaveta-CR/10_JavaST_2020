@@ -1,74 +1,89 @@
 package by.tsvirko.service.builder;
 
-import by.tsvirko.entity.CultivatedFlower;
-import by.tsvirko.entity.Flower;
+import by.tsvirko.entity.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 
-import by.tsvirko.entity.GrowingTips;
-import by.tsvirko.entity.VisualParameters;
+import by.tsvirko.service.parser.DOMParserImpl;
+import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 public class DOMBuilder extends BaseBuilder {
     private static final Logger logger = LogManager.getLogger(DOMBuilder.class);
-
-    private DocumentBuilder docBuilder;
+    private DOMParserImpl domParser;
 
     public DOMBuilder() {
         this.flowers = new HashSet<Flower>();
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-        try {
-            docBuilder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            logger.debug("Parsers configuration exception " + e);
-        }
+        domParser = new DOMParserImpl();
     }
 
     @Override
-    public void buildFlowers(String fileName) {
+    public void buildFlowers() {
         Document doc = null;
         try {
-            doc = docBuilder.parse(fileName);
+            doc = domParser.parse();
             Element root = doc.getDocumentElement();
+
             NodeList cultivatedList = root.getElementsByTagName("cultivated");
+            NodeList wildGrowingList = root.getElementsByTagName("wild_growing");
 
             for (int i = 0; i < cultivatedList.getLength(); i++) {
                 Element flowerElement = (Element) cultivatedList.item(i);
                 Flower flower = buildCultivatedFlower(flowerElement);
                 flowers.add(flower);
             }
-        } catch (SAXException e) {
-            logger.debug("File error or I/O error: " + e);
-        } catch (IOException e) {
-            logger.debug("Parsing failure: " + e);
+            for (int i = 0; i < wildGrowingList.getLength(); i++) {
+                Element flowerElement = (Element) wildGrowingList.item(i);
+                Flower flower = buildWildGrowingFlower(flowerElement);
+                flowers.add(flower);
+            }
         } catch (ParseException e) {
             logger.debug("ParseException " + e.getMessage());
+        } catch (ParserException e) {
+            e.printStackTrace();
         }
     }
 
-    private Flower buildCultivatedFlower(Element flowerElement) throws ParseException {
-        CultivatedFlower flower = new CultivatedFlower();
+    private Flower buildWildGrowingFlower(Element flowerElement) {
+        WildGrowingFlower flower = new WildGrowingFlower();
         flower.setName(getElementTextContent(flowerElement, "name"));
-        flower.setSoil(getElementTextContent(flowerElement, "soil"));
+        flower.setId(flowerElement.getAttribute("id"));
+
+        flower.setSoil(Soil.getSoil(flowerElement.getAttribute("soil")));
 
         VisualParameters visualParameters = buildVisual(flowerElement);
         flower.setParameters(visualParameters);
 
         flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+        flower.setOrigin(getElementTextContent(flowerElement, "origin"));
+
+        Integer life_term = Integer.parseInt(getElementTextContent(flowerElement, "life_term"));
+        flower.setLife_term(life_term);
+
+        return flower;
+    }
+
+    private Flower buildCultivatedFlower(Element flowerElement) throws ParseException {
+        CultivatedFlower flower = new CultivatedFlower();
+        flower.setName(getElementTextContent(flowerElement, "name"));
+        flower.setId(flowerElement.getAttribute("id"));
+
+        flower.setSoil(Soil.getSoil(flowerElement.getAttribute("soil")));
+
+        VisualParameters visualParameters = buildVisual(flowerElement);
+        flower.setParameters(visualParameters);
+
+        flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+
+        flower.setOrigin(getElementTextContent(flowerElement, "origin"));
 
         GrowingTips growingTips = buildGrowing(flowerElement);
         flower.setTips(growingTips);

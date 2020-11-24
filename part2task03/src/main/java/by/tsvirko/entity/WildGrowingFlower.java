@@ -2,7 +2,6 @@ package by.tsvirko.entity;
 
 public class WildGrowingFlower extends Flower {
     private int life_term;
-    private String origin;
 
     public WildGrowingFlower() {
     }
@@ -11,7 +10,8 @@ public class WildGrowingFlower extends Flower {
         this.life_term = life_term;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    @Override
+    public String toString() {
+        return super.toString().concat(", life_term=" + life_term);
     }
 }

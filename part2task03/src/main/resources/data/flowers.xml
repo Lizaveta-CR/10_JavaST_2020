@@ -12,15 +12,15 @@ Multiplying – размножение: листьями, черенками л�
 <flowers xmlns="http://tsvirko.by/flower"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://tsvirko.by/flower flowers.xsd">
-    <cultivated>
+    <cultivated id="c-1" soil="podzolic">
         <name>Orchid</name>
-        <soil>Leaf land</soil>
+        <origin>China</origin>
         <visual_parameters>
             <stem_color>Green</stem_color>
             <leaf_color>Pink</leaf_color>
             <size>70</size>
         </visual_parameters>
-        <multiplying>Leafs</multiplying>
+        <multiplying>leafs</multiplying>
         <growing_tips>
             <temperature>8</temperature>
             <light>diffused</light>
@@ -28,4 +28,16 @@ Multiplying – размножение: листьями, черенками л�
             <watering>100</watering>
         </growing_tips>
     </cultivated>
+
+    <wild_growing id="w-1">
+        <name>Cornflower</name>
+        <origin>Belarus</origin>
+        <visual_parameters>
+            <stem_color>Green</stem_color>
+            <leaf_color>Blue</leaf_color>
+            <size>7</size>
+        </visual_parameters>
+        <multiplying>seed</multiplying>
+        <life_term>3</life_term>
+    </wild_growing>
 </flowers>

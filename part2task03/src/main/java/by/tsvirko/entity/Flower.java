@@ -1,17 +1,23 @@
 package by.tsvirko.entity;
 
 public class Flower {
+    private String id;
     private String name;
-    private String soil;
+    private Soil soil;
     private String multiplying;
+    private String origin;
 
     private VisualParameters parameters;
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSoil(String soil) {
+    public void setSoil(Soil soil) {
         this.soil = soil;
     }
 
@@ -23,13 +29,21 @@ public class Flower {
         this.parameters = parameters;
     }
 
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
     @Override
     public String toString() {
-        return "FlowerType{" +
-                "name='" + name + '\'' +
-                ", soil='" + soil + '\'' +
+        return "Flower{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", soil=" + soil.value() +
                 ", multiplying='" + multiplying + '\'' +
+                ", origin='" + origin + '\'' +
                 ", parameters=" + parameters +
                 '}';
     }
 }
+
+
