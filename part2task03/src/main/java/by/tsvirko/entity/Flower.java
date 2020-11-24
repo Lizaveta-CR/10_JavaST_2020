@@ -1,10 +1,12 @@
 package by.tsvirko.entity;
 
+import java.util.List;
+
 public class Flower {
     private String id;
     private String name;
     private Soil soil;
-    private String multiplying;
+    private List<String> multiplying;
     private String origin;
 
     private VisualParameters parameters;
@@ -21,7 +23,7 @@ public class Flower {
         this.soil = soil;
     }
 
-    public void setMultiplying(String multiplying) {
+    public void setMultiplying(List<String> multiplying) {
         this.multiplying = multiplying;
     }
 
@@ -39,7 +41,7 @@ public class Flower {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", soil=" + soil.value() +
-                ", multiplying='" + multiplying + '\'' +
+                ", multiplying=" + multiplying +
                 ", origin='" + origin + '\'' +
                 ", parameters=" + parameters +
                 '}';

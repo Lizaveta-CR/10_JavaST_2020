@@ -19,7 +19,7 @@
     <complexType name="Flower">
         <sequence>
             <element name="name" type="string"/>
-            <element name="origin" type="string"/>
+            <element name="origin" type="tns:origin"/>
             <element name="visual_parameters" type="tns:VisualParameters"/>
             <element name="multiplying" type="string" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
@@ -81,6 +81,12 @@
             <enumeration value="sod-podzolic"/>
             <enumeration value="podzolic"/>
             <enumeration value="ground"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="origin">
+        <restriction base="string">
+            <pattern value="[A-Z]{2,3}"/>
         </restriction>
     </simpleType>
 </schema>

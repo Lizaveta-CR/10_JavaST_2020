@@ -19,7 +19,6 @@ public class DOMParserImpl {
     private static final Logger logger = LogManager.getLogger(DOMParserImpl.class);
 
     public Document parse() throws ParserException {
-//        loadPath(path);
         DocumentBuilder documentBuilder = null;
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

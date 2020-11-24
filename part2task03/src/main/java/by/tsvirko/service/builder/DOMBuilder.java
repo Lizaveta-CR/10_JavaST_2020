@@ -4,8 +4,10 @@ import by.tsvirko.entity.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 
 import by.tsvirko.service.parser.DOMParserImpl;
 import by.tsvirko.service.parser.exception.ParserException;
@@ -32,8 +34,8 @@ public class DOMBuilder extends BaseBuilder {
             doc = domParser.parse();
             Element root = doc.getDocumentElement();
 
-            NodeList cultivatedList = root.getElementsByTagName("cultivated");
-            NodeList wildGrowingList = root.getElementsByTagName("wild_growing");
+            NodeList cultivatedList = root.getElementsByTagName(FlowerEnum.CULTIVATED_FLOWER.getField());
+            NodeList wildGrowingList = root.getElementsByTagName(FlowerEnum.WILD_GROWING_FLOWER.getField());
 
             for (int i = 0; i < cultivatedList.getLength(); i++) {
                 Element flowerElement = (Element) cultivatedList.item(i);
@@ -52,6 +54,7 @@ public class DOMBuilder extends BaseBuilder {
         }
     }
 
+    //TODO: добавить 1 метод вместо 2
     private Flower buildWildGrowingFlower(Element flowerElement) {
         WildGrowingFlower flower = new WildGrowingFlower();
         flower.setName(getElementTextContent(flowerElement, "name"));
@@ -62,7 +65,14 @@ public class DOMBuilder extends BaseBuilder {
         VisualParameters visualParameters = buildVisual(flowerElement);
         flower.setParameters(visualParameters);
 
-        flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+        NodeList multiplying = flowerElement.getElementsByTagName("multiplying");
+        List<String> list = new ArrayList<>();
+        int multiplyingLength = multiplying.getLength();
+        for (int i = 0; i < multiplyingLength; i++) {
+            list.add((multiplying.item(i)).getTextContent());
+        }
+        flower.setMultiplying(list);
+
         flower.setOrigin(getElementTextContent(flowerElement, "origin"));
 
         Integer life_term = Integer.parseInt(getElementTextContent(flowerElement, "life_term"));
@@ -81,7 +91,13 @@ public class DOMBuilder extends BaseBuilder {
         VisualParameters visualParameters = buildVisual(flowerElement);
         flower.setParameters(visualParameters);
 
-        flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+        NodeList multiplying = flowerElement.getElementsByTagName("multiplying");
+        List<String> list = new ArrayList<>();
+        int multiplyingLength = multiplying.getLength();
+        for (int i = 0; i < multiplyingLength; i++) {
+            list.add((multiplying.item(i)).getTextContent());
+        }
+        flower.setMultiplying(list);
 
         flower.setOrigin(getElementTextContent(flowerElement, "origin"));
 

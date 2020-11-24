@@ -14,7 +14,7 @@ Multiplying – размножение: листьями, черенками л�
          xsi:schemaLocation="http://tsvirko.by/flower flowers.xsd">
     <cultivated id="c-1" soil="podzolic">
         <name>Orchid</name>
-        <origin>China</origin>
+        <origin>CN</origin>
         <visual_parameters>
             <stem_color>Green</stem_color>
             <leaf_color>Pink</leaf_color>
@@ -31,13 +31,14 @@ Multiplying – размножение: листьями, черенками л�
 
     <wild_growing id="w-1">
         <name>Cornflower</name>
-        <origin>Belarus</origin>
+        <origin>BY</origin>
         <visual_parameters>
             <stem_color>Green</stem_color>
             <leaf_color>Blue</leaf_color>
             <size>7</size>
         </visual_parameters>
-        <multiplying>seed</multiplying>
+        <multiplying>seeds</multiplying>
+        <multiplying>leafs</multiplying>
         <life_term>3</life_term>
     </wild_growing>
 </flowers>
