@@ -1,6 +1,6 @@
 package by.tsvirko.entity;
 
-public class FlowerType {
+public class Flower {
     private String name;
     private String soil;
     private String multiplying;

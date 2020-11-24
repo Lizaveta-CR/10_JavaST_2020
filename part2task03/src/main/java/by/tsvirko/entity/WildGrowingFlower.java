@@ -1,6 +1,6 @@
 package by.tsvirko.entity;
 
-public class WildGrowingFlower extends FlowerType {
+public class WildGrowingFlower extends Flower {
     private int life_term;
     private String origin;
 

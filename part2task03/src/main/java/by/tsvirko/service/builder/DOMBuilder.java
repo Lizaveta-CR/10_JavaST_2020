@@ -1,7 +1,7 @@
-package by.tsvirko.service;
+package by.tsvirko.service.builder;
 
 import by.tsvirko.entity.CultivatedFlower;
-import by.tsvirko.entity.FlowerType;
+import by.tsvirko.entity.Flower;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -11,36 +11,35 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.Set;
 
 import by.tsvirko.entity.GrowingTips;
 import by.tsvirko.entity.VisualParameters;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class FlowersDOMBuilder {
-    private Set<FlowerType> flowers;
+public class DOMBuilder extends BaseBuilder {
+    private static final Logger logger = LogManager.getLogger(DOMBuilder.class);
+
     private DocumentBuilder docBuilder;
 
-    public FlowersDOMBuilder() {
-        this.flowers = new HashSet<FlowerType>();
+    public DOMBuilder() {
+        this.flowers = new HashSet<Flower>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {
             docBuilder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            System.err.println("Ошибка конфигурации парсера: " + e);
+            logger.debug("Parsers configuration exception " + e);
         }
     }
 
-    public Set<FlowerType> getFlowers() {
-        return flowers;
-    }
-
-    public void buildSetStudents(String fileName) {
+    @Override
+    public void buildFlowers(String fileName) {
         Document doc = null;
         try {
             doc = docBuilder.parse(fileName);
@@ -49,22 +48,34 @@ public class FlowersDOMBuilder {
 
             for (int i = 0; i < cultivatedList.getLength(); i++) {
                 Element flowerElement = (Element) cultivatedList.item(i);
-                FlowerType flower = buildFlowerCultivated(flowerElement);
+                Flower flower = buildCultivatedFlower(flowerElement);
                 flowers.add(flower);
             }
         } catch (SAXException e) {
-            System.err.println("File error or I/O error: " + e);
+            logger.debug("File error or I/O error: " + e);
         } catch (IOException e) {
-            System.err.println("Parsing failure: " + e);
+            logger.debug("Parsing failure: " + e);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.debug("ParseException " + e.getMessage());
         }
     }
 
-    private FlowerType buildFlowerCultivated(Element flowerElement) throws ParseException {
+    private Flower buildCultivatedFlower(Element flowerElement) throws ParseException {
         CultivatedFlower flower = new CultivatedFlower();
         flower.setName(getElementTextContent(flowerElement, "name"));
         flower.setSoil(getElementTextContent(flowerElement, "soil"));
+
+        VisualParameters visualParameters = buildVisual(flowerElement);
+        flower.setParameters(visualParameters);
+
+        flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+
+        GrowingTips growingTips = buildGrowing(flowerElement);
+        flower.setTips(growingTips);
+        return flower;
+    }
+
+    private VisualParameters buildVisual(Element flowerElement) {
         VisualParameters visualParameters = new VisualParameters();
         Element parameters = (Element) flowerElement.getElementsByTagName("visual_parameters").item(0);
         visualParameters.setStem_color(getElementTextContent(parameters, "stem_color"));
@@ -72,8 +83,10 @@ public class FlowersDOMBuilder {
 
         Integer size = Integer.parseInt(getElementTextContent(parameters, "size"));
         visualParameters.setSize(size);
-        flower.setParameters(visualParameters);
-        flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
+        return visualParameters;
+    }
+
+    private GrowingTips buildGrowing(Element flowerElement) throws ParseException {
         GrowingTips growingTips = new GrowingTips();
         Element tips = (Element) flowerElement.getElementsByTagName("growing_tips").item(0);
         Integer temperature = Integer.parseInt(getElementTextContent(tips, "temperature"));
@@ -86,9 +99,7 @@ public class FlowersDOMBuilder {
 
         double watering = Double.parseDouble(getElementTextContent(tips, "watering"));
         growingTips.setWatering(watering);
-
-        flower.setTips(growingTips);
-        return flower;
+        return growingTips;
     }
 
     private static String getElementTextContent(Element element, String elementName) {

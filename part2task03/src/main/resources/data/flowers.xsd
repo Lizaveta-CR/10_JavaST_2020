@@ -15,7 +15,7 @@
         </complexType>
     </element>
 
-    <complexType name="FlowerType">
+    <complexType name="Flower">
         <sequence>
             <element name="name" type="string"/>
             <element name="soil" type="string"/>

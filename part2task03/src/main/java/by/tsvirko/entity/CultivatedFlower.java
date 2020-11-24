@@ -1,6 +1,6 @@
 package by.tsvirko.entity;
 
-public class CultivatedFlower extends FlowerType {
+public class CultivatedFlower extends Flower {
     private GrowingTips tips;
 
     public CultivatedFlower() {
