@@ -48,19 +48,19 @@
     </complexType>
 
     <complexType name="VisualParameters">
-        <sequence>
+        <all>
             <element name="stem_color" type="string"/>
             <element name="leaf_color" type="string"/>
             <element name="size" type="int"/>
-        </sequence>
+        </all>
     </complexType>
     <complexType name="GrowingTips">
-        <sequence>
+        <all>
             <element name="temperature" type="tns:Temperature"/>
             <element name="light" type="string"/>
             <element name="first_watering" type="date"/>
             <element name="watering" type="double"/>
-        </sequence>
+        </all>
     </complexType>
 
     <simpleType name="Temperature">
