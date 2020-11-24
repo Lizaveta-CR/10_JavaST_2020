@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Растения, содержащиеся в оранжерее:
+Name – название растения.
+Soil – почва для посадки, которая может быть следующих типов: подзолистая, грунтовая, дерново-подзолистая.
+Origin – место происхождения растения.
+Visual рarameters (должно быть несколько) – внешние параметры: цвет стебля, цвет листьев, средний размер растения.
+Growing tips (должно быть несколько) – предпочитаемые условия произрастания: температура (в градусах), освещение (светолюбиво либо нет), полив (мл в неделю).
+Multiplying – размножение: листьями, черенками либо семенами.
+Корневой элемент назвать Flowers.
+-->
+<flowers xmlns="http://tsvirko.by/flower"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://tsvirko.by/flower flowers.xsd">
+    <cultivated>
+        <name>Orchid</name>
+        <soil>Leaf land</soil>
+        <visual_parameters>
+            <stem_color>Green</stem_color>
+            <leaf_color>Pink</leaf_color>
+            <size>70</size>
+        </visual_parameters>
+        <multiplying>Leafs</multiplying>
+        <growing_tips>
+            <temperature>8</temperature>
+            <light>diffused</light>
+            <first_watering>2020-09-22</first_watering>
+            <watering>100</watering>
+        </growing_tips>
+    </cultivated>
+</flowers>

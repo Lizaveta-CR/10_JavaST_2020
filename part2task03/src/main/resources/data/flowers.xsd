@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+        xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tsvirko.by/flower"
+        xmlns:tns="http://tsvirko.by/flower">
+
+    <element name="flower" type="tns:FlowerType" abstract="false"></element>
+    <element name="wild_growing" type="tns:WildGrowingFlower" substitutionGroup="tns:flower"></element>
+    <element name="cultivated" type="tns:CultivatedFlower" substitutionGroup="tns:flower"></element>
+
+    <element name="flowers">
+        <complexType>
+            <sequence>
+                <element ref="tns:flower" minOccurs="1" maxOccurs="unbounded"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="FlowerType">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="soil" type="string"/>
+            <element name="visual_parameters" type="tns:VisualParameters"/>
+            <element name="multiplying" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="WildGrowingFlower">
+        <complexContent>
+            <extension base="tns:FlowerType">
+                <sequence>
+                    <element name="life_term" type="int"/>
+                    <element name="origin" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="CultivatedFlower">
+        <complexContent>
+            <extension base="tns:FlowerType">
+                <sequence>
+                    <element name="growing_tips" type="tns:GrowingTips"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="VisualParameters">
+        <sequence>
+            <element name="stem_color" type="string"/>
+            <element name="leaf_color" type="string"/>
+            <element name="size" type="int"/>
+        </sequence>
+    </complexType>
+    <complexType name="GrowingTips">
+        <sequence>
+            <element name="temperature" type="int"/>
+            <element name="light" type="string"/>
+            <element name="first_watering" type="date"/>
+            <element name="watering" type="double"/>
+        </sequence>
+    </complexType>
+</schema>
