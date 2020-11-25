@@ -1,6 +1,8 @@
 package by.tsvirko.entity;
 
 import java.util.Date;
+import java.util.Objects;
+
 public class GrowingTips {
     private int temperature;
     private String light;
@@ -34,5 +36,21 @@ public class GrowingTips {
                 ", first_watering=" + first_watering +
                 ", watering=" + watering +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GrowingTips that = (GrowingTips) o;
+        return temperature == that.temperature &&
+                Double.compare(that.watering, watering) == 0 &&
+                Objects.equals(light, that.light) &&
+                Objects.equals(first_watering, that.first_watering);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(temperature, light, first_watering, watering);
     }
 }

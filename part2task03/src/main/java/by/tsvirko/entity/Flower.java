@@ -1,6 +1,7 @@
 package by.tsvirko.entity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Flower {
     private String id;
@@ -45,6 +46,24 @@ public class Flower {
                 ", origin='" + origin + '\'' +
                 ", parameters=" + parameters +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flower flower = (Flower) o;
+        return Objects.equals(id, flower.id) &&
+                Objects.equals(name, flower.name) &&
+                soil == flower.soil &&
+                Objects.equals(multiplying, flower.multiplying) &&
+                Objects.equals(origin, flower.origin) &&
+                Objects.equals(parameters, flower.parameters);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, soil, multiplying, origin, parameters);
     }
 }
 

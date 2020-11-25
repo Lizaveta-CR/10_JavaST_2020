@@ -1,5 +1,7 @@
 package by.tsvirko.entity;
 
+import java.util.Objects;
+
 public class CultivatedFlower extends Flower {
     private GrowingTips tips;
 
@@ -15,5 +17,19 @@ public class CultivatedFlower extends Flower {
     public String toString() {
         String string = super.toString();
         return string.concat(" ,").concat(tips.toString());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        CultivatedFlower that = (CultivatedFlower) o;
+        return Objects.equals(tips, that.tips);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tips);
     }
 }
