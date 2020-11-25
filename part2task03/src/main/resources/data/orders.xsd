@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--TODO: добавить атрибуты, значения по умолчанию и шаблон для логина -->
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tsvirko.by/order"
+        xmlns:tns="http://tsvirko.by/order"
+        attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+    <element name="orders">
+        <complexType>
+            <sequence>
+                <element name="order" type="tns:Order" minOccurs="0" maxOccurs="unbounded"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Order">
+        <sequence>
+            <element name="person" type="tns:Person"></element>
+            <element name="product" type="tns:Product" minOccurs="1" maxOccurs="5"></element>
+            <element name="price" type="decimal"></element>
+            <element name="order_date" type="date"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Person">
+        <sequence>
+            <element name="person_id" type="tns:Id"></element>
+            <element name="login" type="string"></element>
+            <element name="email" type="string"></element>
+            <element name="telephone" type="int"></element>
+            <element name="address" type="tns:Address"></element>
+            <element name="userOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Address">
+        <all>
+            <element name="address_id" type="tns:Id"></element>
+            <element name="country" type="string"/>
+            <element name="city" type="string"/>
+            <element name="street" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="Product">
+        <sequence>
+            <element name="product_id" type="tns:Id"></element>
+            <element name="type" type="tns:type"/>
+            <element name="price" type="decimal"/>
+            <element name="producer" type="tns:Producer"/>
+            <element name="availability" type="boolean"/>
+            <element name="productOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Producer">
+        <sequence>
+            <element name="producer_id" type="tns:Id"></element>
+            <element name="producer_name" type="string"/>
+            <element name="producer_country" type="tns:country"/>
+            <element name="producer_telephone" type="tns:Producer"/>
+            <element name="producer_products" type="tns:Product" minOccurs="0" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+
+    <simpleType name="email">
+        <restriction base="string">
+            <pattern value="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="country">
+        <restriction base="string">
+            <pattern value="[A-Z]{2,3}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="type">
+        <restriction base="string">
+            <enumeration value="guitar"/>
+            <enumeration value="cello"/>
+            <enumeration value="violin"/>
+            <enumeration value="drum"/>
+            <enumeration value="saxophone"/>
+            <enumeration value="accordion"/>
+            <enumeration value="piano"/>
+            <enumeration value="flute"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Id">
+        <restriction base="ID">
+            <pattern value="[A-z]-[0-9]{1,3}"/>
+        </restriction>
+    </simpleType>
+</schema>
