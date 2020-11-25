@@ -35,22 +35,31 @@ public class DOMBuilder extends BaseBuilder {
             Element root = doc.getDocumentElement();
 
             NodeList cultivatedList = root.getElementsByTagName(FlowerEnum.CULTIVATED_FLOWER.getField());
-            NodeList wildGrowingList = root.getElementsByTagName(FlowerEnum.WILD_GROWING_FLOWER.getField());
+            build(cultivatedList, FlowerEnum.CULTIVATED_FLOWER);
 
-            for (int i = 0; i < cultivatedList.getLength(); i++) {
-                Element flowerElement = (Element) cultivatedList.item(i);
-                Flower flower = buildCultivatedFlower(flowerElement);
-                flowers.add(flower);
-            }
-            for (int i = 0; i < wildGrowingList.getLength(); i++) {
-                Element flowerElement = (Element) wildGrowingList.item(i);
-                Flower flower = buildWildGrowingFlower(flowerElement);
-                flowers.add(flower);
-            }
+            NodeList wildGrowingList = root.getElementsByTagName(FlowerEnum.WILD_GROWING_FLOWER.getField());
+            build(wildGrowingList, FlowerEnum.WILD_GROWING_FLOWER);
+
         } catch (ParseException e) {
             logger.debug("ParseException " + e.getMessage());
         } catch (ParserException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void build(NodeList nodeList, FlowerEnum type) throws ParseException {
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Element flowerElement = (Element) nodeList.item(i);
+            switch (type) {
+                case CULTIVATED_FLOWER:
+                    Flower cultivatedFlower = buildCultivatedFlower(flowerElement);
+                    flowers.add(cultivatedFlower);
+                    break;
+                case WILD_GROWING_FLOWER:
+                    Flower wildGrowingFlower = buildWildGrowingFlower(flowerElement);
+                    flowers.add(wildGrowingFlower);
+                    break;
+            }
         }
     }
 
