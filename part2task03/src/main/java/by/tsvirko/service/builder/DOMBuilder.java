@@ -54,18 +54,17 @@ public class DOMBuilder extends BaseBuilder {
         }
     }
 
-    //TODO: добавить 1 метод вместо 2
     private Flower buildWildGrowingFlower(Element flowerElement) {
         WildGrowingFlower flower = new WildGrowingFlower();
-        flower.setName(getElementTextContent(flowerElement, "name"));
-        flower.setId(flowerElement.getAttribute("id"));
+        flower.setName(getElementTextContent(flowerElement, FlowerEnum.NAME.getField()));
+        flower.setId(flowerElement.getAttribute(FlowerEnum.ID.getField()));
 
-        flower.setSoil(Soil.getSoil(flowerElement.getAttribute("soil")));
+        flower.setSoil(Soil.getSoil(flowerElement.getAttribute(FlowerEnum.SOIL.getField())));
 
         VisualParameters visualParameters = buildVisual(flowerElement);
         flower.setParameters(visualParameters);
 
-        NodeList multiplying = flowerElement.getElementsByTagName("multiplying");
+        NodeList multiplying = flowerElement.getElementsByTagName(FlowerEnum.MULTIPLYING.getField());
         List<String> list = new ArrayList<>();
         int multiplyingLength = multiplying.getLength();
         for (int i = 0; i < multiplyingLength; i++) {
@@ -73,9 +72,9 @@ public class DOMBuilder extends BaseBuilder {
         }
         flower.setMultiplying(list);
 
-        flower.setOrigin(getElementTextContent(flowerElement, "origin"));
+        flower.setOrigin(getElementTextContent(flowerElement, FlowerEnum.ORIGIN.getField()));
 
-        Integer life_term = Integer.parseInt(getElementTextContent(flowerElement, "life_term"));
+        Integer life_term = Integer.parseInt(getElementTextContent(flowerElement, FlowerEnum.LIFE_TERM.getField()));
         flower.setLife_term(life_term);
 
         return flower;
@@ -83,15 +82,15 @@ public class DOMBuilder extends BaseBuilder {
 
     private Flower buildCultivatedFlower(Element flowerElement) throws ParseException {
         CultivatedFlower flower = new CultivatedFlower();
-        flower.setName(getElementTextContent(flowerElement, "name"));
-        flower.setId(flowerElement.getAttribute("id"));
+        flower.setName(getElementTextContent(flowerElement, FlowerEnum.NAME.getField()));
+        flower.setId(flowerElement.getAttribute(FlowerEnum.ID.getField()));
 
-        flower.setSoil(Soil.getSoil(flowerElement.getAttribute("soil")));
+        flower.setSoil(Soil.getSoil(flowerElement.getAttribute(FlowerEnum.SOIL.getField())));
 
         VisualParameters visualParameters = buildVisual(flowerElement);
         flower.setParameters(visualParameters);
 
-        NodeList multiplying = flowerElement.getElementsByTagName("multiplying");
+        NodeList multiplying = flowerElement.getElementsByTagName(FlowerEnum.MULTIPLYING.getField());
         List<String> list = new ArrayList<>();
         int multiplyingLength = multiplying.getLength();
         for (int i = 0; i < multiplyingLength; i++) {
@@ -99,7 +98,7 @@ public class DOMBuilder extends BaseBuilder {
         }
         flower.setMultiplying(list);
 
-        flower.setOrigin(getElementTextContent(flowerElement, "origin"));
+        flower.setOrigin(getElementTextContent(flowerElement, FlowerEnum.ORIGIN.getField()));
 
         GrowingTips growingTips = buildGrowing(flowerElement);
         flower.setTips(growingTips);
@@ -108,27 +107,27 @@ public class DOMBuilder extends BaseBuilder {
 
     private VisualParameters buildVisual(Element flowerElement) {
         VisualParameters visualParameters = new VisualParameters();
-        Element parameters = (Element) flowerElement.getElementsByTagName("visual_parameters").item(0);
-        visualParameters.setStem_color(getElementTextContent(parameters, "stem_color"));
-        visualParameters.setLeaf_color(getElementTextContent(parameters, "leaf_color"));
+        Element parameters = (Element) flowerElement.getElementsByTagName(FlowerEnum.VISUAL_PARAMETERS.getField()).item(0);
+        visualParameters.setStem_color(getElementTextContent(parameters, FlowerEnum.STEM_COLOR.getField()));
+        visualParameters.setLeaf_color(getElementTextContent(parameters, FlowerEnum.LEAF_COLOR.getField()));
 
-        Integer size = Integer.parseInt(getElementTextContent(parameters, "size"));
+        Integer size = Integer.parseInt(getElementTextContent(parameters, FlowerEnum.SIZE.getField()));
         visualParameters.setSize(size);
         return visualParameters;
     }
 
     private GrowingTips buildGrowing(Element flowerElement) throws ParseException {
         GrowingTips growingTips = new GrowingTips();
-        Element tips = (Element) flowerElement.getElementsByTagName("growing_tips").item(0);
-        Integer temperature = Integer.parseInt(getElementTextContent(tips, "temperature"));
+        Element tips = (Element) flowerElement.getElementsByTagName(FlowerEnum.GROWING_TIPS.getField()).item(0);
+        Integer temperature = Integer.parseInt(getElementTextContent(tips, FlowerEnum.TEMPERATURE.getField()));
         growingTips.setTemperature(temperature);
-        growingTips.setLight(getElementTextContent(tips, "light"));
+        growingTips.setLight(getElementTextContent(tips, FlowerEnum.LIGHT.getField()));
 
         Date firstWatering = new SimpleDateFormat("yyyy-MM-dd")
-                .parse((getElementTextContent(tips, "first_watering")));
+                .parse((getElementTextContent(tips, FlowerEnum.FIRST_WATERING.getField())));
         growingTips.setFirst_watering(firstWatering);
 
-        double watering = Double.parseDouble(getElementTextContent(tips, "watering"));
+        double watering = Double.parseDouble(getElementTextContent(tips, FlowerEnum.WATERING.getField()));
         growingTips.setWatering(watering);
         return growingTips;
     }
