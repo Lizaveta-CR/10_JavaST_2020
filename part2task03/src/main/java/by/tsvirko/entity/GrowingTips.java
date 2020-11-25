@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class GrowingTips {
     private int temperature;
-    private String light;
+    private boolean light;
     private Date first_watering;
     private double watering;
 
@@ -16,7 +16,7 @@ public class GrowingTips {
         this.temperature = temperature;
     }
 
-    public void setLight(String light) {
+    public void setLight(boolean light) {
         this.light = light;
     }
 
@@ -32,7 +32,7 @@ public class GrowingTips {
     public String toString() {
         return "GrowingTips{" +
                 "temperature=" + temperature +
-                ", light='" + light + '\'' +
+                ", light=" + light +
                 ", first_watering=" + first_watering +
                 ", watering=" + watering +
                 '}';
@@ -44,8 +44,8 @@ public class GrowingTips {
         if (o == null || getClass() != o.getClass()) return false;
         GrowingTips that = (GrowingTips) o;
         return temperature == that.temperature &&
+                light == that.light &&
                 Double.compare(that.watering, watering) == 0 &&
-                Objects.equals(light, that.light) &&
                 Objects.equals(first_watering, that.first_watering);
     }
 

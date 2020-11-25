@@ -57,7 +57,7 @@
     <complexType name="GrowingTips">
         <all>
             <element name="temperature" type="tns:Temperature"/>
-            <element name="light" type="string"/>
+            <element name="light" type="boolean"/>
             <element name="first_watering" type="date"/>
             <element name="watering" type="double"/>
         </all>

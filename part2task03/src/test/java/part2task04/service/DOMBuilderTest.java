@@ -39,7 +39,7 @@ public class DOMBuilderTest {
         Calendar calendar = new GregorianCalendar(2020, 8, 22);
 
         growingTips.setFirst_watering(calendar.getTime());
-        growingTips.setLight("diffused");
+        growingTips.setLight(true);
         growingTips.setTemperature(8);
         cultivatedFlower.setTips(growingTips);
 
@@ -57,9 +57,8 @@ public class DOMBuilderTest {
         Assert.assertTrue(flowers.contains(flower));
     }
 
-    @Test(description = "Testing DOMBuilder' buildFlowers() method",
-            dataProvider = "files")
-    public void testBuildSize(String inputFile) {
+    @Test(description = "Testing DOMBuilder' buildFlowers() method")
+    public void testBuildSize() {
         domBuilder.buildFlowers();
         int size = domBuilder.getFlowers().size();
         try {

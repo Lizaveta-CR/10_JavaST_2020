@@ -130,7 +130,14 @@ public class DOMBuilder extends BaseBuilder {
         Element tips = (Element) flowerElement.getElementsByTagName(FlowerEnum.GROWING_TIPS.getField()).item(0);
         Integer temperature = Integer.parseInt(getElementTextContent(tips, FlowerEnum.TEMPERATURE.getField()));
         growingTips.setTemperature(temperature);
-        growingTips.setLight(getElementTextContent(tips, FlowerEnum.LIGHT.getField()));
+
+        String booleanElement = getElementTextContent(tips, FlowerEnum.LIGHT.getField());
+
+        if (booleanElement.equals("true")) {
+            growingTips.setLight(true);
+        } else {
+            growingTips.setLight(false);
+        }
 
         Date firstWatering = new SimpleDateFormat("yyyy-MM-dd")
                 .parse((getElementTextContent(tips, FlowerEnum.FIRST_WATERING.getField())));
