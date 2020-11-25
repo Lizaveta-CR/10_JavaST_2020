@@ -1,6 +1,6 @@
 package by.tsvirko.service.builder;
 
-import by.tsvirko.entity.Flower;
+import by.tsvirko.entity.flowers.Flower;
 
 import java.util.HashSet;
 import java.util.Set;

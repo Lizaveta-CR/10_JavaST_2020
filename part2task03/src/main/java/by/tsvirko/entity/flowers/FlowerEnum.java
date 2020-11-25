@@ -1,4 +1,4 @@
-package by.tsvirko.entity;
+package by.tsvirko.entity.flowers;
 
 public enum FlowerEnum {
     FLOWERS("flowers"),

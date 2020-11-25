@@ -1,7 +1,7 @@
 package by.tsvirko.controller.command.impl;
 
 import by.tsvirko.controller.command.Command;
-import by.tsvirko.entity.Flower;
+import by.tsvirko.entity.flowers.Flower;
 import by.tsvirko.service.builder.BaseBuilder;
 import by.tsvirko.service.builder.factory.ParserFactory;
 

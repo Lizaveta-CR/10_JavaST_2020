@@ -1,6 +1,6 @@
 package part2task04.service;
 
-import by.tsvirko.entity.*;
+import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.builder.BaseBuilder;
 import by.tsvirko.service.builder.DOMBuilder;
 import by.tsvirko.service.parser.DOMParserImpl;

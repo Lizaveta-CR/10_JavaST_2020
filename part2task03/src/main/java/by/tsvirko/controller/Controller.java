@@ -2,12 +2,10 @@ package by.tsvirko.controller;
 
 import by.tsvirko.controller.command.Command;
 import by.tsvirko.controller.command.exception.RequestException;
-import by.tsvirko.entity.Flower;
+import by.tsvirko.entity.flowers.Flower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 public class Controller {

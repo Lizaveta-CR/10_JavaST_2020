@@ -1,7 +1,5 @@
 package by.tsvirko.service.builder;
 
-import by.tsvirko.entity.*;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,6 +7,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
+import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.parser.DOMParserImpl;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;

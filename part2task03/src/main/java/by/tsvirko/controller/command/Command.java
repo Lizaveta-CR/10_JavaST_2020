@@ -1,9 +1,7 @@
 package by.tsvirko.controller.command;
 
-import by.tsvirko.entity.Flower;
+import by.tsvirko.entity.flowers.Flower;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 /**
