@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import by.tsvirko.entity.flowers.*;
-import by.tsvirko.service.parser.DOMParserImpl;
+import by.tsvirko.service.parser.DOMParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,11 +16,11 @@ import org.w3c.dom.NodeList;
 
 public class DOMBuilder extends BaseBuilder {
     private static final Logger logger = LogManager.getLogger(DOMBuilder.class);
-    private DOMParserImpl domParser;
+    private DOMParser domParser;
 
     public DOMBuilder() {
         this.flowers = new HashSet<Flower>();
-        domParser = new DOMParserImpl();
+        domParser = new DOMParser();
     }
 
     @Override

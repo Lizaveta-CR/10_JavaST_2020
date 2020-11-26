@@ -41,9 +41,10 @@ public class FlowerHandler extends DefaultHandler {
             //TODO:подключить xsd for default
             if (attributes.getValue(1) != null) {
                 currentWild.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
-            } else {
-                currentWild.setSoil(Soil.GROUND);
             }
+//            else {
+//                currentWild.setSoil(Soil.GROUND);
+//            }
         } else if ("cultivated".equals(localName)) {
             name = FlowerEnum.CULTIVATED_FLOWER.getField();
             currentCultivated = new CultivatedFlower();
@@ -52,9 +53,10 @@ public class FlowerHandler extends DefaultHandler {
             //TODO:подключить xsd for default
             if (attributes.getValue(1) != null) {
                 currentCultivated.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
-            } else {
-                currentCultivated.setSoil(Soil.GROUND);
             }
+//            else {
+//                currentCultivated.setSoil(Soil.GROUND);
+//            }
         } else {
             FlowerEnum temp = FlowerEnum.valueOf(localName.toUpperCase());
             if (withText.contains(temp)) {

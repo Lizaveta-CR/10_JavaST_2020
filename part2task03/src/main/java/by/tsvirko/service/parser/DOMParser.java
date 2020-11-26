@@ -15,8 +15,8 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class DOMParserImpl {
-    private static final Logger logger = LogManager.getLogger(DOMParserImpl.class);
+public class DOMParser {
+    private static final Logger logger = LogManager.getLogger(DOMParser.class);
 
     public Document parse() throws ParserException {
         DocumentBuilder documentBuilder = null;
@@ -54,7 +54,7 @@ public class DOMParserImpl {
     }
 
     private String loadPath(String fileName) {
-        ClassLoader classLoader = DOMParserImpl.class.getClassLoader();
+        ClassLoader classLoader = DOMParser.class.getClassLoader();
         File file = new File(classLoader.getResource("data/" + fileName).getFile());
         return file.getPath();
     }

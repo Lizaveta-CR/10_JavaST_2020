@@ -3,9 +3,6 @@ package by.tsvirko.view;
 import by.tsvirko.controller.Controller;
 import by.tsvirko.controller.command.CommandName;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ViewConsole {
@@ -20,10 +17,13 @@ public class ViewConsole {
     public void view() {
         System.out.println("Enter parser: ");
         System.out.println("1. DOM");
+        System.out.println("2. SAX");
 
         switch (scanner.nextInt()) {
             case 1:
                 controller.executeTask(CommandName.DOM.name()).forEach(System.out::println);
+            case 2:
+                controller.executeTask(CommandName.SAX.name()).forEach(System.out::println);
             default:
                 break;
         }

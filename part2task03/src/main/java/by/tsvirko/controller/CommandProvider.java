@@ -4,6 +4,7 @@ import by.tsvirko.controller.command.Command;
 import by.tsvirko.controller.command.CommandName;
 import by.tsvirko.controller.command.exception.RequestException;
 import by.tsvirko.controller.command.impl.DOMCommand;
+import by.tsvirko.controller.command.impl.SAXCommand;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +20,7 @@ public class CommandProvider {
 
     public CommandProvider() {
         repository.put(CommandName.DOM, new DOMCommand());
+        repository.put(CommandName.SAX, new SAXCommand());
     }
 
     public Command getCommand(String name) throws RequestException {
