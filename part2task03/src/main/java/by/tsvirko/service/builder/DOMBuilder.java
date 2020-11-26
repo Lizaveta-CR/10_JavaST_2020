@@ -2,10 +2,7 @@ package by.tsvirko.service.builder;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.parser.DOMParserImpl;
@@ -73,7 +70,7 @@ public class DOMBuilder extends BaseBuilder {
         flower.setParameters(visualParameters);
 
         NodeList multiplying = flowerElement.getElementsByTagName(FlowerEnum.MULTIPLYING.getField());
-        List<String> list = new ArrayList<>();
+        Set<String> list = new HashSet<>();
         int multiplyingLength = multiplying.getLength();
         for (int i = 0; i < multiplyingLength; i++) {
             list.add((multiplying.item(i)).getTextContent());
@@ -99,7 +96,7 @@ public class DOMBuilder extends BaseBuilder {
         flower.setParameters(visualParameters);
 
         NodeList multiplying = flowerElement.getElementsByTagName(FlowerEnum.MULTIPLYING.getField());
-        List<String> list = new ArrayList<>();
+        Set<String> list = new HashSet<>();
         int multiplyingLength = multiplying.getLength();
         for (int i = 0; i < multiplyingLength; i++) {
             list.add((multiplying.item(i)).getTextContent());

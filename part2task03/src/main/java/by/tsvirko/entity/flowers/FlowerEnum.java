@@ -15,10 +15,10 @@ public enum FlowerEnum {
     TEMPERATURE("temperature"),
     LIGHT("light"),
     WATERING("watering"),
-    VISUAL_PARAMETERS("visual_parameters"),
     LIFE_TERM("life_term"),
-    GROWING_TIPS("growing_tips"),
-    FIRST_WATERING("first_watering");
+    FIRST_WATERING("first_watering"),
+    VISUAL_PARAMETERS("visual_parameters"),
+    GROWING_TIPS("growing_tips");
     private String field;
 
     FlowerEnum(String field) {

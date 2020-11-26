@@ -6,12 +6,16 @@ public class CultivatedFlower extends Flower {
     private GrowingTips tips;
 
     public CultivatedFlower() {
+        this.tips = new GrowingTips();
     }
 
     public void setTips(GrowingTips tips) {
         this.tips = tips;
     }
 
+    public GrowingTips getTips() {
+        return tips;
+    }
 
     @Override
     public String toString() {

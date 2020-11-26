@@ -2,12 +2,14 @@ package by.tsvirko.service.builder.factory;
 
 import by.tsvirko.service.builder.BaseBuilder;
 import by.tsvirko.service.builder.DOMBuilder;
+import by.tsvirko.service.builder.SAXBuilder;
 
 public class ParserFactory {
     private static final ParserFactory INSTANCE = new ParserFactory();
 
     private enum TypeParser {
-        DOM
+        DOM,
+        SAX
     }
 
     private ParserFactory() {
@@ -22,6 +24,8 @@ public class ParserFactory {
         switch (type) {
             case DOM:
                 return new DOMBuilder();
+            case SAX:
+                return new SAXBuilder();
             default:
                 throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
         }

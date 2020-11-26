@@ -29,7 +29,7 @@ public class DOMBuilderTest {
         visualParameters.setSize(70);
         cultivatedFlower.setParameters(visualParameters);
 
-        List<String> objects = new ArrayList<>();
+        Set<String> objects = new HashSet<>();
         objects.add("leafs");
         cultivatedFlower.setMultiplying(objects);
 
