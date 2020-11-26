@@ -2,7 +2,10 @@ package by.tsvirko.service.parser;
 
 import by.tsvirko.entity.flowers.Flower;
 import by.tsvirko.service.builder.FlowerHandler;
+import by.tsvirko.service.builder.SAXBuilder;
 import by.tsvirko.service.parser.exception.ParserException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -17,6 +20,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class SAXParser {
+    private static final Logger logger = LogManager.getLogger(SAXParser.class);
+
     private XMLReader reader;
 
     public XMLReader parse(DefaultHandler handler) throws ParserException, IOException, SAXException {
@@ -32,12 +37,12 @@ public class SAXParser {
 
             factory.setSchema(schema);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.debug("Schema setting failed: " + ex.getMessage());
         }
         try {
             reader = XMLReaderFactory.createXMLReader();
         } catch (SAXException e) {
-            e.printStackTrace();
+            logger.debug("XMLReader can not be created: " + e.getMessage());
         }
         reader.setFeature("http://xml.org/sax/features/namespaces", true);
         reader.setFeature("http://xml.org/sax/features/validation", true);

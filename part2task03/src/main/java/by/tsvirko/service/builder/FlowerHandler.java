@@ -1,6 +1,8 @@
 package by.tsvirko.service.builder;
 
 import by.tsvirko.entity.flowers.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,6 +15,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FlowerHandler extends DefaultHandler {
+    private static final Logger logger = LogManager.getLogger(FlowerHandler.class);
+
     protected Set<Flower> flowers;
     private WildGrowingFlower currentWild = null;
     private CultivatedFlower currentCultivated = null;
@@ -38,25 +42,13 @@ public class FlowerHandler extends DefaultHandler {
             currentWild = new WildGrowingFlower();
             multiplyingWild = new HashSet<>();
             currentWild.setId(attributes.getValue(FlowerEnum.ID.getField()));
-            //TODO:подключить xsd for default
-            if (attributes.getValue(1) != null) {
-                currentWild.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
-            }
-//            else {
-//                currentWild.setSoil(Soil.GROUND);
-//            }
+            currentWild.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
         } else if ("cultivated".equals(localName)) {
             name = FlowerEnum.CULTIVATED_FLOWER.getField();
             currentCultivated = new CultivatedFlower();
             multiplyingCultivated = new HashSet<>();
             currentCultivated.setId(attributes.getValue(FlowerEnum.ID.getField()));
-            //TODO:подключить xsd for default
-            if (attributes.getValue(1) != null) {
-                currentCultivated.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
-            }
-//            else {
-//                currentCultivated.setSoil(Soil.GROUND);
-//            }
+            currentCultivated.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
         } else {
             FlowerEnum temp = FlowerEnum.valueOf(localName.toUpperCase());
             if (withText.contains(temp)) {
@@ -139,14 +131,14 @@ public class FlowerHandler extends DefaultHandler {
                                 .parse(currentElem);
                         currentCultivated.getTips().setFirst_watering(firstWatering);
                     } catch (ParseException e) {
-                        //TODO:logger
-                        e.printStackTrace();
+                        logger.info("Can not parse date: " + e.getMessage());
                     }
                     break;
                 case WATERING:
                     currentCultivated.getTips().setWatering(Double.parseDouble(currentElem));
                     break;
                 default:
+                    logger.info("No enum for parsing");
                     throw new EnumConstantNotPresentException(
                             currentEnum.getDeclaringClass(), currentEnum.name());
             }

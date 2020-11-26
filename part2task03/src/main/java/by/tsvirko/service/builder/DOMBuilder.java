@@ -19,7 +19,7 @@ public class DOMBuilder extends BaseBuilder {
     private DOMParser domParser;
 
     public DOMBuilder() {
-        this.flowers = new HashSet<Flower>();
+        this.flowers = new HashSet<>();
         domParser = new DOMParser();
     }
 

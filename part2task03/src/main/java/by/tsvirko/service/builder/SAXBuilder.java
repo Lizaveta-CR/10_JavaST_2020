@@ -1,13 +1,16 @@
 package by.tsvirko.service.builder;
 
-import by.tsvirko.service.builder.factory.ParserFactory;
 import by.tsvirko.service.parser.SAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
 public class SAXBuilder extends BaseBuilder {
+    private static final Logger logger = LogManager.getLogger(SAXBuilder.class);
+
     private FlowerHandler handler;
 
     public SAXBuilder() {
@@ -16,7 +19,7 @@ public class SAXBuilder extends BaseBuilder {
         try {
             new SAXParser().parse(handler);
         } catch (ParserException | SAXException | IOException e) {
-            e.printStackTrace();
+            logger.info("Parsing failed " + e.getMessage());
         }
     }
 
