@@ -1,10 +1,11 @@
-package by.tsvirko.service.builder;
+package by.tsvirko.service.bulders.builderFlowers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import by.tsvirko.entity.flowers.*;
+import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.parser.DOMParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
@@ -14,12 +15,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DOMBuilder extends BaseBuilder {
+public class DOMBuilder extends BaseBuilder<Flower> {
     private static final Logger logger = LogManager.getLogger(DOMBuilder.class);
     private DOMParser domParser;
 
     public DOMBuilder() {
-        this.flowers = new HashSet<>();
+        this.items = new HashSet<>();
         domParser = new DOMParser();
     }
 
@@ -49,11 +50,11 @@ public class DOMBuilder extends BaseBuilder {
             switch (type) {
                 case CULTIVATED:
                     Flower cultivatedFlower = buildCultivatedFlower(flowerElement);
-                    flowers.add(cultivatedFlower);
+                    items.add(cultivatedFlower);
                     break;
                 case WILD_GROWING:
                     Flower wildGrowingFlower = buildWildGrowingFlower(flowerElement);
-                    flowers.add(wildGrowingFlower);
+                    items.add(wildGrowingFlower);
                     break;
             }
         }

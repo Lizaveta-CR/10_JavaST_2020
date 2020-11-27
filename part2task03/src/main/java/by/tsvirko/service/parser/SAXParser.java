@@ -1,8 +1,5 @@
 package by.tsvirko.service.parser;
 
-import by.tsvirko.entity.flowers.Flower;
-import by.tsvirko.service.builder.FlowerHandler;
-import by.tsvirko.service.builder.SAXBuilder;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +16,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class SAXParser {
+public class SAXParser extends Parser{
     private static final Logger logger = LogManager.getLogger(SAXParser.class);
 
     private XMLReader reader;

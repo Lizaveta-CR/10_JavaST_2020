@@ -3,7 +3,39 @@
 <orders xmlns="http://tsvirko.by/order"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://tsvirko.by/order orders.xsd">
-    <order>
-        <name></name>
+    <order order_id="O1" order_date="2020-11-26">
+        <person person_id="P1">
+            <email>eliza@gmail.com</email>
+            <telephone>3754411111111</telephone>
+            <address address_id="A1">
+                <country>BY</country>
+                <city>Minsk</city>
+                <street>Lenina</street>
+            </address>
+        </person>
+        <products>
+            <amount>2</amount>
+            <product>
+                <type>guitar</type>
+                <price>123.67</price>
+                <producer>
+<!--                    <producer_id>PRD1</producer_id>-->
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>violin</type>
+                <price>567.99</price>
+                <producer>
+<!--                    <producer_id>PRD1</producer_id>-->
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
     </order>
 </orders>

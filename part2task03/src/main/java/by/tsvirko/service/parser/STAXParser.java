@@ -21,7 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class STAXParser {
+public class STAXParser extends Parser{
     private static final Logger logger = LogManager.getLogger(STAXParser.class);
 
     private XMLInputFactory inputFactory;

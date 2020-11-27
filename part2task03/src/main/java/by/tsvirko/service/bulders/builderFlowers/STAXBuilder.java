@@ -1,13 +1,13 @@
-package by.tsvirko.service.builder;
+package by.tsvirko.service.bulders.builderFlowers;
 
 import by.tsvirko.entity.flowers.*;
+import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.parser.STAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -16,7 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class STAXBuilder extends BaseBuilder {
+public class STAXBuilder extends BaseBuilder<Flower> {
     private static final Logger logger = LogManager.getLogger(STAXBuilder.class);
 
     private XMLStreamReader reader;
@@ -41,11 +41,11 @@ public class STAXBuilder extends BaseBuilder {
                     name = reader.getLocalName();
                     if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         Flower cultivated = buildCultivated(reader, new CultivatedFlower());
-                        flowers.add(cultivated);
+                        items.add(cultivated);
                     }
                     if (name.equals(FlowerEnum.WILD_GROWING.getField())) {
                         Flower wild = buildWild(reader, new WildGrowingFlower());
-                        flowers.add(wild);
+                        items.add(wild);
                     }
                 }
             }
@@ -101,7 +101,7 @@ public class STAXBuilder extends BaseBuilder {
         throw new XMLStreamException("Unknown element");
     }
 
-    private Flower buildWild(XMLStreamReader reader, WildGrowingFlower flower) throws XMLStreamException, ParseException {
+    private Flower buildWild(XMLStreamReader reader, WildGrowingFlower flower) throws XMLStreamException {
         flower.setId(reader.getAttributeValue(null, FlowerEnum.ID.getField()));
 
         //TODO:connect schema
@@ -225,11 +225,5 @@ public class STAXBuilder extends BaseBuilder {
             text = reader.getText();
         }
         return text;
-    }
-
-    public static void main(String[] args) {
-        BaseBuilder baseBuilder = new STAXBuilder();
-        baseBuilder.buildFlowers();
-        baseBuilder.getFlowers().forEach(System.out::println);
     }
 }

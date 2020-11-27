@@ -5,5 +5,6 @@ package by.tsvirko.controller.command;
  */
 public enum CommandName {
     DOM,
-    SAX
+    SAX,
+    STAX
 }

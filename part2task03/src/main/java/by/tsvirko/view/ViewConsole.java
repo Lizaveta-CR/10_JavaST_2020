@@ -18,12 +18,18 @@ public class ViewConsole {
         System.out.println("Enter parser: ");
         System.out.println("1. DOM");
         System.out.println("2. SAX");
+        System.out.println("3. STAX");
 
         switch (scanner.nextInt()) {
             case 1:
                 controller.executeTask(CommandName.DOM.name()).forEach(System.out::println);
+                break;
             case 2:
                 controller.executeTask(CommandName.SAX.name()).forEach(System.out::println);
+                break;
+            case 3:
+                controller.executeTask(CommandName.STAX.name()).forEach(System.out::println);
+                break;
             default:
                 break;
         }

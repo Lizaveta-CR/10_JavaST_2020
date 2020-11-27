@@ -1,7 +1,7 @@
-package part2task04.service;
+package part2task04.service.builderFlowers;
 
 import by.tsvirko.entity.flowers.*;
-import by.tsvirko.service.builder.STAXBuilder;
+import by.tsvirko.service.bulders.builderFlowers.STAXBuilder;
 import by.tsvirko.service.parser.DOMParser;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

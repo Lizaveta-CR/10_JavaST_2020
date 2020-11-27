@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<!--TODO: добавить атрибуты, значения по умолчанию и шаблон для логина -->
-
-
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tsvirko.by/order"
         xmlns:tns="http://tsvirko.by/order"
         attributeFormDefault="unqualified" elementFormDefault="qualified">
@@ -19,56 +16,63 @@
     <complexType name="Order">
         <sequence>
             <element name="person" type="tns:Person"></element>
-            <element name="product" type="tns:Product" minOccurs="1" maxOccurs="5"></element>
-            <element name="price" type="decimal"></element>
-            <element name="order_date" type="date"></element>
+            <element name="products" type="tns:Products" minOccurs="1" maxOccurs="5"></element>
+            <!--            <element name="price" type="decimal"></element>-->
         </sequence>
+        <attribute name="order_id" type="tns:Id" use="required"/>
+        <attribute name="order_date" type="date" use="optional" default="2020-09-27"></attribute>
     </complexType>
 
     <complexType name="Person">
         <sequence>
-            <element name="person_id" type="tns:Id"></element>
-            <element name="login" type="string"></element>
-            <element name="email" type="string"></element>
-            <element name="telephone" type="int"></element>
+            <element name="email" type="tns:email"></element>
+            <element name="telephone" type="tns:Telephone"></element>
             <element name="address" type="tns:Address"></element>
-            <element name="userOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"></element>
+            <!--            <element name="userOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"></element>-->
         </sequence>
+        <attribute name="person_id" type="tns:Id" use="required"/>
+        <attribute name="login" type="tns:login" use="optional" default="user"/>
     </complexType>
 
     <complexType name="Address">
         <all>
-            <element name="address_id" type="tns:Id"></element>
-            <element name="country" type="string"/>
+            <element name="country" type="tns:country"/>
             <element name="city" type="string"/>
             <element name="street" type="string"/>
         </all>
+        <attribute name="address_id" type="tns:Id" use="required"/>
     </complexType>
 
-    <complexType name="Product">
+    <complexType name="ProductItem">
         <sequence>
-            <element name="product_id" type="tns:Id"></element>
             <element name="type" type="tns:type"/>
             <element name="price" type="decimal"/>
             <element name="producer" type="tns:Producer"/>
-            <element name="availability" type="boolean"/>
-            <element name="productOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"/>
+            <!--            <element name="productOrders" type="tns:Order" minOccurs="0" maxOccurs="unbounded"/>-->
+        </sequence>
+<!--        <attribute name="product_id" type="tns:Id" use="required"/>-->
+    </complexType>
+
+    <complexType name="Products">
+        <sequence>
+            <element name="amount" type="int"/>
+            <element name="product" type="tns:ProductItem"/>
         </sequence>
     </complexType>
 
     <complexType name="Producer">
         <sequence>
-            <element name="producer_id" type="tns:Id"></element>
+<!--            <element name="producer_id" type="string"/>-->
             <element name="producer_name" type="string"/>
             <element name="producer_country" type="tns:country"/>
-            <element name="producer_telephone" type="tns:Producer"/>
-            <element name="producer_products" type="tns:Product" minOccurs="0" maxOccurs="unbounded"></element>
+            <!--            <element name="producer_products" type="tns:Product" minOccurs="0" maxOccurs="unbounded"></element>-->
         </sequence>
     </complexType>
 
     <simpleType name="email">
         <restriction base="string">
-            <pattern value="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$"/>
+            <pattern
+                    value="^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"/>
         </restriction>
     </simpleType>
 
@@ -93,7 +97,18 @@
 
     <simpleType name="Id">
         <restriction base="ID">
-            <pattern value="[A-z]-[0-9]{1,3}"/>
+            <pattern value="[A-z]{1,5}[0-9]{1,5}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="login">
+        <restriction base="ID">
+            <pattern value="(\\w){8,20}"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Telephone">
+        <restriction base="long">
+            <pattern value="(\d){13}"/>
         </restriction>
     </simpleType>
 </schema>

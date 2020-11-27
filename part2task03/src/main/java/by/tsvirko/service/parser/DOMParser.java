@@ -15,7 +15,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class DOMParser {
+public class DOMParser extends Parser {
     private static final Logger logger = LogManager.getLogger(DOMParser.class);
 
     public Document parse() throws ParserException {

@@ -1,8 +1,8 @@
-package part2task04.service;
+package part2task04.service.builderFlowers;
 
 import by.tsvirko.entity.flowers.*;
-import by.tsvirko.service.builder.BaseBuilder;
-import by.tsvirko.service.builder.SAXBuilder;
+import by.tsvirko.service.bulders.BaseBuilder;
+import by.tsvirko.service.bulders.builderFlowers.DOMBuilder;
 import by.tsvirko.service.parser.DOMParser;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -10,13 +10,10 @@ import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class SAXBuilderTest {
-    private BaseBuilder saxBuilder = new SAXBuilder();
+public class DOMBuilderTest {
+    private BaseBuilder domBuilder = new DOMBuilder();
 
     @DataProvider(name = "correct_data")
     public Object[] symbolData() {
@@ -52,20 +49,21 @@ public class SAXBuilderTest {
         };
     }
 
-    @Test(description = "Testing SAXBuilder' buildFlowers() method",
+    @Test(description = "Testing DOMBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
-        saxBuilder.buildFlowers();
+        domBuilder.buildFlowers();
 
-        Set<Flower> flowers = saxBuilder.getFlowers();
+        Set<Flower> flowers = domBuilder.getFlowers();
         Assert.assertTrue(flowers.contains(flower));
     }
 
-    @Test(description = "Testing SAXBuilder' buildFlowers() method")
+    @Test(description = "Testing DOMBuilder' buildFlowers() method")
     public void testBuildSize() {
-        saxBuilder.buildFlowers();
-        int size = saxBuilder.getFlowers().size();
+        domBuilder.buildFlowers();
+        int size = domBuilder.getFlowers().size();
         try {
+
             Document doc = new DOMParser().parse();
 
             NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED.getField());

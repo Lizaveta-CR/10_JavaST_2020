@@ -1,5 +1,7 @@
-package by.tsvirko.service.builder;
+package by.tsvirko.service.bulders.builderFlowers;
 
+import by.tsvirko.entity.flowers.Flower;
+import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.parser.SAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
@@ -8,7 +10,7 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
-public class SAXBuilder extends BaseBuilder {
+public class SAXBuilder extends BaseBuilder<Flower> {
     private static final Logger logger = LogManager.getLogger(SAXBuilder.class);
 
     private FlowerHandler handler;
@@ -25,6 +27,6 @@ public class SAXBuilder extends BaseBuilder {
 
     @Override
     public void buildFlowers() {
-        flowers = handler.getFlowers();
+        items = handler.getFlowers();
     }
 }
