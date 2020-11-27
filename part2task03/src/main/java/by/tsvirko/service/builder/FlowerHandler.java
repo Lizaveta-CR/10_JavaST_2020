@@ -38,13 +38,13 @@ public class FlowerHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if ("wild_growing".equals(localName)) {
-            name = FlowerEnum.WILD_GROWING_FLOWER.getField();
+            name = FlowerEnum.WILD_GROWING.getField();
             currentWild = new WildGrowingFlower();
             multiplyingWild = new HashSet<>();
             currentWild.setId(attributes.getValue(FlowerEnum.ID.getField()));
             currentWild.setSoil(Soil.getSoil(attributes.getValue(FlowerEnum.SOIL.getField())));
         } else if ("cultivated".equals(localName)) {
-            name = FlowerEnum.CULTIVATED_FLOWER.getField();
+            name = FlowerEnum.CULTIVATED.getField();
             currentCultivated = new CultivatedFlower();
             multiplyingCultivated = new HashSet<>();
             currentCultivated.setId(attributes.getValue(FlowerEnum.ID.getField()));
@@ -75,42 +75,42 @@ public class FlowerHandler extends DefaultHandler {
         if (currentEnum != null) {
             switch (currentEnum) {
                 case NAME:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         currentCultivated.setName(currentElem);
                     } else {
                         currentWild.setName(currentElem);
                     }
                     break;
                 case ORIGIN:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         currentCultivated.setOrigin(currentElem);
                     } else {
                         currentWild.setOrigin(currentElem);
                     }
                     break;
                 case STEM_COLOR:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         currentCultivated.getParameters().setStem_color(currentElem);
                     } else {
                         currentWild.getParameters().setStem_color(currentElem);
                     }
                     break;
                 case LEAF_COLOR:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         currentCultivated.getParameters().setLeaf_color(currentElem);
                     } else {
                         currentWild.getParameters().setLeaf_color(currentElem);
                     }
                     break;
                 case SIZE:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         currentCultivated.getParameters().setSize(Integer.parseInt(currentElem));
                     } else {
                         currentWild.getParameters().setSize(Integer.parseInt(currentElem));
                     }
                     break;
                 case MULTIPLYING:
-                    if (name.equals(FlowerEnum.CULTIVATED_FLOWER.getField())) {
+                    if (name.equals(FlowerEnum.CULTIVATED.getField())) {
                         multiplyingCultivated.add(currentElem);
                     } else {
                         multiplyingWild.add(currentElem);

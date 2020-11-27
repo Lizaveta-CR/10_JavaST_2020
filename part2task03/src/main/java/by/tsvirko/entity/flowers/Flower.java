@@ -43,6 +43,9 @@ public class Flower {
         this.origin = origin;
     }
 
+    public Set<String> getMultiplying() {
+        return multiplying;
+    }
 
     public VisualParameters getParameters() {
         return parameters;

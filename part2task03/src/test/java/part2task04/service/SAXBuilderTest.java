@@ -52,7 +52,7 @@ public class SAXBuilderTest {
         };
     }
 
-    @Test(description = "Testing DOMBuilder' buildFlowers() method",
+    @Test(description = "Testing SAXBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
         saxBuilder.buildFlowers();
@@ -61,15 +61,15 @@ public class SAXBuilderTest {
         Assert.assertTrue(flowers.contains(flower));
     }
 
-    @Test(description = "Testing DOMBuilder' buildFlowers() method")
+    @Test(description = "Testing SAXBuilder' buildFlowers() method")
     public void testBuildSize() {
         saxBuilder.buildFlowers();
         int size = saxBuilder.getFlowers().size();
         try {
             Document doc = new DOMParser().parse();
 
-            NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED_FLOWER.getField());
-            NodeList nodeListWildGrowing = doc.getElementsByTagName(FlowerEnum.WILD_GROWING_FLOWER.getField());
+            NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED.getField());
+            NodeList nodeListWildGrowing = doc.getElementsByTagName(FlowerEnum.WILD_GROWING.getField());
             int totalLength = nodeListCultivated.getLength() + nodeListWildGrowing.getLength();
 
             Assert.assertEquals(size, totalLength);

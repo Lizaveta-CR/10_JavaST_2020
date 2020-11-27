@@ -1,8 +1,7 @@
 package part2task04.service;
 
 import by.tsvirko.entity.flowers.*;
-import by.tsvirko.service.builder.BaseBuilder;
-import by.tsvirko.service.builder.DOMBuilder;
+import by.tsvirko.service.builder.STAXBuilder;
 import by.tsvirko.service.parser.DOMParser;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -10,10 +9,13 @@ import org.testng.annotations.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Set;
 
-public class DOMBuilderTest {
-    private BaseBuilder domBuilder = new DOMBuilder();
+public class STAXBuilderTest {
+    private STAXBuilder staxBuilder = new STAXBuilder();
 
     @DataProvider(name = "correct_data")
     public Object[] symbolData() {
@@ -49,19 +51,19 @@ public class DOMBuilderTest {
         };
     }
 
-    @Test(description = "Testing DOMBuilder' buildFlowers() method",
+    @Test(description = "Testing STAXBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
-        domBuilder.buildFlowers();
+        staxBuilder.buildFlowers();
 
-        Set<Flower> flowers = domBuilder.getFlowers();
+        Set<Flower> flowers = staxBuilder.getFlowers();
         Assert.assertTrue(flowers.contains(flower));
     }
 
-    @Test(description = "Testing DOMBuilder' buildFlowers() method")
+    @Test(description = "Testing STAXBuilder' buildFlowers() method")
     public void testBuildSize() {
-        domBuilder.buildFlowers();
-        int size = domBuilder.getFlowers().size();
+        staxBuilder.buildFlowers();
+        int size = staxBuilder.getFlowers().size();
         try {
 
             Document doc = new DOMParser().parse();

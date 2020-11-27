@@ -30,11 +30,11 @@ public class DOMBuilder extends BaseBuilder {
             doc = domParser.parse();
             Element root = doc.getDocumentElement();
 
-            NodeList cultivatedList = root.getElementsByTagName(FlowerEnum.CULTIVATED_FLOWER.getField());
-            build(cultivatedList, FlowerEnum.CULTIVATED_FLOWER);
+            NodeList cultivatedList = root.getElementsByTagName(FlowerEnum.CULTIVATED.getField());
+            build(cultivatedList, FlowerEnum.CULTIVATED);
 
-            NodeList wildGrowingList = root.getElementsByTagName(FlowerEnum.WILD_GROWING_FLOWER.getField());
-            build(wildGrowingList, FlowerEnum.WILD_GROWING_FLOWER);
+            NodeList wildGrowingList = root.getElementsByTagName(FlowerEnum.WILD_GROWING.getField());
+            build(wildGrowingList, FlowerEnum.WILD_GROWING);
 
         } catch (ParseException e) {
             logger.debug("ParseException " + e.getMessage());
@@ -47,11 +47,11 @@ public class DOMBuilder extends BaseBuilder {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element flowerElement = (Element) nodeList.item(i);
             switch (type) {
-                case CULTIVATED_FLOWER:
+                case CULTIVATED:
                     Flower cultivatedFlower = buildCultivatedFlower(flowerElement);
                     flowers.add(cultivatedFlower);
                     break;
-                case WILD_GROWING_FLOWER:
+                case WILD_GROWING:
                     Flower wildGrowingFlower = buildWildGrowingFlower(flowerElement);
                     flowers.add(wildGrowingFlower);
                     break;

@@ -2,8 +2,8 @@ package by.tsvirko.entity.flowers;
 
 public enum FlowerEnum {
     FLOWERS("flowers"),
-    WILD_GROWING_FLOWER("wild_growing"),
-    CULTIVATED_FLOWER("cultivated"),
+    WILD_GROWING("wild_growing"),
+    CULTIVATED("cultivated"),
     ID("id"),
     SOIL("soil"),
     NAME("name"),
