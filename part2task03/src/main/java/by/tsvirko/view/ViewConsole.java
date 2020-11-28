@@ -46,7 +46,7 @@ public class ViewConsole {
                 controller.executeTask(CommandName.DOM_ORDERS.name()).forEach(System.out::println);
                 break;
             case 2:
-//                controller.executeTask(CommandName.SAX_FLOWERS.name()).forEach(System.out::println);
+                controller.executeTask(CommandName.SAX_ORDERS.name()).forEach(System.out::println);
                 break;
             case 3:
 //                controller.executeTask(CommandName.STAX_FLOWERS.name()).forEach(System.out::println);

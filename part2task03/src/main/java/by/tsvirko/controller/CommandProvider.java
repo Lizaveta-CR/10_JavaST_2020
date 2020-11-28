@@ -3,10 +3,7 @@ package by.tsvirko.controller;
 import by.tsvirko.controller.command.Command;
 import by.tsvirko.controller.command.CommandName;
 import by.tsvirko.controller.command.exception.RequestException;
-import by.tsvirko.controller.command.impl.DOMCommandFlowers;
-import by.tsvirko.controller.command.impl.DOMCommandOrders;
-import by.tsvirko.controller.command.impl.SAXCommandFlowers;
-import by.tsvirko.controller.command.impl.STAXCommandFlowers;
+import by.tsvirko.controller.command.impl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,6 +22,7 @@ public class CommandProvider {
         repository.put(CommandName.SAX_FLOWERS, new SAXCommandFlowers());
         repository.put(CommandName.STAX_FLOWERS, new STAXCommandFlowers());
         repository.put(CommandName.DOM_ORDERS, new DOMCommandOrders());
+        repository.put(CommandName.SAX_ORDERS, new SAXCommandOrders());
     }
 
     public Command getCommand(String name) throws RequestException {

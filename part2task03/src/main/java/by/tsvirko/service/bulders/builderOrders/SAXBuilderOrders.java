@@ -1,9 +1,6 @@
 package by.tsvirko.service.bulders.builderOrders;
 
-import by.tsvirko.entity.orders.Order;
 import by.tsvirko.service.bulders.BaseBuilder;
-import by.tsvirko.service.bulders.builderFlowers.FlowerHandler;
-import by.tsvirko.service.bulders.builderFlowers.SAXBuilder;
 import by.tsvirko.service.parser.PathContainer;
 import by.tsvirko.service.parser.SAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
@@ -31,11 +28,5 @@ public class SAXBuilderOrders extends BaseBuilder {
     @Override
     public void build() {
         items = handler.getOrders();
-    }
-
-    public static void main(String[] args) {
-        BaseBuilder<Order> bb = new SAXBuilderOrders();
-        bb.build();
-        bb.getItems().forEach(System.out::println);
     }
 }
