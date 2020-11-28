@@ -26,7 +26,7 @@ public class SAXBuilder extends BaseBuilder<Flower> {
     }
 
     @Override
-    public void buildFlowers() {
+    public void build() {
         items = handler.getFlowers();
     }
 }

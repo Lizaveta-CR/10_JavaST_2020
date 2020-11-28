@@ -5,6 +5,8 @@ import by.tsvirko.view.ViewConsole;
 
 public class Runner {
     public static void main(String[] args) {
-        new ViewConsole().view();
+        ViewConsole viewConsole = new ViewConsole();
+        viewConsole.viewFlowers();
+        viewConsole.viewOrders();
     }
 }

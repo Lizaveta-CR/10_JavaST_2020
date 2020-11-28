@@ -18,7 +18,7 @@ import java.io.IOException;
 public class DOMParser extends Parser {
     private static final Logger logger = LogManager.getLogger(DOMParser.class);
 
-    public Document parse() throws ParserException {
+    public Document parse(PathContainer xml, PathContainer xsd) throws ParserException {
         DocumentBuilder documentBuilder = null;
         try {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -27,7 +27,7 @@ public class DOMParser extends Parser {
             SchemaFactory xsdFactory = SchemaFactory.newInstance(constant);
             Schema schema = null;
             try {
-                schema = xsdFactory.newSchema(new File(loadPath(PathContainer.FLOWERS_XSD.getField())));
+                schema = xsdFactory.newSchema(new File(loadPath(xsd.getField())));
             } catch (SAXException e) {
                 logger.error("Failed to create schema", e);
                 throw new ParserException(e.getMessage(), e);
@@ -42,7 +42,7 @@ public class DOMParser extends Parser {
         }
         Document document;
         try {
-            document = documentBuilder.parse(new File(loadPath(PathContainer.FLOWERS_XML.getField())));
+            document = documentBuilder.parse(new File(loadPath(xml.getField())));
         } catch (SAXException e) {
             throw new ParserException(e.getMessage(), e);
         } catch (IOException e) {

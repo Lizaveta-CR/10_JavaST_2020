@@ -27,4 +27,14 @@ public class Order {
     public void setProduct(Set<Product> product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", date=" + date +
+                ", person=" + person +
+                ", product=" + product +
+                '}';
+    }
 }

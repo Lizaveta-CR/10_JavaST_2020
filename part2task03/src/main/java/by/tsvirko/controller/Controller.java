@@ -8,14 +8,14 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Set;
 
-public class Controller {
+public class Controller<T> {
     private final CommandProvider provider = new CommandProvider();
     private static final Logger logger = LogManager.getLogger(Controller.class);
 
 
-    public Set<Flower> executeTask(String request) {
+    public Set<T> executeTask(String request) {
         Command executionCommand;
-        Set<Flower> response = null;
+        Set<T> response = null;
 
         try {
             executionCommand = provider.getCommand(request);

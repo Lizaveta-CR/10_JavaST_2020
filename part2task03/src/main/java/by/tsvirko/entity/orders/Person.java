@@ -1,7 +1,6 @@
 package by.tsvirko.entity.orders;
 
 public class Person {
-    private String person_id;
     private String login;
     private String email;
     private long telephone;
@@ -11,10 +10,6 @@ public class Person {
     public Person() {
         address = new Address();
 //        orders = new ArrayList<>();
-    }
-
-    public void setPerson_id(String person_id) {
-        this.person_id = person_id;
     }
 
     public void setLogin(String login) {
@@ -31,5 +26,15 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                " login='" + login + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone=" + telephone +
+                ", address=" + address +
+                '}';
     }
 }

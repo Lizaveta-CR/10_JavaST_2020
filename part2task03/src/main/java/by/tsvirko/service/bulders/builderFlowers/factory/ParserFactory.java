@@ -4,14 +4,18 @@ import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.bulders.builderFlowers.DOMBuilder;
 import by.tsvirko.service.bulders.builderFlowers.SAXBuilder;
 import by.tsvirko.service.bulders.builderFlowers.STAXBuilder;
+import by.tsvirko.service.bulders.builderOrders.DOMBuilderOrders;
 
 public class ParserFactory {
     private static final ParserFactory INSTANCE = new ParserFactory();
 
     private enum TypeParser {
-        DOM,
-        SAX,
-        STAX
+        DOM_FLOWERS,
+        SAX_FLOWERS,
+        STAX_FLOWERS,
+        DOM_ORDERS,
+        SAX_ORDERS,
+        STAX_ORDERS
     }
 
     private ParserFactory() {
@@ -21,15 +25,17 @@ public class ParserFactory {
         return INSTANCE;
     }
 
-    public BaseBuilder createFlowerParser(String typeParser) {
+    public BaseBuilder createParser(String typeParser) {
         TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
         switch (type) {
-            case DOM:
+            case DOM_FLOWERS:
                 return new DOMBuilder();
-            case SAX:
+            case SAX_FLOWERS:
                 return new SAXBuilder();
-            case STAX:
+            case STAX_FLOWERS:
                 return new STAXBuilder();
+            case DOM_ORDERS:
+                return new DOMBuilderOrders();
             default:
                 throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
         }

@@ -7,6 +7,7 @@ import java.util.*;
 import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.parser.DOMParser;
+import by.tsvirko.service.parser.PathContainer;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,10 +26,10 @@ public class DOMBuilder extends BaseBuilder<Flower> {
     }
 
     @Override
-    public void buildFlowers() {
+    public void build() {
         Document doc = null;
         try {
-            doc = domParser.parse();
+            doc = domParser.parse(PathContainer.FLOWERS_XML, PathContainer.FLOWERS_XSD);
             Element root = doc.getDocumentElement();
 
             NodeList cultivatedList = root.getElementsByTagName(FlowerEnum.CULTIVATED.getField());

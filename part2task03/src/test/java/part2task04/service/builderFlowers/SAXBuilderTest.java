@@ -4,6 +4,7 @@ import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.bulders.builderFlowers.SAXBuilder;
 import by.tsvirko.service.parser.DOMParser;
+import by.tsvirko.service.parser.PathContainer;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -55,18 +56,18 @@ public class SAXBuilderTest {
     @Test(description = "Testing SAXBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
-        saxBuilder.buildFlowers();
+        saxBuilder.build();
 
-        Set<Flower> flowers = saxBuilder.getFlowers();
+        Set<Flower> flowers = saxBuilder.getItems();
         Assert.assertTrue(flowers.contains(flower));
     }
 
     @Test(description = "Testing SAXBuilder' buildFlowers() method")
     public void testBuildSize() {
-        saxBuilder.buildFlowers();
-        int size = saxBuilder.getFlowers().size();
+        saxBuilder.build();
+        int size = saxBuilder.getItems().size();
         try {
-            Document doc = new DOMParser().parse();
+            Document doc = new DOMParser().parse(PathContainer.FLOWERS_XML,PathContainer.FLOWERS_XSD);
 
             NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED.getField());
             NodeList nodeListWildGrowing = doc.getElementsByTagName(FlowerEnum.WILD_GROWING.getField());
@@ -74,7 +75,6 @@ public class SAXBuilderTest {
 
             Assert.assertEquals(size, totalLength);
         } catch (Exception e) {
-            System.err.println(e);
         }
     }
 }

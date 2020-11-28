@@ -14,21 +14,42 @@ public class ViewConsole {
         this.controller = new Controller();
     }
 
-    public void view() {
-        System.out.println("Enter parser: ");
+    public void viewFlowers() {
+        System.out.println("Enter parser for flowers: ");
         System.out.println("1. DOM");
         System.out.println("2. SAX");
         System.out.println("3. STAX");
 
         switch (scanner.nextInt()) {
             case 1:
-                controller.executeTask(CommandName.DOM.name()).forEach(System.out::println);
+                controller.executeTask(CommandName.DOM_FLOWERS.name()).forEach(System.out::println);
                 break;
             case 2:
-                controller.executeTask(CommandName.SAX.name()).forEach(System.out::println);
+                controller.executeTask(CommandName.SAX_FLOWERS.name()).forEach(System.out::println);
                 break;
             case 3:
-                controller.executeTask(CommandName.STAX.name()).forEach(System.out::println);
+                controller.executeTask(CommandName.STAX_FLOWERS.name()).forEach(System.out::println);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void viewOrders() {
+        System.out.println("Enter parser for orders: ");
+        System.out.println("1. DOM");
+        System.out.println("2. SAX");
+        System.out.println("3. STAX");
+
+        switch (scanner.nextInt()) {
+            case 1:
+                controller.executeTask(CommandName.DOM_ORDERS.name()).forEach(System.out::println);
+                break;
+            case 2:
+//                controller.executeTask(CommandName.SAX_FLOWERS.name()).forEach(System.out::println);
+                break;
+            case 3:
+//                controller.executeTask(CommandName.STAX_FLOWERS.name()).forEach(System.out::println);
                 break;
             default:
                 break;

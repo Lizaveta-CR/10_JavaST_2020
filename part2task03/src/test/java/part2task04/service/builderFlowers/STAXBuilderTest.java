@@ -3,6 +3,7 @@ package part2task04.service.builderFlowers;
 import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.bulders.builderFlowers.STAXBuilder;
 import by.tsvirko.service.parser.DOMParser;
+import by.tsvirko.service.parser.PathContainer;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -54,19 +55,19 @@ public class STAXBuilderTest {
     @Test(description = "Testing STAXBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
-        staxBuilder.buildFlowers();
+        staxBuilder.build();
 
-        Set<Flower> flowers = staxBuilder.getFlowers();
+        Set<Flower> flowers = staxBuilder.getItems();
         Assert.assertTrue(flowers.contains(flower));
     }
 
     @Test(description = "Testing STAXBuilder' buildFlowers() method")
     public void testBuildSize() {
-        staxBuilder.buildFlowers();
-        int size = staxBuilder.getFlowers().size();
+        staxBuilder.build();
+        int size = staxBuilder.getItems().size();
         try {
 
-            Document doc = new DOMParser().parse();
+            Document doc = new DOMParser().parse(PathContainer.FLOWERS_XML, PathContainer.FLOWERS_XSD);
 
             NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED.getField());
             NodeList nodeListWildGrowing = doc.getElementsByTagName(FlowerEnum.WILD_GROWING.getField());
@@ -74,7 +75,6 @@ public class STAXBuilderTest {
 
             Assert.assertEquals(size, totalLength);
         } catch (Exception e) {
-            System.err.println(e);
         }
     }
 }

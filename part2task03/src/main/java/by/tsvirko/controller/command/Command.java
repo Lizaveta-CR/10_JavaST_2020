@@ -7,6 +7,6 @@ import java.util.Set;
 /**
  * Command interface
  */
-public interface Command {
-    Set<Flower> execute(String request);
+public interface Command<T> {
+    Set<T> execute(String request);
 }

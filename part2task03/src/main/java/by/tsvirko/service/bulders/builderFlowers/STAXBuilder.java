@@ -32,7 +32,7 @@ public class STAXBuilder extends BaseBuilder<Flower> {
     }
 
     @Override
-    public void buildFlowers() {
+    public void build() {
         String name;
         try {
             while (reader.hasNext()) {

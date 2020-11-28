@@ -2,6 +2,7 @@ package by.tsvirko.entity.orders;
 
 public enum OrderEnum {
     ORDERS("orders"),
+    ORDER("order"),
     PERSON("person"),
     EMAIL("email"),
     TELEPHONE("telephone"),
@@ -9,6 +10,8 @@ public enum OrderEnum {
     COUNTRY("country"),
     CITY("city"),
     STREET("street"),
+    APARTAMENT_NUMBER("apartment_number"),
+    HOUSE_NUMBER("house_number"),
     ADDRESS_ID("address_id"),
     PERSON_ID("person_id"),
     LOGIN("login"),

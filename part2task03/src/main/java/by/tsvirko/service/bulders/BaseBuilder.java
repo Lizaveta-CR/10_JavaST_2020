@@ -10,9 +10,9 @@ public abstract class BaseBuilder<T> {
         this.items = new HashSet<>();
     }
 
-    public Set<T> getFlowers() {
+    public Set<T> getItems() {
         return items;
     }
 
-    public abstract void buildFlowers();
+    public abstract void build();
 }

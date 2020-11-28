@@ -4,13 +4,15 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://tsvirko.by/order orders.xsd">
     <order order_id="O1" order_date="2020-11-26">
-        <person person_id="P1">
+        <person login="LizaTs2000">
             <email>eliza@gmail.com</email>
             <telephone>3754411111111</telephone>
-            <address address_id="A1">
+            <address>
                 <country>BY</country>
                 <city>Minsk</city>
                 <street>Lenina</street>
+                <apartment_number>11</apartment_number>
+                <house_number>12</house_number>
             </address>
         </person>
         <products>
@@ -19,7 +21,6 @@
                 <type>guitar</type>
                 <price>123.67</price>
                 <producer>
-<!--                    <producer_id>PRD1</producer_id>-->
                     <producer_name>Takamine</producer_name>
                     <producer_country>JP</producer_country>
                 </producer>
@@ -31,7 +32,220 @@
                 <type>violin</type>
                 <price>567.99</price>
                 <producer>
-<!--                    <producer_id>PRD1</producer_id>-->
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O2">
+        <person login="Misha2345">
+            <email>miha@gmail.com</email>
+            <telephone>3753311211721</telephone>
+            <address>
+                <country>CN</country>
+                <city>Beijing</city>
+                <street>中国第一街</street>
+                <apartment_number>2</apartment_number>
+                <house_number>12</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>saxophone</type>
+                <price>388.99</price>
+                <producer>
+                    <producer_name>Peace</producer_name>
+                    <producer_country>TW</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O3" order_date="2020-09-09">
+        <person login="Waivabrs">
+            <email>toledymmiza-8247@yopmail.com</email>
+            <telephone>3754411111111</telephone>
+            <address>
+                <country>RU</country>
+                <city>Moscow</city>
+                <street>Ostozenka</street>
+                <apartment_number>1</apartment_number>
+                <house_number>22</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>piano</type>
+                <price>2098.20</price>
+                <producer>
+                    <producer_name>Yamaha</producer_name>
+                    <producer_country>ID</producer_country>
+                </producer>
+            </product>
+        </products>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>violin</type>
+                <price>567.99</price>
+                <producer>
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O4" order_date="2019-02-12">
+        <person login="Vagetost28">
+            <email>dexeniny-9232@yopmail.com</email>
+            <telephone>3751127121212</telephone>
+            <address>
+                <country>US</country>
+                <city>New-York</city>
+                <street>Park Avenue</street>
+                <apartment_number>23</apartment_number>
+                <house_number>12</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>2</amount>
+            <product>
+                <type>drum</type>
+                <price>2777.30</price>
+                <producer>
+                    <producer_name>Roland</producer_name>
+                    <producer_country>TW</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O5" order_date="2020-10-01">
+        <person login="LizUhd007">
+            <email>KjEliza@gmail.com</email>
+            <telephone>3754481621233</telephone>
+            <address>
+                <country>CA</country>
+                <city>Toronto</city>
+                <street>Yonge Street</street>
+                <apartment_number>33</apartment_number>
+                <house_number>65</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>accordion</type>
+                <price>162.99</price>
+                <producer>
+                    <producer_name>Weltmeister</producer_name>
+                    <producer_country>DE</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O6" order_date="2020-01-26">
+        <person login="KsuSokol123">
+            <email>KsuSokol123@gmail.com</email>
+            <telephone>3753382611111</telephone>
+            <address>
+                <country>BY</country>
+                <city>Grodno</city>
+                <street>Lenina</street>
+                <apartment_number>222</apartment_number>
+                <house_number>12</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>flute</type>
+                <price>1232.67</price>
+                <producer>
+                    <producer_name>Brahner</producer_name>
+                    <producer_country>CN</producer_country>
+                </producer>
+            </product>
+        </products>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>violin</type>
+                <price>567.99</price>
+                <producer>
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O7" order_date="2020-02-07">
+        <person login="NikAzar2000">
+            <email>nikitaAzaroz@mail.ru</email>
+            <telephone>3753372521111</telephone>
+            <address>
+                <country>BY</country>
+                <city>Brest</city>
+                <street>Gogolya</street>
+                <apartment_number>111</apartment_number>
+                <house_number>9</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>violin</type>
+                <price>567.99</price>
+                <producer>
+                    <producer_name>Takamine</producer_name>
+                    <producer_country>JP</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O8" order_date="2020-05-19">
+        <person login="SashaAv22">
+            <email>sashkaAverin@gmail.com</email>
+            <telephone>3752999211112</telephone>
+            <address>
+                <country>DE</country>
+                <city>Munhen</city>
+                <street>Tal</street>
+                <apartment_number>18</apartment_number>
+                <house_number>2</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>cello</type>
+                <price>8762.82</price>
+                <producer>
+                    <producer_name>Cremona</producer_name>
+                    <producer_country>CN</producer_country>
+                </producer>
+            </product>
+        </products>
+    </order>
+    <order order_id="O9" order_date="2020-04-03">
+        <person login="dasDasKr">
+            <email>dashkaKrav@gmail.com</email>
+            <telephone>3754417741111</telephone>
+            <address>
+                <country>BY</country>
+                <city>Gomel</city>
+                <street>Lenina</street>
+                <apartment_number>223</apartment_number>
+                <house_number>11</house_number>
+            </address>
+        </person>
+        <products>
+            <amount>1</amount>
+            <product>
+                <type>violin</type>
+                <price>567.99</price>
+                <producer>
                     <producer_name>Takamine</producer_name>
                     <producer_country>JP</producer_country>
                 </producer>
