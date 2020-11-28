@@ -1,5 +1,6 @@
 package by.tsvirko.service.bulders.builderOrders;
 
+import by.tsvirko.entity.orders.Order;
 import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.parser.PathContainer;
 import by.tsvirko.service.parser.SAXParser;
@@ -10,7 +11,7 @@ import org.xml.sax.SAXException;
 
 import java.io.IOException;
 
-public class SAXBuilderOrders extends BaseBuilder {
+public class SAXBuilderOrders extends BaseBuilder<Order> {
     private static final Logger logger = LogManager.getLogger(SAXBuilderOrders.class);
 
     private OrderHandler handler;

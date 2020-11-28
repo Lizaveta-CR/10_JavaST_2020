@@ -6,6 +6,7 @@ import by.tsvirko.service.bulders.builderFlowers.SAXBuilder;
 import by.tsvirko.service.bulders.builderFlowers.STAXBuilder;
 import by.tsvirko.service.bulders.builderOrders.DOMBuilderOrders;
 import by.tsvirko.service.bulders.builderOrders.SAXBuilderOrders;
+import by.tsvirko.service.bulders.builderOrders.STAXBuilderOrders;
 
 public class ParserFactory {
     private static final ParserFactory INSTANCE = new ParserFactory();
@@ -39,6 +40,8 @@ public class ParserFactory {
                 return new DOMBuilderOrders();
             case SAX_ORDERS:
                 return new SAXBuilderOrders();
+            case STAX_ORDERS:
+                return new STAXBuilderOrders();
             default:
                 throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
         }

@@ -21,15 +21,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class STAXParser extends Parser{
+public class STAXParser extends Parser {
     private static final Logger logger = LogManager.getLogger(STAXParser.class);
 
     private XMLInputFactory inputFactory;
 
-    public XMLStreamReader parse() throws ParserException, IOException, SAXException {
+    public XMLStreamReader parse(PathContainer xml, PathContainer xsd) throws ParserException, IOException, SAXException {
         String schemaLang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory schemaFactory = SchemaFactory.newInstance(schemaLang);
-        File xsdFile = new File(loadPath(PathContainer.FLOWERS_XSD.getField()));
+        File xsdFile = new File(loadPath(xsd.getField()));
         Schema schema = schemaFactory.newSchema(xsdFile);
         Validator validator = schema.newValidator();
         XMLStreamReader xmlStreamReaderValidate = null;
@@ -37,12 +37,12 @@ public class STAXParser extends Parser{
         try {
             xmlStreamReaderValidate = XMLInputFactory
                     .newInstance()
-                    .createXMLStreamReader(new FileInputStream(loadPath(PathContainer.FLOWERS_XML.getField())));
+                    .createXMLStreamReader(new FileInputStream(loadPath(xml.getField())));
             StAXSource staxSource = new StAXSource(xmlStreamReaderValidate);
             validator.validate(staxSource);
             xmlStreamReaderParse = XMLInputFactory
                     .newInstance()
-                    .createXMLStreamReader(new FileInputStream(loadPath(PathContainer.FLOWERS_XML.getField())));
+                    .createXMLStreamReader(new FileInputStream(loadPath(xml.getField())));
         } catch (XMLStreamException e) {
             logger.info("XMLStreamException while creating reader for STAX", e.getMessage());
         }

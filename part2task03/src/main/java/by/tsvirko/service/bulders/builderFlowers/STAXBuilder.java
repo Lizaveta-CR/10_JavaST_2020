@@ -2,6 +2,7 @@ package by.tsvirko.service.bulders.builderFlowers;
 
 import by.tsvirko.entity.flowers.*;
 import by.tsvirko.service.bulders.BaseBuilder;
+import by.tsvirko.service.parser.PathContainer;
 import by.tsvirko.service.parser.STAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +26,7 @@ public class STAXBuilder extends BaseBuilder<Flower> {
     public STAXBuilder() {
         super();
         try {
-            reader = new STAXParser().parse();
+            reader = new STAXParser().parse(PathContainer.FLOWERS_XML,PathContainer.FLOWERS_XSD);
         } catch (ParserException | IOException | SAXException e) {
             logger.error("STAXBuilder parsing failed!", e.getMessage());
         }

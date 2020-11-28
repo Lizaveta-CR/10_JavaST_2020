@@ -23,6 +23,7 @@ public class CommandProvider {
         repository.put(CommandName.STAX_FLOWERS, new STAXCommandFlowers());
         repository.put(CommandName.DOM_ORDERS, new DOMCommandOrders());
         repository.put(CommandName.SAX_ORDERS, new SAXCommandOrders());
+        repository.put(CommandName.STAX_ORDERS, new STAXCommandOrders());
     }
 
     public Command getCommand(String name) throws RequestException {
