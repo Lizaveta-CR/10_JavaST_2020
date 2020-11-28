@@ -1,7 +1,8 @@
-package part2task04.service.builderFlowers;
+package part2task04.service.builder.builderFlowers;
 
 import by.tsvirko.entity.flowers.*;
-import by.tsvirko.service.bulders.builderFlowers.STAXBuilder;
+import by.tsvirko.service.bulders.BaseBuilder;
+import by.tsvirko.service.bulders.builderFlowers.SAXBuilder;
 import by.tsvirko.service.parser.DOMParser;
 import by.tsvirko.service.parser.PathContainer;
 import org.testng.Assert;
@@ -15,8 +16,8 @@ import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
 
-public class STAXBuilderTest {
-    private STAXBuilder staxBuilder = new STAXBuilder();
+public class SAXBuilderTest {
+    private BaseBuilder saxBuilder = new SAXBuilder();
 
     @DataProvider(name = "correct_data")
     public Object[] symbolData() {
@@ -52,22 +53,21 @@ public class STAXBuilderTest {
         };
     }
 
-    @Test(description = "Testing STAXBuilder' buildFlowers() method",
+    @Test(description = "Testing SAXBuilder' buildFlowers() method",
             dataProvider = "correct_data")
     public void testBuild(CultivatedFlower flower) {
-        staxBuilder.build();
+        saxBuilder.build();
 
-        Set<Flower> flowers = staxBuilder.getItems();
+        Set<Flower> flowers = saxBuilder.getItems();
         Assert.assertTrue(flowers.contains(flower));
     }
 
-    @Test(description = "Testing STAXBuilder' buildFlowers() method")
+    @Test(description = "Testing SAXBuilder' buildFlowers() method")
     public void testBuildSize() {
-        staxBuilder.build();
-        int size = staxBuilder.getItems().size();
+        saxBuilder.build();
+        int size = saxBuilder.getItems().size();
         try {
-
-            Document doc = new DOMParser().parse(PathContainer.FLOWERS_XML, PathContainer.FLOWERS_XSD);
+            Document doc = new DOMParser().parse(PathContainer.FLOWERS_XML,PathContainer.FLOWERS_XSD);
 
             NodeList nodeListCultivated = doc.getElementsByTagName(FlowerEnum.CULTIVATED.getField());
             NodeList nodeListWildGrowing = doc.getElementsByTagName(FlowerEnum.WILD_GROWING.getField());
