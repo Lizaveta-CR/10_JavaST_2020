@@ -1,5 +1,7 @@
 package by.tsvirko.entity.orders;
 
+import java.util.Objects;
+
 public class Person {
     private String login;
     private String email;
@@ -26,6 +28,38 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public long getTelephone() {
+        return telephone;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return telephone == person.telephone &&
+                Objects.equals(login, person.login) &&
+                Objects.equals(email, person.email) &&
+                Objects.equals(address, person.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, email, telephone, address);
     }
 
     @Override

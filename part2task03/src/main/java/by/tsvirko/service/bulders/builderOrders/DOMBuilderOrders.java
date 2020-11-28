@@ -67,7 +67,7 @@ public class DOMBuilderOrders extends BaseBuilder<Order> {
         }
         order.setDate(date);
 
-        order.setProduct(buildProduct(orderElement));
+        order.setProducts(buildProduct(orderElement));
         return order;
     }
 
@@ -85,7 +85,7 @@ public class DOMBuilderOrders extends BaseBuilder<Order> {
         address.setCity(getElementTextContent(element, OrderEnum.CITY.getField()));
         address.setCountry(getElementTextContent(element, OrderEnum.COUNTRY.getField()));
         address.setStreet(getElementTextContent(element, OrderEnum.STREET.getField()));
-        address.setApartment_number(Integer.parseInt(getElementTextContent(element, OrderEnum.APARTAMENT_NUMBER.getField())));
+        address.setApartment_number(Integer.parseInt(getElementTextContent(element, OrderEnum.APARTMENT_NUMBER.getField())));
         address.setHouse_number(Integer.parseInt(getElementTextContent(element, OrderEnum.HOUSE_NUMBER.getField())));
         return address;
     }
@@ -124,11 +124,5 @@ public class DOMBuilderOrders extends BaseBuilder<Order> {
         Node node = nList.item(0);
         String text = node.getTextContent();
         return text;
-    }
-
-    public static void main(String[] args) {
-        BaseBuilder<Order> flowerParser = new DOMBuilderOrders();
-        flowerParser.build();
-        flowerParser.getItems().forEach(System.out::println);
     }
 }

@@ -2,6 +2,7 @@ package by.tsvirko.service.bulders.builderFlowers;
 
 import by.tsvirko.entity.flowers.Flower;
 import by.tsvirko.service.bulders.BaseBuilder;
+import by.tsvirko.service.parser.PathContainer;
 import by.tsvirko.service.parser.SAXParser;
 import by.tsvirko.service.parser.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
@@ -19,7 +20,7 @@ public class SAXBuilder extends BaseBuilder<Flower> {
         super();
         handler = new FlowerHandler();
         try {
-            new SAXParser().parse(handler);
+            new SAXParser().parse(PathContainer.FLOWERS_XML, PathContainer.FLOWERS_XSD, handler);
         } catch (ParserException | SAXException | IOException e) {
             logger.info("Parsing failed " + e.getMessage());
         }

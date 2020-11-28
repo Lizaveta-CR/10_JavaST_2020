@@ -1,5 +1,7 @@
 package by.tsvirko.entity.orders;
 
+import java.util.Objects;
+
 public class Producer {
     private String name;
     private String country;
@@ -15,6 +17,20 @@ public class Producer {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Producer producer = (Producer) o;
+        return Objects.equals(name, producer.name) &&
+                Objects.equals(country, producer.country);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, country);
     }
 
     @Override

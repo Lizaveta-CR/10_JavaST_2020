@@ -16,18 +16,18 @@ import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class SAXParser extends Parser{
+public class SAXParser extends Parser {
     private static final Logger logger = LogManager.getLogger(SAXParser.class);
 
     private XMLReader reader;
 
-    public XMLReader parse(DefaultHandler handler) throws ParserException, IOException, SAXException {
+    public XMLReader parse(PathContainer xml, PathContainer xsd, DefaultHandler handler) throws ParserException, IOException, SAXException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
         SchemaFactory schemaFactory =
                 SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-        File file = new File(loadPath(PathContainer.FLOWERS_XSD.getField()));
+        File file = new File(loadPath(xsd.getField()));
 
         try {
             Schema schema = schemaFactory.newSchema(file);
@@ -47,7 +47,7 @@ public class SAXParser extends Parser{
         reader.setContentHandler(handler);
 
         reader.setContentHandler(handler);
-        reader.parse(new InputSource(loadPath(PathContainer.FLOWERS_XML.getField())));
+        reader.parse(new InputSource(loadPath(xml.getField())));
         return reader;
     }
 

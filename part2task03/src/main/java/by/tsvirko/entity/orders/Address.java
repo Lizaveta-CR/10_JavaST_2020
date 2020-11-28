@@ -1,5 +1,7 @@
 package by.tsvirko.entity.orders;
 
+import java.util.Objects;
+
 public class Address {
     private String country;
     private String city;
@@ -25,6 +27,23 @@ public class Address {
 
     public void setHouse_number(int house_number) {
         this.house_number = house_number;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return apartment_number == address.apartment_number &&
+                house_number == address.house_number &&
+                Objects.equals(country, address.country) &&
+                Objects.equals(city, address.city) &&
+                Objects.equals(street, address.street);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(country, city, street, apartment_number, house_number);
     }
 
     @Override
