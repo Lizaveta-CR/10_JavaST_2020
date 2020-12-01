@@ -1,0 +1,59 @@
+package by.tsvirko.service.parser;
+
+import by.tsvirko.service.parser.exception.ParserException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.helpers.XMLReaderFactory;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.*;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import java.io.File;
+import java.io.IOException;
+
+public class SAXParser extends Parser {
+    private static final Logger logger = LogManager.getLogger(SAXParser.class);
+
+    private XMLReader reader;
+
+    public XMLReader parse(PathContainer xml, PathContainer xsd, DefaultHandler handler) throws ParserException, IOException, SAXException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+
+        SchemaFactory schemaFactory =
+                SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
+        File file = new File(loadPath(xsd.getField()));
+
+        try {
+            Schema schema = schemaFactory.newSchema(file);
+
+            factory.setSchema(schema);
+        } catch (Exception ex) {
+            logger.debug("Schema setting failed: " + ex.getMessage());
+        }
+        try {
+            reader = XMLReaderFactory.createXMLReader();
+        } catch (SAXException e) {
+            logger.debug("XMLReader can not be created: " + e.getMessage());
+        }
+        reader.setFeature("http://xml.org/sax/features/namespaces", true);
+        reader.setFeature("http://xml.org/sax/features/validation", true);
+        reader.setFeature("http://apache.org/xml/features/validation/schema", true);
+        reader.setContentHandler(handler);
+
+        reader.setContentHandler(handler);
+        reader.parse(new InputSource(loadPath(xml.getField())));
+        return reader;
+    }
+
+    private String loadPath(String fileName) {
+        ClassLoader classLoader = DOMParser.class.getClassLoader();
+        File file = new File(classLoader.getResource("data/" + fileName).getFile());
+        return file.getPath();
+    }
+}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Растения, содержащиеся в оранжерее:
+Name – название растения.
+Soil – почва для посадки, которая может быть следующих типов: подзолистая, грунтовая, дерново-подзолистая.
+Origin – место происхождения растения.
+Visual рarameters (должно быть несколько) – внешние параметры: цвет стебля, цвет листьев, средний размер растения.
+Growing tips (должно быть несколько) – предпочитаемые условия произрастания: температура (в градусах), освещение (светолюбиво либо нет), полив (мл в неделю).
+Multiplying – размножение: листьями, черенками либо семенами.
+Корневой элемент назвать Flowers.
+-->
+<flowers xmlns="http://tsvirko.by/flower"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://tsvirko.by/flower flowers.xsd">
+        <cultivated id="c-1" soil="podzolic">
+            <name>Orchid</name>
+            <origin>CN</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Pink</leaf_color>
+                <size>70</size>
+            </visual_parameters>
+            <multiplying>leafs</multiplying>
+            <multiplying>cuttings</multiplying>
+            <growing_tips>
+                <temperature>8</temperature>
+                <light>true</light>
+                <first_watering>2020-09-22</first_watering>
+                <watering>100</watering>
+            </growing_tips>
+        </cultivated>
+        <cultivated id="c-2">
+            <name>Rose</name>
+            <origin>CN</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Red</leaf_color>
+                <size>70</size>
+            </visual_parameters>
+            <multiplying>cuttings</multiplying>
+            <growing_tips>
+                <temperature>20</temperature>
+                <light>true</light>
+                <first_watering>2020-09-22</first_watering>
+                <watering>89</watering>
+            </growing_tips>
+        </cultivated>
+        <cultivated soil="podzolic" id="c-3">
+            <name>Paeonia</name>
+            <origin>GR</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <size>60</size>
+                <leaf_color>White</leaf_color>
+            </visual_parameters>
+            <multiplying>cuttings</multiplying>
+            <growing_tips>
+                <light>true</light>
+                <temperature>15</temperature>
+                <first_watering>2020-10-12</first_watering>
+                <watering>180</watering>
+            </growing_tips>
+        </cultivated>
+        <cultivated id="c-5" soil="podzolic">
+            <name>Sunflower</name>
+            <origin>US</origin>
+            <visual_parameters>
+                <stem_color>Yellow</stem_color>
+                <leaf_color>Green</leaf_color>
+                <size>500</size>
+            </visual_parameters>
+            <multiplying>seeds</multiplying>
+            <growing_tips>
+                <temperature>20</temperature>
+                <light>true</light>
+                <first_watering>2020-09-22</first_watering>
+                <watering>500</watering>
+            </growing_tips>
+        </cultivated>
+        <cultivated id="c-6">
+            <name>Peer</name>
+            <origin>PL</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Brown</leaf_color>
+                <size>7</size>
+            </visual_parameters>
+            <multiplying>seeds</multiplying>
+            <growing_tips>
+                <temperature>15</temperature>
+                <light>true</light>
+                <first_watering>2020-09-22</first_watering>
+                <watering>200</watering>
+            </growing_tips>
+        </cultivated>
+        <cultivated id="c-7" soil="podzolic">
+            <name>Raspberry</name>
+            <origin>BY</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Red</leaf_color>
+                <size>4</size>
+            </visual_parameters>
+            <multiplying>seeds</multiplying>
+            <growing_tips>
+                <temperature>23</temperature>
+                <light>true</light>
+                <first_watering>2020-09-22</first_watering>
+                <watering>200</watering>
+            </growing_tips>
+        </cultivated>
+    <cultivated id="c-8" soil="podzolic">
+        <name>Aster</name>
+        <origin>PL</origin>
+        <visual_parameters>
+            <stem_color>Green</stem_color>
+            <leaf_color>Purple</leaf_color>
+            <size>70</size>
+        </visual_parameters>
+        <multiplying>leafs</multiplying>
+        <growing_tips>
+            <temperature>8</temperature>
+            <light>true</light>
+            <first_watering>2020-09-22</first_watering>
+            <watering>187</watering>
+        </growing_tips>
+    </cultivated>
+
+    <wild_growing id="w-1">
+        <name>Cornflower</name>
+        <origin>BY</origin>
+        <visual_parameters>
+            <stem_color>Green</stem_color>
+            <leaf_color>Blue</leaf_color>
+            <size>7</size>
+        </visual_parameters>
+        <multiplying>seeds</multiplying>
+        <multiplying>leafs</multiplying>
+        <life_term>3</life_term>
+    </wild_growing>
+        <wild_growing id="w-2">
+            <name>Aconite</name>
+            <origin>BY</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Purple</leaf_color>
+                <size>7</size>
+            </visual_parameters>
+            <multiplying>seeds</multiplying>
+            <multiplying>leafs</multiplying>
+            <life_term>3</life_term>
+        </wild_growing>
+        <wild_growing id="w-3">
+            <name>Chamomile</name>
+            <origin>BY</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>White</leaf_color>
+                <size>20</size>
+            </visual_parameters>
+            <multiplying>cuttings</multiplying>
+            <life_term>1</life_term>
+        </wild_growing>
+        <wild_growing id="w-4">
+            <name>Hazel</name>
+            <origin>US</origin>
+            <visual_parameters>
+                <stem_color>Brown</stem_color>
+                <leaf_color>Green</leaf_color>
+                <size>7</size>
+            </visual_parameters>
+            <multiplying>leafs</multiplying>
+            <life_term>5</life_term>
+        </wild_growing>
+        <wild_growing id="w-5">
+            <name>Cornflower</name>
+            <origin>BY</origin>
+            <visual_parameters>
+                <stem_color>Green</stem_color>
+                <leaf_color>Blue</leaf_color>
+                <size>7</size>
+            </visual_parameters>
+            <multiplying>seeds</multiplying>
+            <multiplying>leafs</multiplying>
+            <life_term>3</life_term>
+        </wild_growing>
+</flowers>
