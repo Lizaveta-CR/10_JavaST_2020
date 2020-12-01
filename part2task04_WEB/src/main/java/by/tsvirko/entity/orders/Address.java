@@ -29,6 +29,26 @@ public class Address {
         this.house_number = house_number;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public int getApartment_number() {
+        return apartment_number;
+    }
+
+    public int getHouse_number() {
+        return house_number;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

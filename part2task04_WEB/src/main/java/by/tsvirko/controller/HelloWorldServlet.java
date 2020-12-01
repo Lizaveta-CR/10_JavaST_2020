@@ -2,6 +2,7 @@ package by.tsvirko.controller;
 
 import by.tsvirko.entity.flowers.CultivatedFlower;
 import by.tsvirko.entity.flowers.Flower;
+import by.tsvirko.entity.orders.Order;
 import by.tsvirko.service.bulders.BaseBuilder;
 import by.tsvirko.service.bulders.builderFlowers.factory.ParserFactory;
 
@@ -32,6 +33,24 @@ public class HelloWorldServlet extends HttpServlet {
 
     private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String typeParser = request.getParameter("parser");
+
+        if (typeParser.contains("flowers".toUpperCase())) {
+            flowers(request, response, typeParser);
+        } else {
+            orders(request, response, typeParser);
+        }
+    }
+
+    private void orders(HttpServletRequest request, HttpServletResponse response, String typeParser) throws ServletException, IOException {
+        BaseBuilder<Order> flowerParser = ParserFactory.getInstance().createParser(typeParser);
+        flowerParser.build();
+        Set<Order> items = flowerParser.getItems();
+
+        request.setAttribute("orders", items);
+        request.getRequestDispatcher("/WEB-INF/view/orders.jsp").forward(request, response);
+    }
+
+    private void flowers(HttpServletRequest request, HttpServletResponse response, String typeParser) throws ServletException, IOException {
         BaseBuilder<Flower> flowerParser = ParserFactory.getInstance().createParser(typeParser);
         flowerParser.build();
         Set<Flower> items = flowerParser.getItems();

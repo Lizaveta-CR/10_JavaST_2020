@@ -11,24 +11,8 @@
 <head>
     <title>Flowers List</title>
     <link href="/resources/core/css/table.css" rel="stylesheet"/>
-    <%--    <style type="text/css">--%>
-    <%--        TABLE {--%>
-    <%--            border-collapse: collapse;--%>
-    <%--            width: 300px;--%>
-    <%--        }--%>
-
-    <%--        TH {--%>
-    <%--            background: #fc0;--%>
-    <%--            text-align: left;--%>
-    <%--        }--%>
-
-    <%--        TH, TD {--%>
-    <%--            border: 1px solid black;--%>
-    <%--            padding: 4px;--%>
-    <%--        }--%>
-    <%--    </style>--%>
 </head>
-<a href="/hello" Home></a>
+<%--<a href="/hello" Home></a>--%>
 <table>
     <thead>
     <tr>
@@ -46,21 +30,21 @@
         <th>Multiplying</th>
     </tr>
     </thead>
-    <c:forEach var="cult" items="${cultivated}">
+    <c:forEach var="order" items="${cultivated}">
         <tbody>
         <tr>
-            <td><c:out value="${cult.id}"/></td>
-            <td><c:out value="${cult.name}"/></td>
-            <td><c:out value="${cult.soil}"/></td>
-            <td><c:out value="${cult.origin}"/></td>
-            <td><c:out value="${cult.parameters.stem_color}"/></td>
-            <td><c:out value="${cult.parameters.leaf_color}"/></td>
-            <td><c:out value="${cult.parameters.size}"/></td>
-            <td><c:out value="${cult.tips.temperature}"/></td>
-            <td><c:out value="${cult.tips.light}"/></td>
-            <td><c:out value="${cult.tips.first_watering}"/></td>
-            <td><c:out value="${cult.tips.watering}"/></td>
-            <td><c:out value="${cult.multiplying}"/></td>
+            <td><c:out value="${order.id}"/></td>
+            <td><c:out value="${order.name}"/></td>
+            <td><c:out value="${order.soil}"/></td>
+            <td><c:out value="${order.origin}"/></td>
+            <td><c:out value="${order.parameters.stem_color}"/></td>
+            <td><c:out value="${order.parameters.leaf_color}"/></td>
+            <td><c:out value="${order.parameters.size}"/></td>
+            <td><c:out value="${order.tips.temperature}"/></td>
+            <td><c:out value="${order.tips.light}"/></td>
+            <td><c:out value="${order.tips.first_watering}"/></td>
+            <td><c:out value="${order.tips.watering}"/></td>
+            <td><c:out value="${order.multiplying}"/></td>
 
                 <%--            <c:forEach items="${cult.multiplying}" var="multip">--%>
                 <%--                <td>${multip}</td>--%>
