@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,7 +24,9 @@ import java.util.Set;
  * 30.11.2020
  */
 @WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello")
-public class HelloWorldServlet extends HttpServlet {
+public class ServletRunner extends HttpServlet {
+    private Controller controller = new Controller();
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
@@ -42,19 +47,12 @@ public class HelloWorldServlet extends HttpServlet {
     }
 
     private void orders(HttpServletRequest request, HttpServletResponse response, String typeParser) throws ServletException, IOException {
-        BaseBuilder<Order> flowerParser = ParserFactory.getInstance().createParser(typeParser);
-        flowerParser.build();
-        Set<Order> items = flowerParser.getItems();
-
-        request.setAttribute("orders", items);
+        request.setAttribute("orders", controller.executeTask(typeParser.toUpperCase()));
         request.getRequestDispatcher("/WEB-INF/view/orders.jsp").forward(request, response);
     }
 
     private void flowers(HttpServletRequest request, HttpServletResponse response, String typeParser) throws ServletException, IOException {
-        BaseBuilder<Flower> flowerParser = ParserFactory.getInstance().createParser(typeParser);
-        flowerParser.build();
-        Set<Flower> items = flowerParser.getItems();
-
+        Set<Flower> items = controller.executeTask(typeParser.toUpperCase());
         Set<Flower> cultivated = new HashSet<>();
         Set<Flower> wild = new HashSet<>();
         for (Flower item : items) {

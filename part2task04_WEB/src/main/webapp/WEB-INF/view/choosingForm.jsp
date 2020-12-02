@@ -17,10 +17,7 @@
         <label class="radio-inline"><input type="radio" name="parser" value="DOM_FLOWERS" checked>DOM-parser : </label>
         <label class="radio-inline"><input type="radio" name="parser" value="SAX_FLOWERS">SAX-parser : </label>
         <label class="radio-inline"><input type="radio" name="parser" value="STAX_FLOWERS">StAX-parser : </label>
-        <%--        <div class="form-group">--%>
-        <%--            <label for="exampleFormControlFile1">Choose file</label>--%>
-        <%--            <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" required>--%>
-        <%--        </div>--%>
+
         <button type="submit" class="btn btn-primary">Check</button>
     </form>
 </div>
@@ -30,10 +27,7 @@
         <label class="radio-inline"><input type="radio" name="parser" value="DOM_ORDERS" checked>DOM-parser : </label>
         <label class="radio-inline"><input type="radio" name="parser" value="SAX_ORDERS">SAX-parser : </label>
         <label class="radio-inline"><input type="radio" name="parser" value="STAX_ORDERS">StAX-parser : </label>
-        <%--        <div class="form-group">--%>
-        <%--            <label for="exampleFormControlFile1">Choose file</label>--%>
-        <%--            <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" required>--%>
-        <%--        </div>--%>
+
         <button type="submit" class="btn btn-primary">Check</button>
     </form>
 </div>
